@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RoutingMapMethod")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+81fce44116718a4d36b45183953e74ab70d94c33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+06b57a6be63a2fef1bb33997fa1b2989355e4076")]
 [assembly: System.Reflection.AssemblyProductAttribute("RoutingMapMethod")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RoutingMapMethod")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
