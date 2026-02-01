@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="CustomClassesMiddleware/CustomClassesMiddleware.csproj" Id="2e0b6391-b158-4b06-b0c2-0f14e72a6bf0" />
+  <Project Path="CustomMiddlewareExtensionMethod/CustomMiddlewareExtensionMethod.csproj" Id="77d0afa9-f4c2-439d-a3c9-5b588d9d9692" />
+  <Project Path="GetPostManipulation/GetPostManipulation.csproj" Id="fde3c942-01c5-40e7-88e3-550c4558823c" />
+  <Project Path="LoginMiddleware/LoginMiddleware.csproj" Id="150b21c3-6185-4d17-8e43-cc4e4e642c26" />
+  <Project Path="MathApp/MathApp.csproj" Id="c19cebb0-ed6c-4991-a5c2-e7894c9ca500" />
+  <Project Path="MiddleWareIntro/MiddleWareIntro.csproj" Id="5c7c6d34-b9c5-4d80-91c7-b627817ad852" />
+  <Project Path="MyFirstApp/MyFirstApp.csproj" />
+  <Project Path="UseWhenExample/UseWhenExample.csproj" Id="6933a22b-0e59-4243-bb8c-ecc6fb26fd30" />
+</Solution>
