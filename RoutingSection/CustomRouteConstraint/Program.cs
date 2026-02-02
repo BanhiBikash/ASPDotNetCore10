@@ -21,7 +21,7 @@ app.Map("registration-month/{year:int:range(1900,2025)}-{month:months}", async (
 //fallback route
 app.MapFallback(async (context) =>
 {
-    await context.Response.WriteAsync("Invalid Month. Please enter a valid month (Jan, Apr, Aug, Dec)");
+    await context.Response.WriteAsync("Invalid Month. Please enter a valid month (jan, apr, aug, dec)");
 });
 
 app.Run();
