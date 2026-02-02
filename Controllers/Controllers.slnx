@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Content Result Json Result/Content Result Json Result.csproj" Id="cb4a71e8-fb7c-4931-80ef-0876525ea85c" />
   <Project Path="Controller 1/Controller 1.csproj" />
+  <Project Path="File Results/File Results.csproj" Id="960432a4-b9d2-48f8-9c13-c7ae486846f0" />
 </Solution>
