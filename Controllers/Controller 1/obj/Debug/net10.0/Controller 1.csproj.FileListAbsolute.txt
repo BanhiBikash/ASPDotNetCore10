@@ -1,0 +1,30 @@
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\appsettings.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\Controller 1.staticwebassets.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\Controller 1.exe
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\Controller 1.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\Controller 1.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\Controller 1.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\bin\Debug\net10.0\Controller 1.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\scopedcss\bundle\Controller 1.styles.css
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\refint\Controller 1.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\Controller 1.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Controller 1\obj\Debug\net10.0\ref\Controller 1.dll
