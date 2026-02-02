@@ -1,0 +1,30 @@
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\appsettings.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\Content Result Json Result.staticwebassets.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\Content Result Json Result.exe
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\Content Result Json Result.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\Content Result Json Result.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\Content Result Json Result.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\bin\Debug\net10.0\Content Result Json Result.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\scopedcss\bundle\Content Result Json Result.styles.css
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\refint\Content Result Json Result.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\Content Result Json Result.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\Content Result Json Result\obj\Debug\net10.0\ref\Content Result Json Result.dll
