@@ -13,13 +13,7 @@ namespace IAction_Result.Controllers
 
                     if (loggedIn == false)
                     {
-                        if (!status)
-                        {
-                            Response.StatusCode = 200;
-                            status = true;
-                        }
-
-                        return Content("\nPlease login");
+                        return RedirectToAction("loginError","Home");
                     }
                     else
                     {
@@ -41,8 +35,7 @@ namespace IAction_Result.Controllers
                 //    Response.StatusCode = 404;
                 //    status = true;
                 //}
-                return Content("\nEither invalid or empty data delivered.");
-                return StatusCode(400);
+                return RedirectToAction("InvalidInputError","Home");
 
             }
         }
