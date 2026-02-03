@@ -1,0 +1,30 @@
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\appsettings.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\IAction Result.staticwebassets.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\IAction Result.exe
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\IAction Result.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\IAction Result.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\IAction Result.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\bin\Debug\net10.0\IAction Result.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\scopedcss\bundle\IAction Result.styles.css
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\refint\IAction Result.dll
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\IAction Result.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\Controllers\IAction Result\obj\Debug\net10.0\ref\IAction Result.dll
