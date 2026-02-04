@@ -1,0 +1,30 @@
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\appsettings.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\Model Class.staticwebassets.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\Model Class.exe
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\Model Class.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\Model Class.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\Model Class.dll
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\bin\Debug\net10.0\Model Class.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\scopedcss\bundle\Model Class.styles.css
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.dll
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\refint\Model Class.dll
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\Model Class.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Model Class\obj\Debug\net10.0\ref\Model Class.dll
