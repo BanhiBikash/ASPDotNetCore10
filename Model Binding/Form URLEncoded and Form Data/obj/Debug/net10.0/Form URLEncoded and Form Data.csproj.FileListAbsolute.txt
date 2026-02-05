@@ -1,0 +1,30 @@
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\appsettings.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\Form URLEncoded and Form Data.staticwebassets.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\Form URLEncoded and Form Data.exe
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\Form URLEncoded and Form Data.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\Form URLEncoded and Form Data.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\Form URLEncoded and Form Data.dll
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\bin\Debug\net10.0\Form URLEncoded and Form Data.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\scopedcss\bundle\Form URLEncoded and Form Data.styles.css
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.dll
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\refint\Form URLEncoded and Form Data.dll
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\Form URLEncoded and Form Data.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\Model Binding\Form URLEncoded and Form Data\obj\Debug\net10.0\ref\Form URLEncoded and Form Data.dll
