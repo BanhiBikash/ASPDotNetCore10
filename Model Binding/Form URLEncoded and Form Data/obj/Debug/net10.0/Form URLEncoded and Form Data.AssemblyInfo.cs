@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Form URLEncoded and Form Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bebcaf4607fe73d08cd1eec9f78e4ec0b7d6afd3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fe0a74835c5b177688baa1fe8aa5c98f9a2bf35c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Form URLEncoded and Form Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Form URLEncoded and Form Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
