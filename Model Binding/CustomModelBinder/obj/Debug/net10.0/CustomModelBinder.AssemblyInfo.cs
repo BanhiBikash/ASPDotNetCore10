@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CustomModelBinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58aedb912a0999b445224167b64a175af3577651")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f9e9ebd790bce9ec197a288c9530457e5a8129ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("CustomModelBinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CustomModelBinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
