@@ -25,7 +25,7 @@ namespace Form_URLEncoded_and_Form_Data.Controllers
             }
             else
             {
-                return Content($"\n-----------\nStudent Name:{students.Name},  Id:{students.Id},  City:{students.City},  Date of Birth:{students.dob.ToString("dd/mm/yyyy")}\n---------\n ", "text/html");
+                return Content($"\n-----------\nStudent Name:{students.Name},  Id:{students.Id},  City:{students.City},  Date of Birth:{students.dob.ToString("dd/mm/yyyy")}, Class Applied: {students.classApplied}, Last Class Studied:{students.LastClassStudies}\n---------\n ", "text/html");
             }
         }
     }

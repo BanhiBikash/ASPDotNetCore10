@@ -1,11 +1,9 @@
 ﻿using Form_URLEncoded_and_Form_Data.Custom_Validations;
-using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
-using System.Runtime.InteropServices;
-
+using System.Reflection.Metadata.Ecma335;
 namespace Form_URLEncoded_and_Form_Data.Models
 {
-    public class Students
+    public class Students:IValidatableObject
     {
         //this takes value in accordnace to precedence
         [Display(Name = "Student Name")]
@@ -28,8 +26,27 @@ namespace Form_URLEncoded_and_Form_Data.Models
 
 
         //this takes value in accoradance to precedence
-        [Required(ErrorMessage = "Date of Birth can't be empty.")]
+        //[Required(ErrorMessage = "Date of Birth can't be empty.")]
         [MinimumDateofBirth(2008, ErrorMessage = "The candidate can't be older than 16 years old.")]
-        public DateTime dob { get; set; }
+        public DateTime? dob { get; set; }
+
+        //takes value according to prevelance 
+        public int? age { get; set; }
+
+        [Required(ErrorMessage = "enter the calss you want the candidate to apply for.")]
+        [AppliedClassAttribute(ErrorMessage = "The class applied should be between 1 and 12.")]
+        public int classApplied{ get; set; }
+
+        [Required(ErrorMessage = "Enter the last class studied by the candidate.")]
+        [LastClassValidator("classApplied", ErrorMessage = "The last class studied should be less than the class applied for.")]
+        public int LastClassStudies { get; set; }
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            if(dob.HasValue == false && age.HasValue == false)
+            {
+               yield return new ValidationResult("Either DOB or age must be supplied.", new[] {nameof(dob), nameof(age)});
+            }
+        }
     }
 }
