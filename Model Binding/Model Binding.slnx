@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="CustomModelBinder/CustomModelBinder.csproj" Id="a3ffbe69-1067-4994-b150-a18a7ad4a463" />
+  <Project Path="ECommerce App/ECommerce App.csproj" Id="fa059db8-46a7-42a1-8275-2b2707e724c7" />
   <Project Path="Form URLEncoded and Form Data/Form URLEncoded and Form Data.csproj" Id="613f6ca4-c80f-4c41-863e-923b3f083d38" />
   <Project Path="Model Class/Model Class.csproj" />
 </Solution>
