@@ -1,16 +1,51 @@
-﻿@{
-	string Name = "Banhi";
-	long phone = 8877164293;
-}
+﻿@using Views1.Models
 
 <!DOCTYPE html>
     <html>
     <head>
+	<link rel="stylesheet" href="~/StyleSheet.css" />
         <title></title>
     </head>
     <body>
-        <h1>Welcome</h1>
-        <h2>@Name</h2>
-        <h2>@phone</h2>
+<center>
+    @{
+        List<Student>? Students = (List<Student>)ViewData["students"];
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Std</th>
+				<th>Roll</th>
+            </tr>
+        @foreach(var Student in Students)
+        {
+                <tr>
+                    <td>@Student.name</td>
+                    <td>@Student.std</td>
+                    <td>@Student.roll</td>
+                </tr>
+            }
+        </table>
+    }
+
+        <h2>Using ViewBag</h2>
+
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Std</th>
+                <th>Roll</th>
+            </tr>
+    @foreach(Student student in ViewBag.students){
+       
+                <tr>
+                    <td>@student.name</td>
+                    <td>@student.std</td>
+                    <td>@student.roll</td>
+                </tr>
+    }
+        </table>
+    }
+    </center>
     </body>
     </html>
