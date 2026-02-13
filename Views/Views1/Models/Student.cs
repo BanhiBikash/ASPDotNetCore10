@@ -7,6 +7,9 @@
         public int? roll { get; set; }
 
         public int? std { get; set; }
-          
+
+        public string?  gender { get; set; }
+
+        public int? age { get; set; }
     }
 }

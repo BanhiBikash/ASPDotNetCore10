@@ -1,0 +1,30 @@
+﻿@using Views1.Models;
+@model Student
+
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Student Details</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+    <body>
+        <table>
+                        <tr>
+                <th>Name</th>
+                <th>Std</th>
+                <th>Roll</th>
+                <th>Gender</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <td>@Model.name</td>
+                <td>@Model.std</td>
+                <td>@Model.roll</td>
+                <td>@Model.gender</td>
+                <td>@Model.age</td>
+            </tr>
+            <a href="/">Home</a>
+        </table>
+    </body>
+    </html>
+

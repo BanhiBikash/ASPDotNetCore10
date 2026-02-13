@@ -4,7 +4,7 @@
     <html>
     <head>
 	<link rel="stylesheet" href="~/StyleSheet.css" />
-        <title></title>
+        <title>Student List</title>
     </head>
     <body>
 <center>
@@ -17,12 +17,12 @@
                 <th>Std</th>
 				<th>Roll</th>
             </tr>
-        @foreach(var Student in Students)
+        @foreach(Student St in Students)
         {
                 <tr>
-                    <td>@Student.name</td>
-                    <td>@Student.std</td>
-                    <td>@Student.roll</td>
+                    <td>@St.name</td>
+                    <td>@St.std</td>
+                    <td>@St.roll</td>
                 </tr>
             }
         </table>
@@ -35,6 +35,7 @@
                 <th>Name</th>
                 <th>Std</th>
                 <th>Roll</th>
+                <th>Action</th>
             </tr>
     @foreach(Student student in ViewBag.students){
        
@@ -42,6 +43,7 @@
                     <td>@student.name</td>
                     <td>@student.std</td>
                     <td>@student.roll</td>
+                    <td><a href="/details/@student.name">Details</a></td>
                 </tr>
     }
         </table>
