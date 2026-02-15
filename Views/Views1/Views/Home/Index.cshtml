@@ -1,5 +1,5 @@
 ﻿@using Views1.Models
-
+@model List<Student>
 <!DOCTYPE html>
     <html>
     <head>
@@ -9,7 +9,7 @@
     <body>
 <center>
     @{
-        List<Student>? Students = (List<Student>)ViewData["students"];
+        //List<Student>? Students = Model;
 
         <table>
             <tr>
@@ -17,7 +17,7 @@
                 <th>Std</th>
 				<th>Roll</th>
             </tr>
-        @foreach(Student St in Students)
+        @foreach(Student St in Model)
         {
                 <tr>
                     <td>@St.name</td>

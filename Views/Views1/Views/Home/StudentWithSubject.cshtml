@@ -1,0 +1,44 @@
+﻿@using Views1.Models;
+@model StudentSubjectWrapper;
+
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Student Subject Details</title>
+	<link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+<body>
+    <a href="/">Home</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Std</th>
+            <th>Roll</th>
+            <th>Subject</th>
+        </tr>
+        <tr>
+            <td>@Model.studentData.name</td>
+            <td>@Model.studentData.std</td>
+            <td>@Model.studentData.roll</td>
+            <td>@Model.subjectData.subjectName</td>
+		</tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Subject Name</th>
+            <th>Subject Code</th>
+            <th>Marks Obtained</th>
+            <th>Percentage</th>
+        </tr>
+        <tr>
+            <td>@Model.subjectData.subjectName</td>
+            <td>@Model.subjectData.subjectCode</td>
+            <td>@Model.subjectData.subjectMarksObtained</td>
+            @{
+				double percentage = (double)Model.subjectData.subjectMarksObtained /(double) Model.subjectData.subjectMaxMarks * 100;
+            }
+            <td>@percentage</td>
+		</tr>
+</body>
+</html>

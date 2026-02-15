@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AspNetCoreGeneratedDocument;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Reflection;
+using System.Xml.Linq;
 using Views1.Models;
 
 namespace Views1.Controllers
@@ -17,7 +21,7 @@ namespace Views1.Controllers
             };
 
             ViewData["students"] = students;
-            return View();
+            return View(students);
         }
 
         [Route("/details/{studentName}")]
@@ -55,6 +59,16 @@ namespace Views1.Controllers
                 return View(student);
 
             }
+        }
+
+        [Route("/all-details/")]
+        public IActionResult StudentWithSubject()
+        {
+            Student student = new Student(){ name = "John", roll = 1, std = 10, gender = "Male", age = 17};
+            Subject subject = new Subject() { subjectName = "Mathematics", subjectCode = 1, subjectMaxMarks = 100, subjectMarksObtained=88 };
+            StudentSubjectWrapper studentWithSubject = new StudentSubjectWrapper() {studentData=student, subjectData=subject };
+         
+            return View(studentWithSubject);
         }
     }
 }
