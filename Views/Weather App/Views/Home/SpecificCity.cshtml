@@ -1,0 +1,22 @@
+﻿@using Weather_App.Models;
+@model City
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="~/StyleSheet.css" />
+    </head>
+<body>
+    <h2>Weather</h2>
+    <div class="dashboard">
+       
+            <div class="tile">
+                <h2>@Model.CityName</h2>
+                <div class="time">@Model.DateAndTime.ToString("hh:mm tt") </div>
+                <div class="temp">@Model.TemperatureFahrenheit</div>
+                <a href="#">Details</a>
+            </div>
+    </div>
+        
+    </body>
+    </html>

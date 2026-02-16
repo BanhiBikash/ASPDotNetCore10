@@ -1,0 +1,70 @@
+﻿/* Container for all tiles */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+body {
+    background: lightblue;
+}
+/* Individual tile */
+.tile {
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+    /* City name */
+    .tile h2 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    /* Time */
+    .tile .time {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    /* Temperature */
+    .tile .temp {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    /* Details link */
+    .tile a {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 6px 12px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.3s;
+    }
+
+        .tile a:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+    /* Color cycle: repeats every 3 tiles */
+    .tile:nth-child(3n+1) {
+        background: #3b82f6;
+    }
+    /* Blue */
+    .tile:nth-child(3n+2) {
+        background: #10b981;
+    }
+    /* Green */
+    .tile:nth-child(3n+3) {
+        background: #ef4444;
+    }
+/* Red */

@@ -1,0 +1,24 @@
+﻿@using Weather_App.Models;
+@model IEnumerable<City>
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>All city Data</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+    <body>
+        <h2>Weather</h2>
+    <div class="dashboard">
+        @foreach(City city in Model)
+        {
+            <div class="tile">
+                <h2>@city.CityName</h2>
+                <div class="time">@city.DateAndTime.ToString("hh:mm tt") </div>
+                <div class="temp">@city.TemperatureFahrenheit</div>
+                <a href="#">Details</a>
+            </div>
+        }
+    </div>
+    </body>
+    </html>
