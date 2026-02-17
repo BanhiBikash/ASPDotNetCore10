@@ -10,9 +10,10 @@ namespace Layout_Views1.Controllers
             return View();
         }
 
-        [Route("/Cities")]
-        public IActionResult CitiesPage()
+        [Route("/Cities/{CityCode?}")]
+        public IActionResult CitiesPage(string? cityCode)
         {
+            ViewBag.CityCode = Request.RouteValues["CityCode"];
             return View();
         }
 

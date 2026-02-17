@@ -1,7 +1,4 @@
-﻿@{
-    Layout = "~/Views/Shared/_MasterLayout.cshtml";
-}
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
     <html>
     <head>
         <title>@ViewBag.Title</title>
@@ -10,7 +7,7 @@
     <body>
         @* This is Navbar *@
     <div class="navbar">
-        <a href="#" class="logo">WeatherApp</a>
+        <a href="#" class="logo">WeatherApp Custom Navbar</a>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/Cities">Cities</a></li>
@@ -21,11 +18,6 @@
 
     <div>
         @RenderBody();
-    </div>
-
-    <div>
-        @* this tells if the footer section is available then render *@
-        @RenderSection("footer_section",false);
     </div>
     </body>
     </html>

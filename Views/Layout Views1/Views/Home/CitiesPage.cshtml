@@ -1,5 +1,10 @@
 ﻿@{
 	ViewData["Title"] = "Cities Information";
+
+	if (ViewBag.CityCode != null)
+	{
+		Layout = "~/Views/Home/_LayoutView.cshtml";
+	}
 }
 
 <h2>This is Cities Page</h2>
