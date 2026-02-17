@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+    <html>
+    <head>
+        <title>LayoutViewDemo</title>
+        <link rel="stylesheet" href="~/StyleSheet.css" />
+    </head>
+    <body>
+        @* This is Navbar *@
+    <div class="navbar">
+        <a href="#" class="logo">WeatherApp</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Cities">Cities</a></li>
+            <li><a href="/About">About</a></li>
+            <li><a href="/Contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <div>
+        @RenderBody();
+    </div>
+    </body>
+    </html>
