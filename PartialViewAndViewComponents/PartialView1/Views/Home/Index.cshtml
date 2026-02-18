@@ -1,1 +1,16 @@
 ﻿<h1>This is home.</h1>
+@{
+	ViewBag.Title = "Home for partial";
+	ListModels listModels = new ListModels()
+	{
+		ListTitle = "About",
+		Items = new List<string>() { "This is a sample Home page.", "It demonstrates how to use partial views in ASP.NET Core MVC." }
+	};
+}
+@await Html.PartialAsync("_PartialContent", listModels);
+
+@* @{
+	var myViewData = new ViewDataDictionary(ViewData);
+	myViewData["title"] = "custom view data";
+	myViewData["message"] = "This is a message from custom view data.";
+} *@

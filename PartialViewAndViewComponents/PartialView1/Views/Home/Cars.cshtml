@@ -1,0 +1,14 @@
+﻿<button id="load">Load Car list</button>
+<div id="container"></div>
+
+<script>
+	let button = document.querySelector("#load");
+
+	button.addEventListener("click", async (obj) => {
+		console.log("clicked");
+		let response = await fetch("/GetCars/");
+		let data = await response.text();
+		let container = document.querySelector("#container");
+		container.innerHTML = data;
+	});
+</script>
