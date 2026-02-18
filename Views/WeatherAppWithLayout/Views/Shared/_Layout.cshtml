@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+    <html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <link rel="stylesheet" href="~/StyleSheet.css" />
+    </head>
+    <body>
+
+    @* This is Navbar *@
+    <div class="navbar">
+        <a href="#" class="logo">WeatherApp</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#">Cities</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <div>
+		@RenderBody();
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        © 2030 WeatherApp — All rights reserved
+    </div>
+    </body>
+    </html>

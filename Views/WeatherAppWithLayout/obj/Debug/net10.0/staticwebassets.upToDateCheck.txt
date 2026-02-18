@@ -1,0 +1,2 @@
+wwwroot\StyleSheet.css
+C:\Users\Banhi\source\repos\aspnetcore\Views\WeatherAppWithLayout\wwwroot\StyleSheet.css
