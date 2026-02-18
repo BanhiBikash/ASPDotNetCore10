@@ -1,0 +1,9 @@
+﻿@{
+	ListModels myListModel = new ListModels()
+	{
+		ListTitle = "Cities",
+		Items = new List<string>() { "New York", "London", "Paris", "Tokyo" }
+	};
+
+	await Html.RenderPartialAsync("_PartialContent", myListModel);
+}

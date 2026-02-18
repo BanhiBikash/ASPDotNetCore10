@@ -15,5 +15,17 @@ namespace PartialView1.Controllers
         {
             return View();
         }
+
+        [Route("/CityPage")]
+        public IActionResult CityPage()
+        {
+            return View();
+        }
+
+        [Route("/Programming_Languages")]
+        public IActionResult Programming_Languages()
+        {
+            return View();
+        }
     }
 }

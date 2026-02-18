@@ -1,3 +1,9 @@
 ﻿<h1>This is About</h1>
-<Partial name="_PartialContent" />
-@* @await Html.PartialAsync("_PartialContent") *@
+@{
+	ListModels listModels	= new ListModels()
+	{
+		ListTitle = "About",
+		Items = new List<string>() { "This is a sample about page.", "It demonstrates how to use partial views in ASP.NET Core MVC." }
+	};
+}
+@await Html.PartialAsync("_PartialContent",listModels);

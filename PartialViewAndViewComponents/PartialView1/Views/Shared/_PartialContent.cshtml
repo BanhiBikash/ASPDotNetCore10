@@ -1,1 +1,15 @@
-﻿<h1>This partial content</h1>
+﻿@model ListModels
+
+<div class="city-list">
+    <h2>@Model.ListTitle</h2>
+    <ul>
+        @{
+            foreach (var item in Model.Items)
+            {
+                <li>
+                    @item <span class="badge">@item</span>
+                </li>
+			}
+        }
+    </ul>
+</div>
