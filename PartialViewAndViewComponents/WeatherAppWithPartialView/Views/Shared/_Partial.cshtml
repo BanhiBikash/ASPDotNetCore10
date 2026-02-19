@@ -1,0 +1,28 @@
+﻿@model City
+
+
+<div class="dashboard">
+
+	<div class="tile">
+		<h2>@Model.CityName</h2>
+		<div class="time">@(Model.DateAndTime) </div>
+		<div class="temp">@Model.TemperatureFahrenheit °F</div>
+		@{
+			int? temp = @Model.TemperatureFahrenheit;
+			if (temp <= 50)
+			{
+				<h2>Cold</h2>
+			}
+			else if (temp > 50 && temp <= 80)
+			{
+				<h2>Warm</h2>
+			}
+			else
+			{
+				<h2>Hot</h2>
+			}
+		}
+		<a href="/">Home</a>
+	</div>
+
+</div>

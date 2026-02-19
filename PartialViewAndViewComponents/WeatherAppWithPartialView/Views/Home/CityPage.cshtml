@@ -1,0 +1,24 @@
+﻿@model City
+
+
+<div class="dashboard">
+    
+        <div class="tile">
+            <h2>@Model.CityName</h2>
+            <div class="time">@(Model.DateAndTime.ToString("hh:mm tt")) </div>
+        <div class="temp">@Model.TemperatureFahrenheit °F</div>
+            <a href="/CityPage/@Model.CityUniqueCode">Details</a>
+            <button id="load">Load Details</button>
+        </div>
+    
+</div>
+<script>
+	let load = document.getElementById("load");
+	load.addEventListener("click",async function() {
+
+        let response = await fetch("/CityData/@Model.CityUniqueCode");
+        let data = await response.text();
+        let tile = document.querySelector(".dashboard");
+        tile.innerHTML = data;
+    });
+</script>

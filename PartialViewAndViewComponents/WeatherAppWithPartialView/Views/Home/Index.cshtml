@@ -1,0 +1,15 @@
+﻿@model IEnumerable<City>
+
+<h1>Home</h1>
+
+<div class="dashboard">
+    @foreach (City city in Model)
+    {
+        <div class="tile">  
+            <h2>@city.CityName</h2>
+            <div class="time">@(city.DateAndTime.ToString("hh:mm tt")) </div>
+            <div class="temp">@city.TemperatureFahrenheit</div>
+            <a href="/CityPage/@city.CityUniqueCode">Details</a>
+        </div>
+    }
+</div>
