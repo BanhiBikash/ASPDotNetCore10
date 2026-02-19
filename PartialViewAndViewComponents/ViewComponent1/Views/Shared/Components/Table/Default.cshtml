@@ -1,0 +1,23 @@
+﻿@model IEnumerable<City>
+
+<table>
+    <thead>
+        <tr>
+            <th>City Code</th>
+            <th>City Name</th>
+            <th>Date & Time</th>
+            <th>Temperature (°F)</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var city in Model)
+    {
+        <tr>
+            <td>@city.CityUniqueCode</td>
+            <td>@city.CityName</td>
+            <td>@city.DateAndTime.ToString("yyyy-MM-dd HH:mm")</td>
+            <td>@city.TemperatureFahrenheit °F</td>
+        </tr>
+    }
+    </tbody>
+</table>

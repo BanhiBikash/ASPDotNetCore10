@@ -1,0 +1,239 @@
+﻿/* General reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9fafb;
+}
+
+/* Header */
+.header {
+    background-color: #1f2937; /* dark gray */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navbar container */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937; /* dark gray */
+    padding: 12px 24px;
+}
+
+    .navbar .logo {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .navbar ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+            .navbar ul li a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 16px;
+                transition: color 0.3s;
+            }
+
+                .navbar ul li a:hover {
+                    color: #3b82f6; /* blue highlight */
+                }
+
+/* Dashboard container */
+.dashboard {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 40px;
+    flex-wrap: wrap; /* allows wrapping on smaller screens */
+}
+
+/* Individual tile */
+.tile {
+    width: 180px;
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+    .tile h2 {
+        margin: 0;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .tile .time {
+        margin: 10px 0;
+        font-size: 16px;
+    }
+
+    .tile .temp {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .tile a {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 6px 12px;
+        background: rgba(255,255,255,0.2);
+        border-radius: 6px;
+        text-decoration: none;
+        color: #fff;
+        transition: background 0.3s;
+    }
+
+        .tile a:hover {
+            background: rgba(255,255,255,0.4);
+        }
+
+    /* Color cycle: repeats every 3 tiles */
+    .tile:nth-child(3n+1) {
+        background: #3b82f6; /* Blue */
+    }
+
+    .tile:nth-child(3n+2) {
+        background: #10b981; /* Green */
+    }
+
+    .tile:nth-child(3n+3) {
+        background: #ef4444; /* Red */
+    }
+
+/* Footer */
+.footer {
+    background-color: dodgerblue;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+
+/* City list container */
+.city-list {
+    margin: 40px auto;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+    /* Title for the list */
+    .city-list h2 {
+        margin: 0 0 15px;
+        font-size: 22px;
+        font-weight: bold;
+        color: #1f2937;
+        text-align: center;
+    }
+
+    /* Actual list */
+    .city-list ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        /* Each city item */
+        .city-list ul li {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e5e7eb;
+            font-size: 16px;
+            color: #374151;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+            /* Hover effect */
+            .city-list ul li:hover {
+                background: #f3f4f6;
+            }
+
+            /* Optional badge for temperature or status */
+            .city-list ul li .badge {
+                background: #3b82f6;
+                color: #fff;
+                padding: 4px 10px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+button {
+    background-color: #3b82f6; /* blue */
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+    button:hover {
+        background-color: #2563eb; /* darker blue on hover */
+        transform: scale(1.05);
+    }
+
+    button:active {
+        background-color: #1e40af; /* even darker when clicked */
+        transform: scale(0.95);
+    }
+
+table {
+    width: 80%;
+    margin: 40px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #1f2937; /* dark gray */
+    color: #fff;
+}
+
+    thead th {
+        padding: 12px;
+        text-align: left;
+    }
+
+tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+    tbody tr:hover {
+        background-color: #f3f4f6; /* light gray hover */
+    }
+
+tbody td {
+    padding: 12px;
+    color: #374151;
+}
