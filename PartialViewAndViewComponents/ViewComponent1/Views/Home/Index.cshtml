@@ -1,5 +1,21 @@
 ﻿@{
-	ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home Page";
+
+    List<City> Cities1 = new List<City>()
+        {
+            new City(){CityUniqueCode="NYC",CityName="New York City",DateAndTime=DateTime.Now,TemperatureFahrenheit=75},
+            new City(){CityUniqueCode="LDN",CityName="London",DateAndTime=DateTime.Now,TemperatureFahrenheit=65},
+            new City(){CityUniqueCode="TKY",CityName="Tokyo",DateAndTime=DateTime.Now,TemperatureFahrenheit=80},
+            new City(){CityUniqueCode="SYD",CityName="Sydney",DateAndTime=DateTime.Now,TemperatureFahrenheit=70}
+        };
+    List<City> Cities2 = new List<City>()
+        {
+            new City(){CityUniqueCode="MUB",CityName="Mumbai",DateAndTime=DateTime.Now,TemperatureFahrenheit=75},
+            new City(){CityUniqueCode="DEL",CityName="Delhi",DateAndTime=DateTime.Now,TemperatureFahrenheit=65},
+            new City(){CityUniqueCode="KOL",CityName="Kolkata",DateAndTime=DateTime.Now,TemperatureFahrenheit=80},
+            new City(){CityUniqueCode="CHN",CityName="Chennai",DateAndTime=DateTime.Now,TemperatureFahrenheit=70}
+        };
 }
 <h1>Home Page</h1>
-@await Component.InvokeAsync("Table");
+@await Component.InvokeAsync("Table", new{ Cities = Cities1});
+@await Component.InvokeAsync("Table", new { Cities = Cities2 });
