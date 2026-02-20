@@ -1,0 +1,10 @@
+﻿@model City
+
+<div class="dashboard">
+        <div class="tile">
+            <h2>@Model.CityName</h2>
+            <div class="time">@(Model.DateAndTime.ToString("hh:mm tt")) </div>
+            <div class="temp">@Model.TemperatureFahrenheit</div>
+            <a href="/CityPage/@Model.CityUniqueCode">Details</a>
+        </div>
+</div>

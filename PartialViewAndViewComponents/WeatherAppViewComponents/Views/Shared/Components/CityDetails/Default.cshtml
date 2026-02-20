@@ -1,0 +1,34 @@
+﻿@model IEnumerable<City>
+
+<div class="dashboard">
+    @foreach (City city in Model)
+    {
+        <div class="tile">
+            <h2>@city.CityName</h2>
+            <div class="time">@(city.DateAndTime.ToString("hh:mm tt")) </div>
+            <div class="temp">@city.TemperatureFahrenheit</div>
+            <a href="/CityPage/@city.CityUniqueCode">Details</a>
+            <button class="load" data-citycode="@city.CityUniqueCode">Load This City</button>
+        </div>
+    }
+</div>
+
+<script>
+	let load  = document.querySelector(".load");
+	load.addEventListener("click", async (event)=>{
+		console.log("clicked");
+		let cityCode = event.target.dataset.citycode;
+
+		if(cityCode !==null){console.log("citycode received"+cityCode)}
+
+		let response = await fetch(`/LoadSpecificCity/${cityCode}`);
+
+		if (response.ok) {
+			console.log("City data loaded successfully");
+			let data = await response.text();
+			document.querySelector("#box").innerHTML = data;
+		} else {
+			console.error("Failed to load Indian cities");
+		}
+	});
+</script>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WeatherAppWithPartialView")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b461bf478957721200d8e286642dbceac6287526")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+470b5126ddafa17f8f3361828cc5e5594a849c56")]
 [assembly: System.Reflection.AssemblyProductAttribute("WeatherAppWithPartialView")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WeatherAppWithPartialView")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
