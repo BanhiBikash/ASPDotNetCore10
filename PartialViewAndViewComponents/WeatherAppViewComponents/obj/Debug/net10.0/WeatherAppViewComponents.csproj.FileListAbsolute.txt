@@ -20,7 +20,6 @@ C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppVi
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\scopedcss\bundle\WeatherAppViewComponents.styles.css
-C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\compressed\fo51rpc2cz-{0}-ax5yls2nvg-ax5yls2nvg.gz
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\staticwebassets.development.json
@@ -32,3 +31,4 @@ C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppVi
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\WeatherAppViewComponents.pdb
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\WeatherAppViewComponents.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\ref\WeatherAppViewComponents.dll
+C:\Users\Banhi\source\repos\aspnetcore\PartialViewAndViewComponents\WeatherAppViewComponents\obj\Debug\net10.0\compressed\fo51rpc2cz-{0}-ueeh6ecvdz-ueeh6ecvdz.gz

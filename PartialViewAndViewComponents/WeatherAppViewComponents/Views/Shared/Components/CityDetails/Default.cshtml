@@ -14,8 +14,9 @@
 </div>
 
 <script>
-	let load  = document.querySelector(".load");
-	load.addEventListener("click", async (event)=>{
+	let loadButtons  = document.querySelectorAll(".load");
+
+	loadButtons.forEach(load=>	load.addEventListener("click", async (event)=>{
 		console.log("clicked");
 		let cityCode = event.target.dataset.citycode;
 
@@ -30,5 +31,7 @@
 		} else {
 			console.error("Failed to load Indian cities");
 		}
-	});
+	}))
+
+
 </script>
