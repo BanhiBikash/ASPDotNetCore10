@@ -1,4 +1,6 @@
-﻿namespace Services
+﻿using ServiceContracts;
+
+namespace Services
 {
     public class City
     {
@@ -8,7 +10,7 @@
 
         public int TemperatureFahrenheit { get; set; }
     }
-    public class CitiesService
+    public class CitiesService: ICitiesService
     {
         public List<string> Cities; 
 

@@ -36,3 +36,5 @@ C:\Users\Banhi\source\repos\aspnetcore\Services\WeatherAppServices\obj\Debug\net
 C:\Users\Banhi\source\repos\aspnetcore\Services\WeatherAppServices\obj\Debug\net10.0\WeatherAppServices.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Services\WeatherAppServices\obj\Debug\net10.0\WeatherAppServices.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Services\WeatherAppServices\obj\Debug\net10.0\ref\WeatherAppServices.dll
+C:\Users\Banhi\source\repos\aspnetcore\Services\WeatherAppServices\bin\Debug\net10.0\ServiceContracts.dll
+C:\Users\Banhi\source\repos\aspnetcore\Services\WeatherAppServices\bin\Debug\net10.0\ServiceContracts.pdb

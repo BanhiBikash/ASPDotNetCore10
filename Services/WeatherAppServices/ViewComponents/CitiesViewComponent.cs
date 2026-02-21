@@ -6,14 +6,14 @@ namespace WeatherAppServices.ViewComponents
 {
     public class CitiesViewComponent: ViewComponent
     {
-        public List<string> Cities;
-        public CitiesViewComponent()
-        {
-            CitiesService citiesService = new CitiesService();
-            Cities = citiesService.GetCities();
-        }
+        //public List<string> Cities;
+        //public CitiesViewComponent()
+        //{
+        //    CitiesService citiesService = new CitiesService();
+        //    Cities = citiesService.GetCities();
+        //}
 
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(List<string> Cities)
         {
             return View(Cities);
         }
