@@ -1,0 +1,12 @@
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\bin\Debug\net10.0\Services.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\bin\Debug\net10.0\Services.dll
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\bin\Debug\net10.0\Services.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.dll
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\refint\Services.dll
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\Services.pdb
+C:\Users\Banhi\source\repos\aspnetcore\Services\Services\obj\Debug\net10.0\ref\Services.dll
