@@ -4,6 +4,7 @@ using Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICitiesService, CitiesService>();
+builder.Services.AddScoped<ISpecificCity, SpecificCity>();
 
 var app = builder.Build();
 

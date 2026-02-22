@@ -26,8 +26,16 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Banhi/source/repos/aspnetcore/Services/WeatherAppServices/Views/Home/SpecificCity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTcGVjaWZpY0NpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Banhi/source/repos/aspnetcore/Services/WeatherAppServices/Views/Shared/Components/Cities/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2l0aWVzXERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/Services/WeatherAppServices/Views/Shared/Components/SpecificCity/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3BlY2lmaWNDaXR5XERlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Banhi/source/repos/aspnetcore/Services/WeatherAppServices/Views/Shared/_Layout.cshtml]

@@ -3,9 +3,8 @@ using ServiceContracts;
 
 namespace WeatherAppServices.ViewComponents
 {
-    public class CitiesViewComponent: ViewComponent
+    public class CitiesViewComponent : ViewComponent
     {
-
         public async Task<IViewComponentResult> InvokeAsync(List<City> Cities)
         {
             return View(Cities);
