@@ -1,19 +1,18 @@
-﻿@model List<string>
+﻿@using Services;
+@model List<City>
 
 <div>
     @{
         foreach(var City in Model)
         {
-            <p>@City</p>
+            <div class="dashboard">
+                <div class="tile">
+                    <h2>@City.CityName</h2>
+                    <div class="time">@(City.DateAndTime.ToString("hh:mm tt")) </div>
+                    <div class="temp">@City.TemperatureFahrenheit</div>
+                    <a href="/CityPage/@City.CityUniqueCode">Details</a>
+                </div>
+            </div>
         }
     }
 </div>
-
-@* <div class="dashboard">
-    <div class="tile">
-        <h2>@Model.CityName</h2>
-        <div class="time">@(Model.DateAndTime.ToString("hh:mm tt")) </div>
-        <div class="temp">@Model.TemperatureFahrenheit</div>
-        <a href="/CityPage/@Model.CityUniqueCode">Details</a>
-    </div>
-</div> *@

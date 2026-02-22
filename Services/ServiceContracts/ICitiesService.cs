@@ -2,6 +2,6 @@
 {
     public interface ICitiesService
     {
-        List<string> GetCities();
+        List<City> GetCities();
     }
 }

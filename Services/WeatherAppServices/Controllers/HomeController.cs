@@ -18,7 +18,7 @@ namespace WeatherAppServices.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            List<string> cities = _cityService.GetCities();
+            List<City> cities = _cityService.GetCities();
             return View(cities);
         }
 
