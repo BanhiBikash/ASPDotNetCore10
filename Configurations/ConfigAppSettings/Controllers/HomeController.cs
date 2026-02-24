@@ -14,9 +14,12 @@ namespace ConfigAppSettings.Controllers
         [Route("/")]
         public IActionResult Index()
         {
-            ViewBag.ConfigData = _configuration.GetValue<string>("MyKey");
-            ViewBag.ChildKey1 = _configuration.GetValue<string>("MasterKey:ChildKey1");   
-            ViewBag.ChildKey2 = _configuration.GetValue<string>("MasterKey:ChildKey2");
+            ViewBag.ChildKey1 = _configuration.GetValue<string>("MasterKey:ChildKey1");
+
+            //get section property
+            IConfigurationSection MasterSection = _configuration.GetSection("MasterKey");
+            ViewBag.ChildKey2 = MasterSection["ChildKey2"];
+
             return View();
         }
     }
