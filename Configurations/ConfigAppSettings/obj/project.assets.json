@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Cinfigurations\\ConfigAppSettings\\ConfigAppSettings.csproj",
+      "projectUniqueName": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Configurations\\ConfigAppSettings\\ConfigAppSettings.csproj",
       "projectName": "ConfigAppSettings",
-      "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Cinfigurations\\ConfigAppSettings\\ConfigAppSettings.csproj",
+      "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Configurations\\ConfigAppSettings\\ConfigAppSettings.csproj",
       "packagesPath": "C:\\Users\\Banhi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Cinfigurations\\ConfigAppSettings\\obj\\",
+      "outputPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Configurations\\ConfigAppSettings\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
