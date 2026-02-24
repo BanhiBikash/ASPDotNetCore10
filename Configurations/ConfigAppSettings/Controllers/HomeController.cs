@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ConfigAppSettings.Models;
 
 namespace ConfigAppSettings.Controllers
 {
@@ -19,6 +20,19 @@ namespace ConfigAppSettings.Controllers
             //get section property
             IConfigurationSection MasterSection = _configuration.GetSection("MasterKey");
             ViewBag.ChildKey2 = MasterSection["ChildKey2"];
+
+            return View();
+        }
+
+        [Route("/options")]
+        public IActionResult Options()
+        {
+            Keys keys = new Keys();
+
+            _configuration.GetSection("MasterKey").Bind(keys);
+
+            ViewBag.Key1Options = keys.ChildKey1;
+            ViewBag.Key2Options = keys.ChildKey2;
 
             return View();
         }
