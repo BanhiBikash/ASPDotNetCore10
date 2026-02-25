@@ -1,0 +1,6 @@
+{
+    "MasterKey": {
+        "ChildKey1": "child key 1 value from custom json",
+        "ChildKey2": "child key 2 for custom json"
+    }
+}

@@ -66,3 +66,4 @@ C:\Users\Banhi\source\repos\aspnetcore\Configurations\ConfigAppSettings\obj\Debu
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\ConfigAppSettings\obj\Debug\net10.0\ConfigAppSettings.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\ConfigAppSettings\obj\Debug\net10.0\ConfigAppSettings.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\ConfigAppSettings\obj\Debug\net10.0\ref\ConfigAppSettings.dll
+C:\Users\Banhi\source\repos\aspnetcore\Configurations\ConfigAppSettings\bin\Debug\net10.0\MyKeys.json
