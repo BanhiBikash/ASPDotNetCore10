@@ -1,5 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model Dictionary<string,object>
+
+<div class="finance-tile">
+    <h2>Stock Data</h2>
+    <ul>
+        <li><span class="abbr">Current price</span> <span class="def">@Model["c"]</span></li>
+        <li><span class="abbr">Change</span> <span class="def">@Model["d"]</span></li>
+        <li><span class="abbr">Percent change</span> <span class="def">@Model["dp"]</span></li>
+        <li><span class="abbr">High price of the day</span> <span class="def">@Model["h"]</span></li>
+        @* <li><span class="abbr">l</span> <span class="def">Low price of the day</span><span>@Model["i"]</span></li> *@
+        <li><span class="abbr">Open price of the day</span> <span class="def">@Model["o"]</span></li>
+        <li><span class="abbr">Previous close price</span> <span class="def">@Model["pc"]</span></li>
+    </ul>
+</div>

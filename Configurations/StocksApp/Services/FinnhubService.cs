@@ -1,23 +1,24 @@
-﻿using System.Net.Http;
-
+﻿using StocksApp.ServiceContracts;
+using System.Net.Http;
+using System.Text.Json;
 namespace StocksApp.Services
 {
-    public class Stocks
+    public class FinnhubService:IFinnhubService
     {
         private readonly IHttpClientFactory _httpClientFactory;
 
-        public Stocks(IHttpClientFactory httpClientFactory)
+        public FinnhubService(IHttpClientFactory httpClientFactory)
         {
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task GetStocks()
+        public async Task<Dictionary<string, object>> GetStockQuote(string Symbol="AAPL")
         {
             using (HttpClient httpclient = _httpClientFactory.CreateClient())
             {
                 HttpRequestMessage httpRequestMessage = new HttpRequestMessage()
                 {
-                    RequestUri = new Uri("https://finnhub.io/api/v1/quote?symbol=AAPL&token=d6fhve1r01qjq8n1niogd6fhve1r01qjq8n1nip0"),
+                    RequestUri = new Uri($"https://finnhub.io/api/v1/quote?symbol={Symbol}&token=d6fhve1r01qjq8n1niogd6fhve1r01qjq8n1nip0"),
                     Method = HttpMethod.Get
                 };
 
@@ -29,8 +30,18 @@ namespace StocksApp.Services
                     StreamReader streamReader = new StreamReader(stream);
 
                     string response = streamReader.ReadToEnd();
+
+                    Dictionary<string,object>? ResponseDictionary = JsonSerializer.Deserialize<Dictionary<string,object>>(response);
+
+                    return (ResponseDictionary);
+                }
+
+                else
+                {
+                    return null;
                 }
             }
+
         }
     }
 }

@@ -31,4 +31,4 @@ C:\Users\Banhi\source\repos\aspnetcore\Configurations\StocksApp\obj\Debug\net10.
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StocksApp\obj\Debug\net10.0\StocksApp.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StocksApp\obj\Debug\net10.0\StocksApp.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StocksApp\obj\Debug\net10.0\ref\StocksApp.dll
-C:\Users\Banhi\source\repos\aspnetcore\Configurations\StocksApp\obj\Debug\net10.0\compressed\215eur004x-{0}-g0k6v4n880-g0k6v4n880.gz
+C:\Users\Banhi\source\repos\aspnetcore\Configurations\StocksApp\obj\Debug\net10.0\compressed\215eur004x-{0}-ernptfznv3-ernptfznv3.gz

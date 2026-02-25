@@ -1,24 +1,32 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using StocksApp.Services;
-using StocksApp.Models;
 
 namespace StocksApp.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly Stocks _stocks;
+        private readonly FinnhubService _finnhubService;
 
-        public HomeController(Stocks stocks)
+        public HomeController(FinnhubService finnhubService)
         {
-            _stocks = stocks;
+            _finnhubService = finnhubService;
         }
 
         [Route("/")]
         public async Task<IActionResult> Index()
         {
             //StockData stockData = new StockData();
-            await _stocks.GetStocks();
-            return View();
+            Dictionary<string, object> ResponseDictionary = await _finnhubService.GetStockQuote();
+
+            if (ResponseDictionary != null)
+            {
+                return View(ResponseDictionary);
+            }
+            else
+            {
+                return NotFound("No response from Finnhub.");
+            }
         }
     }
 }
+

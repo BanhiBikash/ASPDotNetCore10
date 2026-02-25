@@ -210,3 +210,48 @@ button {
         background-color: #1e40af; /* even darker when clicked */
         transform: scale(0.95);
     }
+
+/* Tile container */
+.finance-tile {
+    width: 250px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #3b82f6; /* blue background */
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-family: Arial, sans-serif;
+}
+
+    /* Title */
+    .finance-tile h2 {
+        margin: 0 0 15px;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    /* List of abbreviations */
+    .finance-tile ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        .finance-tile ul li {
+            margin: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 15px;
+        }
+
+            /* Abbreviation */
+            .finance-tile ul li .abbr {
+                font-weight: bold;
+                margin-right: 10px;
+            }
+
+            /* Definition */
+            .finance-tile ul li .def {
+                flex: 1;
+                text-align: right;
+            }
