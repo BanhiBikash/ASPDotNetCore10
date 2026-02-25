@@ -27,6 +27,9 @@ body {
     align-items: center;
     background-color: #1f2937; /* dark gray */
     padding: 12px 24px;
+    width:100%;
+    position:absolute;
+    top:0;
 }
 
     .navbar .logo {
