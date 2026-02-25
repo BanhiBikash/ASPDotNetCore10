@@ -1,0 +1,34 @@
+﻿@using ConfigAppSettings.Models;
+@model Keys;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IConfiguration</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">MyDashboard</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/CityPage/">Cities</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+
+    <center>
+        <h1>@ViewBag.ConfigData</h1>
+        <h2><bold>Child Key 1 Value:</bold><span>@Model.ChildKey1</span></h2>
+        <h2><bold>Child Key 2 Value:</bold><span>@Model.ChildKey2</span></h2>
+    </center>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2026 MyDashboard. All rights reserved.
+    </footer>
+
+</body>
+</html>

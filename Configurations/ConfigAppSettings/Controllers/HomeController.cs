@@ -1,15 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ConfigAppSettings.Models;
+using Microsoft.Extensions.Options;
 
 namespace ConfigAppSettings.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IConfiguration _configuration;
+        public readonly Keys _keys;
 
-        public HomeController(IConfiguration configuration)
+        public HomeController(IConfiguration configuration, IOptions<Keys> keys)
         {
             _configuration = configuration;
+            _keys = keys.Value;
         }
 
         [Route("/")]
@@ -35,6 +38,12 @@ namespace ConfigAppSettings.Controllers
             ViewBag.Key2Options = keys.ChildKey2;
 
             return View();
+        }
+
+        [Route("OptionsAsService/")]
+        public IActionResult OptionsAsService()
+        {
+            return View(new {_keys.ChildKey1, _keys.ChildKey2});
         }
     }
 }

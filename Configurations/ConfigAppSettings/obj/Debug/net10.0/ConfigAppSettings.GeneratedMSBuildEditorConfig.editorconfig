@@ -29,3 +29,7 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/Banhi/source/repos/aspnetcore/Configurations/ConfigAppSettings/Views/Home/Options.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcHRpb25zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/Configurations/ConfigAppSettings/Views/Home/OptionsAsService.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcHRpb25zQXNTZXJ2aWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
