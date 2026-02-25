@@ -2,7 +2,7 @@ using ConfigAppSettings.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
-builder.Services.Configure<Keys>(builder.Configuration.GetSection("MasterKeys"));
+builder.Services.Configure<Keys>(builder.Configuration.GetSection("MasterKey"));
 
 var app = builder.Build();
 app.UseStaticFiles();   

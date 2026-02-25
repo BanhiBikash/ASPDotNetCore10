@@ -43,7 +43,8 @@ namespace ConfigAppSettings.Controllers
         [Route("OptionsAsService/")]
         public IActionResult OptionsAsService()
         {
-            return View(new {_keys.ChildKey1, _keys.ChildKey2});
+            
+            return View(_keys);
         }
     }
 }
