@@ -1,0 +1,56 @@
+﻿@model CompanyProfile;
+
+<table class="company-table">
+    <tr>
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>Country</td>
+        <td>@Model.Country</td>
+    </tr>
+    <tr>
+        <td>Currency</td>
+        <td>@Model.Currency</td>
+    </tr>
+    <tr>
+        <td>Exchange</td>
+        <td>@Model.Exchange</td>
+    </tr>
+    <tr>
+        <td>Finnhub Industry</td>
+        <td>@Model.Industry</td>
+    </tr>
+    <tr>
+        <td>IPO Date</td>
+        <td>@Model.Ipo</td>
+    </tr>
+    <tr>
+        <td>Logo</td>
+        <td><img src=@Model.Logo alt="Company Logo" width="50"></td>
+    </tr>
+    <tr>
+        <td>Market Capitalization</td>
+        <td>@Model.MarketCapitalization</td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td>Phone</td>
+        <td>@Model.Phone</td>
+    </tr>
+    <tr>
+        <td>Shares Outstanding</td>
+        <td>@Model.ShareOutstanding</td>
+    </tr>
+    <tr>
+        <td>Ticker</td>
+        <td>@Model.Ticker</td>
+    </tr>
+    <tr>
+        <td>Website</td>
+        <td><a href=@Model.WebUrl target="_blank">@Model.WebUrl</a></td>
+    </tr>
+</table>

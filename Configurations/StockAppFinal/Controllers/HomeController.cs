@@ -40,5 +40,34 @@ namespace StockAppFinal.Controllers
 
             return View(stockData);
         }
+
+        [Route("/CompanyInfo/{CompanySymbol}")]
+        public async Task<IActionResult> CompanyInfo(string CompanySymbol = "MSFT")
+        {
+            string? APIKey = _configuration.GetValue<string>("APIData:APIKey");
+
+            Dictionary<string, object> ResponseDictionary = await _finnhubService.GetCompanyProfile(CompanySymbol, APIKey);
+
+            // Assume ResponseDictionary is Dictionary<string, object> 
+            // and values are JsonElement from System.Text.Json
+
+            CompanyProfile companyProfile = new CompanyProfile
+            {
+                Country = ((JsonElement)ResponseDictionary["country"]).GetString(),
+                Currency = ((JsonElement)ResponseDictionary["currency"]).GetString(),
+                Exchange = ((JsonElement)ResponseDictionary["exchange"]).GetString(),
+                Industry = ((JsonElement)ResponseDictionary["finnhubIndustry"]).GetString(),
+                Ipo = DateTime.Parse(((JsonElement)ResponseDictionary["ipo"]).GetString()), // IPO date is usually a string like "1980-12-12"
+                Logo = ((JsonElement)ResponseDictionary["logo"]).GetString(),
+                MarketCapitalization = ((JsonElement)ResponseDictionary["marketCapitalization"]).GetDouble(),
+                Name = ((JsonElement)ResponseDictionary["name"]).GetString(),
+                Phone = ((JsonElement)ResponseDictionary["phone"]).GetString(),
+                ShareOutstanding = ((JsonElement)ResponseDictionary["shareOutstanding"]).GetDouble(),
+                Ticker = ((JsonElement)ResponseDictionary["ticker"]).GetString(),
+                WebUrl = ((JsonElement)ResponseDictionary["weburl"]).GetString()
+            };
+
+            return View(companyProfile);
+        }
     }
 }

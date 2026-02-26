@@ -31,4 +31,4 @@ C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\ne
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\StockAppFinal.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\StockAppFinal.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\ref\StockAppFinal.dll
-C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\compressed\3xo271c431-{0}-fx4szm1t9e-fx4szm1t9e.gz
+C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\compressed\3xo271c431-{0}-fccb0bk5xk-fccb0bk5xk.gz

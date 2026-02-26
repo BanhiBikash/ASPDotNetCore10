@@ -567,3 +567,31 @@ a.link-hover:hover {
         flex-direction: row;
     }
 }
+
+.company-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+    .company-table th, .company-table td {
+        border: 1px solid #ddd;
+        padding: 10px 15px;
+        text-align: left;
+    }
+
+    .company-table th {
+        background-color: #3b82f6; /* blue header */
+        color: #fff;
+        font-weight: bold;
+    }
+
+    .company-table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .company-table tr:hover {
+        background-color: #f1f1f1;
+    }

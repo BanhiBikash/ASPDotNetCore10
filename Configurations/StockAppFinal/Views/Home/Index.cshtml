@@ -11,7 +11,7 @@
    <div id="stock-price-panel">
 
     <div class="stock">
-     <h1 class="stock-title">@Model.StockName (@Model.StockSymbol)</h1>
+                    <h1 class="stock-title"><a href="/CompanyInfo/@Model.StockSymbol">@Model.StockName (@Model.StockSymbol)</a></h1>
      <h2 class="stock-price"><small class="text-grey">$</small> <span class="price">@Model.CurrentPrice</span></h2>
     </div>
 
@@ -23,7 +23,7 @@
  </div>
 
 
- <input type="hidden" name="StockSymbol" id="StockSymbol" value="@Model.StockSymbol" />
+ <input type="hidden" name="StockSymbol" id="StockSymbol" value="@Model.StockSymbol">
  <input type="hidden" id="FinnhubToken" value="@ViewBag.FinnhubToken" />
 
 </form>
