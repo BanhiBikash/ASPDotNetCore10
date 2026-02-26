@@ -1,14 +1,36 @@
-﻿@model StockData
+﻿@{
+    @model StockData
+ ViewBag.Title = "Trading";
+}
 
-<div class="finance-tile">
-    <h2>Stock Data: @Model.StockName -- @Model.StockSymbol</h2>
-    <ul>
-        <li><span class="abbr">Current price</span> <span class="def">@Model.CurrentPrice</span></li>
-        <li><span class="abbr">Change</span> <span class="def">@Model.Change</span></li>
-        <li><span class="abbr">Percent change</span> <span class="def">@Model.PercentChange</span></li>
-        <li><span class="abbr">High price of the day</span> <span class="def">@Model.HighPriceOfDay</span></li>
-        <li><span class="abbr">Low price of the day</span> <span class="def">@Model.LowPriceOfDay</span></li>
-        <li><span class="abbr">Open price of the day</span> <span class="def">@Model.OpenPriceOfDay</span></li>
-        <li><span class="abbr">Previous close price</span> <span class="def">@Model.PreviousClosePrice</span></li>
-    </ul>
-</div>
+
+<form method="post">
+ <div class="box trading-panel">
+
+  <div class="flex trading-panel-flex">
+   <div id="stock-price-panel">
+
+    <div class="stock">
+     <h1 class="stock-title">@Model.StockName (@Model.StockSymbol)</h1>
+     <h2 class="stock-price"><small class="text-grey">$</small> <span class="price">@Model.CurrentPrice</span></h2>
+    </div>
+
+    <div class="date"></div>
+   </div>
+
+
+  </div>
+ </div>
+
+
+ <input type="hidden" name="StockSymbol" id="StockSymbol" value="@Model.StockSymbol" />
+ <input type="hidden" id="FinnhubToken" value="@ViewBag.FinnhubToken" />
+
+</form>
+
+
+@section Scripts {
+ @* import the FinnhubScript.js file to update the price *@
+  <script src="~/Scripts/FinnhubScript.js">
+ </script> 
+}

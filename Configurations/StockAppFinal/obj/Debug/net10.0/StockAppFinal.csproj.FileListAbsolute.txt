@@ -20,7 +20,6 @@ C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\ne
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\scopedcss\bundle\StockAppFinal.styles.css
-C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\compressed\3xo271c431-{0}-ernptfznv3-ernptfznv3.gz
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\staticwebassets.development.json
@@ -32,3 +31,4 @@ C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\ne
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\StockAppFinal.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\StockAppFinal.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\ref\StockAppFinal.dll
+C:\Users\Banhi\source\repos\aspnetcore\Configurations\StockAppFinal\obj\Debug\net10.0\compressed\3xo271c431-{0}-fx4szm1t9e-fx4szm1t9e.gz

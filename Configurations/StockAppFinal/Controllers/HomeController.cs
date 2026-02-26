@@ -21,7 +21,8 @@ namespace StockAppFinal.Controllers
         {
             string? APIKey = _configuration.GetValue<string>("APIData:APIKey");
 
-            string stockSymbol = "AAPL";
+            string? stockSymbol = _configuration.GetValue<string>("TradingOptions:DefaultStockSymbol");
+
             Dictionary<string, object>? ResponseDictionary = await _finnhubService.GetStockQuote(stockSymbol,APIKey);
 
             StockData stockData = new StockData()

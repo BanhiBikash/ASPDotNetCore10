@@ -1,4 +1,6 @@
-﻿/* General reset */
+﻿
+
+/* General reset */
 body {
     font-family: Arial, sans-serif;
     background-color: #f9fafb;
@@ -27,9 +29,9 @@ body {
     align-items: center;
     background-color: #1f2937; /* dark gray */
     padding: 12px 24px;
-    width:100%;
-    position:absolute;
-    top:0;
+    width: 100%;
+    position: absolute;
+    top: 0;
 }
 
     .navbar .logo {
