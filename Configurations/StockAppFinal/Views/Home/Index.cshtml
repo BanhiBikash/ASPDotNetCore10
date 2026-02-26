@@ -1,0 +1,14 @@
+﻿@model StockData
+
+<div class="finance-tile">
+    <h2>Stock Data: @Model.StockName -- @Model.StockSymbol</h2>
+    <ul>
+        <li><span class="abbr">Current price</span> <span class="def">@Model.CurrentPrice</span></li>
+        <li><span class="abbr">Change</span> <span class="def">@Model.Change</span></li>
+        <li><span class="abbr">Percent change</span> <span class="def">@Model.PercentChange</span></li>
+        <li><span class="abbr">High price of the day</span> <span class="def">@Model.HighPriceOfDay</span></li>
+        <li><span class="abbr">Low price of the day</span> <span class="def">@Model.LowPriceOfDay</span></li>
+        <li><span class="abbr">Open price of the day</span> <span class="def">@Model.OpenPriceOfDay</span></li>
+        <li><span class="abbr">Previous close price</span> <span class="def">@Model.PreviousClosePrice</span></li>
+    </ul>
+</div>

@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ConfigAppSettings/ConfigAppSettings.csproj" />
+  <Project Path="StockAppFinal/StockAppFinal.csproj" Id="3760b8b2-420c-44e3-aba4-75300d1b6002" />
   <Project Path="StocksApp/StocksApp.csproj" Id="fda77487-d84b-4872-8d99-c0ab3b04fecf" />
 </Solution>

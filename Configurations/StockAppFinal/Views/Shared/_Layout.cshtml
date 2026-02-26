@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#" class="logo">MyDashboard</a>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/CityPage/">Pagge 2</a></li>
+            <li><a href="#dashboard">Page 3</a></li>
+            <li><a href="#about">Page 4</a></li>
+        </ul>
+    </nav>
+
+    <center>
+        @RenderBody()
+    </center>
+
+    <!-- Footer -->
+    <footer class="footer">
+        © 2026 MyDashboard. All rights reserved.
+    </footer>
+
+</body>
+</html>
