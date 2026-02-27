@@ -1,3 +1,7 @@
 <Solution>
+  <Project Path="CountriesService/Services.csproj" />
   <Project Path="CRUDApp1/CRUDApp1.csproj" />
+  <Project Path="CrudTest1/CrudTest1.csproj" />
+  <Project Path="Entities/Entities.csproj" />
+  <Project Path="ServiceContracts/ServiceContracts.csproj" />
 </Solution>
