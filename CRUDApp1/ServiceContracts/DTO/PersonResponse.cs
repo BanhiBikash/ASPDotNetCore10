@@ -7,7 +7,7 @@ namespace ServiceContracts.DTO
 {
     public class PersonResponse
     {
-        public int? PersonID { get; set; }
+        public Guid? PersonID { get; set; }
 
         public string? PersonName { get; set; }
 
@@ -19,14 +19,27 @@ namespace ServiceContracts.DTO
 
         public string? Address { get; set; }
 
-        public Guid? CountryID { get; set; }
+        public string? CountryID { get; set; }
+
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null) return false;
+
+            if (obj.GetType() != typeof(PersonResponse)) return false;
+
+            PersonResponse personResponse = (PersonResponse)obj;
+            if (this.PersonID == personResponse.PersonID && this.PersonName == personResponse.PersonName) return true;
+
+            return false;
+        }
     }
 
     public static class PersonExtension
     {
         public static PersonResponse ToPersonResponse(this Person person)
         {
-            return new PersonResponse() {PersonName = person.PersonName, Address = person.Address, DateOfBirth = person.DateOfBirth, Email = person.Email, CountryID = person.CountryID, Gender = person.Gender };
+            return new PersonResponse() {PersonName = person.PersonName, Address = person.Address, DateOfBirth = person.DateOfBirth, Email = person.Email, CountryID = person.CountryID, Gender = person.Gender, PersonID = person.PersonID };
             
         }
     }

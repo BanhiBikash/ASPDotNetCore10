@@ -22,6 +22,6 @@ namespace Entities
 
         public string? Address { get; set; }    
 
-        public Guid? CountryID { get; set; }
+        public string? CountryID { get; set; }
     }
 }

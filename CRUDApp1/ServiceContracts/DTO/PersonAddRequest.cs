@@ -16,7 +16,7 @@ namespace ServiceContracts.DTO
 
         public string? Address { get; set; }
 
-        public Guid? CountryID { get; set; }
+        public string? CountryID { get; set; }
 
         public Person ToPerson()
         {

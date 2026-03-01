@@ -26,6 +26,6 @@ namespace ServiceContracts
         /// </summary>
         /// <param name="personID">The unique identifier of the person to retrieve.</param>
         /// <returns>A PersonResponse object containing the person's details if found; otherwise, null.</returns>
-        PersonResponse GetPersonByID(Guid personID);
+        PersonResponse? GetPersonByID(Guid? personID);
     }
 }

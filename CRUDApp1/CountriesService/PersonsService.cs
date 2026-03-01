@@ -5,10 +5,11 @@ using ServiceContracts;
 using ServiceContracts.DTO;
 using Entities;
 using System.Reflection;
+using Services.Helpers;
 
 namespace Services
 {
-    internal class PersonsService : IPersonsService
+    public class PersonsService : IPersonsService
     {
         private readonly List<Person> _persons;
 
@@ -27,10 +28,14 @@ namespace Services
             {
                 if (property.GetValue(request) == null)
                 {
-                    throw new ArgumentNullException(property.Name);
+                    throw new ArgumentException(property.Name);
                 }
             }
 
+            //Validation
+            ValidationHelpers.Validate(request);
+
+            //Logic
             Person person = request.ToPerson();
             person.PersonID = Guid.NewGuid();
 
@@ -51,7 +56,7 @@ namespace Services
             return responseList;
         }
 
-        public PersonResponse GetPersonByID(Guid personID)
+        public PersonResponse? GetPersonByID(Guid? personID)
         {
             if(personID == null)
             {
@@ -63,8 +68,10 @@ namespace Services
                 throw new ArgumentException("Person ID cannot be empty.", nameof(personID));
             }
 
-            Person person = _persons.Find(p => p.PersonID == personID);
+            Person? person = _persons.Find(p => p.PersonID == personID);
+
             if (person == null) return null;
+            
             return person.ToPersonResponse();
         }
     }
