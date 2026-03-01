@@ -10,7 +10,19 @@ namespace ServiceContracts.DTO
     public class CountryResponse
     {
         public Guid CountryID { get; set; }
-        public string? CountryName { get; set; } 
+        public string? CountryName { get; set; }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj == null) return false;
+
+            if (obj.GetType() != typeof(CountryResponse)) return false;
+
+            CountryResponse countryResponse = (CountryResponse)obj;
+            if(this.CountryID == countryResponse.CountryID && this.CountryName == countryResponse.CountryName) return true;
+
+            return false;
+        }
     }
 
     public static class CountryExtension
