@@ -1,5 +1,6 @@
 ﻿using System;
 using ServiceContracts.DTO;
+using ServiceContracts.Enums;
 
 namespace ServiceContracts
 {
@@ -27,5 +28,15 @@ namespace ServiceContracts
         /// <param name="personID">The unique identifier of the person to retrieve.</param>
         /// <returns>A PersonResponse object containing the person's details if found; otherwise, null.</returns>
         PersonResponse? GetPersonByID(Guid? personID);
+
+        /// <summary>
+        /// Retrieves a list of persons filtered by a specified property and value.
+        /// </summary>
+        /// <param name="ByProperty">The name of the property to filter by. This value is case-insensitive. If null or empty, no filtering is
+        /// applied.</param>
+        /// <param name="PropertyValue">The value to match for the specified property. If null or empty, no filtering is applied.</param>
+        /// <returns>A list of persons that match the specified filter criteria. Returns all persons if no filter is applied. The
+        /// list will be empty if no persons match the criteria.</returns>
+        List<PersonResponse> GetFilteredPersons(string? ByProperty, string? PropertyValue);  
     }
 }

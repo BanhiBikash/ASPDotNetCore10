@@ -74,5 +74,10 @@ namespace Services
             
             return person.ToPersonResponse();
         }
+
+        public List<PersonResponse> GetFilteredPersons(string? ByProperty, string? PropertyValue)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

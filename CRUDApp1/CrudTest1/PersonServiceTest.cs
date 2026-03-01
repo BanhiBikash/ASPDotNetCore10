@@ -12,10 +12,12 @@ namespace CrudTest1
     public class PersonServiceTest
     {
         private readonly IPersonsService _personsService;
+        private readonly List<PersonResponse>? _personsExpected;
 
         public PersonServiceTest()
         {
             _personsService = new PersonsService();
+            _personsExpected = new List<PersonResponse>();
         }
 
         #region AddPerson
@@ -163,6 +165,71 @@ namespace CrudTest1
             Assert.Equal(personResponse,responseFromGet);
         }
 
+        #endregion
+
+        #region GetFilteredPerson
+
+        /// <summary>
+        /// Verifies that the GetFilteredPersons method returns an empty list when no filter criteria are provided.
+        /// </summary>
+        /// <remarks>This test ensures that the filtering logic in the persons service behaves as expected
+        /// when called with empty filter parameters. It is intended to validate that all persons are returned when no
+        /// filters are applied.</remarks>
+        [Fact]
+        public void GetFilteredPerson_ReturnsEmptyList()
+        {
+            //Arrange
+            List<PersonAddRequest> personAddRequest = new List<PersonAddRequest>()
+            {
+                new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" }
+            };
+
+            //Act
+            foreach (PersonAddRequest person in personAddRequest)
+            {
+                _personsExpected.Add(_personsService.AddPerson(person));
+            }
+
+            List<PersonResponse> filteredPersons = _personsService.GetFilteredPersons(nameof(Person.PersonName), string.Empty);
+
+            //Assert_personsService.GetFilteredPersons(null, null)
+            foreach (PersonResponse person in _personsExpected)
+            {
+                Assert.Contains(person, filteredPersons);
+            }
+        }
+
+        [Fact]
+        public void GetFilteredPerson_ReturnsSearchedPerson()
+        {
+            //Arrange
+            List<PersonAddRequest> personAddRequest = new List<PersonAddRequest>()
+            {
+                new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example1.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example2.com", DateOfBirth = new DateTime(2000, 5, 15), Gender = GenderValues.Male, Address = "Delhi", CountryID = "IND" }
+            };
+
+            //Act
+            foreach (PersonAddRequest person in personAddRequest)
+            {
+                _personsExpected.Add(_personsService.AddPerson(person));
+            }
+
+            List<PersonResponse> expectedList = _personsExpected.Where(person=>person.PersonName.Contains("JohnSmith",StringComparison.OrdinalIgnoreCase)).ToList();
+            List<PersonResponse> filteredPersons = _personsService.GetFilteredPersons(nameof(Person.PersonName), "John Smith");
+
+            //Assert_personsService.GetFilteredPersons checking that the filtered list contains only the expected person and that all expected persons are in the filtered list.
+            foreach (PersonResponse person in expectedList)
+            {
+                Assert.Contains(person, filteredPersons);
+            }
+            foreach (PersonResponse person in filteredPersons)
+            {
+                Assert.Contains(person, expectedList);
+            }
+        }
         #endregion
     }
 }
