@@ -200,6 +200,14 @@ namespace CrudTest1
             }
         }
 
+        /// <summary>
+        /// Verifies that the GetFilteredPersons method returns only the persons matching the specified search criteria
+        /// for the person name.
+        /// </summary>
+        /// <remarks>This test adds multiple persons to the service and asserts that filtering by person
+        /// name returns the expected subset. It ensures that the filtering logic correctly identifies and returns
+        /// persons whose names match the search term, and that no unexpected persons are included in the
+        /// results.</remarks>
         [Fact]
         public void GetFilteredPerson_ReturnsSearchedPerson()
         {
@@ -217,7 +225,7 @@ namespace CrudTest1
                 _personsExpected.Add(_personsService.AddPerson(person));
             }
 
-            List<PersonResponse> expectedList = _personsExpected.Where(person=>person.PersonName.Contains("JohnSmith",StringComparison.OrdinalIgnoreCase)).ToList();
+            List<PersonResponse> expectedList = _personsExpected.Where(person=>person.PersonName.Contains("John Smith",StringComparison.OrdinalIgnoreCase)).ToList();
             List<PersonResponse> filteredPersons = _personsService.GetFilteredPersons(nameof(Person.PersonName), "John Smith");
 
             //Assert_personsService.GetFilteredPersons checking that the filtered list contains only the expected person and that all expected persons are in the filtered list.
