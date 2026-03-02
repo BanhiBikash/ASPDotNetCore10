@@ -113,7 +113,7 @@ namespace Services
                 case "address":
                     return GetPersonList().FindAll(p => p.Address != null && p.Address.Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
                 case "personid":
-                    return GetPersonList().FindAll(p => p.PersonID != null && p.PersonID.Equals(PropertyValue));
+                    return GetPersonList().FindAll(p => p.PersonID != null && p.PersonID.ToString().Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
                 case "countryid":
                     return GetPersonList().FindAll(p => p.CountryID != null && p.CountryID.Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
                 case "dateofbirth":
@@ -121,6 +121,20 @@ namespace Services
 
                 default: return GetPersonList();
             }
+        }
+
+        public List<PersonResponse> GetSortedPersons(string? ByProperty,bool ascending = true)
+        {
+            if(string.IsNullOrEmpty(ByProperty))
+            {
+                throw new ArgumentNullException("Property Name cannot be null or empty.", nameof(ByProperty));
+            }
+
+            //Getting property info of the property name provided in the parameter
+            var propInfo = typeof(PersonResponse).GetProperty(ByProperty);
+
+                             //ascending order                                                    descending order
+            return ascending?GetPersonList().OrderBy(p => propInfo.GetValue(p, null)).ToList() : GetPersonList().OrderByDescending(p => propInfo.GetValue(p, null)).ToList();
         }
     }
 }

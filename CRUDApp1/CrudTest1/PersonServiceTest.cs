@@ -1,4 +1,5 @@
 ﻿using Entities;
+using Newtonsoft.Json.Linq;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -225,8 +226,8 @@ namespace CrudTest1
                 _personsExpected.Add(_personsService.AddPerson(person));
             }
 
-            List<PersonResponse> expectedList = _personsExpected.Where(person=>person.PersonName.Contains("John Smith",StringComparison.OrdinalIgnoreCase)).ToList();
-            List<PersonResponse> filteredPersons = _personsService.GetFilteredPersons(nameof(Person.PersonName), "John Smith");
+            List<PersonResponse> expectedList = _personsExpected.Where(person=>person.PersonName.Contains("John",StringComparison.OrdinalIgnoreCase)).ToList();
+            List<PersonResponse> filteredPersons = _personsService.GetFilteredPersons(nameof(Person.PersonName), "John");
 
             //Assert_personsService.GetFilteredPersons checking that the filtered list contains only the expected person and that all expected persons are in the filtered list.
             foreach (PersonResponse person in expectedList)
@@ -236,6 +237,80 @@ namespace CrudTest1
             foreach (PersonResponse person in filteredPersons)
             {
                 Assert.Contains(person, expectedList);
+            }
+        }
+        #endregion
+
+        #region SortedPerson
+
+        /// <summary>
+        /// Verifies that GetSortedPersons throws an ArgumentNullException when a null parameter is provided.
+        /// </summary>
+        /// <remarks>This unit test ensures that the GetSortedPersons method enforces its null argument
+        /// precondition by throwing the appropriate exception. This helps maintain correct usage and input validation
+        /// in the service.</remarks>
+        [Fact]
+        public void GetSortedPersons_NullParamterSent()
+        {
+            //Aseert
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                //Act
+                _personsService.GetSortedPersons(null);
+            });
+
+        }
+
+        /// <summary>
+        /// Verifies that the GetSortedPersons method throws an ArgumentException when an empty parameter is provided.
+        /// </summary>
+        /// <remarks>This test ensures that the GetSortedPersons method enforces input validation by
+        /// rejecting empty string parameters. It is intended to confirm that the method does not accept empty input and
+        /// responds with the appropriate exception.</remarks>
+        [Fact]
+        public void GetSortedPersons_EmptyParameterSent()
+        {
+            //Assert
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                //Act
+                _personsService.GetSortedPersons(string.Empty);
+            });
+        }
+
+        /// <summary>
+        /// Verifies that the GetSortedPersons method returns a list of persons sorted by the specified property name.
+        /// </summary>
+        /// <remarks>This test adds multiple persons to the service and asserts that the returned list
+        /// from GetSortedPersons, when sorted by person name, contains the expected persons in the correct order. The
+        /// test ensures that sorting by property name functions as intended.</remarks>
+        [Fact]
+        public void GetSortedPersons_GetSorted()
+        {
+            //Arrange
+            List<PersonAddRequest> personAddRequest = new List<PersonAddRequest>()
+            {
+                new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" }
+            };
+
+            //Act
+            foreach (PersonAddRequest person in personAddRequest)
+            {
+                _personsExpected.Add(_personsService.AddPerson(person));
+            }
+
+            List<PersonResponse>? personsExpected = _personsExpected.OrderBy(p => typeof(PersonResponse).GetProperty(nameof(PersonResponse.PersonName)).GetValue(p, null)).ToList();
+            List<PersonResponse>? personsSorted = _personsService.GetSortedPersons(nameof(PersonResponse.PersonName),true);
+
+            //Assert
+            foreach (PersonResponse person in personsExpected)
+            {
+                Assert.Contains(person, personsSorted);
+            }
+            foreach (PersonResponse person in personsSorted)
+            {
+                Assert.Contains(person, personsExpected);
             }
         }
         #endregion

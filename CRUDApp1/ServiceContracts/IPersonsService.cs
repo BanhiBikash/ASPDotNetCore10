@@ -37,6 +37,15 @@ namespace ServiceContracts
         /// <param name="PropertyValue">The value to match for the specified property. If null or empty, no filtering is applied.</param>
         /// <returns>A list of persons that match the specified filter criteria. Returns all persons if no filter is applied. The
         /// list will be empty if no persons match the criteria.</returns>
-        List<PersonResponse> GetFilteredPersons(string? ByProperty, string? PropertyValue);  
+        List<PersonResponse> GetFilteredPersons(string? ByProperty, string? PropertyValue);
+
+        /// <summary>
+        /// Returns a list of persons sorted by the specified property.
+        /// </summary>
+        /// <param name="ByProperty">The name of the property to sort by. If null or empty, the default sort order is applied. Supported property
+        /// names are case-insensitive.</param>
+        /// <returns>A list of <see cref="PersonResponse"/> objects sorted according to the specified property. The list will be
+        /// empty if there are no persons to return.</returns>
+        List<PersonResponse> GetSortedPersons(string? ByProperty, bool ascending = true);
     }
 }
