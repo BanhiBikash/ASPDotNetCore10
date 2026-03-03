@@ -4,4 +4,5 @@
   <Project Path="CrudTest1/CrudTest1.csproj" />
   <Project Path="Entities/Entities.csproj" />
   <Project Path="ServiceContracts/ServiceContracts.csproj" />
+  <Project Path="StocksAppWithUnitTest/StocksAppWithUnitTest.csproj" Id="a3eaf407-34b3-4d74-a25f-8aaec75ec107" />
 </Solution>

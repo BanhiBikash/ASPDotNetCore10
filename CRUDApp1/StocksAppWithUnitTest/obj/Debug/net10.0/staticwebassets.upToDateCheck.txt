@@ -1,0 +1,2 @@
+C:\Users\Banhi\source\repos\aspnetcore\CRUDApp1\StocksAppWithUnitTest\wwwroot\StyleSheet.css
+wwwroot\StyleSheet.css
