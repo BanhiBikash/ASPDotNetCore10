@@ -45,6 +45,46 @@ namespace Services
             return person.ToPersonResponse();
         }
 
+        public PersonResponse UpdatePerson(PersonUpdateRequest? request)
+        {
+            //if the request is null
+            if (request == null)
+            {
+                throw new ArgumentNullException(nameof(request));
+            }
+
+            //if any or many attribute of the request is null, throw an exception
+            foreach (var property in typeof(PersonUpdateRequest).GetProperties())
+            {
+                if(property.GetValue(request) == null)
+                {
+                    throw new ArgumentException(nameof(property));
+                }
+            }
+
+            PersonResponse? PersonResponse = GetPersonByID(request.PersonID);
+
+            //Invalid Guid
+            if(PersonResponse == null) throw new ArgumentException("Person with the given ID does not exist.");
+
+            //logic to update the person details
+            foreach (Person person in _persons) 
+            {
+                if (person.PersonID == request.PersonID)
+                { 
+                    person.PersonName = request.PersonName;
+                    person.Email = request.Email;
+                    person.DateOfBirth = request.DateOfBirth;
+                    person.Address = request.Address;
+                    person.CountryID = request.CountryID;
+                    person.Gender = request.Gender.ToString();
+                    break;
+                }
+            };
+
+            return GetPersonByID(request.PersonID);
+        }
+
         public List<PersonResponse> GetPersonList()
         {
             List<PersonResponse> responseList = new List<PersonResponse>();
@@ -135,6 +175,19 @@ namespace Services
 
                              //ascending order                                                    descending order
             return ascending?GetPersonList().OrderBy(p => propInfo.GetValue(p, null)).ToList() : GetPersonList().OrderByDescending(p => propInfo.GetValue(p, null)).ToList();
+        }
+
+        public bool DeletePerson(Guid? personID)
+        {
+            if(personID == null)
+            {
+                throw new ArgumentNullException("Person ID can't be null value.", nameof(personID));
+            }
+
+            if (GetPersonByID(personID) == null) return false;
+
+            //this functions returns the number of elements removed from the list, so if it is greater than 0, it means that the person with the given ID was found and removed from the list, and we can return true. Otherwise, if it returns 0, it means that no person with the given ID was found in the list, and we can return false.
+            return _persons.RemoveAll(p => p.PersonID == personID)>0;
         }
     }
 }

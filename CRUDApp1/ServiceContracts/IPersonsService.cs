@@ -47,5 +47,20 @@ namespace ServiceContracts
         /// <returns>A list of <see cref="PersonResponse"/> objects sorted according to the specified property. The list will be
         /// empty if there are no persons to return.</returns>
         List<PersonResponse> GetSortedPersons(string? ByProperty, bool ascending = true);
+
+        /// <summary>
+        /// Updates the details of an existing person based on the specified update request.
+        /// </summary>
+        /// <param name="personUpdateRequest">An object containing the updated information for the person. Cannot be null. All required fields must be
+        /// populated as specified by the request contract.</param>
+        /// <returns>A PersonResponse object containing the updated details of the person after the update operation completes.</returns>
+        PersonResponse UpdatePerson(PersonUpdateRequest? personUpdateRequest);
+
+        /// <summary>
+        /// Deletes the person with the specified identifier from the data store.
+        /// </summary>
+        /// <param name="personID">The unique identifier of the person to delete. If null, no action is taken.</param>
+        /// <returns>true if the person was found and deleted; otherwise, false.</returns>
+        bool DeletePerson(Guid? personID);
     }
 }

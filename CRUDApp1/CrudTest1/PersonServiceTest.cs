@@ -1,12 +1,8 @@
 ﻿using Entities;
-using Newtonsoft.Json.Linq;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
 using Services;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CrudTest1
 {
@@ -53,7 +49,7 @@ namespace CrudTest1
         public void AddPerson_NullRequestParaeter()
         {
             //Arrange
-            PersonAddRequest? personAddRequest = new PersonAddRequest() { PersonName = "null"};
+            PersonAddRequest? personAddRequest = new PersonAddRequest() { PersonName = "null" };
 
             //Assert
             Assert.Throws<ArgumentException>(() =>
@@ -72,7 +68,7 @@ namespace CrudTest1
         public void AddPerson_GetValidPersonResponse()
         {
             //Arrange
-            PersonAddRequest personAddRequest = new PersonAddRequest() 
+            PersonAddRequest personAddRequest = new PersonAddRequest()
             { PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" };
 
             //Act
@@ -82,7 +78,7 @@ namespace CrudTest1
             Assert.True(personResponse.PersonID != Guid.Empty);
         }
         #endregion
-        
+
         #region GetPersonList
 
         [Fact]
@@ -101,7 +97,7 @@ namespace CrudTest1
         {
             //Arrange
             List<PersonAddRequest> personAddRequest = new List<PersonAddRequest>()
-            { 
+            {
                 new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
                 new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" }
             };
@@ -109,13 +105,13 @@ namespace CrudTest1
             //Act
             List<PersonResponse> personList = new List<PersonResponse>();
 
-            foreach(PersonAddRequest person in personAddRequest)
+            foreach (PersonAddRequest person in personAddRequest)
             {
                 personList.Add(_personsService.AddPerson(person));
             }
 
             //Assert
-            foreach(var person in personList)
+            foreach (var person in personList)
             {
                 Assert.Contains(person, _personsService.GetPersonList());
             }
@@ -163,7 +159,7 @@ namespace CrudTest1
             PersonResponse? responseFromGet = _personsService.GetPersonByID(personResponse.PersonID);
 
             //Assert
-            Assert.Equal(personResponse,responseFromGet);
+            Assert.Equal(personResponse, responseFromGet);
         }
 
         #endregion
@@ -226,7 +222,7 @@ namespace CrudTest1
                 _personsExpected.Add(_personsService.AddPerson(person));
             }
 
-            List<PersonResponse> expectedList = _personsExpected.Where(person=>person.PersonName.Contains("John",StringComparison.OrdinalIgnoreCase)).ToList();
+            List<PersonResponse> expectedList = _personsExpected.Where(person => person.PersonName.Contains("John", StringComparison.OrdinalIgnoreCase)).ToList();
             List<PersonResponse> filteredPersons = _personsService.GetFilteredPersons(nameof(Person.PersonName), "John");
 
             //Assert_personsService.GetFilteredPersons checking that the filtered list contains only the expected person and that all expected persons are in the filtered list.
@@ -301,7 +297,7 @@ namespace CrudTest1
             }
 
             List<PersonResponse>? personsExpected = _personsExpected.OrderBy(p => typeof(PersonResponse).GetProperty(nameof(PersonResponse.PersonName)).GetValue(p, null)).ToList();
-            List<PersonResponse>? personsSorted = _personsService.GetSortedPersons(nameof(PersonResponse.PersonName),true);
+            List<PersonResponse>? personsSorted = _personsService.GetSortedPersons(nameof(PersonResponse.PersonName), true);
 
             //Assert
             foreach (PersonResponse person in personsExpected)
@@ -314,5 +310,139 @@ namespace CrudTest1
             }
         }
         #endregion
+
+        #region UpdatePerson
+
+        [Fact]
+        public void UpdatePerson_NullRequest()
+        {
+            //Arrange
+            PersonUpdateRequest? personUpdateRequest = null;
+            //Assert
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                //Act
+                _personsService.UpdatePerson(personUpdateRequest);
+            });
+        }
+
+        [Fact]
+        public void UpdatePerson_NullRequestAttribute()
+        {
+            //Arrange
+            PersonUpdateRequest? personUpdateRequest = new PersonUpdateRequest() { PersonName = null };
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                _personsService.UpdatePerson(personUpdateRequest);
+            });
+        }
+
+        [Fact]
+        public void UpdatePerson_InvalidGuid()
+        {
+            //Arrange
+            List<PersonAddRequest> personAddRequest = new List<PersonAddRequest>()
+            { new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" }
+            };
+            PersonUpdateRequest? personUpdateRequest = new PersonUpdateRequest() { PersonID = Guid.NewGuid() };
+
+            //Act
+            foreach (PersonAddRequest person in personAddRequest)
+            {
+                _personsExpected.Add(_personsService.AddPerson(person));
+            }
+
+            //Assert
+            Assert.Throws<ArgumentException>(() =>
+            {
+                //Act
+                _personsService.UpdatePerson(personUpdateRequest);
+            });
+        }
+
+        [Fact]
+        public void UpdatePerson_ProperResponse()
+        {
+            //Arrange
+           List< PersonAddRequest> personAddRequest = new List<PersonAddRequest>() 
+            { new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" }
+            };
+
+            //Act
+            foreach (PersonAddRequest person in personAddRequest)
+            {
+                _personsExpected.Add(_personsService.AddPerson(person));
+            }
+
+            //selecting the first person to update
+            PersonResponse? personToUpdateResponse = _personsService.GetPersonByID(_personsExpected.First().PersonID);
+            //converting it into update request to update the person
+            PersonUpdateRequest? personToUpdate = personToUpdateResponse.ToPersonUpdateResponse();
+            //updating the person name
+            personToUpdate.PersonName = "John Updated";
+
+            //We are receiving the updated person from updated person
+            PersonResponse? UpdatedPerson = _personsService.UpdatePerson(personToUpdate);
+
+            //Assert
+            Assert.Equal(personToUpdate.ToPerson().ToPersonResponse(), UpdatedPerson);
+        }
+
+        #endregion
+
+        #region DeletePerson
+
+        [Fact]
+        public void DeletePerson_NullID()
+        {
+            //Arrange
+            Guid? personID = null;
+
+            //Assert
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                //Act
+                _personsService.DeletePerson(personID);
+            });
+        }
+
+        //if person not found send not deleted i.e. false
+        [Fact]
+        public void DeletePerson_PersonNotFoundOrInvalidGuid()
+        {
+            //Arrange
+            Guid personID = Guid.NewGuid();
+
+            //Assert
+            Assert.False(_personsService.DeletePerson(personID));
+        }
+
+        [Fact]
+
+        public void DeletePerson_ProperDeletion()
+        {
+            //Arrange
+            List<PersonAddRequest> personAddRequest = new List<PersonAddRequest>()
+            {
+                new PersonAddRequest() {PersonName = "John Doe", Email = "john.doe@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, USA", CountryID = "USA" },
+                new PersonAddRequest()  {PersonName = "John Smith", Email = "john.smith@example.com", DateOfBirth = new DateTime(1990, 5, 15), Gender = GenderValues.Male, Address = "123 Main Street, New York, Camada", CountryID = "CND" }
+            };
+
+            //Act
+            foreach (PersonAddRequest person in personAddRequest)
+            {
+                _personsExpected.Add(_personsService.AddPerson(person));
+            }
+
+            bool DeleteReturn = _personsService.DeletePerson(_personsExpected.First().PersonID);
+
+            //Assert
+            Assert.True(DeleteReturn);
+        }
+            #endregion
     }
-}
+}   
