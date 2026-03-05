@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CountriesService\Services.csproj" />
     <ProjectReference Include="..\ServiceContracts\ServiceContracts.csproj" />
+    <ProjectReference Include="..\StocksAppWithUnitTest\StocksAppWithUnitTest.csproj" />
   </ItemGroup>
 
   <ItemGroup>

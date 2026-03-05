@@ -688,6 +688,24 @@
         "runtime": {
           "bin/placeholder/Services.dll": {}
         }
+      },
+      "StocksAppWithUnitTest/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Entities": "1.0.0",
+          "ServiceContracts": "1.0.0",
+          "Services": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/StocksAppWithUnitTest.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StocksAppWithUnitTest.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       }
     }
   },
@@ -1665,6 +1683,11 @@
       "type": "project",
       "path": "../CountriesService/Services.csproj",
       "msbuildProject": "../CountriesService/Services.csproj"
+    },
+    "StocksAppWithUnitTest/1.0.0": {
+      "type": "project",
+      "path": "../StocksAppWithUnitTest/StocksAppWithUnitTest.csproj",
+      "msbuildProject": "../StocksAppWithUnitTest/StocksAppWithUnitTest.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -1672,6 +1695,7 @@
       "Microsoft.NET.Test.Sdk >= 17.14.1",
       "ServiceContracts >= 1.0.0",
       "Services >= 1.0.0",
+      "StocksAppWithUnitTest >= 1.0.0",
       "coverlet.collector >= 6.0.4",
       "xunit >= 2.9.3",
       "xunit.runner.visualstudio >= 3.1.4"
@@ -1714,6 +1738,9 @@
             },
             "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CRUDApp1\\ServiceContracts\\ServiceContracts.csproj": {
               "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CRUDApp1\\ServiceContracts\\ServiceContracts.csproj"
+            },
+            "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CRUDApp1\\StocksAppWithUnitTest\\StocksAppWithUnitTest.csproj": {
+              "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CRUDApp1\\StocksAppWithUnitTest\\StocksAppWithUnitTest.csproj"
             }
           }
         }

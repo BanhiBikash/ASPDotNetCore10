@@ -1,4 +1,6 @@
-﻿namespace StocksAppWithUnitTest.Models
+﻿using System.ComponentModel;
+
+namespace StocksAppWithUnitTest.Models
 {
     public class Stock
     {
@@ -9,6 +11,7 @@
         /// <summary>
         /// Current price
         /// </summary>
+        [DisplayName("Current Price")]
         public decimal CurrentPrice { get; set; }
 
         /// <summary>

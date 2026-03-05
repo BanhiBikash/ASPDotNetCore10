@@ -2,6 +2,7 @@
 using Services;
 using ServiceContracts;
 using StocksAppWithUnitTest.Models;
+using System.Text.Json;
 
 namespace StocksAppWithUnitTest.Controllers
 {
@@ -27,20 +28,25 @@ namespace StocksAppWithUnitTest.Controllers
             {
                Dictionary<string,object> StockInfo = await _finnhubService.GetStockInfo(CompanySymbol, MyAPIKey);
 
+                if(StockInfo == null || StockInfo.Count == 0)
+                {
+                    return NotFound("Stock information is not found.");
+                }
+
                 Stock stock = new Stock()
                 {
                     StockName = CompanyName,
                     StockSymbol = CompanySymbol,
-                    CurrentPrice = Convert.ToDecimal(StockInfo["c"]),
-                    Change = Convert.ToDecimal(StockInfo["d"]),
-                    PercentChange = Convert.ToDecimal(StockInfo["dp"]),
-                    HighPrice = Convert.ToDecimal(StockInfo["h"]),
-                    LowPrice = Convert.ToDecimal(StockInfo["l"]),
-                    OpenPrice = Convert.ToDecimal(StockInfo["o"]),
-                    PreviousClosePrice = Convert.ToDecimal(StockInfo["pc"])
+                    CurrentPrice = ((JsonElement)StockInfo["c"]).GetDecimal(),
+                    Change = ((JsonElement)StockInfo["d"]).GetDecimal(),
+                    PercentChange = ((JsonElement)StockInfo["dp"]).GetDecimal(),
+                    HighPrice = ((JsonElement)StockInfo["h"]).GetDecimal(),
+                    LowPrice = ((JsonElement)StockInfo["l"]).GetDecimal(),
+                    OpenPrice = ((JsonElement)StockInfo["o"]).GetDecimal(),
+                    PreviousClosePrice = ((JsonElement)StockInfo["pc"]).GetDecimal()
                 };
 
-                return View(StockInfo);
+                return View(stock);
             }
             else
             {
@@ -58,23 +64,23 @@ namespace StocksAppWithUnitTest.Controllers
             {
                 Dictionary<string, object> companyInfo = await _finnhubService.GetCompanyProfile(CompanySymbol, MyAPIKey);
 
-                CompanyProfile stock = new CompanyProfile()
+                CompanyProfile CompanyData = new CompanyProfile()
                 {
-                    Country = companyInfo["country"]?.ToString(),
-                    Currency = companyInfo["currency"]?.ToString(),
-                    Exchange = companyInfo["exchange"]?.ToString(),
-                    Industry = companyInfo["finnhubIndustry"]?.ToString(),
-                    Ipo = Convert.ToDateTime(companyInfo["ipo"]),
-                    Logo = companyInfo["logo"]?.ToString(),
-                    MarketCapitalization = Convert.ToDouble(companyInfo["marketCapitalization"]),
-                    Name = companyInfo["name"]?.ToString(),
-                    Phone = companyInfo["phone"]?.ToString(),
-                    ShareOutstanding = Convert.ToDouble(companyInfo["shareOutstanding"]),
-                    Ticker = companyInfo["ticker"]?.ToString(),
-                    WebUrl = companyInfo["weburl"]?.ToString()
+                    Country = ((JsonElement)companyInfo["country"]).GetString(),
+                    Currency = ((JsonElement)companyInfo["currency"]).GetString(),
+                    Exchange = ((JsonElement)companyInfo["exchange"]).GetString(),
+                    Industry = ((JsonElement)companyInfo["finnhubIndustry"]).GetString(),
+                    Ipo = ((JsonElement)companyInfo["ipo"]).GetDateTime(),
+                    Logo = ((JsonElement)companyInfo["logo"]).GetString(),
+                    MarketCapitalization = ((JsonElement)companyInfo["marketCapitalization"]).GetDouble(),
+                    Name = ((JsonElement)companyInfo["name"]).GetString(),
+                    Phone = ((JsonElement)companyInfo["phone"]).GetString(),
+                    ShareOutstanding = ((JsonElement)companyInfo["shareOutstanding"]).GetDouble(),
+                    Ticker = ((JsonElement)companyInfo["ticker"]).GetString(),
+                    WebUrl = ((JsonElement)companyInfo["weburl"]).GetString()
                 };
 
-                return View(companyInfo);
+                return View(CompanyData);
             }
             else
             {
