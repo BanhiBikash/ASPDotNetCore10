@@ -1,0 +1,2 @@
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\wwwroot\StyleSheet.css
+wwwroot\StyleSheet.css

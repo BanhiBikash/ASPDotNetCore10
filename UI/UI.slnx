@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Entities/Entities.csproj" />
+  <Project Path="Services/Services.csproj" />
+  <Project Path="ServicesContracts/ServicesContracts.csproj" />
+  <Project Path="Starting with UI/Starting with UI.csproj" />
+</Solution>

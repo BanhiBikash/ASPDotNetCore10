@@ -1,0 +1,42 @@
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\appsettings.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.staticwebassets.runtime.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.staticwebassets.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.exe
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Starting with UI.pdb
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Entities.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Services.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\ServicesContracts.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Entities.pdb
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\ServicesContracts.pdb
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\bin\Debug\net10.0\Services.pdb
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.csproj.AssemblyReference.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.RazorAssemblyInfo.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.RazorAssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\scopedcss\bundle\Starting with UI.styles.css
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\compressed\0k7juk6uc2-{0}-okagqheipi-okagqheipi.gz
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting.E8E3AA59.Up2Date
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\refint\Starting with UI.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.pdb
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\ref\Starting with UI.dll
