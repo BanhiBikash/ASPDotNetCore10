@@ -5,7 +5,7 @@ namespace ServicesContracts
     public interface IPersonServices
     {
         PersonResponse AddPerson( PersonAddRequests? personAddRequest);
-
-
+        List<PersonResponse> GetAllPersonResponseList();
+        List<PersonResponse> GetFilteredPersons(string? ByProperty, string? PropertyValue);
     }
 }

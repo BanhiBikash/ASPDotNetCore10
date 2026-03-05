@@ -1,0 +1,30 @@
+﻿@model List<PersonResponse>
+
+<table class="table w-100 mt"> 
+	<thead>
+		<tr>
+			<th>Person ID</th>
+			<th>Name</th>
+			<th>Email</th>
+			<th>DOB</th>
+			<th>Gender</th>
+			<th>Address</th>
+			<th>Country</th
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var person in Model)
+		{
+			<tr>
+				<td>@person.PersonID</td>
+				<td>@person.PersonName</td>
+				<td>@person.Email</td>
+				<td>@person.DateOfBirth</td>
+				<td>@person.Gender</td>
+				<td>@person.Address</td>
+				<td>@person.CountryID</td>
+			</tr>
+		}
+	</tbody>
+</table>
+

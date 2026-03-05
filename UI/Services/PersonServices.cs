@@ -111,5 +111,44 @@ namespace Services
 
             return personResponses;
         }
+
+        //return person on the basis of filter
+        public List<PersonResponse> GetFilteredPersons(string? ByProperty, string? PropertyValue)
+        {
+            //if either of the filter parameter is null then return all person
+            if (string.IsNullOrEmpty(ByProperty) || string.IsNullOrEmpty(PropertyValue))return GetAllPersonResponseList();
+
+            List<string> PersonProperties = new List<string>();
+
+            foreach (var property in typeof(Person).GetProperties())
+            {
+                PersonProperties.Add(property.Name);
+            }
+
+            if (!PersonProperties.Contains(ByProperty))
+            {
+                throw new ArgumentException("Property Name is invalid");
+            }
+
+            switch (ByProperty.ToLower())
+            {
+                case "personname":
+                    return GetAllPersonResponseList().FindAll(p => p.PersonName != null && p.PersonName.Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
+                case "email":
+                    return GetAllPersonResponseList().FindAll(p => p.Email != null && p.Email.Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
+                case "address":
+                    return GetAllPersonResponseList().FindAll(p => p.Address != null && p.Address.Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
+                case "personid":
+                    return GetAllPersonResponseList().FindAll(p => p.PersonID != null && p.PersonID.ToString().Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
+                case "countryid":
+                    return GetAllPersonResponseList().FindAll(p => p.CountryID != null && p.CountryID.Contains(PropertyValue, StringComparison.OrdinalIgnoreCase));
+                case "dateofbirth":
+                    return GetAllPersonResponseList().FindAll(p => p.DateOfBirth != null && p.DateOfBirth.ToString().Contains(PropertyValue));
+                case "gender":
+                    return GetAllPersonResponseList().FindAll(p => p.Gender != null && p.Gender.ToString().ToLower().Equals(PropertyValue.ToLower()));
+
+                default: return GetAllPersonResponseList();
+            }
+        }
     }
 }
