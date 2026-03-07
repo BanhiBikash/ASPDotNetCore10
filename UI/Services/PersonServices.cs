@@ -1,6 +1,7 @@
-﻿using ServicesContracts;
+﻿using Entities;
+using ServicesContracts;
 using ServicesContracts.DTO;
-using Entities;
+using System.Reflection;
 
 namespace Services
 {
@@ -149,6 +150,27 @@ namespace Services
 
                 default: return GetAllPersonResponseList();
             }
+        }
+
+        //return person on the basis of sorting
+        public List<PersonResponse> GetSortedPersons(string? ByProperty, bool ascending = true)
+        {
+            if (string.IsNullOrEmpty(ByProperty))
+            {
+                throw new ArgumentNullException("Property Name cannot be null or empty.", nameof(ByProperty));
+            }
+
+            //Getting property info of the property name provided in the parameter
+            var propInfo = typeof(PersonResponse).GetProperty(ByProperty,BindingFlags.IgnoreCase | BindingFlags.Public | BindingFlags.Instance);
+
+            if (propInfo == null)
+            {
+                throw new ArgumentException($"Property '{ByProperty}' not found on PersonResponse.");
+            }
+
+
+            //ascending order                                                    descending order
+            return ascending ? GetAllPersonResponseList().OrderBy(p => propInfo.GetValue(p, null)).ToList() : GetAllPersonResponseList().OrderByDescending(p => propInfo.GetValue(p, null)).ToList();
         }
     }
 }

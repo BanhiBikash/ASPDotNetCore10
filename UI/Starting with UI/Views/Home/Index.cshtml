@@ -22,5 +22,19 @@
 
             @:propertySelect[0].appendChild(option);
             @:console.log("hi");
-    }
+    };
+
+    //handling click
+    let propertyRow = document.querySelector("#properties");
+    propertyRow.addEventListener("click",(event)=>{
+        if(event.target.classList.contains("sort"))
+        {
+            let sortBy = event.target.getAttribute("name");
+
+            console.log("Sorting by:", sortBy);
+
+            // navigate dynamically using that value
+            window.location.href = `/sortBy/${sortBy}`;
+        }
+    });
 </script>
