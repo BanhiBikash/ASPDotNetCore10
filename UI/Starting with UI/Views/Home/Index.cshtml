@@ -7,7 +7,7 @@
 
 <script>
     let propertySelect = document.querySelectorAll(".form-input");
-
+    let sortByASC;
     @foreach (var property in typeof(Entities.Person).GetProperties())
     {
             @:var option = document.createElement("option");
@@ -27,6 +27,14 @@
     //handling click
     let propertyRow = document.querySelector("#properties");
     propertyRow.addEventListener("click",(event)=>{
+
+        @if(ViewBag.sortByASC == null)
+        {
+				@:sortByASC = true;
+        }else{
+			@:sortByASC = !sortByASC;
+        }
+
         if(event.target.classList.contains("sort"))
         {
             let sortBy = event.target.getAttribute("name");
@@ -34,7 +42,7 @@
             console.log("Sorting by:", sortBy);
 
             // navigate dynamically using that value
-            window.location.href = `/sortBy/${sortBy}`;
+            window.location.href = `/sortBy/${sortBy}/${sortByASC}`;
         }
     });
 </script>

@@ -75,7 +75,7 @@ namespace Services
             //if any or many attribte of the request is null
             foreach(var property in typeof(PersonAddRequests).GetProperties())
             {
-                throw new ArgumentException(nameof(property)+" is null. Adding Failed!");
+                if(property.GetValue(personAddRequest) == null) throw new ArgumentException(nameof(property)+" is null. Adding Failed!");
             }
 
             //Actual adding logic
