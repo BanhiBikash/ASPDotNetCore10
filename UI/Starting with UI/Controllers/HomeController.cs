@@ -3,6 +3,7 @@ using ServicesContracts;
 using ServicesContracts.DTO;
 using Entities;
 using Services;
+using Starting_with_UI.Models;
 
 namespace Starting_with_UI.Controllers
 {
@@ -52,13 +53,21 @@ namespace Starting_with_UI.Controllers
         [Route("/persons/create")]
         public IActionResult AddingPerson(PersonAddRequests? personAddRequest)
         {
+            List<string> errors = null;
+
             if (!ModelState.IsValid)
             {
-                List<string> errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList(); 
+                errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList(); 
                 return View("CreateNewPerson",errors);
             }
 
-            _personsService.AddPerson(personAddRequest);
+            ErrorListAndPersonRequest pes = new ErrorListAndPersonRequest
+            {
+                Errors = errors,
+                PersonAddRequest = personAddRequest
+            };
+
+            _personsService.AddPerson(pes);
 
             return View("Index", _personsService.GetAllPersonResponseList());
         }
