@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Entities;
+using Microsoft.AspNetCore.Mvc;
+using Services;
 using ServicesContracts;
 using ServicesContracts.DTO;
-using Entities;
-using Services;
 using Starting_with_UI.Models;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Starting_with_UI.Controllers
 {
@@ -45,9 +46,16 @@ namespace Starting_with_UI.Controllers
         }
 
         [Route("/AddPerson")]
-        public IActionResult CreateNewPerson() 
+        public IActionResult CreateNewPerson()
         {
-            return View();
+
+            ErrorListAndPersonRequest pes = new ErrorListAndPersonRequest
+            {
+                Errors = null,
+                PersonAddRequest = null
+            };
+
+            return View(pes);
         }
 
         [Route("/persons/create")]
@@ -57,19 +65,25 @@ namespace Starting_with_UI.Controllers
 
             if (!ModelState.IsValid)
             {
-                errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList(); 
-                return View("CreateNewPerson",errors);
+                errors = ModelState.Values
+                    .SelectMany(v => v.Errors)
+                    .Select(e => e.ErrorMessage)
+                    .ToList();
+
+                ErrorListAndPersonRequest pes = new ErrorListAndPersonRequest
+                {
+                    Errors = errors,
+                    PersonAddRequest = personAddRequest
+                };
+
+                // Pass the full model back
+                return View("CreateNewPerson", pes);
             }
 
-            ErrorListAndPersonRequest pes = new ErrorListAndPersonRequest
-            {
-                Errors = errors,
-                PersonAddRequest = personAddRequest
-            };
-
-            _personsService.AddPerson(pes);
+            _personsService.AddPerson(personAddRequest);
 
             return View("Index", _personsService.GetAllPersonResponseList());
         }
+
     }
 }

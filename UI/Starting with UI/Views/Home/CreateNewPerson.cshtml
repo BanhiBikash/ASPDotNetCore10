@@ -23,7 +23,7 @@
                 <label for="Email" class="form-label pt">Email</label>
             </div>
             <div class="flex-1">
-                <input type="email" asp-for="PersonAddRequest.Email" class="form-input" />
+                <input type="text" asp-for="PersonAddRequest.Email" class="form-input" />
             </div>
         </div>
 
@@ -43,13 +43,13 @@
                 <label class="form-label">Gender</label>
             </div>
             <div class="flex-1">
-                <input type="radio" asp-for="PersonAddRequest.Gender" />
+                <input type="radio" value="Male" asp-for="PersonAddRequest.Gender" />
                 <label for="Male">Male</label>
 
-                <input type="radio" asp-for="PersonAddRequest.Gender" class="ml" />
+                <input type="radio" value="Female" asp-for="PersonAddRequest.Gender" class="ml" />
                 <label for="Female">Female</label>
 
-                <input type="radio" asp-for="PersonAddRequest.Gender" class="ml" />
+                <input type="radio" value="Other" asp-for="PersonAddRequest.Gender" class="ml" />
                 <label for="Other">Other</label>
             </div>
         </div>
