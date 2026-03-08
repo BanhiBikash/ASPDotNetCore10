@@ -1,8 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<string>
 
 <a href="/" class="link-hover">Back to Person List</a>
 <h2>Create Person</h2>
@@ -86,11 +82,11 @@
             <div class="flex-1">
                 <button class="button button-green-back">Create</button>
 
-                @if (ViewBag.Errors != null)
+                @if (Model != null)
                 {
                     <div class="text-red ml">
                         <ul>
-                            @foreach (string error in ViewBag.Errors)
+                            @foreach (string error in Model)
                             {
                                 <li class="ml">@error</li>
                             }

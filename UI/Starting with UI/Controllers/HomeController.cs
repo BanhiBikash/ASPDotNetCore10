@@ -52,9 +52,10 @@ namespace Starting_with_UI.Controllers
         [Route("/persons/create")]
         public IActionResult AddingPerson(PersonAddRequests? personAddRequest)
         {
-            if (Model)
+            if (!ModelState.IsValid)
             {
-
+                List<string> errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList(); 
+                return View("CreateNewPerson",errors);
             }
 
             _personsService.AddPerson(personAddRequest);
