@@ -1,10 +1,13 @@
-﻿@model ErrorListAndPersonRequest
+﻿@model PersonResponse
 
 <a href="/" class="link-hover">Back to Person List</a>
-<h2>Create Person</h2>
+<h2>Edit Person</h2>
 
 <div class="w-50">
-    <form asp-controller="Home" asp-action="AddingPerson" method="post">
+    <form asp-controller="Home" asp-action="UpdatingPerson" method="post">
+
+        @* PersonID *@
+        <input type="hidden" asp-for="PersonID" />
 
         @*PersonName*@
         <div class="form-field flex">
@@ -12,8 +15,8 @@
                 <label for="PersonName" class="form-label pt">Person Name</label>
             </div>
             <div class="flex-1">
-                <input type="text" asp-for="PersonAddRequest.PersonName" class="form-input" />
-                <span class="text-red" asp-validation-for="PersonAddRequest.PersonName"></span>
+                <input type="text" asp-for="PersonName" class="form-input" />
+                <span class="text-red" asp-validation-for="PersonName"></span>
             </div>
         </div>
 
@@ -24,8 +27,8 @@
                 <label for="Email" class="form-label pt">Email</label>
             </div>
             <div class="flex-1">
-                <input type="text" asp-for="PersonAddRequest.Email" class="form-input" />
-                <span class="text-red" asp-validation-for="PersonAddRequest.Email"></span>
+                <input type="text" asp-for="Email" class="form-input" />
+                <span class="text-red" asp-validation-for="Email"></span>
             </div>
         </div>
 
@@ -35,8 +38,8 @@
                 <label for="DateOfBirth" class="form-label pt">Date of Birth</label>
             </div>
             <div class="flex-1">
-                <input type="datetime" asp-for="PersonAddRequest.DateOfBirth" class="form-input" />
-                <span class="text-red" asp-validation-for="PersonAddRequest.DateOfBirth"></span>
+                <input type="datetime" asp-for="DateOfBirth" class="form-input" />
+                <span class="text-red" asp-validation-for="DateOfBirth"></span>
             </div>
         </div>
 
@@ -46,15 +49,15 @@
                 <label class="form-label">Gender</label>
             </div>
             <div class="flex-1">
-                <input type="radio" value="Male" asp-for="PersonAddRequest.Gender" />
+                <input type="radio" value="Male" asp-for="Gender" />
                 <label for="Male">Male</label>
 
-                <input type="radio" value="Female" asp-for="PersonAddRequest.Gender" class="ml" />
+                <input type="radio" value="Female" asp-for="Gender" class="ml" />
                 <label for="Female">Female</label>
 
-                <input type="radio" value="Other" asp-for="PersonAddRequest.Gender" class="ml" />
+                <input type="radio" value="Other" asp-for="Gender" class="ml" />
                 <label for="Other">Other</label>
-                <span class="text-red" asp-validation-for="PersonAddRequest.Gender"></span>
+                <span class="text-red" asp-validation-for="Gender"></span>
             </div>
         </div>
 
@@ -64,8 +67,8 @@
                 <label class="form-label" for="CountryID">Country</label>
             </div>
             <div class="flex-1">
-                <input type="text" asp-for="PersonAddRequest.CountryID" class="form-input" />
-                <span class="text-red" asp-validation-for="PersonAddRequest.CountryID"></span>
+                <input type="text" asp-for="CountryID" class="form-input" />
+                <span class="text-red" asp-validation-for="CountryID"></span>
             </div>
         </div>
 
@@ -76,8 +79,8 @@
                 <label for="Address" class="form-label pt">Address</label>
             </div>
             <div class="flex-1">
-                <textarea asp-for="PersonAddRequest.Address" class="form-input"></textarea>
-                <span class="text-red" asp-validation-for="PersonAddRequest.Address"></span>
+                <textarea asp-for="Address" class="form-input"></textarea>
+                <span class="text-red" asp-validation-for="Address"></span>
             </div>
         </div>
 
@@ -86,13 +89,13 @@
             <div class="w-25">
             </div>
             <div class="flex-1">
-                <button class="button button-green-back">Create</button>
+                <button class="button button-green-back">Edit</button>
 
-                @if (Model.Errors != null)
+                @if (ViewBag.Errors != null)
                 {
                     <div class="text-red ml">
                         <ul>
-                            @foreach (string error in Model.Errors)
+                            @foreach (string error in ViewBag.Errors)
                             {
                                 <li class="ml">@error</li>
                             }

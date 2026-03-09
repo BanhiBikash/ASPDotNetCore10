@@ -29,9 +29,11 @@
     margin-right: 16px;
 }
 
-.navbar
-{
+.navbar {
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content:end;
 }
 
 .navbar > ul

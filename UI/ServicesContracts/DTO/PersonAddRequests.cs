@@ -13,12 +13,13 @@ namespace ServicesContracts.DTO
         public string? Email { get; set; }
 
         [Required(ErrorMessage = "DateOfBirth is required.")]
+        [DataType(DataType.Date)]
         public DateTime? DateOfBirth { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Gender Value required")]
         public GenderValues? Gender { get; set; }
 
-        [Required]
+        [Required(ErrorMessage ="Value required for countryID")]
         public string? Address { get; set; }
 
         [Required(ErrorMessage = "CountryID is required")]

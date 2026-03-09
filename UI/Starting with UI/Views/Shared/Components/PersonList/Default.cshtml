@@ -10,6 +10,7 @@
 			<th class="sort" name="Gender">Gender</th>
 			<th class="sort" name="Address">Address</th>
 			<th class="sort" name="CountryID">Country</th>
+			<th>Actions</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -23,6 +24,10 @@
 				<td>@person.Gender</td>
 				<td>@person.Address</td>
 				<td>@person.CountryID</td>
+				<td>
+					<a asp-action="EditPerson" asp-controller="Home" asp-route-id="@person.PersonID">Edit</a>
+					<a asp-action="DeletePerson" asp-controller="Home" asp-route-id="@person.PersonID">Delete</a>
+				</td>
 			</tr>
 		}
 	</tbody>

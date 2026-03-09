@@ -38,7 +38,7 @@ namespace Starting_with_UI.Controllers
 
             if (!string.IsNullOrEmpty(sortBy))
             {
-                return View(_personsService.GetSortedPersons(sortBy,ascending));
+                return View(_personsService.GetSortedPersons(sortBy, ascending));
             }
 
             // fallback
@@ -85,5 +85,47 @@ namespace Starting_with_UI.Controllers
             return View("Index", _personsService.GetAllPersonResponseList());
         }
 
+        [Route("/persons/edit")]
+        public IActionResult EditPerson(Guid? id)
+        {
+            List<PersonResponse> personToEdit = _personsService.GetFilteredPersons("PersonID", id.ToString());
+
+            //person not found
+            if (personToEdit.Count == 0) return BadRequest("Person is not found");
+
+            //person found
+            return View(personToEdit[0]);
+        }
+
+        [HttpPost]
+        [Route("/persons/update")]
+        public IActionResult UpdatingPerson(PersonResponse? personResponse)
+        {
+            bool result = _personsService.EditPerson(personResponse);
+
+            if (result)
+            {
+                return View("Index", _personsService.GetAllPersonResponseList());
+            }
+            else
+            {
+                return Content("text/html", "Not Updated");
+            }
+        }
+
+        [Route("/persons/delete")]
+        public IActionResult DeletePerson(Guid? id)
+        {
+            bool result = _personsService.DeletePerson(id);
+
+            if (result)
+            {
+                return View("Index", _personsService.GetAllPersonResponseList());
+            }
+            else
+            {
+                return Content("text/html", "Not Deleted");
+            }
+        }
     }
 }

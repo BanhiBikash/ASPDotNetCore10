@@ -100,6 +100,59 @@ namespace Services
             } 
         }
 
+        public bool DeletePerson(Guid? id)
+        {
+            if(id== null) throw new ArgumentNullException("Person ID is null. Deletion Failed");
+
+            List<PersonResponse>? personToDelete = GetFilteredPersons("PersonID", id.ToString());
+
+            if(personToDelete.Count == 0) throw new ArgumentException("No person found with the given ID. Deletion Failed");
+
+            int numberRemoved = _persons.RemoveAll(person => person.PersonID == personToDelete[0].PersonID);
+
+            if(numberRemoved > 0) //successfull deletion
+            {
+                return true;
+            }
+            else //deletion failed
+            {
+                return false;
+            }
+        }
+
+        public bool EditPerson(PersonResponse? personResponse)
+        {
+            if (personResponse == null) throw new ArgumentNullException("Edit request is null. Editing Failed");
+
+            foreach (var property in typeof(PersonResponse).GetProperties())
+            {
+                if (property.GetValue(personResponse) == null)
+                    throw new ArgumentException(nameof(property) + "is null.");
+            }
+
+            List<PersonResponse>? personToEdit = GetFilteredPersons("PersonID", personResponse.PersonID.ToString());
+
+            Person existingPerson = _persons.FirstOrDefault(person => person.PersonID == personToEdit[0].PersonID);
+
+            existingPerson.PersonName = personResponse.PersonName;
+            existingPerson.Email = personResponse.Email;
+            existingPerson.DateOfBirth = personResponse.DateOfBirth;
+            existingPerson.Gender = personResponse.Gender;
+            existingPerson.CountryID = personResponse.CountryID;
+            existingPerson.Address = personResponse.Address;
+
+            PersonResponse updatedPersonResponse = existingPerson.ToPersonResponse();   
+            //check if the changes took place
+            if (personResponse.Equals(updatedPersonResponse))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         //return all person
         public List<PersonResponse> GetAllPersonResponseList() 
         { 

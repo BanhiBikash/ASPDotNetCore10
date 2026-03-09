@@ -3,7 +3,7 @@ using ServicesContracts;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<IPersonServices, PersonServices>();
+builder.Services.AddSingleton<IPersonServices, PersonServices>();
 
 var app = builder.Build();
 app.UseStaticFiles();

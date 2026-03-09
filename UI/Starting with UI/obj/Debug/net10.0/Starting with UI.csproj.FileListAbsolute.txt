@@ -27,7 +27,6 @@ C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rji
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\scopedcss\bundle\Starting with UI.styles.css
-C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\compressed\0k7juk6uc2-{0}-okagqheipi-okagqheipi.gz
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\staticwebassets.development.json
@@ -40,3 +39,4 @@ C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\ref
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.pdb
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\Starting with UI.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\ref\Starting with UI.dll
+C:\Users\Banhi\source\repos\aspnetcore\UI\Starting with UI\obj\Debug\net10.0\compressed\0k7juk6uc2-{0}-azgh4sg53r-azgh4sg53r.gz
