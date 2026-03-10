@@ -1,0 +1,113 @@
+﻿@model PersonResponse
+
+<a href="/" class="link-hover">Back to Person List</a>
+<h2>Edit Person</h2>
+
+<div class="w-50">
+    <form asp-controller="Home" asp-action="UpdatingPerson" method="post">
+
+        @* PersonID *@
+        <input type="hidden" asp-for="PersonID" />
+
+        @*PersonName*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="PersonName" class="form-label pt">Person Name</label>
+            </div>
+            <div class="flex-1">
+                <input type="text" asp-for="PersonName" class="form-input" />
+                <span class="text-red" asp-validation-for="PersonName"></span>
+            </div>
+        </div>
+
+
+        @*Email*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="Email" class="form-label pt">Email</label>
+            </div>
+            <div class="flex-1">
+                <input type="text" asp-for="Email" class="form-input" />
+                <span class="text-red" asp-validation-for="Email"></span>
+            </div>
+        </div>
+
+        @*DateOfBirth*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="DateOfBirth" class="form-label pt">Date of Birth</label>
+            </div>
+            <div class="flex-1">
+                <input type="datetime" asp-for="DateOfBirth" class="form-input" />
+                <span class="text-red" asp-validation-for="DateOfBirth"></span>
+            </div>
+        </div>
+
+        @*Gender*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label class="form-label">Gender</label>
+            </div>
+            <div class="flex-1">
+                <input type="radio" value="Male" asp-for="Gender" />
+                <label for="Male">Male</label>
+
+                <input type="radio" value="Female" asp-for="Gender" class="ml" />
+                <label for="Female">Female</label>
+
+                <input type="radio" value="Other" asp-for="Gender" class="ml" />
+                <label for="Other">Other</label>
+                <span class="text-red" asp-validation-for="Gender"></span>
+            </div>
+        </div>
+
+        @*Country*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label class="form-label" for="CountryID">Country</label>
+            </div>
+            <div class="flex-1">
+                <input type="text" asp-for="CountryID" class="form-input" />
+                <span class="text-red" asp-validation-for="CountryID"></span>
+            </div>
+        </div>
+
+
+        @*Address*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label for="Address" class="form-label pt">Address</label>
+            </div>
+            <div class="flex-1">
+                <textarea asp-for="Address" class="form-input"></textarea>
+                <span class="text-red" asp-validation-for="Address"></span>
+            </div>
+        </div>
+
+        @*Submit*@
+        <div class="form-field flex">
+            <div class="w-25">
+            </div>
+            <div class="flex-1">
+                <button class="button button-green-back">Edit</button>
+
+                @if (ViewBag.Errors != null)
+                {
+                    <div class="text-red ml">
+                        <ul>
+                            @foreach (string error in ViewBag.Errors)
+                            {
+                                <li class="ml">@error</li>
+                            }
+                        </ul>
+                    </div>
+                }
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script src="<script src=" https: //cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-MXe5EK5gyK+fbhwQy/dukwz9fw71HZcsM4KsyDBDTvMyjymkiO0M5qqU0lF4vqLI4VnKf1+DIKf1GM6RFkO8PA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+<script src="<script src=" https: //cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.21.0/jquery.validate.min.js" integrity="sha512-KFHXdr2oObHKI9w4Hv1XPKc898mE4kgYx58oqsc/JqqdLMDI4YjOLzom+EMlW8HFUd0QfjfAvxSL6sEq/a42fQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>
+<script src="<script src=" https: //cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/4.0.0/jquery.validate.unobtrusive.min.js" integrity="sha512-xq+Vm8jC94ynOikewaQXMEkJIOBp7iArs3IhFWSWdRT3Pq8wFz46p+ZDFAR7kHnSFf+zUv52B3prRYnbDRdgog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>"></script>

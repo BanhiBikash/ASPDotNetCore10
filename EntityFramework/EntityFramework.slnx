@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Entities/Entities.csproj" Id="23059e7a-5e38-4a04-9a05-b510f03a1fb3" />
+  <Project Path="EntityFramework1/EntityFramework1.csproj" />
+  <Project Path="ServiceContracts/ServicesContracts.csproj" Id="89f0c186-bac3-41af-964b-ebd2cbbf7ce3" />
+  <Project Path="Services/Services.csproj" Id="58b3f2d2-5464-48a0-b48c-aecb7df4ba80" />
+</Solution>

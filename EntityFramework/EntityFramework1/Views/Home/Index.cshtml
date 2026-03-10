@@ -1,0 +1,48 @@
+﻿@model List<PersonResponse>
+
+<h1>Persons</h1>
+
+@await Component.InvokeAsync("SearchModule")
+@await Component.InvokeAsync("PersonList", @Model)
+
+<script>
+    let propertySelect = document.querySelectorAll(".form-input");
+    let sortByASC;
+    @foreach (var property in typeof(Entities.Person).GetProperties())
+    {
+            @:var option = document.createElement("option");
+            @:option.value = "@property.Name";
+            @:option.textContent = "@property.Name";
+
+			//check if the current property is the one selected by the user, if so, set it as selected
+            if(ViewBag.searchBy == property.Name)
+            {
+                @:option.selected = true;
+			}
+
+            @:propertySelect[0].appendChild(option);
+            @:console.log("hi");
+    };
+
+    //handling click
+    let propertyRow = document.querySelector("#properties");
+    propertyRow.addEventListener("click",(event)=>{
+
+        @if(ViewBag.sortByASC == null)
+        {
+				@:sortByASC = true;
+        }else{
+			@:sortByASC = !sortByASC;
+        }
+
+        if(event.target.classList.contains("sort"))
+        {
+            let sortBy = event.target.getAttribute("name");
+
+            console.log("Sorting by:", sortBy);
+
+            // navigate dynamically using that value
+            window.location.href = `/sortBy/${sortBy}/${sortByASC}`;
+        }
+    });
+</script>

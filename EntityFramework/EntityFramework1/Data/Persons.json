@@ -1,0 +1,47 @@
+[
+    {
+        "PersonID": "00000000-0000-0000-0000-000000000001",
+        "PersonName": "Alice Johnson",
+        "Email": "alice.johnson@example.com",
+        "DateOfBirth": "1990-05-12",
+        "Gender": "Female",
+        "Address": "123 Maple Street, New York",
+        "CountryID": "US"
+    },
+    {
+        "PersonID": "00000000-0000-0000-0000-000000000002",
+        "PersonName": "Bob Smith",
+        "Email": "bob.smith@example.com",
+        "DateOfBirth": "1985-11-23",
+        "Gender": "Male",
+        "Address": "456 Oak Avenue, Chicago",
+        "CountryID": "US"
+    },
+    {
+        "PersonID": "00000000-0000-0000-0000-000000000003",
+        "PersonName": "Catherine Lee",
+        "Email": "catherine.lee@example.com",
+        "DateOfBirth": "1992-02-08",
+        "Gender": "Female",
+        "Address": "789 Pine Road, San Francisco",
+        "CountryID": "US"
+    },
+    {
+        "PersonID": "00000000-0000-0000-0000-000000000004",
+        "PersonName": "David Kumar",
+        "Email": "david.kumar@example.com",
+        "DateOfBirth": "1988-07-19",
+        "Gender": "Male",
+        "Address": "12 MG Road, Bengaluru",
+        "CountryID": "IN"
+    },
+    {
+        "PersonID": "00000000-0000-0000-0000-000000000005",
+        "PersonName": "Emma Brown",
+        "Email": "emma.brown@example.com",
+        "DateOfBirth": "1995-09-30",
+        "Gender": "Female",
+        "Address": "34 Queen Street, London",
+        "CountryID": "UK"
+    }
+]
