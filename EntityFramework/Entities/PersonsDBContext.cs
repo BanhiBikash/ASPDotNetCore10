@@ -33,5 +33,20 @@ namespace Entities
                 modelBuilder.Entity<Person>().HasData(person);
             };
         }
+
+        //stored procedure to get all persons from the database
+        public List<Person> getAllPersons()
+        {
+            return Persons.FromSqlRaw("EXECUTE [dbo].[GetAllPersons]").ToList();
+        }
+
+        public List<Person> SortPersonsByProperty(string propertyName)
+        {
+            return Persons
+                .FromSqlRaw("EXECUTE [dbo].[SortPersonsByProperty] @propertyName",
+                            new Microsoft.Data.SqlClient.SqlParameter("@propertyName", propertyName))
+                .ToList();
+        }
+
     }
 }

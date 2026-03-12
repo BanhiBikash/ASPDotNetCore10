@@ -114,7 +114,7 @@ namespace Services
         { 
             List<PersonResponse> personResponses = new List<PersonResponse>();
 
-            foreach(Person person in _personsDB.Persons)
+            foreach(Person person in _personsDB.getAllPersons())
             {
                 personResponses.Add(person.ToPersonResponse());
             }
@@ -178,8 +178,8 @@ namespace Services
             }
 
 
-            //ascending order                                                    descending order
-            return ascending ? GetAllPersonResponseList().OrderBy(p => propInfo.GetValue(p, null)).ToList() : GetAllPersonResponseList().OrderByDescending(p => propInfo.GetValue(p, null)).ToList();
+                                //ascending order                                                                                   descending order
+            return ascending ? _personsDB.SortPersonsByProperty(ByProperty).Select(person=>person.ToPersonResponse()).ToList() : GetAllPersonResponseList().OrderByDescending(p => propInfo.GetValue(p, null)).ToList();
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace ServicesContracts.DTO
 {
@@ -16,6 +17,7 @@ namespace ServicesContracts.DTO
 
         public string? Address { get; set; }
 
+        [StringLength(5)]
         public string? CountryID { get; set; }
 
         public override bool Equals(object? obj)
