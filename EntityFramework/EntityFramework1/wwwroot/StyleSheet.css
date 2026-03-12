@@ -33,7 +33,11 @@
     padding: 10px;
     display: flex;
     align-items: center;
-    justify-content:end;
+    justify-content:space-between;
+    width:100vw;
+    font-weight:500;
+    color: #d0d0d0;
+    background-color:#333333;
 }
 
 .navbar > ul
