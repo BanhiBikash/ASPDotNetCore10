@@ -33,6 +33,8 @@ namespace Entities
                 if(person != null)
                 modelBuilder.Entity<Person>().HasData(person);
             };
+
+            modelBuilder.Entity<Person>().Property(persons => persons.Pin).HasColumnName("PinCode").HasDefaultValue(111111);
         }
 
         //stored procedure to get all persons from the database

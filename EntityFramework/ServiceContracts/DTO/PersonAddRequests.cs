@@ -25,6 +25,9 @@ namespace ServicesContracts.DTO
         [Required(ErrorMessage = "CountryID is required")]
         public string? CountryID { get; set; }
 
+        [Range(100000, 999999)]
+        public int? Pin { get; set; }
+
         public Person ConvertToPerson()
         {
             return new Person
@@ -34,7 +37,8 @@ namespace ServicesContracts.DTO
                 DateOfBirth = this.DateOfBirth,
                 Gender = this.Gender.ToString(),
                 Address = this.Address,
-                CountryID = this.CountryID
+                CountryID = this.CountryID,
+                Pin = this.Pin
             };
         }
     }

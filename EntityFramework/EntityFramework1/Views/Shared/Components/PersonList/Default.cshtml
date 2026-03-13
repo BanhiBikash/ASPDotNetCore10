@@ -3,13 +3,10 @@
 <table class="table w-100 mt"> 
 	<thead>
 		<tr id="properties">
-			<th class="sort" name="PersonID">Person ID</th>
-			<th class="sort" name="PersonName">Name</th>
-			<th class="sort" name="Email">Email</th>
-			<th class="sort" name="DateOfBirth">DOB</th>
-			<th class="sort" name="Gender">Gender</th>
-			<th class="sort" name="Address">Address</th>
-			<th class="sort" name="CountryID">Country</th>
+			@foreach(var property in typeof(PersonResponse).GetProperties())
+			{
+				<th class="sort" name=@property.Name>@property.Name</th>
+			}
 			<th>Actions</th>
 		</tr>
 	</thead>
@@ -24,6 +21,7 @@
 				<td>@person.Gender</td>
 				<td>@person.Address</td>
 				<td>@person.CountryID</td>
+				<td>@person.Pin</td>
 				<td>
 					<a asp-action="EditPerson" asp-controller="Home" asp-route-id="@person.PersonID">Edit</a>
 					<a asp-action="DeletePerson" asp-controller="Home" asp-route-id="@person.PersonID">Delete</a>

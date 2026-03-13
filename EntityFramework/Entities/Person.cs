@@ -28,5 +28,8 @@ namespace Entities
 
         [StringLength(5)]
         public string? CountryID { get; set; }
+
+        [Range(100000,999999)]
+        public int? Pin { get; set; }
     }
 }
