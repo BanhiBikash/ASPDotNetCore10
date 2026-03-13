@@ -166,3 +166,4 @@ C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debu
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\obj\Debug\net10.0\compressed\n2gp2volb6-{0}-1ygew4dy19-1ygew4dy19.gz
+C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\Data\Genders.json

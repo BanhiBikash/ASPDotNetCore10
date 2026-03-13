@@ -1,0 +1,16 @@
+[
+    {
+        "GenderName": "Male",
+        "GenderKey": 11,
+        "Benefits": false
+    }, 
+{
+    "GenderName": "Female",
+    "GenderKey": 21,
+    "Benefits": true
+},
+{
+   "GenderName": "Other",
+    "GenderKey": 31,
+    "Benefits": false
+}]

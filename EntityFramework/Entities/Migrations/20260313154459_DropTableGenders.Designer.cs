@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(PersonsDBContext))]
-    partial class PersonsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260313154459_DropTableGenders")]
+    partial class DropTableGenders
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,40 +27,34 @@ namespace Entities.Migrations
 
             modelBuilder.Entity("Entities.Gender", b =>
                 {
-                    b.Property<int>("GenderKey")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GenderKey"));
+                    b.Property<string>("GenderName")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<bool?>("Benefits")
                         .HasColumnType("bit");
 
-                    b.Property<string>("GenderName")
+                    b.Property<string>("Gendercode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("GenderKey");
+                    b.HasKey("GenderName");
 
                     b.ToTable("Genders", (string)null);
 
                     b.HasData(
                         new
                         {
-                            GenderKey = 11,
-                            Benefits = false,
-                            GenderName = "Male"
+                            GenderName = "Male",
+                            Benefits = false
                         },
                         new
                         {
-                            GenderKey = 21,
-                            Benefits = true,
-                            GenderName = "Female"
+                            GenderName = "Female",
+                            Benefits = true
                         },
                         new
                         {
-                            GenderKey = 31,
-                            Benefits = false,
-                            GenderName = "Other"
+                            GenderName = "Other",
+                            Benefits = false
                         });
                 });
 
@@ -82,6 +79,7 @@ namespace Entities.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
+                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
@@ -96,6 +94,8 @@ namespace Entities.Migrations
                         .HasColumnName("PinCode");
 
                     b.HasKey("PersonID");
+
+                    b.HasAlternateKey("Gender");
 
                     b.ToTable("Persons", (string)null);
 

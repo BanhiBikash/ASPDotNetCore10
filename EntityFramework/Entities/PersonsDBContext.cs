@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography.Pkcs;
@@ -16,11 +17,13 @@ namespace Entities
 
         //person type of data
         public DbSet<Person> Persons { get; set; }
+        public DbSet<Gender> Genders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Person>().ToTable("Persons");
+            modelBuilder.Entity<Gender>().ToTable("Genders");
 
             //fetching data from json file
             string personsJson = System.IO.File.ReadAllText("Data/Persons.json");
@@ -34,7 +37,22 @@ namespace Entities
                 modelBuilder.Entity<Person>().HasData(person);
             };
 
+
+            //doing the same for genders
+            string gendersJson = System.IO.File.ReadAllText("Data/Genders.json");
+            List<Gender>? genders = JsonSerializer.Deserialize<List<Gender>>(gendersJson);
+
+            foreach(Gender g in genders)
+            {
+                if (g != null)
+                {
+                    modelBuilder.Entity<Gender>().HasData(g);
+                }
+            }
+
+            //making changes to the pin column
             modelBuilder.Entity<Person>().Property(persons => persons.Pin).HasColumnName("PinCode").HasDefaultValue(111111);
+            modelBuilder.Entity<Gender>().HasKey(p=>p.GenderKey);   
         }
 
         //stored procedure to get all persons from the database
