@@ -9,8 +9,10 @@ namespace Entities
     {
         public string? GenderName { get; set; }
 
-        public int? GenderKey { get; set; }  
+        public int GenderKey { get; set; }  
 
         public bool? Benefits { get; set; }
+
+        public virtual ICollection<Person>? Persons { get; set; }
     }
 }

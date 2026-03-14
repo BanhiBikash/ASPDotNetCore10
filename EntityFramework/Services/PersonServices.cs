@@ -15,7 +15,7 @@ namespace Services
             _personsDB = personDB;
         }
         //method to add person
-        public PersonResponse AddPerson(PersonAddRequests? personAddRequest)
+        public async Task<PersonResponse> AddPerson(PersonAddRequests? personAddRequest)
         {
             //if the entire request is null
             if (personAddRequest == null) throw new ArgumentNullException("Add request is null. Adding Failed");
@@ -35,31 +35,31 @@ namespace Services
             int personCount = _personsDB.Persons.Count();
 
             //adding to the person list
-            //_personsDB.Persons.Add(personToAdd);
-            //_personsDB.SaveChanges();
+            _personsDB.Persons.Add(personToAdd);
+            await _personsDB.SaveChangesAsync();
 
             //checking if addition is successfull that is count increased
-            //if (_personsDB.Persons.Count() > personCount)//successfull addition
-            //{
-            //    return personToAdd.ToPersonResponse();
-            //}
-            //else//addition failed
-            //{
-            //    return null;
-            //} 
+            if (_personsDB.Persons.Count() > personCount)//successfull addition
+                {
+                    return personToAdd.ToPersonResponse();
+                }
+                else//addition failed
+                {
+                    return null;
+                }
 
             //using stored procedure for adding person and checking the result returned by the stored procedure to check if addition is successfully
 
-            int rowsAffected = _personsDB.InsertPerson(personToAdd);
+            //int rowsAffected = _personsDB.InsertPerson(personToAdd);
 
-            if(rowsAffected > 0) //successfull addition
-            {
-                return personToAdd.ToPersonResponse();
-            }
-            else //addition failed
-            {
-                return null;
-            }
+            //if(rowsAffected > 0) //successfull addition
+            //{
+            //    return personToAdd.ToPersonResponse();
+            //}
+            //else //addition failed
+            //{
+            //    return null;
+            //}
         }
 
         public bool DeletePerson(Guid? id)

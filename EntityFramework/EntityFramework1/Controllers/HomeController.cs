@@ -59,7 +59,7 @@ namespace EntityFramework1.Controllers
         }
 
         [Route("/persons/create")]
-        public IActionResult AddingPerson(PersonAddRequests? personAddRequest)
+        public async Task<IActionResult> AddingPerson(PersonAddRequests? personAddRequest)
         {
             List<string> errors = null;
 
@@ -80,7 +80,7 @@ namespace EntityFramework1.Controllers
                 return View("CreateNewPerson", pes);
             }
 
-            _personsService.AddPerson(personAddRequest);
+            await _personsService.AddPerson(personAddRequest);
 
             return View("Index", _personsService.GetAllPersonResponseList());
         }

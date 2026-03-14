@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entities.Migrations
 {
     [DbContext(typeof(PersonsDBContext))]
-    partial class PersonsDBContextModelSnapshot : ModelSnapshot
+    [Migration("20260314055506_Add_CountryKey_Column_inPersons")]
+    partial class Add_CountryKey_Column_inPersons
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,9 +88,6 @@ namespace Entities.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int>("GenderKey")
-                        .HasColumnType("int");
-
                     b.Property<string>("PersonName")
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
@@ -100,8 +100,6 @@ namespace Entities.Migrations
 
                     b.HasKey("PersonID");
 
-                    b.HasIndex("GenderKey");
-
                     b.ToTable("Persons", (string)null);
 
                     b.HasData(
@@ -113,7 +111,6 @@ namespace Entities.Migrations
                             DateOfBirth = new DateTime(1990, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "alice.johnson@example.com",
                             Gender = "Female",
-                            GenderKey = 0,
                             PersonName = "Alice Johnson"
                         },
                         new
@@ -124,7 +121,6 @@ namespace Entities.Migrations
                             DateOfBirth = new DateTime(1985, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "bob.smith@example.com",
                             Gender = "Male",
-                            GenderKey = 0,
                             PersonName = "Bob Smith"
                         },
                         new
@@ -135,7 +131,6 @@ namespace Entities.Migrations
                             DateOfBirth = new DateTime(1992, 2, 8, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "catherine.lee@example.com",
                             Gender = "Female",
-                            GenderKey = 0,
                             PersonName = "Catherine Lee"
                         },
                         new
@@ -146,7 +141,6 @@ namespace Entities.Migrations
                             DateOfBirth = new DateTime(1988, 7, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "david.kumar@example.com",
                             Gender = "Male",
-                            GenderKey = 0,
                             PersonName = "David Kumar"
                         },
                         new
@@ -157,25 +151,8 @@ namespace Entities.Migrations
                             DateOfBirth = new DateTime(1995, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "emma.brown@example.com",
                             Gender = "Female",
-                            GenderKey = 0,
                             PersonName = "Emma Brown"
                         });
-                });
-
-            modelBuilder.Entity("Entities.Person", b =>
-                {
-                    b.HasOne("Entities.Gender", "Gndr")
-                        .WithMany("Persons")
-                        .HasForeignKey("GenderKey")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Gndr");
-                });
-
-            modelBuilder.Entity("Entities.Gender", b =>
-                {
-                    b.Navigation("Persons");
                 });
 #pragma warning restore 612, 618
         }

@@ -52,7 +52,10 @@ namespace Entities
 
             //making changes to the pin column
             modelBuilder.Entity<Person>().Property(persons => persons.Pin).HasColumnName("PinCode").HasDefaultValue(111111);
-            modelBuilder.Entity<Gender>().HasKey(p=>p.GenderKey);   
+            modelBuilder.Entity<Gender>().HasKey(p=>p.GenderKey);
+
+            //table relationship
+            modelBuilder.Entity<Person>().HasOne(p => p.Gndr).WithMany(g=>g.Persons).HasForeignKey(p => p.GenderKey);
         }
 
         //stored procedure to get all persons from the database

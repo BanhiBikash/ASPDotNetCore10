@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.CompilerServices;
 
 namespace Entities
@@ -31,5 +32,10 @@ namespace Entities
 
         [Range(100000,999999)]
         public int? Pin { get; set; }
+
+        public int GenderKey { get; set; }
+
+        [ForeignKey(nameof(GenderKey))]
+        public Gender? Gndr { get; set; }
     }
 }
