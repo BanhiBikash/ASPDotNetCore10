@@ -58,6 +58,24 @@
             </div>
         </div>
 
+        @*GenderKey*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label class="form-label">GenderKey</label>
+            </div>
+            <div class="flex-1">
+                <input type="radio" value=11 asp-for="PersonAddRequest.GenderKey" />
+                <label for="Male">Male</label>
+
+                <input type="radio" value=21 asp-for="PersonAddRequest.GenderKey" class="ml" />
+                <label for="Female">Female</label>
+
+                <input type="radio" value=31 asp-for="PersonAddRequest.GenderKey" class="ml" />
+                <label for="Other">Other</label>
+                <span class="text-red" asp-validation-for="PersonAddRequest.GenderKey"></span>
+            </div>
+        </div>
+
         @*Country*@
         <div class="form-field flex">
             <div class="w-25">
@@ -78,6 +96,18 @@
             <div class="flex-1">
                 <textarea asp-for="PersonAddRequest.Address" class="form-input"></textarea>
                 <span class="text-red" asp-validation-for="PersonAddRequest.Address"></span>
+            </div>
+        </div>
+
+
+        @*PinCode*@
+        <div class="form-field flex">
+            <div class="w-25">
+                <label asp-for="PersonAddRequest.Pin" class="form-label pt">Pin Code</label>
+            </div>
+            <div class="flex-1">
+                <textarea asp-for="PersonAddRequest.Pin" class="form-input"></textarea>
+                <span class="text-red" asp-validation-for="PersonAddRequest.Pin"></span>
             </div>
         </div>
 

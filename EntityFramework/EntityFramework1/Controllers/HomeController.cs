@@ -4,6 +4,7 @@ using Services;
 using ServicesContracts;
 using ServicesContracts.DTO;
 using EntityFramework1.Models;
+using Rotativa.AspNetCore;  
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace EntityFramework1.Controllers
@@ -126,6 +127,14 @@ namespace EntityFramework1.Controllers
             {
                 return Content("text/html", "Not Deleted");
             }
+        }
+
+        [Route("/persons/printpersonlist")]
+        public IActionResult PrintPersonsList() 
+        {
+            List<PersonResponse>? personList = _personsService.GetAllPersonResponseList();
+
+            return new ViewAsPdf("PersonsPDF", personList, ViewData);
         }
     }
 }

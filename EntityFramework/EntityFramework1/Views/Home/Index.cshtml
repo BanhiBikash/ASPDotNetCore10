@@ -2,6 +2,7 @@
 
 <h1>Persons</h1>
 
+<a asp-controller="Home" asp-action="PrintPersonsList">Print PDF</a>
 @await Component.InvokeAsync("SearchModule")
 @await Component.InvokeAsync("PersonList", @Model)
 

@@ -19,6 +19,8 @@ namespace ServicesContracts.DTO
         [Required(ErrorMessage ="Gender Value required")]
         public GenderValues? Gender { get; set; }
 
+        public int GenderKey { get; set; }
+
         [Required(ErrorMessage ="Value required for countryID")]
         public string? Address { get; set; }
 

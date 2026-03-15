@@ -791,6 +791,18 @@
           }
         }
       },
+      "Rotativa.AspNetCore/1.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Rotativa.AspNetCore.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Rotativa.AspNetCore.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "System.ClientModel/1.5.1": {
         "type": "package",
         "dependencies": {
@@ -2728,6 +2740,24 @@
         "packageIcon.png"
       ]
     },
+    "Rotativa.AspNetCore/1.4.0": {
+      "sha512": "zn0KgqCQqiTuNPYgeqrIJxXafjJUfDJBcUJIhAV5NgWSCX3DOEeg339zMJTbzcCyoJgGPL5LrG+IKZ3k8/Uk9Q==",
+      "type": "package",
+      "path": "rotativa.aspnetcore/1.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/net5.0/Rotativa.AspNetCore.dll",
+        "lib/net6.0/Rotativa.AspNetCore.dll",
+        "lib/net7.0/Rotativa.AspNetCore.dll",
+        "lib/net8.0/Rotativa.AspNetCore.dll",
+        "lib/netcoreapp3.1/Rotativa.AspNetCore.dll",
+        "lib/netstandard2.0/Rotativa.AspNetCore.dll",
+        "rotativa.aspnetcore.1.4.0.nupkg.sha512",
+        "rotativa.aspnetcore.nuspec"
+      ]
+    },
     "System.ClientModel/1.5.1": {
       "sha512": "k2jKSO0X45IqhVOT9iQB4xralNN9foRQsRvXBTyRpAVxyzCJlG895T9qYrQWbcJ6OQXxOouJQ37x5nZH5XKK+A==",
       "type": "package",
@@ -3101,6 +3131,7 @@
     "net10.0": [
       "Microsoft.EntityFrameworkCore.Design >= 10.0.3",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.3",
+      "Rotativa.AspNetCore >= 1.4.0",
       "Services >= 1.0.0",
       "ServicesContracts >= 1.0.0"
     ]
@@ -3171,6 +3202,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[10.0.3, )"
+          },
+          "Rotativa.AspNetCore": {
+            "target": "Package",
+            "version": "[1.4.0, )"
           }
         },
         "imports": [

@@ -23,6 +23,8 @@ namespace ServicesContracts.DTO
         [Range(100000, 999999)]
         public int? Pin { get; set; }
 
+        public int GenderKey { get; set; }
+
         public override bool Equals(object? obj)
         {
             if (obj is not PersonResponse other)

@@ -1,2 +1,3 @@
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\wwwroot\StyleSheet.css
+wwwroot\Rotativa\Rotativa\wkhtmltopdf.exe
 wwwroot\StyleSheet.css
