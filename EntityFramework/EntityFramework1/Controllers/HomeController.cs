@@ -130,11 +130,18 @@ namespace EntityFramework1.Controllers
         }
 
         [Route("/persons/printpersonlist")]
-        public IActionResult PrintPersonsList() 
+        public IActionResult PrintPersonsList()
         {
             List<PersonResponse>? personList = _personsService.GetAllPersonResponseList();
 
             return new ViewAsPdf("PersonsPDF", personList, ViewData);
+        }
+
+        [Route("persons/PersonsCSV")]
+        public async Task<IActionResult> GetPersonsCSV()
+        {
+            MemoryStream stream = await _personsService.GetPersonsCSV();
+            return File(stream, "application/octet-stream", "PersonsList.csv");
         }
     }
 }

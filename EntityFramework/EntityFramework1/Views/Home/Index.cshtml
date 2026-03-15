@@ -2,7 +2,11 @@
 
 <h1>Persons</h1>
 
+@* //downloads *@
 <a asp-controller="Home" asp-action="PrintPersonsList">Print PDF</a>
+<a asp-controller="Home" asp-action="GetPersonsCSV">Print CSV</a>
+
+@* //content *@
 @await Component.InvokeAsync("SearchModule")
 @await Component.InvokeAsync("PersonList", @Model)
 

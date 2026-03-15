@@ -17,9 +17,6 @@ app.MapControllers();
 
 app.MapFallback(async (obj) => await obj.Response.WriteAsync("Hello World! From Fallback"));
 
-Rotativa.AspNetCore.RotativaConfiguration.Setup(
-    Path.Combine(builder.Environment.WebRootPath, "Rotativa"),
-    "Rotativa"
-);
+Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa/Rotativa");
 
 app.Run();

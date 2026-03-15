@@ -1,6 +1,8 @@
-﻿using Entities;
+﻿using CsvHelper;
+using Entities;
 using ServicesContracts;
 using ServicesContracts.DTO;
+using System.Globalization;
 using System.Reflection;
 
 namespace Services
@@ -209,6 +211,25 @@ namespace Services
             //}
 
             return _personsDB.FilteredPersons(ByProperty, PropertyValue).Select(person => person.ToPersonResponse()).ToList();  
+        }
+
+        public async Task<MemoryStream> GetPersonsCSV()
+        {
+            MemoryStream memoryStream = new MemoryStream(); 
+            StreamWriter streamWriter = new StreamWriter(memoryStream);
+            CsvWriter csvWriter = new CsvWriter(streamWriter, CultureInfo.InvariantCulture, leaveOpen: true);
+
+            csvWriter.WriteHeader<PersonResponse>();
+            //PersonId,PersonName,
+
+            csvWriter.NextRecord();
+
+            await csvWriter.WriteRecordsAsync(GetAllPersonResponseList());
+            //0000-000,Bob
+
+            memoryStream.Position = 0;
+
+            return memoryStream;
         }
 
         //return person on the basis of sorting

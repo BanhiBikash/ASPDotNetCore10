@@ -1,1 +1,0 @@
-C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\wwwroot\Rotativa\wkhtmltopdf.exe
