@@ -10,6 +10,7 @@ namespace ServicesContracts
         List<PersonResponse> GetSortedPersons(string? ByProperty, bool ascending = true);
         bool EditPerson(PersonResponse? personResponse);
         bool DeletePerson(Guid? id);
-        Task<MemoryStream> GetPersonsCSV();
+        Task<MemoryStream> GetPersonCSV();
+        Task<MemoryStream> GetPersonExcel();
     }
 }

@@ -408,6 +408,10 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.5.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -1259,6 +1263,10 @@
             "CsvHelper": {
               "target": "Package",
               "version": "[33.1.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.5.0, )"
             }
           },
           "imports": [

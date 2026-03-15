@@ -138,10 +138,17 @@ namespace EntityFramework1.Controllers
         }
 
         [Route("persons/PersonsCSV")]
-        public async Task<IActionResult> GetPersonsCSV()
+        public async Task<IActionResult> PrintPersonCSV()
         {
-            MemoryStream stream = await _personsService.GetPersonsCSV();
+            MemoryStream stream = await _personsService.GetPersonCSV();
             return File(stream, "application/octet-stream", "PersonsList.csv");
+        }
+
+        [Route("persons/PersonsExcel")]
+        public async Task<IActionResult> PrintPersonsExcel()
+        {
+            MemoryStream stream = await _personsService.GetPersonExcel();
+            return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "PersonsList.xlsx");
         }
     }
 }

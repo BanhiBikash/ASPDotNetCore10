@@ -4,6 +4,7 @@ using ServicesContracts;
 using ServicesContracts.DTO;
 using System.Globalization;
 using System.Reflection;
+using OfficeOpenXml;
 
 namespace Services
 {
@@ -213,7 +214,7 @@ namespace Services
             return _personsDB.FilteredPersons(ByProperty, PropertyValue).Select(person => person.ToPersonResponse()).ToList();  
         }
 
-        public async Task<MemoryStream> GetPersonsCSV()
+        public async Task<MemoryStream> GetPersonCSV()
         {
             MemoryStream memoryStream = new MemoryStream(); 
             StreamWriter streamWriter = new StreamWriter(memoryStream);
@@ -223,10 +224,61 @@ namespace Services
             //PersonId,PersonName,
 
             csvWriter.NextRecord();
-
-            await csvWriter.WriteRecordsAsync(GetAllPersonResponseList());
+            List<PersonResponse> personResponses = GetAllPersonResponseList();
+            await csvWriter.WriteRecordsAsync(personResponses);
             //0000-000,Bob
 
+            await csvWriter.FlushAsync();
+            await streamWriter.FlushAsync();
+
+            if (memoryStream.Length == 0) throw new Exception("EMpty stream");
+
+            memoryStream.Position = 0;
+
+            return memoryStream;
+        }
+
+        public async Task<MemoryStream> GetPersonExcel()
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            ExcelPackage.License.SetNonCommercialPersonal("Banhi");
+            using (ExcelPackage excelPackage = new ExcelPackage(memoryStream)) 
+            { 
+                ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add("Persons");
+                //Adding Headers
+                worksheet.Cells[1, 1].Value = "PersonID";
+                worksheet.Cells[1, 2].Value = "PersonName";
+                worksheet.Cells[1, 3].Value = "Email";
+                worksheet.Cells[1, 4].Value = "DateOfBirth";
+                worksheet.Cells[1, 5].Value = "Gender";
+                worksheet.Cells[1, 6].Value = "Country";
+                worksheet.Cells[1, 7].Value = "GenderKey";   // int codes
+                worksheet.Cells[1, 8].Value = "PinCode";     // int 100000–999999
+
+                int row = 2;
+
+                List<PersonResponse> personsList = GetAllPersonResponseList();
+
+                foreach (PersonResponse person in personsList)
+                {
+                    worksheet.Cells[row, 1].Value = person.PersonID;
+                    worksheet.Cells[row, 2].Value = person.PersonName;
+                    worksheet.Cells[row, 3].Value = person.Email;
+                    worksheet.Cells[row, 4].Value = person.DateOfBirth;
+                    worksheet.Cells[row, 5].Value = person.Gender;
+                    worksheet.Cells[row, 6].Value = person.CountryID;
+                    worksheet.Cells[row, 7].Value = person.GenderKey;
+                    worksheet.Cells[row, 8].Value = person.Pin;
+
+                    row++;
+                }
+
+                worksheet.Cells[$"A1:H{row}"].AutoFitColumns();
+
+                await excelPackage.SaveAsAsync(memoryStream);
+            }
+            if (memoryStream.Length == 0) throw new Exception("Empty stream");
+ 
             memoryStream.Position = 0;
 
             return memoryStream;

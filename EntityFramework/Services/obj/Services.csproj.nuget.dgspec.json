@@ -754,6 +754,10 @@
             "CsvHelper": {
               "target": "Package",
               "version": "[33.1.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[8.5.0, )"
             }
           },
           "imports": [

@@ -170,3 +170,6 @@ C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debu
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\Rotativa.AspNetCore.dll
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\obj\Debug\net10.0\EntityFramework1.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\CsvHelper.dll
+C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\EPPlus.dll
+C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\EPPlus.Interfaces.dll
+C:\Users\Banhi\source\repos\aspnetcore\EntityFramework\EntityFramework1\bin\Debug\net10.0\Microsoft.IO.RecyclableMemoryStream.dll
