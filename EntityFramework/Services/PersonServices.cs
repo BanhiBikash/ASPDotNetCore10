@@ -1,10 +1,12 @@
 ﻿using CsvHelper;
 using Entities;
+using Microsoft.AspNetCore.Http;
+using OfficeOpenXml;
 using ServicesContracts;
 using ServicesContracts.DTO;
+using ServicesContracts.Enums;
 using System.Globalization;
 using System.Reflection;
-using OfficeOpenXml;
 
 namespace Services
 {
@@ -303,6 +305,78 @@ namespace Services
 
                                 //ascending order                                                                                   descending order
             return ascending ? _personsDB.SortPersonsByProperty(ByProperty).Select(person=>person.ToPersonResponse()).ToList() : GetAllPersonResponseList().OrderByDescending(p => propInfo.GetValue(p, null)).ToList();
+        }
+
+        public async Task<int> UploadPersonsList(IFormFile formFile)
+        {
+            MemoryStream memorystream = new MemoryStream();
+            formFile.CopyToAsync(memorystream);
+
+            int personsInserted = 0;
+            List<PersonAddRequests>? personList = new List<PersonAddRequests>();
+
+            //setting the license
+            ExcelPackage.License.SetNonCommercialPersonal("Banhi");
+
+            using (ExcelPackage excel = new ExcelPackage(memorystream))
+            {
+                ExcelWorksheet worksheet = excel.Workbook.Worksheets["Persons"];
+                int entries = worksheet.Dimension.Rows;
+
+                for (int row = 2; row <= entries; row++)
+                {
+                    PersonAddRequests person = new PersonAddRequests();
+                    person.PersonName = worksheet.Cells[row, 1].Value.ToString();
+
+                    person.Email = worksheet.Cells[row, 2].Value?.ToString();
+
+                    // Convert DateOfBirth from Excel cell (if stored as DateTime or serial number)
+                    if (worksheet.Cells[row, 3].Value != null)
+                    {
+                        if (DateTime.TryParse(worksheet.Cells[row, 3].Value.ToString(), out DateTime dob))
+                            person.DateOfBirth = dob;
+                        else
+                            person.DateOfBirth = DateTime.FromOADate(Convert.ToDouble(worksheet.Cells[row, 3].Value));
+                    }
+
+                    // Gender as enum
+                    if (Enum.TryParse<GenderValues>(worksheet.Cells[row, 4].Value?.ToString(), out var gender))
+                        person.Gender = gender;
+
+                    // GenderKey as int
+                    if (int.TryParse(worksheet.Cells[row, 5].Value?.ToString(), out int genderKey))
+                        person.GenderKey = genderKey;
+
+                    // Address
+                    person.Address = worksheet.Cells[row, 6].Value?.ToString();
+
+                    // CountryID
+                    person.CountryID = worksheet.Cells[row, 7].Value?.ToString();
+
+                    // Pin (int between 100000–999999)
+                    if (int.TryParse(worksheet.Cells[row, 8].Value?.ToString(), out int pin))
+                        person.Pin = pin;
+
+                    foreach(var property in typeof(PersonAddRequests).GetProperties())
+                    {
+                        if (property.GetValue(person) == null) throw new ArgumentException("One or more Value of one or more person is null or empty");
+                    }
+
+                    PersonResponse  personAdded= await AddPerson(person);
+                    await _personsDB.SaveChangesAsync();
+
+                    if (GetFilteredPersons("PersonID", personAdded.PersonID.ToString()).Equals(personAdded))
+                    {
+                        personsInserted++;
+                    }
+                    else
+                    {
+                        throw new Exception("\nFailed to add "+person.PersonName+" DOB:"+person.DateOfBirth);
+                    }
+                }
+            }
+
+                throw new NotImplementedException();
         }
     }
 }

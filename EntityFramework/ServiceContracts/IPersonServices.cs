@@ -1,4 +1,5 @@
 ﻿using ServicesContracts.DTO;
+using Microsoft.AspNetCore.Http;
 
 namespace ServicesContracts
 {
@@ -12,5 +13,6 @@ namespace ServicesContracts
         bool DeletePerson(Guid? id);
         Task<MemoryStream> GetPersonCSV();
         Task<MemoryStream> GetPersonExcel();
+        Task<int> UploadPersonsList(IFormFile formFile);
     }
 }

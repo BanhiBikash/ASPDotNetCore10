@@ -150,5 +150,11 @@ namespace EntityFramework1.Controllers
             MemoryStream stream = await _personsService.GetPersonExcel();
             return File(stream, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "PersonsList.xlsx");
         }
+
+        [Route("persons/UploadFile")]
+        public async Task<IActionResult> UploadPersonList(IFormFile formFile)
+        {
+            return View();
+        }
     }
 }
