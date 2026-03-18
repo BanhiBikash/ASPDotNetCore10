@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+    <html>
+    <head>
+        <title>@ViewBag.Title</title>
+        <link rel="stylesheet" href="~/StyleSheet.css"/>
+    </head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar-brand">Stock Trader</div>
+        <form class="search-form">
+            <input type="text" placeholder="Search stocks..." />
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+
+    @RenderBody();
+    
+    </body>
+    </html>

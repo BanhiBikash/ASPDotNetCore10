@@ -1,0 +1,2 @@
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\wwwroot\StyleSheet.css
+wwwroot\StyleSheet.css

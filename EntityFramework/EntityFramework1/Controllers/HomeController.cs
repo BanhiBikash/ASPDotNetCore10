@@ -152,9 +152,10 @@ namespace EntityFramework1.Controllers
         }
 
         [Route("persons/UploadFile")]
-        public async Task<IActionResult> UploadPersonList(IFormFile formFile)
+        public async Task<IActionResult> UploadPersons(IFormFile formFile)
         {
-            return View();
+            int rowsAdded =await _personsService.UploadPersonsList(formFile);
+            return View("Index",_personsService.GetAllPersonResponseList());
         }
     }
 }

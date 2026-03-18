@@ -1,0 +1,15 @@
+﻿<div class="stock-container">
+    <h2 class="stock-name">Microsoft Corp</h2>
+    <p class="stock-symbol">Symbol: MSFT</p>
+    <p class="stock-price">Price: $235.87</p>
+
+    <form asp-action="Order" asp-controller="Home" class="order-section" method="post" enctype="multipart/form-data" action="Home/Order">
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" value="100" name="quantity" class="order-input" />
+
+        <div class="order-buttons">
+            <button type="submit" class="btn btn-sell" name="orderAction" value="sell">Sell</button>
+            <button type="submit" class="btn btn-buy" name="orderAction" value="buy">Buy</button>
+        </div>
+    </form>
+</div>

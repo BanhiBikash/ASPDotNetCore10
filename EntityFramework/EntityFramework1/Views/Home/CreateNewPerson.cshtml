@@ -2,7 +2,10 @@
 
 <a href="/" class="link-hover">Back to Person List</a>
 <h2>Create Person</h2>
-<input type="file" placeholder="Upload Excel File"/>
+<form asp-controller="Home" asp-action="UploadPersons" enctype="multipart/form-data" method="post">
+<input type="file" name="formFile" placeholder="Upload Excel File"/>
+<input type="submit" placeholder="Upload"/>
+</form>
 <div class="w-50">
     <form asp-controller="Home" asp-action="AddingPerson" method="post">
 

@@ -310,7 +310,7 @@ namespace Services
         public async Task<int> UploadPersonsList(IFormFile formFile)
         {
             MemoryStream memorystream = new MemoryStream();
-            formFile.CopyToAsync(memorystream);
+            await formFile.CopyToAsync(memorystream);
 
             int personsInserted = 0;
             List<PersonAddRequests>? personList = new List<PersonAddRequests>();
@@ -325,58 +325,76 @@ namespace Services
 
                 for (int row = 2; row <= entries; row++)
                 {
-                    PersonAddRequests person = new PersonAddRequests();
-                    person.PersonName = worksheet.Cells[row, 1].Value.ToString();
-
-                    person.Email = worksheet.Cells[row, 2].Value?.ToString();
-
-                    // Convert DateOfBirth from Excel cell (if stored as DateTime or serial number)
-                    if (worksheet.Cells[row, 3].Value != null)
+                    var person = new PersonAddRequests
                     {
-                        if (DateTime.TryParse(worksheet.Cells[row, 3].Value.ToString(), out DateTime dob))
+                        PersonName = worksheet.Cells[row, 1].Value?.ToString(),
+                        Email = worksheet.Cells[row, 2].Value?.ToString(),
+                        Address = worksheet.Cells[row, 6].Value?.ToString(),
+                        CountryID = worksheet.Cells[row, 7].Value?.ToString()
+                    };
+
+                    // DateOfBirth
+                    var dobCell = worksheet.Cells[row, 3].Value;
+                    if (dobCell != null)
+                    {
+                        if (DateTime.TryParse(dobCell.ToString(), out DateTime dob))
                             person.DateOfBirth = dob;
                         else
-                            person.DateOfBirth = DateTime.FromOADate(Convert.ToDouble(worksheet.Cells[row, 3].Value));
+                            person.DateOfBirth = DateTime.FromOADate(Convert.ToDouble(dobCell));
                     }
 
-                    // Gender as enum
+                    // Gender
                     if (Enum.TryParse<GenderValues>(worksheet.Cells[row, 4].Value?.ToString(), out var gender))
                         person.Gender = gender;
 
-                    // GenderKey as int
+                    // GenderKey
                     if (int.TryParse(worksheet.Cells[row, 5].Value?.ToString(), out int genderKey))
                         person.GenderKey = genderKey;
 
-                    // Address
-                    person.Address = worksheet.Cells[row, 6].Value?.ToString();
-
-                    // CountryID
-                    person.CountryID = worksheet.Cells[row, 7].Value?.ToString();
-
-                    // Pin (int between 100000–999999)
+                    // Pin
                     if (int.TryParse(worksheet.Cells[row, 8].Value?.ToString(), out int pin))
                         person.Pin = pin;
 
-                    foreach(var property in typeof(PersonAddRequests).GetProperties())
+                    // ✅ Validation: skip if required fields are missing
+                    if (string.IsNullOrWhiteSpace(person.PersonName) ||
+                        string.IsNullOrWhiteSpace(person.Email) ||
+                        !person.DateOfBirth.HasValue ||
+                        person.Gender == null ||
+                        string.IsNullOrWhiteSpace(person.CountryID) ||
+                        !person.Pin.HasValue ||
+                        person.Pin < 100000 || person.Pin > 999999)
                     {
-                        if (property.GetValue(person) == null) throw new ArgumentException("One or more Value of one or more person is null or empty");
+                        Console.WriteLine($"Skipping row {row}: invalid or missing data.");
+                        continue;
                     }
 
-                    PersonResponse  personAdded= await AddPerson(person);
-                    await _personsDB.SaveChangesAsync();
+                    try
+                    {
+                        // Insert
+                        PersonResponse personAdded = await AddPerson(person);
+                        await _personsDB.SaveChangesAsync();
 
-                    if (GetFilteredPersons("PersonID", personAdded.PersonID.ToString()).Equals(personAdded))
-                    {
-                        personsInserted++;
+                        // Verify insert
+                        PersonResponse? check = GetFilteredPersons("PersonID", personAdded.PersonID.ToString()).FirstOrDefault();
+                        if (check != null && check.PersonID == personAdded.PersonID)
+                        {
+                            personsInserted++;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Row {row}: Insert verification failed for {person.PersonName}");
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        throw new Exception("\nFailed to add "+person.PersonName+" DOB:"+person.DateOfBirth);
+                        Console.WriteLine($"Row {row}: Failed to add {person.PersonName}. Error: {ex.Message}");
+                        continue;
                     }
                 }
+
             }
 
-                throw new NotImplementedException();
+            return personsInserted;
         }
     }
 }

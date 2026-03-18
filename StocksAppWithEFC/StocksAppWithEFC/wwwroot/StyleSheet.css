@@ -1,0 +1,112 @@
+﻿/* General reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 10px 20px;
+    color: #fff;
+}
+
+.navbar-brand {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.search-form {
+    display: flex;
+}
+
+    .search-form input {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .search-form button {
+        padding: 5px 15px;
+        border: none;
+        background-color: #4caf50;
+        color: #fff;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+    }
+
+        .search-form button:hover {
+            background-color: #45a049;
+        }
+
+/* Stock container */
+.stock-container {
+    background: #fff;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.stock-name {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.stock-symbol,
+.stock-price {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Order section */
+.order-section {
+    margin-top: 20px;
+}
+
+.order-input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.order-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-sell {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+    .btn-sell:hover {
+        background-color: #c0392b;
+    }
+
+.btn-buy {
+    background-color: #2ecc71;
+    color: #fff;
+}
+
+    .btn-buy:hover {
+        background-color: #27ae60;
+    }
