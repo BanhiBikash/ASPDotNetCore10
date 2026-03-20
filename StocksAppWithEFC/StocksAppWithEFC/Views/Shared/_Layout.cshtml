@@ -7,7 +7,13 @@
 <body>
 
     <nav class="navbar">
-        <div class="navbar-brand">Stock Trader</div>
+        @* links? *@
+        <div>
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand">Stock Trader</a>
+            <a asp-controller="Home" asp-action="Orders">Orders</a>
+        </div>
+
+        @* search *@
         <form class="search-form">
             <input type="text" placeholder="Search stocks..." />
             <button type="submit">Search</button>

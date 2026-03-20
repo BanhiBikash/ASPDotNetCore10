@@ -10,3 +10,7 @@ C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\obj\Deb
 C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\obj\Debug\net10.0\refint\ServiceContracts.dll
 C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\obj\Debug\net10.0\ServiceContracts.pdb
 C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\obj\Debug\net10.0\ref\ServiceContracts.dll
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\obj\Debug\net10.0\ServiceContracts.csproj.AssemblyReference.cache
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\bin\Debug\net10.0\Entities.dll
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\bin\Debug\net10.0\Entities.pdb
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\ServiceContracts\obj\Debug\net10.0\ServiceC.04662A29.Up2Date

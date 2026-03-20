@@ -24,6 +24,6 @@ namespace Entities
 
         [Required(ErrorMessage = "Stock Price is required")]
         [Range(1, 10000, ErrorMessage = "Stock Price must be between {0} and {1}")]
-        public double? stockPrice { get; set; }
+        public decimal? stockPrice { get; set; }
     }
 }

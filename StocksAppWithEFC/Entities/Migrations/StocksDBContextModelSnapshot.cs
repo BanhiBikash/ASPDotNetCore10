@@ -38,8 +38,8 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("stockPrice")
-                        .HasColumnType("float");
+                    b.Property<decimal>("stockPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("stockSymbol")
                         .IsRequired()
@@ -66,8 +66,8 @@ namespace Entities.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("stockPrice")
-                        .HasColumnType("float");
+                    b.Property<decimal>("stockPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("stockSymbol")
                         .IsRequired()
