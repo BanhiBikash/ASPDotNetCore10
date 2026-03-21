@@ -40,9 +40,9 @@ namespace ServiceContracts.DTO
         public override int GetHashCode() =>
             HashCode.Combine(BuyOrderID, stockSymbol, stockName, orderDate, orderQuantity, stockPrice);
     }
-    public class BuyOrderExtension
+    public static class BuyOrderExtension
     {
-        public static BuyOrderResponse ToBuyOrderResponse(BuyOrder buyOrder)
+        public static BuyOrderResponse ToBuyOrderResponse(this BuyOrder buyOrder)
         {
             return new BuyOrderResponse() { BuyOrderID = buyOrder.BuyOrderID, stockSymbol = buyOrder.stockSymbol, stockName = buyOrder.stockName, orderDate = buyOrder.orderDate, orderQuantity = buyOrder.orderQuantity, stockPrice = buyOrder.stockPrice };
         }

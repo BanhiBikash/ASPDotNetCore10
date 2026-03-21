@@ -1,10 +1,11 @@
 ﻿using Entities;
+using ServiceContracts.DTO;
 
 namespace StocksAppWithEFC.Models
 {
     public class OrdersList
     {
-        public List<BuyOrder>? BuyOrdersList { get; set; }
-        public List<SellOrder>? SellOrdersList { get; set; }
+        public List<BuyOrderResponse>? BuyOrdersList { get; set; }
+        public List<SellOrderResponse>? SellOrdersList { get; set; }
     }
 }

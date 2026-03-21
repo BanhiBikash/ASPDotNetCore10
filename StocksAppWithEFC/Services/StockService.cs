@@ -131,20 +131,20 @@ namespace Services
             return false; 
         }
 
-        public async Task<List<BuyOrder>> GetBuyOrderList()
+        public async Task<List<BuyOrderResponse>> GetBuyOrderList()
         {
-            List<BuyOrder>? buyList = null;
+            List<BuyOrderResponse>? buyList = null;  
 
-            buyList = await _stocksDBContext.BuyOrders.ToListAsync();
+            buyList = await _stocksDBContext.BuyOrders.Select(order=>order.ToBuyOrderResponse()).ToListAsync();
 
             return buyList;
         }  
 
-        public async Task<List<SellOrder>> GetSellOrderList()
+        public async Task<List<SellOrderResponse>> GetSellOrderList()
         {
-            List<SellOrder>? sellList = null;
+            List<SellOrderResponse>? sellList = null;
 
-            sellList = await _stocksDBContext.SellOrders.ToListAsync();
+            sellList = await _stocksDBContext.SellOrders.Select(orders=>orders.ToSellOrderResponse()).ToListAsync();
 
             return sellList;
         }

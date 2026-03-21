@@ -164,4 +164,6 @@ C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\obj\Deb
 C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\obj\Debug\net10.0\StocksAppWithEFC.RazorAssemblyInfo.cache
 C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\obj\Debug\net10.0\StocksAppWithEFC.RazorAssemblyInfo.cs
 C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\bin\Debug\net10.0\StocksAppWithEFC.staticwebassets.runtime.json
-C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\obj\Debug\net10.0\compressed\wje7t1gbxh-{0}-nzyqevnf5g-nzyqevnf5g.gz
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\bin\Debug\net10.0\Rotativa.AspNetCore.dll
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\obj\Debug\net10.0\StocksAppWithEFC.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC\obj\Debug\net10.0\compressed\wje7t1gbxh-{0}-zhwhml4n4i-zhwhml4n4i.gz

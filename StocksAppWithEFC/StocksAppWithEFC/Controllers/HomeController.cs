@@ -2,6 +2,8 @@
 using ServiceContracts;
 using ServiceContracts.DTO;
 using StocksAppWithEFC.Models;
+using Rotativa.AspNetCore;
+
 namespace StocksAppWithEFC.Controllers
 {
     [Route("Home")]
@@ -115,9 +117,12 @@ namespace StocksAppWithEFC.Controllers
             return View(ordersList);
         }
 
-        public  IActionResult PrintPDF()
+        [Route("PrintPDF")]
+        public async Task<IActionResult> PrintPDF()
         {
-            return View();
+            OrdersList? ordersList = new OrdersList() { BuyOrdersList = await _stockService.GetBuyOrderList(), SellOrdersList = await _stockService.GetSellOrderList() };
+
+            return new ViewAsPdf("PrintPDF",ordersList, ViewData);
         }
     }
 }

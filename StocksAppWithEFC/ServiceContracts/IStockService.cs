@@ -9,7 +9,7 @@ namespace ServiceContracts
         Task<bool> BuyStocks(BuyOrderRequest? buyOrderRequest);
         Task<bool> SellStocks(SellOrderRequest? sellOrderRequest);
         Task<StockQuote> FetchStockQuote(string? stockSymbol, string? Key);
-        Task<List<BuyOrder>> GetBuyOrderList();
-        Task<List<SellOrder>> GetSellOrderList();
+        Task<List<BuyOrderResponse>> GetBuyOrderList();
+        Task<List<SellOrderResponse>> GetSellOrderList();
     }
 }

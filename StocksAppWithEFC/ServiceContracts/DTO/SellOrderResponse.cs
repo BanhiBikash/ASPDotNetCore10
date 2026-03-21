@@ -42,9 +42,9 @@ namespace ServiceContracts.DTO
             HashCode.Combine(SellOrderID, stockSymbol, stockName, orderDate, orderQuantity, stockPrice);
     }
 
-    public class SellOrderExtension
+    public static class SellOrderExtension
     {
-        public static SellOrderResponse ToSellOrderResponse(SellOrder sellOrder)
+        public static SellOrderResponse ToSellOrderResponse(this SellOrder sellOrder)
         {
             return new SellOrderResponse() { SellOrderID = sellOrder.SellOrderID, stockSymbol = sellOrder.stockSymbol, stockName = sellOrder.stockName, orderDate = sellOrder.orderDate, orderQuantity = sellOrder.orderQuantity, stockPrice = sellOrder.stockPrice };
         }

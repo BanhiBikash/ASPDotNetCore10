@@ -1,5 +1,6 @@
 ﻿@model OrdersList
 
+<a asp-controller="Home" asp-action="PrintPDF">Print PDF</a>
 <div class="orders-wrapper">
 
     <!-- Buy Order -->
@@ -9,7 +10,7 @@
         @if(Model.BuyOrdersList != null)
         {
             <div class="order-box">
-            @foreach(BuyOrder order in Model.BuyOrdersList)
+            @foreach(BuyOrderResponse order in Model.BuyOrdersList)
             {
                 <div class="order-field">
                     <label>Stock Symbol:</label>
@@ -43,7 +44,7 @@
         @if(Model.SellOrdersList != null)
         {
             <div class="order-box">
-            @foreach(SellOrder order in Model.SellOrdersList)
+            @foreach(SellOrderResponse order in Model.SellOrdersList)
             {
                 <div class="order-field">
                     <label>Stock Symbol:</label>
