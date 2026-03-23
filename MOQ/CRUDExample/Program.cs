@@ -9,6 +9,9 @@ using Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+//Logging configuration
+builder.Logging.ClearProviders().AddConsole().AddDebug();
+
 //add services into IoC container
 builder.Services.AddScoped<ICountriesRespository, CountriesRespository>();
 builder.Services.AddScoped<IPersonsRespository, PersonsRepository>();

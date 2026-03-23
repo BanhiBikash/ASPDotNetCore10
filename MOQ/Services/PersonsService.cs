@@ -12,6 +12,7 @@ using CsvHelper.Configuration;
 using OfficeOpenXml;
 using RespositoryContract;
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
+using Microsoft.Extensions.Logging;
 
 namespace Services
 {
@@ -20,11 +21,13 @@ namespace Services
   //private field
   private readonly IPersonsRespository _personRepository;
   private readonly ICountriesRespository _countryRespository;
+        private readonly ILogger<PersonsService> _logger;
 
   //constructor
-  public PersonsService(IPersonsRespository personsRespository)
+  public PersonsService(IPersonsRespository personsRespository, ILogger<PersonsService> logger)
   {
    _personRepository = personsRespository;
+   _logger = logger;
    //_countryRespository = countriesRespository;
   }
 
@@ -57,6 +60,7 @@ namespace Services
 
   public async Task<List<PersonResponse>> GetAllPersons()
   {
+            _logger.LogInformation("GetAllPersons of Persons Service");
    //SELECT * from Persons
    var persons = await _personRepository.GetAllPersons();
 
@@ -84,6 +88,8 @@ namespace Services
 
   public async Task<List<PersonResponse>> GetFilteredPersons(string searchBy, string? searchString)
   {
+            _logger.LogInformation("GetFilteredPersons of Persons Service");
+            _logger.LogDebug($"GetFilteredPersons of Persons Service, searchBy:{searchBy}, searchString: {searchString}");
             List<Person> filteredPersons = searchBy switch
             {
                 nameof(PersonResponse.PersonName) => await _personRepository.GetFilteredPersons(temp => string.IsNullOrEmpty(searchString) || (temp.PersonName != null && temp.PersonName.Contains(searchString))),
