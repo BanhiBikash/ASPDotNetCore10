@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StocksAppEntityFrameWork")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a24b3880fd36d503370358597e4deb1dd702cb4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e45a688a4619b7d7d44f849819a31117efeb0f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("StocksAppEntityFrameWork")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StocksAppEntityFrameWork")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

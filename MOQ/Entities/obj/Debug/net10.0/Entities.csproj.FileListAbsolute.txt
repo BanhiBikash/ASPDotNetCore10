@@ -1,0 +1,15 @@
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\bin\Debug\net10.0\Entities.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\bin\Debug\net10.0\Entities.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\bin\Debug\net10.0\Entities.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\bin\Debug\net10.0\Entities.pdb
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.csproj.AssemblyReference.cache
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\refint\Entities.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.pdb
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\Entities.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\Entities\obj\Debug\net10.0\ref\Entities.dll

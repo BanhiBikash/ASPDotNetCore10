@@ -16,8 +16,8 @@ namespace Entities
         }
 
         //person type of data
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<Gender> Genders { get; set; }
+        public virtual DbSet<Person> Persons { get; set; }
+        public virtual DbSet<Gender> Genders { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
