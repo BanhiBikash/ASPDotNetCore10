@@ -9,6 +9,11 @@ using Services;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
+builder.Services.AddHttpLogging(options =>
+{
+    options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestPropertiesAndHeaders | Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
+});
+
 //Logging configuration
 builder.Logging.ClearProviders().AddConsole().AddDebug();
 
@@ -42,5 +47,6 @@ Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePa
 
 app.UseStaticFiles();
 app.MapControllers();
+app.UseHttpLogging();
 
 app.Run();
