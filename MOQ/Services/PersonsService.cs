@@ -113,6 +113,8 @@ namespace Services
 
         public async Task<List<PersonResponse>> GetSortedPersons(List<PersonResponse> allPersons, string sortBy, SortOrderOptions sortOrder)
   {
+            _logger.LogInformation("GetSortedPersons of PersonsService");
+            _logger.LogDebug($"GetSortedPersons of Persons Service sortBy:{sortBy} and SortOrderOptions:{sortOrder}");
    if (string.IsNullOrEmpty(sortBy))
     return allPersons;
 
@@ -159,6 +161,8 @@ namespace Services
 
   public async Task<PersonResponse> UpdatePerson(PersonUpdateRequest? personUpdateRequest)
   {
+            _logger.LogInformation("Update Person of Persons Service.");
+
    if (personUpdateRequest == null)
     throw new ArgumentNullException(nameof(Person));
 
@@ -179,8 +183,12 @@ namespace Services
 
   public async Task<bool> DeletePerson(Guid? personID)
   {
+
+            _logger.LogInformation("DeletePerson of PersonsService");
+
    if (personID == null)
    {
+                _logger.LogError("DeletePerson of Persons Service: PesonnId is null.");
     throw new ArgumentNullException(nameof(personID));
    }
 

@@ -235,3 +235,14 @@ C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Resposi
 C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\RespositoryContract.pdb
 C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Repositries.dll
 C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Repositries.pdb
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.AspNetCore.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Extensions.Hosting.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Extensions.Logging.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Formatting.Compact.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Settings.Configuration.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Sinks.Console.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Sinks.Debug.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Sinks.File.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Sinks.MSSqlServer.dll
+C:\Users\Banhi\source\repos\aspnetcore\MOQ\CRUDExample\bin\Debug\net10.0\Serilog.Sinks.Seq.dll

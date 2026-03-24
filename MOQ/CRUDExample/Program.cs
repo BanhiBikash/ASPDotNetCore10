@@ -5,6 +5,7 @@ using Repositries;
 using RespositoryContract;
 using ServiceContracts;
 using Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
@@ -15,7 +16,12 @@ builder.Services.AddHttpLogging(options =>
 });
 
 //Logging configuration
-builder.Logging.ClearProviders().AddConsole().AddDebug();
+//builder.Logging.ClearProviders().AddConsole().AddDebug();
+
+builder.Host.UseSerilog((HostBuilderContext context,IServiceProvider service,LoggerConfiguration configuration) => 
+{
+    configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(service);
+});
 
 //add services into IoC container
 builder.Services.AddScoped<ICountriesRespository, CountriesRespository>();

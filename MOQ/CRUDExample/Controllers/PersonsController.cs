@@ -41,7 +41,7 @@ namespace CRUDExample.Controllers
         { nameof(PersonResponse.CountryID), "Country" },
         { nameof(PersonResponse.Address), "Address" }
       };
-            _logger.LogDebug($"Search parameters Index of Person controller, ID: {ViewBag.SearchFields[nameof(PersonResponse.PersonID)]}, Name: {ViewBag.SearchFields[nameof(PersonResponse.PersonName)]}, Email: {ViewBag.SearchFields[nameof(PersonResponse.Email)]}, DateOfBirth: {ViewBag.SearchFields[nameof(PersonResponse.DateOfBirth)]}, Gender: {ViewBag.SearchFields[nameof(PersonResponse.Gender)]}, Country: {ViewBag.SearchFields[nameof(PersonResponse.CountryID)]}, Address: {ViewBag.SearchFields[nameof(PersonResponse.Address)]}, ReceiveNewsLetters: {ViewBag.SearchFields[nameof(PersonResponse.ReceiveNewsLetters)]}");
+           // _logger.LogDebug($"Search parameters Index of Person controller, ID: {ViewBag.SearchFields[nameof(PersonResponse.PersonID)]}, Name: {ViewBag.SearchFields[nameof(PersonResponse.PersonName)]}, Email: {ViewBag.SearchFields[nameof(PersonResponse.Email)]}, DateOfBirth: {ViewBag.SearchFields[nameof(PersonResponse.DateOfBirth)]}, Gender: {ViewBag.SearchFields[nameof(PersonResponse.Gender)]}, Country: {ViewBag.SearchFields[nameof(PersonResponse.CountryID)]}, Address: {ViewBag.SearchFields[nameof(PersonResponse.Address)]}, ReceiveNewsLetters: {ViewBag.SearchFields[nameof(PersonResponse.ReceiveNewsLetters)]}");
 
             List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
    ViewBag.CurrentSearchBy = searchBy;
