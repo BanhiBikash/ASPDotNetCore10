@@ -1,0 +1,135 @@
+2026-03-25 20:58:10.711 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Index.cshtml'.
+2026-03-25 20:58:10.855 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Orders.cshtml'.
+2026-03-25 20:58:10.859 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/PrintPDF.cshtml'.
+2026-03-25 20:58:10.861 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-03-25 20:58:10.862 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-03-25 20:58:10.864 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-03-25 20:58:11.026 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-03-25 20:58:11.508 +05:30 [DBG] Hosting starting
+2026-03-25 20:58:11.616 +05:30 [INF] User profile is available. Using 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-03-25 20:58:11.681 +05:30 [DBG] Reading data from file 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys\key-213a9e69-f674-451a-87a6-89d04416c0e3.xml'.
+2026-03-25 20:58:12.674 +05:30 [DBG] Found key {213a9e69-f674-451a-87a6-89d04416c0e3}.
+2026-03-25 20:58:12.716 +05:30 [DBG] Considering key {213a9e69-f674-451a-87a6-89d04416c0e3} with expiration date 2026-05-10 15:23:00Z as default key.
+2026-03-25 20:58:12.724 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-25 20:58:12.777 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2026-03-25 20:58:12.786 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-03-25 20:58:12.796 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-03-25 20:58:12.799 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-03-25 20:58:12.802 +05:30 [DBG] Using key {213a9e69-f674-451a-87a6-89d04416c0e3} as the default key.
+2026-03-25 20:58:12.812 +05:30 [DBG] Key ring with default key {213a9e69-f674-451a-87a6-89d04416c0e3} was loaded during application startup.
+2026-03-25 20:58:12.850 +05:30 [DBG] Middleware loaded
+2026-03-25 20:58:12.887 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16517 B).
+2026-03-25 20:58:12.892 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-03-25 20:58:13.795 +05:30 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-03-25 20:58:13.865 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-03-25 20:58:13.900 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-03-25 20:58:15.120 +05:30 [INF] Now listening on: http://localhost:5255
+2026-03-25 20:58:15.128 +05:30 [DBG] Loaded hosting startup assembly StocksAppWithEFC
+2026-03-25 20:58:15.131 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-03-25 20:58:15.133 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-03-25 20:58:15.135 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-03-25 20:58:15.173 +05:30 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-25 20:58:15.176 +05:30 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-03-25 20:58:15.323 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-03-25 20:58:15.326 +05:30 [INF] Hosting environment: Development
+2026-03-25 20:58:15.329 +05:30 [INF] Content root path: C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithEFC\StocksAppWithEFC
+2026-03-25 20:58:15.331 +05:30 [DBG] Hosting started
+2026-03-25 20:58:15.362 +05:30 [DBG] Connection id "0HNKAGCH4E21T" received FIN.
+2026-03-25 20:58:15.364 +05:30 [DBG] Connection id "0HNKAGCH4E21U" received FIN.
+2026-03-25 20:58:15.397 +05:30 [DBG] Connection id "0HNKAGCH4E21U" accepted.
+2026-03-25 20:58:15.398 +05:30 [DBG] Connection id "0HNKAGCH4E21T" accepted.
+2026-03-25 20:58:15.404 +05:30 [DBG] Connection id "0HNKAGCH4E21U" started.
+2026-03-25 20:58:15.406 +05:30 [DBG] Connection id "0HNKAGCH4E21T" started.
+2026-03-25 20:58:15.460 +05:30 [DBG] Connection id "0HNKAGCH4E21T" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-03-25 20:58:15.448 +05:30 [DBG] Connection id "0HNKAGCH4E21U" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-03-25 20:58:15.482 +05:30 [DBG] Connection id "0HNKAGCH4E21T" disconnecting.
+2026-03-25 20:58:15.484 +05:30 [DBG] Connection id "0HNKAGCH4E21U" disconnecting.
+2026-03-25 20:58:15.501 +05:30 [DBG] Connection id "0HNKAGCH4E21T" stopped.
+2026-03-25 20:58:15.501 +05:30 [DBG] Connection id "0HNKAGCH4E21U" stopped.
+2026-03-25 20:58:18.112 +05:30 [DBG] Connection id "0HNKAGCH4E21V" accepted.
+2026-03-25 20:58:18.169 +05:30 [DBG] Connection id "0HNKAGCH4E21V" started.
+2026-03-25 20:58:18.346 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5255/ - null null
+2026-03-25 20:58:18.422 +05:30 [DBG] Connection id "0HNKAGCH4E220" accepted.
+2026-03-25 20:58:18.444 +05:30 [DBG] Connection id "0HNKAGCH4E220" started.
+2026-03-25 20:58:19.491 +05:30 [DBG] 2 candidate(s) found for the request path '/'
+2026-03-25 20:58:19.503 +05:30 [DBG] Endpoint 'StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC)' with route pattern '' is valid for the request path '/'
+2026-03-25 20:58:19.509 +05:30 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is valid for the request path '/'
+2026-03-25 20:58:19.516 +05:30 [DBG] Request matched endpoint 'StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC)'
+2026-03-25 20:58:19.573 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-03-25 20:58:19.603 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2026-03-25 20:58:19.610 +05:30 [INF] Executing endpoint 'StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC)'
+2026-03-25 20:58:19.865 +05:30 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller StocksAppWithEFC.Controllers.HomeController (StocksAppWithEFC).
+2026-03-25 20:58:19.881 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-03-25 20:58:19.888 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-25 20:58:19.895 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)"]
+2026-03-25 20:58:19.902 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-03-25 20:58:19.908 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-03-25 20:58:19.923 +05:30 [DBG] Executing controller factory for controller StocksAppWithEFC.Controllers.HomeController (StocksAppWithEFC)
+2026-03-25 20:58:20.471 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-03-25 20:58:20.587 +05:30 [DBG] Executed controller factory for controller StocksAppWithEFC.Controllers.HomeController (StocksAppWithEFC)
+2026-03-25 20:58:20.612 +05:30 [INF] Start processing HTTP request GET https://finnhub.io/api/v1/quote?*
+2026-03-25 20:58:20.616 +05:30 [INF] Sending HTTP request GET https://finnhub.io/api/v1/quote?*
+2026-03-25 20:58:23.012 +05:30 [INF] Received HTTP response headers after 2376.3319ms - 200
+2026-03-25 20:58:23.018 +05:30 [INF] End processing HTTP request after 2407.5478ms - 200
+2026-03-25 20:58:23.069 +05:30 [DBG] View lookup cache miss for view 'Index' in controller 'Home'.
+2026-03-25 20:58:23.082 +05:30 [INF] Executing ViewResult, running view Index.
+2026-03-25 20:58:23.103 +05:30 [DBG] The view path '/Views/Home/Index.cshtml' was found in 25.0112ms.
+2026-03-25 20:58:23.310 +05:30 [DBG] Found the endpoints ["StocksAppWithEFC.Controllers.HomeController.PlaceOrder (StocksAppWithEFC)"] for address (action=[PlaceOrder],controller=[Home])
+2026-03-25 20:58:23.326 +05:30 [DBG] Successfully processed template Home/PlaceOrder for StocksAppWithEFC.Controllers.HomeController.PlaceOrder (StocksAppWithEFC) resulting in /Home/PlaceOrder and 
+2026-03-25 20:58:23.331 +05:30 [DBG] Link generation succeeded for endpoints ["StocksAppWithEFC.Controllers.HomeController.PlaceOrder (StocksAppWithEFC)"] with result /Home/PlaceOrder
+2026-03-25 20:58:23.359 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-03-25 20:58:23.635 +05:30 [DBG] Found the endpoints ["StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC)"] for address (action=[Index],controller=[Home])
+2026-03-25 20:58:23.642 +05:30 [DBG] Successfully processed template  for StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC) resulting in  and 
+2026-03-25 20:58:23.645 +05:30 [DBG] Link generation succeeded for endpoints ["StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC)"] with result /
+2026-03-25 20:58:23.656 +05:30 [DBG] Found the endpoints ["StocksAppWithEFC.Controllers.HomeController.Orders (StocksAppWithEFC)"] for address (action=[Orders],controller=[Home])
+2026-03-25 20:58:23.660 +05:30 [DBG] Successfully processed template Home/Orders for StocksAppWithEFC.Controllers.HomeController.Orders (StocksAppWithEFC) resulting in /Home/Orders and 
+2026-03-25 20:58:23.664 +05:30 [DBG] Link generation succeeded for endpoints ["StocksAppWithEFC.Controllers.HomeController.Orders (StocksAppWithEFC)"] with result /Home/Orders
+2026-03-25 20:58:23.692 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-03-25 20:58:23.730 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-03-25 20:58:23.761 +05:30 [INF] Executed ViewResult - view Index executed in 697.5311ms.
+2026-03-25 20:58:23.775 +05:30 [INF] Executed action StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC) in 3862.1074ms
+2026-03-25 20:58:23.783 +05:30 [INF] Executed endpoint 'StocksAppWithEFC.Controllers.HomeController.Index (StocksAppWithEFC)'
+2026-03-25 20:58:23.810 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-03-25 20:58:23.818 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5255/_framework/aspnetcore-browser-refresh.js - null null
+2026-03-25 20:58:23.820 +05:30 [DBG] Connection id "0HNKAGCH4E221" accepted.
+2026-03-25 20:58:23.858 +05:30 [DBG] Connection id "0HNKAGCH4E221" started.
+2026-03-25 20:58:23.846 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-03-25 20:58:23.838 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-03-25 20:58:23.858 +05:30 [DBG] Connection id "0HNKAGCH4E222" accepted.
+2026-03-25 20:58:23.866 +05:30 [DBG] Connection id "0HNKAGCH4E220" completed keep alive response.
+2026-03-25 20:58:23.872 +05:30 [DBG] Connection id "0HNKAGCH4E21V" completed keep alive response.
+2026-03-25 20:58:23.862 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5255/StyleSheet.css - null null
+2026-03-25 20:58:23.887 +05:30 [DBG] Connection id "0HNKAGCH4E222" started.
+2026-03-25 20:58:23.912 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5255/_vs/browserLink - null null
+2026-03-25 20:58:23.908 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5255/ - 200 null text/html; charset=utf-8 5606.3466ms
+2026-03-25 20:58:23.909 +05:30 [DBG] 1 candidate(s) found for the request path '/StyleSheet.css'
+2026-03-25 20:58:23.894 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5255/_framework/aspnetcore-browser-refresh.js - 200 16517 application/javascript; charset=utf-8 75.0396ms
+2026-03-25 20:58:23.975 +05:30 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'StyleSheet.css' for the request path '/StyleSheet.css'
+2026-03-25 20:58:23.986 +05:30 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/StyleSheet.css'
+2026-03-25 20:58:23.993 +05:30 [DBG] Request did not match any endpoints
+2026-03-25 20:58:24.015 +05:30 [INF] The file /StyleSheet.css was not modified
+2026-03-25 20:58:24.017 +05:30 [DBG] Handled. Status code: 304 File: /StyleSheet.css
+2026-03-25 20:58:24.026 +05:30 [DBG] Connection id "0HNKAGCH4E221" completed keep alive response.
+2026-03-25 20:58:24.029 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5255/StyleSheet.css - 304 null text/css 167.0033ms
+2026-03-25 20:58:24.226 +05:30 [DBG] Connection id "0HNKAGCH4E222" completed keep alive response.
+2026-03-25 20:58:24.240 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5255/_vs/browserLink - 200 null text/javascript; charset=UTF-8 328.1022ms
+2026-03-25 20:58:24.336 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5255/favicon.ico - null null
+2026-03-25 20:58:24.342 +05:30 [DBG] 1 candidate(s) found for the request path '/favicon.ico'
+2026-03-25 20:58:24.345 +05:30 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' was rejected by constraint 'path':'Microsoft.AspNetCore.Routing.Constraints.NonFileNameRouteConstraint' with value 'favicon.ico' for the request path '/favicon.ico'
+2026-03-25 20:58:24.356 +05:30 [DBG] Endpoint 'Fallback {*path:nonfile}' with route pattern '{*path:nonfile}' is not valid for the request path '/favicon.ico'
+2026-03-25 20:58:24.361 +05:30 [DBG] Request did not match any endpoints
+2026-03-25 20:58:24.372 +05:30 [DBG] The request path /favicon.ico does not match an existing file
+2026-03-25 20:58:24.374 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+2026-03-25 20:58:24.377 +05:30 [DBG] Connection id "0HNKAGCH4E222" completed keep alive response.
+2026-03-25 20:58:24.379 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5255/favicon.ico - 404 0 null 42.9736ms
+2026-03-25 20:58:24.384 +05:30 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5255/favicon.ico, Response status code: 404

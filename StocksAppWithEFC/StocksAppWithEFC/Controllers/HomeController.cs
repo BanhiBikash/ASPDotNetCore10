@@ -3,6 +3,7 @@ using ServiceContracts;
 using ServiceContracts.DTO;
 using StocksAppWithEFC.Models;
 using Rotativa.AspNetCore;
+using Serilog;
 
 namespace StocksAppWithEFC.Controllers
 {
@@ -11,11 +12,13 @@ namespace StocksAppWithEFC.Controllers
     {
         private readonly IConfiguration _configuration;
         public readonly IStockService _stockService;
+        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(IConfiguration configuration, IStockService stockService)
+        public HomeController(IConfiguration configuration, IStockService stockService, ILogger<HomeController> logger)
         {
             _configuration = configuration;
             _stockService = stockService;
+            _logger = logger;
         }
 
         [Route("/")]
@@ -42,6 +45,8 @@ namespace StocksAppWithEFC.Controllers
         [Route("PlaceOrder")]
         public async Task<IActionResult> PlaceOrder(StockData? stockData)
         {
+            _logger.LogInformation("We are at PlaceOrder of HomeCOntroller");
+
             StockData data;
 
             if (stockData.orderAction == null)

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StocksAppWithEFC")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a24b3880fd36d503370358597e4deb1dd702cb4f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7320e5f7de0764863c2ca576814fe545134656e7")]
 [assembly: System.Reflection.AssemblyProductAttribute("StocksAppWithEFC")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StocksAppWithEFC")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
