@@ -46,13 +46,13 @@ namespace CRUDExample.Controllers
            // _logger.LogDebug($"Search parameters Index of Person controller, ID: {ViewBag.SearchFields[nameof(PersonResponse.PersonID)]}, Name: {ViewBag.SearchFields[nameof(PersonResponse.PersonName)]}, Email: {ViewBag.SearchFields[nameof(PersonResponse.Email)]}, DateOfBirth: {ViewBag.SearchFields[nameof(PersonResponse.DateOfBirth)]}, Gender: {ViewBag.SearchFields[nameof(PersonResponse.Gender)]}, Country: {ViewBag.SearchFields[nameof(PersonResponse.CountryID)]}, Address: {ViewBag.SearchFields[nameof(PersonResponse.Address)]}, ReceiveNewsLetters: {ViewBag.SearchFields[nameof(PersonResponse.ReceiveNewsLetters)]}");
 
             List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
-   ViewBag.CurrentSearchBy = searchBy;
-   ViewBag.CurrentSearchString = searchString;
+   //ViewBag.CurrentSearchBy = searchBy;
+   //ViewBag.CurrentSearchString = searchString;
 
    //Sort
    List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons, sortBy, sortOrder);
-   ViewBag.CurrentSortBy = sortBy;
-   ViewBag.CurrentSortOrder = sortOrder.ToString();
+   //ViewBag.CurrentSortBy = sortBy;
+   //ViewBag.CurrentSortOrder = sortOrder.ToString();
 
    return View(sortedPersons); //Views/Persons/Index.cshtml
   }

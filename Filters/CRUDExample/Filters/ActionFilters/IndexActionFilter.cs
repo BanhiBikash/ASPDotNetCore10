@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using CRUDExample.Controllers;
+using Microsoft.AspNetCore.Mvc.Filters;
+using ServiceContracts.DTO;
+using System.Reflection.PortableExecutable;
 
 namespace CRUDExample.Filters.ActionFilters
 {
@@ -16,12 +19,71 @@ namespace CRUDExample.Filters.ActionFilters
         public void OnActionExecuted(ActionExecutedContext context)
         {
             _logger.LogInformation("Action executed Index Filter");
+
+            //type casting the controller in persons type controller
+            PersonsController personsController = (PersonsController)context.Controller;
+            //string the data from the items to a dictionary type for later use
+            Dictionary<string, object?>? Arguments = (Dictionary<string, object?>?)context.HttpContext.Items["Arguments"];
+
+            //checking if the searchBy paramter is present
+            if (Arguments.ContainsKey("searchBy"))
+            {
+                //storing the data in ViewBag/ViewData
+                personsController.ViewBag.currentSearchBy = Convert.ToString(Arguments["searchBy"]);
+            }
+
+            //checking if the searchstring paramter is present
+            if (Arguments.ContainsKey("searchString"))
+            {
+                //storing the data in ViewBag/ViewData
+                personsController.ViewBag.currentSearchString = Convert.ToString(Arguments["searchString"]); ;
+            }
+
+            //checking if the sortBy paramter is present
+            if (Arguments.ContainsKey("sortBy"))
+            {
+                //storing the data in ViewBag/ViewData
+                personsController.ViewBag.currentSortBy = Convert.ToString(Arguments["sortBy"]);
+            }
+
+            //checking if the sortOrder paramter is present
+            if (Arguments.ContainsKey("sortOrder"))
+            {
+                //storing the data in ViewBag/ViewData
+                personsController.ViewBag.currentSortOrder = Convert.ToString(Arguments["sortOrder"]);
+            }
         }
 
         //Action Executing
         public void OnActionExecuting(ActionExecutingContext context)
         {
             _logger.LogInformation("Action executing Index Filter");
+
+            context.HttpContext.Items["Arguments"] = context.ActionArguments;
+
+            if (context.ActionArguments.ContainsKey("searchBy"))
+            {
+                string? searchBy =  Convert.ToString(context.ActionArguments["searchBy"]);
+
+                List<string> searchByValues = new List<string>() {
+                nameof(PersonResponse.PersonName),
+                nameof (PersonResponse.Gender),
+                nameof(PersonResponse.Address),
+                nameof(PersonResponse.DateOfBirth),
+                nameof(PersonResponse.Email),
+                nameof(PersonResponse.Country)
+                };
+
+                if (!searchByValues.Contains(searchBy))
+                {
+                    context.ActionArguments["searchBy"] = nameof(PersonResponse.PersonName);
+                }
+            }
+
+            if (context.ActionArguments.ContainsKey("searchString"))
+            {
+                string? searchString = Convert.ToString(context.ActionArguments["searchString"]);
+            }
         }
     }
 }
