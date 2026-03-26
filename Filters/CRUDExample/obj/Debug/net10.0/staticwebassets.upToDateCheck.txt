@@ -1,0 +1,10 @@
+C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\wwwroot\jquery.validate.min.js
+C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\wwwroot\jquery.validate.unobtrusive.min.js
+C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\wwwroot\StyleSheet.css
+C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\wwwroot\jquery.min.js
+wwwroot\Rotativa\wkhtmltopdf.exe
+wwwroot\StyleSheet.css
+wwwroot\jquery.min.js
+wwwroot\jquery.validate.min.js
+wwwroot\jquery.validate.unobtrusive.min.js
+wwwroot\logo.png
