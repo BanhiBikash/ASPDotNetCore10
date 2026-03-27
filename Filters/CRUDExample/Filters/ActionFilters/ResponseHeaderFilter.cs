@@ -2,18 +2,21 @@
 
 namespace CRUDExample.Filters.ActionFilters
 {
-    public class ResponseHeaderFilter : IActionFilter
+    public class ResponseHeaderFilter : IActionFilter,IOrderedFilter
     {
 
         private readonly ILogger<ResponseHeaderFilter> _logger;
         private readonly string Key;
         private readonly string Value;
 
-        public ResponseHeaderFilter(ILogger<ResponseHeaderFilter> logger, string key, string value)
+        public int Order { get; set; }
+
+        public ResponseHeaderFilter(ILogger<ResponseHeaderFilter> logger, string key, string value, int order)
         {
             _logger = logger;
             Key = key;
             Value= value;
+            Order = order;
         }
 
         public void OnActionExecuted(ActionExecutedContext context)

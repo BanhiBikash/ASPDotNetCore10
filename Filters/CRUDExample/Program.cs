@@ -1,14 +1,21 @@
+using CRUDExample.Filters.ActionFilters;
 using Entities;
 using Microsoft.EntityFrameworkCore;
+using OfficeOpenXml.Utils;
 using Repositories;
 using Repositries;
 using RespositoryContract;
+using Serilog;
 using ServiceContracts;
 using Services;
-using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllersWithViews();
+
+//creating ilogger
+var logger = builder.Services.BuildServiceProvider().GetService<ILogger<ResponseHeaderFilter>>();
+
+//creating global filters Add(filter1,filter2)
+builder.Services.AddControllersWithViews(options=>options.Filters.Add(new ResponseHeaderFilter(logger,"Global-Key","Global-Value",2)));
 
 builder.Services.AddHttpLogging(options =>
 {
@@ -18,7 +25,7 @@ builder.Services.AddHttpLogging(options =>
 //Logging configuration
 //builder.Logging.ClearProviders().AddConsole().AddDebug();
 
-builder.Host.UseSerilog((HostBuilderContext context,IServiceProvider service,LoggerConfiguration configuration) => 
+builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider service,LoggerConfiguration configuration) => 
 {
     configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(service);
 });

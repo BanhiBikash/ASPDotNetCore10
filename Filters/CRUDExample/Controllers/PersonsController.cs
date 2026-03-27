@@ -9,6 +9,7 @@ using System.IO;
 
 namespace CRUDExample.Controllers
 {
+    [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[]{"PesonControllerKey", "PesonControllerValue",3 })]
     [Route("[controller]")]
     public class PersonsController : Controller
     {
@@ -29,7 +30,7 @@ namespace CRUDExample.Controllers
         [Route("[action]")]
         [Route("/")]
         [TypeFilter(typeof(IndexActionFilter))]
-        [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[]{"Key1","Value1"})]
+        [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[] { "Key1", "Value1", 1 })]
   public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
   {
 
