@@ -2,7 +2,7 @@
 
 namespace CRUDExample.Filters.ActionFilters
 {
-    public class ResponseHeaderFilter : IActionFilter,IOrderedFilter
+    public class ResponseHeaderFilter : IAsyncActionFilter,IOrderedFilter
     {
 
         private readonly ILogger<ResponseHeaderFilter> _logger;
@@ -21,13 +21,19 @@ namespace CRUDExample.Filters.ActionFilters
 
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            _logger.LogInformation("{FilterName}.{MethodName} method", nameof(ResponseHeaderFilter), nameof(OnActionExecuted));
-            context.HttpContext.Response.Headers[Key] = Value;
+          
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
+        }
+
+        public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+        {
             _logger.LogInformation("{FilterName}.{MethodName} method",nameof(ResponseHeaderFilter),nameof(OnActionExecuting));
+            await next();
+            _logger.LogInformation("{FilterName}.{MethodName} method", nameof(ResponseHeaderFilter), nameof(OnActionExecuted));
+            context.HttpContext.Response.Headers[Key] = Value;
         }
     }
 }
