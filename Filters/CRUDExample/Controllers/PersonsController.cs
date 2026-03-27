@@ -9,40 +9,33 @@ using System.IO;
 
 namespace CRUDExample.Controllers
 {
- [Route("[controller]")]
- public class PersonsController : Controller
- {
-  //private fields
-  private readonly IPersonsService _personsService;
-  private readonly ICountriesService _countriesService;
-  private readonly ILogger<PersonsController> _logger;
+    [Route("[controller]")]
+    public class PersonsController : Controller
+    {
+        //private fields
+        private readonly IPersonsService _personsService;
+        private readonly ICountriesService _countriesService;
+        private readonly ILogger<PersonsController> _logger;
 
-  //constructor
-  public PersonsController(IPersonsService personsService, ICountriesService countriesService, ILogger<PersonsController> logger)
-  {
-   _personsService = personsService;
-   _countriesService = countriesService;
-    _logger = logger;
-  }
+        //constructor
+        public PersonsController(IPersonsService personsService, ICountriesService countriesService, ILogger<PersonsController> logger)
+        {
+            _personsService = personsService;
+            _countriesService = countriesService;
+            _logger = logger;
+        }
 
-  //Url: persons/index
-  [Route("[action]")]
-  [Route("/")]
-  [TypeFilter(typeof(IndexActionFilter))]
+        //Url: persons/index
+        [Route("[action]")]
+        [Route("/")]
+        [TypeFilter(typeof(IndexActionFilter))]
+        [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[]{"Key1","Value1"})]
   public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
   {
 
-            _logger.LogInformation("Index Method of Persons COntroller");
+            _logger.LogInformation("Index Method of Persons Controller");
    //Search
-   ViewBag.SearchFields = new Dictionary<string, string>()
-      {
-        { nameof(PersonResponse.PersonName), "Person Name" },
-        { nameof(PersonResponse.Email), "Email" },
-        { nameof(PersonResponse.DateOfBirth), "Date of Birth" },
-        { nameof(PersonResponse.Gender), "Gender" },
-        { nameof(PersonResponse.CountryID), "Country" },
-        { nameof(PersonResponse.Address), "Address" }
-      };
+   
            // _logger.LogDebug($"Search parameters Index of Person controller, ID: {ViewBag.SearchFields[nameof(PersonResponse.PersonID)]}, Name: {ViewBag.SearchFields[nameof(PersonResponse.PersonName)]}, Email: {ViewBag.SearchFields[nameof(PersonResponse.Email)]}, DateOfBirth: {ViewBag.SearchFields[nameof(PersonResponse.DateOfBirth)]}, Gender: {ViewBag.SearchFields[nameof(PersonResponse.Gender)]}, Country: {ViewBag.SearchFields[nameof(PersonResponse.CountryID)]}, Address: {ViewBag.SearchFields[nameof(PersonResponse.Address)]}, ReceiveNewsLetters: {ViewBag.SearchFields[nameof(PersonResponse.ReceiveNewsLetters)]}");
 
             List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
@@ -62,7 +55,8 @@ namespace CRUDExample.Controllers
   //Url: persons/create
   [Route("[action]")]
   [HttpGet]
-  public async Task<IActionResult> Create()
+  [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[] { "Key2", "Value2" })]
+        public async Task<IActionResult> Create()
   {
    List<CountryResponse> countries = await _countriesService.GetAllCountries();
    ViewBag.Countries = countries.Select(temp =>

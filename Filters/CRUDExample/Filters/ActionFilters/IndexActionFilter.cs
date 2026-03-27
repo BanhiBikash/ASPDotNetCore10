@@ -18,7 +18,7 @@ namespace CRUDExample.Filters.ActionFilters
         //Action executed
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            _logger.LogInformation("Action executed Index Filter");
+            _logger.LogInformation("{FilterName}.{MethodName} method", nameof(IndexActionFilter), nameof(OnActionExecuted));
 
             //type casting the controller in persons type controller
             PersonsController personsController = (PersonsController)context.Controller;
@@ -52,12 +52,21 @@ namespace CRUDExample.Filters.ActionFilters
                 //storing the data in ViewBag/ViewData
                 personsController.ViewBag.currentSortOrder = Convert.ToString(Arguments["sortOrder"]);
             }
+            personsController.ViewBag.SearchFields = new Dictionary<string, string>()
+               {{ 
+                    nameof(PersonResponse.PersonName), "Person Name" },
+                { nameof(PersonResponse.Email), "Email" },
+                { nameof(PersonResponse.DateOfBirth), "Date of Birth" },
+                { nameof(PersonResponse.Gender), "Gender" },
+                { nameof(PersonResponse.CountryID), "Country" },
+                { nameof(PersonResponse.Address), "Address" }
+            };
         }
 
         //Action Executing
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            _logger.LogInformation("Action executing Index Filter");
+            _logger.LogInformation("{FilterName}.{MethodName} method",nameof(IndexActionFilter),nameof(OnActionExecuting));
 
             context.HttpContext.Items["Arguments"] = context.ActionArguments;
 
