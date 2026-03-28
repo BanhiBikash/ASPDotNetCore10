@@ -1,4 +1,6 @@
 ﻿using CRUDExample.Filters.ActionFilters;
+using CRUDExample.Filters.AuthorizationFilters;
+using CRUDExample.Filters.ResultFilters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rotativa.AspNetCore;
@@ -31,6 +33,7 @@ namespace CRUDExample.Controllers
         [Route("/")]
         [TypeFilter(typeof(IndexActionFilter))]
         [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[] { "Key1", "Value1", 1 })]
+        [TypeFilter(typeof(IndexResultFilter))]
   public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
   {
 
@@ -56,7 +59,7 @@ namespace CRUDExample.Controllers
   //Url: persons/create
   [Route("[action]")]
   [HttpGet]
-  [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[] { "Key2", "Value2" })]
+  [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[] { "Key2", "Value2",3 })]
         public async Task<IActionResult> Create()
   {
    List<CountryResponse> countries = await _countriesService.GetAllCountries();
@@ -72,20 +75,12 @@ namespace CRUDExample.Controllers
   [HttpPost]
   //Url: persons/create
   [Route("[action]")]
-  public async Task<IActionResult> Create(PersonAddRequest personAddRequest)
+  [TypeFilter(typeof(PersonsCreateandEditFilter))]
+  public async Task<IActionResult> Create(PersonAddRequest personRequest)
   {
-   if (!ModelState.IsValid)
-   {
-    List<CountryResponse> countries = await _countriesService.GetAllCountries();
-    ViewBag.Countries = countries.Select(temp =>
-    new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() });
-
-    ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
-    return View();
-   }
 
    //call the service method
-   PersonResponse personResponse = await _personsService.AddPerson(personAddRequest);
+   PersonResponse personResponse = await _personsService.AddPerson(personRequest);
 
    //navigate to Index() action method (it makes another get request to "persons/index"
    return RedirectToAction("Index", "Persons");
@@ -93,6 +88,7 @@ namespace CRUDExample.Controllers
 
   [HttpGet]
   [Route("[action]/{personID}")] //Eg: /persons/edit/1
+  [TypeFilter(typeof(TokenAuthorizationfilter))]
   public async Task<IActionResult> Edit(Guid personID)
   {
    PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personID);
@@ -113,9 +109,10 @@ namespace CRUDExample.Controllers
 
   [HttpPost]
   [Route("[action]/{personID}")]
-  public async Task<IActionResult> Edit(PersonUpdateRequest personUpdateRequest)
+  [TypeFilter(typeof(PersonsCreateandEditFilter))]
+  public async Task<IActionResult> Edit(PersonUpdateRequest personRequest)
   {
-   PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personUpdateRequest.PersonID);
+   PersonResponse? personResponse = await _personsService.GetPersonByPersonID(personRequest.PersonID);
 
    if (personResponse == null)
    {
@@ -124,16 +121,16 @@ namespace CRUDExample.Controllers
 
    if (ModelState.IsValid)
    {
-    PersonResponse updatedPerson = await _personsService.UpdatePerson(personUpdateRequest);
+    PersonResponse updatedPerson = await _personsService.UpdatePerson(personRequest);
     return RedirectToAction("Index");
    }
    else
    {
-    List<CountryResponse> countries = await _countriesService.GetAllCountries();
-    ViewBag.Countries = countries.Select(temp =>
-    new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() });
+    //List<CountryResponse> countries = await _countriesService.GetAllCountries();
+    //ViewBag.Countries = countries.Select(temp =>
+    //new SelectListItem() { Text = temp.CountryName, Value = temp.CountryID.ToString() });
 
-    ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
+    //ViewBag.Errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage).ToList();
     return View(personResponse.ToPersonUpdateRequest());
    }
   }

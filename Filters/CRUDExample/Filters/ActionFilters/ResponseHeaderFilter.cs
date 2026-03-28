@@ -19,20 +19,11 @@ namespace CRUDExample.Filters.ActionFilters
             Order = order;
         }
 
-        public void OnActionExecuted(ActionExecutedContext context)
-        {
-          
-        }
-
-        public void OnActionExecuting(ActionExecutingContext context)
-        {
-        }
-
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            _logger.LogInformation("{FilterName}.{MethodName} method",nameof(ResponseHeaderFilter),nameof(OnActionExecuting));
+            _logger.LogInformation("{FilterName}.Before method",nameof(ResponseHeaderFilter));
             await next();
-            _logger.LogInformation("{FilterName}.{MethodName} method", nameof(ResponseHeaderFilter), nameof(OnActionExecuted));
+            _logger.LogInformation("{FilterName}.After method", nameof(ResponseHeaderFilter));
             context.HttpContext.Response.Headers[Key] = Value;
         }
     }
