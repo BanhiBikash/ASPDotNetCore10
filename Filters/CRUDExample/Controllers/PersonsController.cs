@@ -1,6 +1,7 @@
 ﻿using CRUDExample.Filters.ActionFilters;
 using CRUDExample.Filters.AuthorizationFilters;
 using CRUDExample.Filters.ResultFilters;
+using CRUDExample.Filters.SkipFilters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rotativa.AspNetCore;
@@ -76,6 +77,7 @@ namespace CRUDExample.Controllers
   //Url: persons/create
   [Route("[action]")]
   [TypeFilter(typeof(PersonsCreateandEditFilter))]
+        //[TypeFilter(typeof(SkipResponseFilter))]
   public async Task<IActionResult> Create(PersonAddRequest personRequest)
   {
 

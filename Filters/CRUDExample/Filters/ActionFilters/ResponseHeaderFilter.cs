@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using CRUDExample.Controllers;
+using CRUDExample.Filters.SkipFilters;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace CRUDExample.Filters.ActionFilters
 {
@@ -21,6 +23,12 @@ namespace CRUDExample.Filters.ActionFilters
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
+            //if the filters list cobtain the skip repsonse filter
+            if (context.Filters.OfType<SkipResponseFilter>().Any())
+            {
+                return;
+            }
+
             _logger.LogInformation("{FilterName}.Before method",nameof(ResponseHeaderFilter));
             await next();
             _logger.LogInformation("{FilterName}.After method", nameof(ResponseHeaderFilter));
