@@ -4,11 +4,21 @@ namespace CRUDExample.Filters.ResultFilters
 {
     public class IndexResultFilterAttribute : Attribute, IFilterFactory
     {
+        private readonly string? _key;
+        private readonly string? _value;
+
+
+        public IndexResultFilterAttribute(string? key, string? value) 
+        { 
+           _key = key;
+           _value = value;
+        }
+
         public bool IsReusable => false;
 
         public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
         {
-            return new IndexResultFilter(serviceProvider.GetService<ILogger<IndexResultFilter>>()) {Key="key", Value = "value" };
+            return new IndexResultFilter(serviceProvider.GetService<ILogger<IndexResultFilter>>()) {Key=_key, Value = _value };
         }
     }
 

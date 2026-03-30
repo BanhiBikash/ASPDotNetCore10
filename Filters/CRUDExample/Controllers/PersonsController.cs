@@ -34,7 +34,7 @@ namespace CRUDExample.Controllers
         [Route("/")]
         [TypeFilter(typeof(IndexActionFilter))]
         [TypeFilter(typeof(ResponseHeaderFilter), Arguments = new object[] { "Key1", "Value1", 1 })]
-        [TypeFilter(typeof(IndexResultFilter))]
+        [IndexResultFilterAttribute("ResultKey","ResultValue")]
   public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName), SortOrderOptions sortOrder = SortOrderOptions.ASC)
   {
 

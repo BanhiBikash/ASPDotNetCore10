@@ -1,4 +1,6 @@
+using CRUDExample;
 using CRUDExample.Filters.ActionFilters;
+using CRUDExample.Filters.ResultFilters;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml.Utils;
@@ -11,37 +13,17 @@ using Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//creating ilogger
-var logger = builder.Services.BuildServiceProvider().GetService<ILogger<ResponseHeaderFilter>>();
+//Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PersonsDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
 
-//creating global filters Add(filter1,filter2)
-builder.Services.AddControllersWithViews(options=>options.Filters.Add(new ResponseHeaderFilter(logger,"Global-Key","Global-Value",2)));
 
-builder.Services.AddHttpLogging(options =>
-{
-    options.LoggingFields = Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.RequestPropertiesAndHeaders | Microsoft.AspNetCore.HttpLogging.HttpLoggingFields.ResponsePropertiesAndHeaders;
-});
+//services
+builder.Services.ConfigureServices(builder.Configuration);
+//services
 
-//Logging configuration
-//builder.Logging.ClearProviders().AddConsole().AddDebug();
-
-builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider service,LoggerConfiguration configuration) => 
+builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider service, LoggerConfiguration configuration) =>
 {
     configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(service);
 });
-
-//add services into IoC container
-builder.Services.AddScoped<ICountriesRespository, CountriesRespository>();
-builder.Services.AddScoped<IPersonsRespository, PersonsRepository>();
-builder.Services.AddScoped<ICountriesService, CountriesService>();
-builder.Services.AddScoped<IPersonsService, PersonsService>();
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
- options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-//Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PersonsDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
 
 var app = builder.Build();
 
