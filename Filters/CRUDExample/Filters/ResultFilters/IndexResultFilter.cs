@@ -2,10 +2,22 @@
 
 namespace CRUDExample.Filters.ResultFilters
 {
+    public class IndexResultFilterAttribute : Attribute, IFilterFactory
+    {
+        public bool IsReusable => false;
+
+        public IFilterMetadata CreateInstance(IServiceProvider serviceProvider)
+        {
+            return new IndexResultFilter(serviceProvider.GetService<ILogger<IndexResultFilter>>()) {Key="key", Value = "value" };
+        }
+    }
+
     public class IndexResultFilter : IAsyncResultFilter
     {
         private readonly ILogger<IndexResultFilter> _logger;
 
+        public string Key { get; set; }
+        public string? Value { get; set; }
         public IndexResultFilter(ILogger<IndexResultFilter> logger) 
         {
             _logger = logger;
