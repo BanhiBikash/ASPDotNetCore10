@@ -1107,6 +1107,10 @@
             "EPPlus": {
               "target": "Package",
               "version": "[8.4.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[10.0.5, )"
             }
           },
           "imports": [

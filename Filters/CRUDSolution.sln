@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.2.11408.102 d18.0
+VisualStudioVersion = 18.2.11408.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDExample", "CRUDExample\CRUDExample.csproj", "{1C89440C-E190-47BD-9CE1-235F4E5B9AFB}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RespositoryContract", "RespositoryContract\RespositoryContract.csproj", "{7D2E5BB7-52A0-412B-96C0-AB5C293E3722}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repositries", "Repositries\Repositries.csproj", "{56C2DBC7-54FA-4C28-B3B2-CE6F4485879B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StocksAppWithFilters", "StocksAppWithFilters\StocksAppWithFilters.csproj", "{B70AE120-4C8C-4838-AFC0-008003724389}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{56C2DBC7-54FA-4C28-B3B2-CE6F4485879B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56C2DBC7-54FA-4C28-B3B2-CE6F4485879B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56C2DBC7-54FA-4C28-B3B2-CE6F4485879B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B70AE120-4C8C-4838-AFC0-008003724389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B70AE120-4C8C-4838-AFC0-008003724389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B70AE120-4C8C-4838-AFC0-008003724389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B70AE120-4C8C-4838-AFC0-008003724389}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

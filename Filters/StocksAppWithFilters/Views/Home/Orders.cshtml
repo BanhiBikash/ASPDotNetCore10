@@ -1,0 +1,74 @@
+﻿@model OrdersList
+
+<a asp-controller="Home" asp-action="PrintPDF">Print PDF</a>
+<div class="orders-wrapper">
+
+    <!-- Buy Order -->
+    <div class="order-container buy-order">
+        <h1>Buy Order</h1>
+
+        @if(Model.BuyOrdersList != null)
+        {
+            <div class="order-box">
+            @foreach(BuyOrderResponse order in Model.BuyOrdersList)
+            {
+                <div class="order-field">
+                    <label>Stock Symbol:</label>
+                    <span>@order.stockSymbol</span>
+                </div>
+                <div class="order-field">
+                    <label>Stock Name:</label>
+                    <span>@order.stockName</span>
+                </div>
+                <div class="order-field">
+                    <label>Order Date:</label>
+                    <span>@order.orderDate:dd-MM-yyyy</span>
+                </div>
+                <div class="order-field">
+                    <label>Quantity:</label>
+                    <span>@order.orderQuantity</span>
+                </div>
+                <div class="order-field">
+                    <label>Price:</label>
+                    <span class="positive">@order.stockPrice</span>
+                </div>
+            }
+            </div>
+        }
+    </div>
+
+    <!-- Sell Order -->
+    <div class="order-container sell-order">
+        <h1>Sell Order</h1>
+
+        @if(Model.SellOrdersList != null)
+        {
+            <div class="order-box">
+            @foreach(SellOrderResponse order in Model.SellOrdersList)
+            {
+                <div class="order-field">
+                    <label>Stock Symbol:</label>
+                    <span>@order.stockSymbol</span>
+                </div>
+                <div class="order-field">
+                    <label>Stock Name:</label>
+                    <span>@order.stockName</span>
+                </div>
+                <div class="order-field">
+                    <label>Order Date:</label>
+                    <span>@order.orderDate:dd-MM-yyyy</span>
+                </div>
+                <div class="order-field">
+                    <label>Quantity:</label>
+                    <span>@order.orderQuantity</span>
+                </div>
+                <div class="order-field">
+                    <label>Price:</label>
+                    <span class="positive">@order.stockPrice</span>
+                </div>
+            }
+            </div>
+        }
+    </div>
+
+</div>

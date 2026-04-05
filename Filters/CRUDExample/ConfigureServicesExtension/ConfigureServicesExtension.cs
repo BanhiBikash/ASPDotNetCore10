@@ -41,7 +41,6 @@ namespace CRUDExample
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
 
-
             return service;
         }
     }
