@@ -1,6 +1,7 @@
 using CRUDExample;
 using CRUDExample.Filters.ActionFilters;
 using CRUDExample.Filters.ResultFilters;
+using CRUDExample.Middlewares;
 using Entities;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml.Utils;
@@ -31,8 +32,12 @@ if (builder.Environment.IsDevelopment())
 {
  app.UseDeveloperExceptionPage();
 }
+else
+{
+    app.UseExceptionHandlingCustomMiddleware();
+}
 
-app.Logger.LogDebug("debug-message");
+    app.Logger.LogDebug("debug-message");
 app.Logger.LogInformation("information-message");
 app.Logger.LogWarning("warning-message");
 app.Logger.LogError("error-message");
