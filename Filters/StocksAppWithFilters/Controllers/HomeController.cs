@@ -20,31 +20,28 @@ namespace StocksAppWithFilters.Controllers
             _configuration = configuration;
         }
 
-        [Route("[Action]")]
-        [Route("/")]
-        public async Task<IActionResult> AllStocks()
+        [Route("[Action]/{stockSymbol}")]
+        public async Task<IActionResult> AllStocks(string? stockSymbol)
         {
-            string? finnhubKey = _configuration.GetValue<string>("finnhubKey");
             string[]? top25Stocks = _configuration.GetSection("StockData:Top25Stocks").Get<string[]>();
-
+            ViewBag.StockSymbol = stockSymbol;
             return View(top25Stocks);
         }
 
         [TypeFilter(typeof(IndexActionFilter))]
-        public async Task<IActionResult> Index()
+        [Route("/")]
+        public async Task<IActionResult> Index(string? stockName, string? stockSymbol)
         {
-            string? companyName = _configuration.GetValue<string>("StockData:StockName");
-            string? companySymbol = _configuration.GetValue<string>("StockData:StockSymbol");
             string? finnhubKey = _configuration.GetValue<string>("finnhubKey");
             StockData? stockData = null;
-            Dictionary<string, object?>? stockQuote = await _stocksService.FetchStockQuote(companySymbol, finnhubKey);
+            Dictionary<string, object?>? stockQuote = await _stocksService.FetchStockQuote(stockSymbol, finnhubKey);
 
             if (stockQuote == null)
             {
                 stockData = new StockData()
                 {
-                    stockName = companyName,
-                    stockSymbol = companySymbol,
+                    stockName = stockName,
+                    stockSymbol = stockSymbol,
                     stockPrice = 0,
                     ErrorMessages = new List<string> { "Failed to fetch stock quote data." }
                 };
@@ -54,8 +51,8 @@ namespace StocksAppWithFilters.Controllers
             {
                 stockData = new StockData
                 {
-                    stockName = companyName,
-                    stockSymbol = companySymbol,
+                    stockName = stockName,
+                    stockSymbol = stockSymbol,
                     stockPrice = stockQuote.ContainsKey("c") && stockQuote["c"] is JsonElement elem ? elem.GetDecimal() : 0m,
                     SuccessMessages = new List<string> { "Stock quote data fetched successfully." }
                 };
@@ -180,6 +177,13 @@ namespace StocksAppWithFilters.Controllers
             };
 
             return new ViewAsPdf("Orders",ordersList,ViewData);
+        }
+
+        [Route("[Action]")]
+        public async Task<IActionResult> CreateStockBox(string stockSymbol)
+        {
+            Dictionary<string, object?>? companyProfile = await _stocksService.FetchCompanyProfile(stockSymbol,_configuration.GetValue<string>("finnhubKey"));
+            return Content("text/html");
         }
     }
 }

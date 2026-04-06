@@ -12,5 +12,6 @@ namespace ServiceContracts
         Task<Dictionary<string,object?>> FetchStockQuote(string? stockSymbol, string? Key);
         Task<List<BuyOrderResponse>?> GetBuyOrderList();
         Task<List<SellOrderResponse>?> GetSellOrderList();
+        Task<Dictionary<string, object?>> FetchCompanyProfile(string stockSymbol, string Key);
     }
 }

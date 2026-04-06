@@ -18,6 +18,12 @@
 </div>
 
 
+@{
+    if (ViewBag.StockSymbol != null)
+    {
+        await Component.InvokeAsync("StockBox", new { stockSymbol = "AAPL" });
+    }
+}
 
 <div class="flex stocks-list">
     <div class="flex-1" id="stocks-list">
@@ -34,16 +40,14 @@
             </div>
 
 
-            <ul class="list">
+            <div id="stockList" class="list">
                 @foreach (string stock in Model)
                 {
-                    <li>
-                            <a class="stock">
-                                <h4>@stock</h4>
+                            <a href="Home/AllStocks/@stock" class="stock">
+                                @stock
                             </a>
-                    </li>
                 }
-            </ul>
+            </div>
 
             @if (Model.Length == 0)
             {
@@ -61,5 +65,19 @@
     </div>
 </div>
 <script>
+   //  console.log("hi");
+   //  let stockcontainer = document.querySelector("#stockList");
+   //  let stocks = document.querySelectorAll(".stock");
 
+   //  stockcontainer.addEventListener("click",(event)=>{
+   //      console.log("clicked")
+
+   //      if(event.target.classList.contains("stock"))
+   //      {
+			// let stocksymbol = event.target.textContent.trim();
+   //          let stockBox = fetch(`/Home/CreateStockBox?stockSymbol=${encodeURIComponent(stockSymbol)}`,method:"GET");
+            
+   //      }
+
+   //  })
 </script>

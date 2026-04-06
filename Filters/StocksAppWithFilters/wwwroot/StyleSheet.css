@@ -15,6 +15,121 @@ body {
     color: #fff;
 }
 
+/* Stock list container */
+#stockList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* spacing between items */
+    margin-top: 15px;
+}
+
+/* Individual stock item */
+.stock {
+    display: block;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+    /* Stock text */
+    .stock{
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    /* Hover effect */
+    .stock:hover {
+        background-color: #f0f8ff;
+        border-color: #4caf50;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+
+    /* Active/selected stock */
+    .stock.active {
+        background-color: #4caf50;
+        color: #fff;
+        border-color: #4caf50;
+    }
+/* Stock card container */
+.stock-card {
+    width: 320px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Header with logo */
+.stock-header {
+    background-color: #000;
+    padding: 20px;
+    text-align: center;
+}
+
+.stock-logo {
+    width: 60px;
+    height: auto;
+}
+
+/* Body content */
+.stock-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.stock-title {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #222;
+}
+
+.stock-sector {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.stock-exchange {
+    margin: 10px 0;
+    font-size: 0.85rem;
+    color: #555;
+}
+
+.stock-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1558d6;
+    margin: 15px 0;
+}
+
+/* Trade button */
+.trade-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+    .trade-btn:hover {
+        background-color: #0056b3;
+    }
+
+
+
 .navbar-brand {
     font-size: 1.2rem;
     font-weight: bold;

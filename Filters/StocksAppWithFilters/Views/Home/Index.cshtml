@@ -1,5 +1,7 @@
 ﻿@model StockData
-
+@{
+    await Component.InvokeAsync("Test");
+}
 <div class="stock-container">
     <h2 class="stock-name">@Model.stockName</h2>
     <p class="stock-symbol">@Model.stockSymbol</p>

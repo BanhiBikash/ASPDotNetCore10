@@ -109,5 +109,30 @@ namespace Services
 
             return sellOrderList;
         }
+
+        public async Task<Dictionary<string,object?>> FetchCompanyProfile(string stockSymbol,string Key)
+        {
+            using (HttpClient httpClient = _contextFactory.CreateClient())
+            {
+                HttpRequestMessage httpRequestMessage = new HttpRequestMessage()
+                {
+                    RequestUri = new Uri($"https://finnhub.io/api/v1/stock/profile2?symbol={stockSymbol}&token={Key}"),
+                    Method = HttpMethod.Get
+                };
+
+                HttpResponseMessage httpResponseMessage = await httpClient.SendAsync(httpRequestMessage);
+
+                if (httpResponseMessage.IsSuccessStatusCode)
+                {
+                    string responseContent = await httpResponseMessage.Content.ReadAsStringAsync();
+                    Dictionary<string, object?>? companyProfile = System.Text.Json.JsonSerializer.Deserialize<Dictionary<string, object?>>(responseContent);
+                    return companyProfile;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }
