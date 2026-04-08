@@ -38,3 +38,5 @@ C:\Users\Banhi\source\repos\aspnetcore\Filters\Services\obj\Debug\net10.0\Servic
 C:\Users\Banhi\source\repos\aspnetcore\Filters\Services\obj\Debug\net10.0\refint\Services.dll
 C:\Users\Banhi\source\repos\aspnetcore\Filters\Services\obj\Debug\net10.0\Services.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Filters\Services\obj\Debug\net10.0\ref\Services.dll
+C:\Users\Banhi\source\repos\aspnetcore\Filters\Services\bin\Debug\net10.0\Exceptions.dll
+C:\Users\Banhi\source\repos\aspnetcore\Filters\Services\bin\Debug\net10.0\Exceptions.pdb

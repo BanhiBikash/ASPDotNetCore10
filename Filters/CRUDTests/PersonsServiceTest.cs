@@ -1,8 +1,10 @@
 ﻿using AutoFixture;
+using Castle.Core.Logging;
 using Entities;
 using EntityFrameworkCoreMock;
 using FluentAssertions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Moq;
 using RespositoryContract;
 using ServiceContracts;
@@ -31,12 +33,15 @@ namespace CRUDTests
         private readonly ITestOutputHelper _testOutputHelper;
         private readonly IFixture _fixture;
 
+        private readonly ILogger<PersonsService> _logger;
+
         //constructor
-        public PersonsServiceTest(ITestOutputHelper testOutputHelper)
+        public PersonsServiceTest(ITestOutputHelper testOutputHelper, ILogger<PersonsService> logger)
         {
             _fixture = new Fixture();
             _personRepositoryMock = new Mock<IPersonsRespository>();
             _personsRepository = _personRepositoryMock.Object;
+            _logger = logger;
 
             var countriesInitialData = new List<Country>() { };
             var personsInitialData = new List<Person>() { };
@@ -56,7 +61,7 @@ namespace CRUDTests
             //Create services based on mocked DbContext object
             _countriesService = new CountriesService(null);
 
-            _personService = new PersonsService(_personsRepository);
+            _personService = new PersonsService(_personsRepository,_logger);
 
             _testOutputHelper = testOutputHelper;
         }

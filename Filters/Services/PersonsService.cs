@@ -13,6 +13,7 @@ using OfficeOpenXml;
 using RespositoryContract;
 using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.Extensions.Logging;
+using Exceptions;
 
 namespace Services
 {
@@ -161,7 +162,7 @@ namespace Services
 
   public async Task<PersonResponse> UpdatePerson(PersonUpdateRequest? personUpdateRequest)
   {
-            _logger.LogInformation("Update Person of Persons Service.");
+    _logger.LogInformation("Update Person of Persons Service.");
 
    if (personUpdateRequest == null)
     throw new ArgumentNullException(nameof(Person));
@@ -171,9 +172,10 @@ namespace Services
 
    //get matching person object to update
    Person? matchingPerson = await _personRepository.GetPersonByPersonID(personUpdateRequest.PersonID);
+
    if (matchingPerson == null)
    {
-    throw new ArgumentException("Given person id doesn't exist");
+        throw new InvalidPersonIDException("Given person id doesn't exist");
    }
 
    matchingPerson = await _personRepository.UpdatePersonByPersonID(personUpdateRequest.ToPerson()); //UPDATE

@@ -32,6 +32,13 @@ namespace StocksAppWithFilters.Controllers
         [Route("/")]
         public async Task<IActionResult> Index(string? stockName, string? stockSymbol)
         {
+
+            if(string.IsNullOrEmpty(stockName) || string.IsNullOrEmpty(stockSymbol))
+            {
+                stockName = _configuration.GetValue<string>("StockData:StockName");
+                stockSymbol = _configuration.GetValue<string>("StockData:StockSymbol");
+            }
+
             string? finnhubKey = _configuration.GetValue<string>("finnhubKey");
             StockData? stockData = null;
             Dictionary<string, object?>? stockQuote = await _stocksService.FetchStockQuote(stockSymbol, finnhubKey);
@@ -184,6 +191,12 @@ namespace StocksAppWithFilters.Controllers
         {
             Dictionary<string, object?>? companyProfile = await _stocksService.FetchCompanyProfile(stockSymbol,_configuration.GetValue<string>("finnhubKey"));
             return Content("text/html");
+        }
+
+        [Route("Error")]
+        public async Task<IActionResult> Error()
+        {
+            return View();
         }
     }
 }

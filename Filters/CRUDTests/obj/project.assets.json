@@ -1615,6 +1615,16 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
+      "Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exceptions.dll": {}
+        }
+      },
       "RespositoryContract/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1648,6 +1658,7 @@
         "dependencies": {
           "CsvHelper": "33.1.0",
           "EPPlus": "8.4.0",
+          "Exceptions": "1.0.0",
           "Microsoft.Extensions.Http": "10.0.5",
           "RespositoryContract": "1.0.0",
           "ServiceContracts": "1.0.0"
@@ -3956,6 +3967,11 @@
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
     },
+    "Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../Exceptions/Exceptions.csproj",
+      "msbuildProject": "../Exceptions/Exceptions.csproj"
+    },
     "RespositoryContract/1.0.0": {
       "type": "project",
       "path": "../RespositoryContract/RespositoryContract.csproj",
@@ -3977,6 +3993,7 @@
       "AutoFixture >= 4.18.1",
       "Entities >= 1.0.0",
       "EntityFrameworkCoreMock.Moq >= 4.0.0",
+      "Exceptions >= 1.0.0",
       "FluentAssertions >= 8.9.0",
       "Microsoft.NET.Test.Sdk >= 18.3.0",
       "Moq >= 4.20.72",
@@ -4022,6 +4039,9 @@
           "projectReferences": {
             "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Filters\\Entities\\Entities.csproj": {
               "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Filters\\Entities\\Entities.csproj"
+            },
+            "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Filters\\Exceptions\\Exceptions.csproj": {
+              "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Filters\\Exceptions\\Exceptions.csproj"
             },
             "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Filters\\RespositoryContract\\RespositoryContract.csproj": {
               "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\Filters\\RespositoryContract\\RespositoryContract.csproj"

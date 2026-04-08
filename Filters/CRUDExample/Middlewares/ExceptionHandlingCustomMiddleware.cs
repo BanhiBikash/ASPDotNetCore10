@@ -29,8 +29,9 @@ namespace CRUDExample.Middlewares
                     _logger.LogError($"{ex.InnerException.GetType().ToString()} : {ex.InnerException.Message.ToString()}");
                 }
 
-                httpContext.Response.StatusCode = 500; // Internal Server Error
-                httpContext.Response.WriteAsync($"An unexpected error occurred: {ex.Message}");
+                //httpContext.Response.StatusCode = 500; // Internal Server Error
+                //httpContext.Response.WriteAsync($"An unexpected error occurred: {ex.Message}");
+                throw;
             }
         }
     }

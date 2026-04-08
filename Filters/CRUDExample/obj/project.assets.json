@@ -1739,6 +1739,16 @@
           "bin/placeholder/Entities.dll": {}
         }
       },
+      "Exceptions/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/Exceptions.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Exceptions.dll": {}
+        }
+      },
       "Repositries/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v10.0",
@@ -1785,6 +1795,7 @@
         "dependencies": {
           "CsvHelper": "33.1.0",
           "EPPlus": "8.4.0",
+          "Exceptions": "1.0.0",
           "RespositoryContract": "1.0.0",
           "ServiceContracts": "1.0.0"
         },
@@ -4510,6 +4521,11 @@
       "type": "project",
       "path": "../Entities/Entities.csproj",
       "msbuildProject": "../Entities/Entities.csproj"
+    },
+    "Exceptions/1.0.0": {
+      "type": "project",
+      "path": "../Exceptions/Exceptions.csproj",
+      "msbuildProject": "../Exceptions/Exceptions.csproj"
     },
     "Repositries/1.0.0": {
       "type": "project",

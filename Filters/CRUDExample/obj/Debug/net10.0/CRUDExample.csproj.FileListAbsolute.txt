@@ -494,3 +494,5 @@ C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\obj\Debug\net10.0\ref
 C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\obj\Debug\net10.0\CRUDExample.pdb
 C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\obj\Debug\net10.0\CRUDExample.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\obj\Debug\net10.0\ref\CRUDExample.dll
+C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\bin\Debug\net10.0\Exceptions.dll
+C:\Users\Banhi\source\repos\aspnetcore\Filters\CRUDExample\bin\Debug\net10.0\Exceptions.pdb

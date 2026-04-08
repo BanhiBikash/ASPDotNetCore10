@@ -175,3 +175,5 @@ C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\obj\Debug\ne
 C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\obj\Debug\net10.0\StocksAppWithFilters.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\obj\Debug\net10.0\ref\StocksAppWithFilters.dll
 C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\bin\Debug\net10.0\Exceptions.dll
+C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\bin\Debug\net10.0\Exceptions.pdb

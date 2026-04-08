@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Entities\Entities.csproj" />
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
     <ProjectReference Include="..\Repositries\Repositries.csproj" />
     <ProjectReference Include="..\RespositoryContract\RespositoryContract.csproj" />
     <ProjectReference Include="..\ServiceContracts\ServiceContracts.csproj" />
