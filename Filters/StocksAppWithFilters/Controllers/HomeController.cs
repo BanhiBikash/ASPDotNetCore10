@@ -6,6 +6,7 @@ using StocksAppWithFilters.Filters.ActionFilters;
 using StocksAppWithFilters.Models;
 using System.Text.Json;
 using Rotativa.AspNetCore;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace StocksAppWithFilters.Controllers
 {
@@ -196,6 +197,7 @@ namespace StocksAppWithFilters.Controllers
         [Route("Error")]
         public async Task<IActionResult> Error()
         {
+            ViewBag.ErrorMessage = HttpContext.Features.Get<IExceptionHandlerPathFeature>().Error.Message;
             return View();
         }
     }

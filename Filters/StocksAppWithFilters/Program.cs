@@ -21,7 +21,18 @@ builder.Services.AddScoped<IStocksService,StocksService>();
 builder.Services.AddScoped<IStocksRepository, StocksRepository>();
 
 var app = builder.Build();
-app.MapControllers();
+
+if (builder.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
+     app.UseExceptionHandlingCustomMiddleware();
+}
+
+    app.MapControllers();
 app.UseStaticFiles();
 
 Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot",wkhtmltopdfRelativePath:"Rotativa");
