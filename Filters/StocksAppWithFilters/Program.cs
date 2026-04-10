@@ -28,8 +28,8 @@ if (builder.Environment.IsDevelopment())
 }
 else
 {
+    app.UseExceptionHandlingCustomMiddleware();
     app.UseExceptionHandler("/Error");
-     app.UseExceptionHandlingCustomMiddleware();
 }
 
     app.MapControllers();

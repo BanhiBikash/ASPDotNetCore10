@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StocksAppWithFilters")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a78db1be4be3c6017f005809344bf1dff60701d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bc1269f5d41af99ada79538ad579a71f63ce9b53")]
 [assembly: System.Reflection.AssemblyProductAttribute("StocksAppWithFilters")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StocksAppWithFilters")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
