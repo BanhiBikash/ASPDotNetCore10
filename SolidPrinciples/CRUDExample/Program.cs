@@ -34,8 +34,8 @@ if (builder.Environment.IsDevelopment())
 }
 else
 {
-    app.UseExceptionHandler("/Error");
     app.UseExceptionHandlingCustomMiddleware();
+    app.UseExceptionHandler("/Error");
 }
 
     app.Logger.LogDebug("debug-message");

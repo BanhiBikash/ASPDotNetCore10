@@ -6,6 +6,7 @@ using RespositoryContract;
 using ServiceContracts;
 using Services;
 using Rotativa;
+using StocksAppWithFilters.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +29,7 @@ if (builder.Environment.IsDevelopment())
 }
 else
 {
-    app.UseExceptionHandlingCustomMiddleware();
+    app.UseCustomExceptionMiddleware();
     app.UseExceptionHandler("/Error");
 }
 

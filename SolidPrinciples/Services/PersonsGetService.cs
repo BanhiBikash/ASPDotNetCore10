@@ -22,10 +22,10 @@ namespace Services
   //private field
   private readonly IPersonsRespository _personRepository;
   private readonly ICountriesRespository _countryRespository;
-        private readonly ILogger<PersonsSortService> _logger;
+        private readonly ILogger<PersonsGetService> _logger;
 
   //constructor
-  public PersonsGetService(IPersonsRespository personsRespository, ILogger<PersonsSortService> logger)
+  public PersonsGetService(IPersonsRespository personsRespository, ILogger<PersonsGetService> logger)
   {
    _personRepository = personsRespository;
    _logger = logger;

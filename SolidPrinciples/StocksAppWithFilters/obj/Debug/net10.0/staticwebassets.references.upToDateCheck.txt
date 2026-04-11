@@ -1,0 +1,1 @@
+C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\staticwebassets.build.json
