@@ -733,7 +733,6 @@ C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\compressed\p72vuk854z-{0}-dd6z7egasc-dd6z7egasc.gz
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\compressed\28hroz56oi-{0}-x0l543ewpl-x0l543ewpl.gz
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\compressed\fe59wvx82e-{0}-42gpqbyvs7-42gpqbyvs7.gz
-C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\compressed\l7tpejtyy5-{0}-bh8vkrh8if-bh8vkrh8if.gz
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\staticwebassets.development.json
@@ -746,3 +745,4 @@ C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\CRUDExample.pdb
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\CRUDExample.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\ref\CRUDExample.dll
+C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\obj\Debug\net10.0\compressed\gzwgjih0ea-{0}-bh8vkrh8if-bh8vkrh8if.gz

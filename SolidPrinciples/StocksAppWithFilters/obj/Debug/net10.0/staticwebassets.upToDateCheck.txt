@@ -1,3 +1,3 @@
-C:\Users\Banhi\source\repos\aspnetcore\Filters\StocksAppWithFilters\wwwroot\StyleSheet.css
 wwwroot\Rotativa\wkhtmltopdf.exe
 wwwroot\StyleSheet.css
+C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\StocksAppWithFilters\wwwroot\StyleSheet.css

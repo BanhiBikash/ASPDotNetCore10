@@ -1,0 +1,1 @@
+C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample\wwwroot\StyleSheet.css
