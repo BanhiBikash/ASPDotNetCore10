@@ -1,0 +1,57 @@
+2026-04-11 12:49:29.749 +05:30 [DBG] debug-message
+2026-04-11 12:49:29.867 +05:30 [INF] information-message
+2026-04-11 12:49:29.876 +05:30 [WRN] warning-message
+2026-04-11 12:49:29.881 +05:30 [ERR] error-message
+2026-04-11 12:49:29.886 +05:30 [FTL] critical-message
+2026-04-11 12:49:30.521 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Countries/UploadFromExcel.cshtml'.
+2026-04-11 12:49:30.531 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Error.cshtml'.
+2026-04-11 12:49:30.533 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Create.cshtml'.
+2026-04-11 12:49:30.547 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Delete.cshtml'.
+2026-04-11 12:49:30.550 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Edit.cshtml'.
+2026-04-11 12:49:30.553 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Index.cshtml'.
+2026-04-11 12:49:30.555 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/PersonsPDF.cshtml'.
+2026-04-11 12:49:30.564 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_GridColumnHeader.cshtml'.
+2026-04-11 12:49:30.575 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-04-11 12:49:30.581 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-04-11 12:49:30.629 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-04-11 12:49:30.731 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-11 12:49:31.361 +05:30 [DBG] Hosting starting
+2026-04-11 12:49:31.422 +05:30 [INF] User profile is available. Using 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-11 12:49:31.469 +05:30 [DBG] Reading data from file 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys\key-213a9e69-f674-451a-87a6-89d04416c0e3.xml'.
+2026-04-11 12:49:31.956 +05:30 [DBG] Found key {213a9e69-f674-451a-87a6-89d04416c0e3}.
+2026-04-11 12:49:32.112 +05:30 [DBG] Considering key {213a9e69-f674-451a-87a6-89d04416c0e3} with expiration date 2026-05-10 15:23:00Z as default key.
+2026-04-11 12:49:32.128 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-11 12:49:32.162 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-11 12:49:32.196 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-11 12:49:32.217 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-11 12:49:32.224 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-11 12:49:32.229 +05:30 [DBG] Using key {213a9e69-f674-451a-87a6-89d04416c0e3} as the default key.
+2026-04-11 12:49:32.235 +05:30 [DBG] Key ring with default key {213a9e69-f674-451a-87a6-89d04416c0e3} was loaded during application startup.
+2026-04-11 12:49:32.266 +05:30 [DBG] Middleware loaded
+2026-04-11 12:49:32.281 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16507 B).
+2026-04-11 12:49:32.284 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-04-11 12:49:32.535 +05:30 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-04-11 12:49:32.544 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-11 12:49:32.555 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-04-11 12:49:32.676 +05:30 [INF] Now listening on: http://localhost:5298
+2026-04-11 12:49:32.681 +05:30 [DBG] Loaded hosting startup assembly CRUDExample
+2026-04-11 12:49:32.686 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-04-11 12:49:32.691 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-04-11 12:49:32.693 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-04-11 12:49:32.753 +05:30 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-04-11 12:49:32.780 +05:30 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-04-11 12:49:32.884 +05:30 [DBG] Connection id "0HNKNJAMRR5AV" received FIN.
+2026-04-11 12:49:32.907 +05:30 [DBG] Connection id "0HNKNJAMRR5AV" accepted.
+2026-04-11 12:49:32.912 +05:30 [DBG] Connection id "0HNKNJAMRR5AV" started.
+2026-04-11 12:49:32.945 +05:30 [DBG] Connection id "0HNKNJAMRR5AV" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-11 12:49:32.956 +05:30 [DBG] Connection id "0HNKNJAMRR5AV" disconnecting.
+2026-04-11 12:49:33.002 +05:30 [DBG] Connection id "0HNKNJAMRR5AV" stopped.
+2026-04-11 12:49:33.051 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-11 12:49:33.055 +05:30 [INF] Hosting environment: Production
+2026-04-11 12:49:33.060 +05:30 [INF] Content root path: C:\Users\Banhi\source\repos\aspnetcore\SolidPrinciples\CRUDExample
+2026-04-11 12:49:33.062 +05:30 [DBG] Hosting started
+2026-04-11 12:49:37.662 +05:30 [DBG] Connection id "0HNKNJAMRR5B0" accepted.
+2026-04-11 12:49:37.668 +05:30 [DBG] Connection id "0HNKNJAMRR5B0" started.
+2026-04-11 12:49:38.017 +05:30 [DBG] Connection id "0HNKNJAMRR5B1" accepted.
+2026-04-11 12:49:38.033 +05:30 [DBG] Connection id "0HNKNJAMRR5B1" started.
+2026-04-11 12:49:38.117 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5298/ - null null
