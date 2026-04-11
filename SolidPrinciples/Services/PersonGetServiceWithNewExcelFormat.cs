@@ -1,10 +1,11 @@
-﻿using OfficeOpenXml;
+﻿using Microsoft.Extensions.Logging;
+using OfficeOpenXml;
+using RespositoryContract;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using RespositoryContract;
 
 namespace Services
 {
@@ -12,11 +13,13 @@ namespace Services
     {
         private readonly PersonsGetService _personGetService;
         private readonly IPersonsRespository _personRepository;
+        private readonly ILogger<PersonsGetService> _logger;
 
-        public PersonGetServiceWithNewExcelFormat(PersonsGetService personGetService,IPersonsRespository personRepository)
+        public PersonGetServiceWithNewExcelFormat(PersonsGetService personGetService,IPersonsRespository personRepository, ILogger<PersonsGetService> logger)
         {
             _personGetService = personGetService;
             _personRepository = personRepository;
+            _logger = logger;
         }
         public async Task<List<PersonResponse>> GetAllPersons()
         {
