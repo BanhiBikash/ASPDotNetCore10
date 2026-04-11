@@ -36,7 +36,7 @@ namespace CRUDExample
             service.AddScoped<IPersonsSortService, PersonsSortService>();
             service.AddScoped<IPersonsDeleteService, PersonsDeleteService>();
             service.AddScoped<IPersonsAddService, PersonsAddService>();
-            service.AddScoped<IPersonsGetService, PersonsGetService>();
+            service.AddScoped<IPersonsGetService, PersonGetServiceWithNewExcelFormat>();
             service.AddScoped<IPersonsUpdateService, PersonsUpdateService>();
             service.AddTransient<IndexResultFilter>();
 
