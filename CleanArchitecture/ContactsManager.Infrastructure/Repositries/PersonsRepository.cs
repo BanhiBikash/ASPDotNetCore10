@@ -1,8 +1,9 @@
-﻿using RespositoryContract;
+﻿using ContactsManager.Domain.RepositoryContracts;
 using Microsoft.EntityFrameworkCore;
-using Entities;
+using ContactsManager.Domain.Entities;
 using System.Linq.Expressions;
 using Microsoft.Extensions.Logging;
+using ContactsManager.Infrastructure.DBContext;
 
 namespace Repositories
 {

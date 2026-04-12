@@ -1,5 +1,5 @@
-﻿using Entities;
-using RespositoryContract;
+﻿using ContactsManager.Domain.Entities;
+using ContactsManager.Domain.RepositoryContracts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Repositries

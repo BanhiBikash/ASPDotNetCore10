@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
+using Microsoft.Data.SqlClient;
 using ContactsManager.Domain.Entities;
 
-namespace DBContext
+namespace ContactsManager.Infrastructure.DBContext
 {
     public class ApplicationDbContext : DbContext
     {

@@ -1,4 +1,4 @@
-﻿using Entities;
+﻿using ContactsManager.Domain.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;

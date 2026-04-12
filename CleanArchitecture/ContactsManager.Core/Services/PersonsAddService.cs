@@ -1,21 +1,22 @@
 ﻿using System;
-using Entities;
+using ContactsManager.Domain.Entities;
 using ContactsManager.Core.DTO;
 using ServiceContracts;
 using Services.Helpers;
 using ServiceContracts.Enums;
-using Microsoft.EntityFrameworkCore;
+//using Microsoft.EntityFrameworkCore;
 using CsvHelper;
 using System.Globalization;
 using System.IO;
 using CsvHelper.Configuration;
 using OfficeOpenXml;
-using RespositoryContract;
-using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
+using ContactsManager.Domain.RepositoryContracts;
+//using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.Extensions.Logging;
-using Exceptions;
+using ContactsManager.Exceptions;
+using ContactsManager.Core.ServiceContracts;
 
-namespace Services
+namespace ContactsManager.Core.Services
 {
  public class PersonsAddService : IPersonsAddService
  {

@@ -1,13 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 using OfficeOpenXml;
-using RespositoryContract;
-using ServiceContracts;
+using ContactsManager.Domain.RepositoryContracts;
+using ContactsManager.Core.Services;
 using ContactsManager.Core.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ContactsManager.Core.ServiceContracts;
 
-namespace Services
+namespace ContactsManager.Core.Services
 {
     public class PersonGetServiceWithNewExcelFormat : IPersonsGetService
     {
