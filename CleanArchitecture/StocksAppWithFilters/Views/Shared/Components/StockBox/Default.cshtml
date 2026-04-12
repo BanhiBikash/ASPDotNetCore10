@@ -1,0 +1,17 @@
+﻿@model Dictionary<string, object?>
+
+<h1>Hi</h1>
+<form class="stock-card" method="post" enctype="multipart/form-data" asp-controller="Home" asp-action="Index">
+	<input name="stockSymbol" value=@Model["ticker"] hidden />
+	<input name="stockName" value=@Model["name"] hidden />
+    <div class="stock-header">
+        <img src="apple-logo.png" alt="Apple Logo" class="stock-logo">
+    </div>
+    <div class="stock-body">
+        <h2 class="stock-title">@Convert.ToString(Model["name"])</h2>
+        <span class="stock-sector">@Convert.ToString(Model["finnhubIndustry"])</span>
+        <p class="stock-exchange">@Convert.ToString(Model["exchange"])</p>
+        <p class="stock-price">@Convert.ToString(Model["exchange"])</p>
+        <button type="submit" class="trade-btn">Trade Now</button>
+    </div>
+</form>

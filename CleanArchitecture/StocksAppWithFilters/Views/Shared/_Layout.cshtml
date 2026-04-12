@@ -1,0 +1,27 @@
+﻿﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/StyleSheet.css" />
+</head>
+<body>
+
+    <nav class="navbar">
+        @* links *@
+        <div>
+            <a asp-controller="Home" asp-action="Index" class="navbar-brand">Stock Trader</a>
+            <a asp-controller="Home" asp-action="Orders">Orders</a>
+        </div>
+
+        @* search *@
+        <form class="search-form">
+            <input type="text" placeholder="Search stocks..." />
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+
+    @RenderBody();
+
+</body>
+</html>
