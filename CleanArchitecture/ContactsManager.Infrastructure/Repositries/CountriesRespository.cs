@@ -1,8 +1,9 @@
 ﻿using ContactsManager.Domain.Entities;
 using ContactsManager.Domain.RepositoryContracts;
 using Microsoft.EntityFrameworkCore;
+using ContactsManager.Infrastructure.DBContext;
 
-namespace Repositries
+namespace ContactsManager.Infrastructure.Repositories
 {
     public class CountriesRespository : ICountriesRespository
     {

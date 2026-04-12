@@ -1,4 +1,4 @@
-﻿using ServiceContracts.Enums;
+﻿using ContactsManager.Core.ServiceContracts.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

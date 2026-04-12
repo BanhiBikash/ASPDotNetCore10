@@ -1,12 +1,11 @@
 ﻿using ContactsManager.Domain.Entities;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using OfficeOpenXml;
-using ServiceContracts;
 using ContactsManager.Core.DTO;
-using RespositoryContract;
+using ContactsManager.Domain.RepositoryContracts;
+using ContactsManager.Core.ServiceContracts;
 
-namespace Services
+namespace ContactsManager.Core.Services
 {
  public class CountriesService : ICountriesService
  {

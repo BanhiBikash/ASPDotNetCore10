@@ -1,22 +1,49 @@
+using ContactsManager.UI.Middlewares;
+using Microsoft.EntityFrameworkCore;
+using Serilog;
+using ContactsManager.UI.ConfigureServicesExtension;
+using Serilog.Sinks.SystemConsole;
+using Serilog.Sinks.File;
+using Serilog.Sinks.Seq;
+using Serilog.Sinks.MSSqlServer;
+using Serilog.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddRazorPages();
+//Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PersonsDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+
+
+//services
+builder.Services.ConfigureServices(builder.Configuration);
+//services
+
+builder.Host.UseSerilog((HostBuilderContext context, IServiceProvider service, LoggerConfiguration configuration) =>
+{
+    configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(service);
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (builder.Environment.IsDevelopment())
 {
+ app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandlingCustomMiddleware();
     app.UseExceptionHandler("/Error");
 }
 
-app.UseRouting();
+    app.Logger.LogDebug("debug-message");
+app.Logger.LogInformation("information-message");
+app.Logger.LogWarning("warning-message");
+app.Logger.LogError("error-message");
+app.Logger.LogCritical("critical-message");
 
-app.UseAuthorization();
+Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 
-app.MapStaticAssets();
-app.MapRazorPages()
-   .WithStaticAssets();
+app.UseStaticFiles();
+app.MapControllers();
+app.UseHttpLogging();
 
 app.Run();

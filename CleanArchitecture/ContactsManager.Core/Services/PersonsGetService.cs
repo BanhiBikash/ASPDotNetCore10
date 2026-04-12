@@ -1,20 +1,15 @@
 ﻿using System;
 using ContactsManager.Domain.Entities;
 using ContactsManager.Core.DTO;
-using ServiceContracts;
-using Services.Helpers;
-using ServiceContracts.Enums;
+using ContactsManager.Core.ServiceContracts;
 //using Microsoft.EntityFrameworkCore;
 using CsvHelper;
 using System.Globalization;
-using System.IO;
 using CsvHelper.Configuration;
 using OfficeOpenXml;
 using ContactsManager.Domain.RepositoryContracts;
 //using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using Microsoft.Extensions.Logging;
-using ContactsManager.Exceptions;
-using ContactsManager.Core.ServiceContracts;
 
 namespace ContactsManager.Core.Services
 {

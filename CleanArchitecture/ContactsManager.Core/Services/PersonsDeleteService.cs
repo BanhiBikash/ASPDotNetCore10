@@ -1,9 +1,9 @@
 ﻿using System;
 using ContactsManager.Domain.Entities;
 using ContactsManager.Core.DTO;
-using ServiceContracts;
+using ContactsManager.Core.ServiceContracts;
 using Services.Helpers;
-using ServiceContracts.Enums;
+using ContactsManager.Core.ServiceContracts.Enums;
 //using Microsoft.EntityFrameworkCore;
 using CsvHelper;
 using System.Globalization;

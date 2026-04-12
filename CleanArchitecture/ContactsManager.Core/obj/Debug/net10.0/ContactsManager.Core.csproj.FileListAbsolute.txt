@@ -1,0 +1,13 @@
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\bin\Debug\net10.0\ContactsManager.Core.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\bin\Debug\net10.0\ContactsManager.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\bin\Debug\net10.0\ContactsManager.Core.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.csproj.AssemblyReference.cache
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\refint\ContactsManager.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ContactsManager.Core.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Core\obj\Debug\net10.0\ref\ContactsManager.Core.dll

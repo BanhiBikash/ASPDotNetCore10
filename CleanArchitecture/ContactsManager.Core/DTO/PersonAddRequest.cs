@@ -1,4 +1,4 @@
-﻿using ServiceContracts.Enums;
+﻿using ContactsManager.Core.ServiceContracts.Enums;
 using ContactsManager.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 

@@ -1,0 +1,16 @@
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\bin\Debug\net10.0\ContactsManager.Infrastructure.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\bin\Debug\net10.0\ContactsManager.Infrastructure.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\bin\Debug\net10.0\ContactsManager.Infrastructure.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\bin\Debug\net10.0\ContactsManager.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\bin\Debug\net10.0\ContactsManager.Core.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\Contacts.2BC572B3.Up2Date
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\refint\ContactsManager.Infrastructure.dll
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ContactsManager.Infrastructure.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.Infrastructure\obj\Debug\net10.0\ref\ContactsManager.Infrastructure.dll

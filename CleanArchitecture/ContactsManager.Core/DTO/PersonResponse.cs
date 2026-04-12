@@ -1,5 +1,5 @@
 ﻿using ContactsManager.Domain.Entities;
-using ServiceContracts.Enums;
+using ContactsManager.Core.ServiceContracts.Enums;
 
 namespace ContactsManager.Core.DTO
 {

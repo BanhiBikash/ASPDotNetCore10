@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using Microsoft.Extensions.Logging;
 using ContactsManager.Infrastructure.DBContext;
 
-namespace Repositories
+namespace ContactsManager.Infrastructure.Repositories
 {
     public class PersonsRepository : IPersonsRespository
     {

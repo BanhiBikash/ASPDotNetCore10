@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ServiceContracts.Enums
+namespace ContactsManager.Core.ServiceContracts.Enums
 {
   public enum SortOrderOptions
   {
