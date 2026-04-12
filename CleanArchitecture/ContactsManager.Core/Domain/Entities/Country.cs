@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Entities
+namespace ContactsManager.Domain.Entities
 {
   /// <summary>
   /// Domain Model for Country

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Repositries")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ae784a37d82bb21752483a1c3591ee7e3d9df47b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df269b2f05c48c6a237462d26f001247b4707ce1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Repositries")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Repositries")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
