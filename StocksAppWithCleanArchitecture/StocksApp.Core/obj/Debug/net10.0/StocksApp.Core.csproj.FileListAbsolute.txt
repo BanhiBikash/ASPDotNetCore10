@@ -1,0 +1,15 @@
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\bin\Debug\net10.0\StocksApp.Core.deps.json
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\bin\Debug\net10.0\StocksApp.Core.runtimeconfig.json
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\bin\Debug\net10.0\StocksApp.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\bin\Debug\net10.0\StocksApp.Core.pdb
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.csproj.AssemblyReference.cache
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.AssemblyInfoInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.AssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.csproj.CoreCompileInputs.cache
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.sourcelink.json
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\refint\StocksApp.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.pdb
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\StocksApp.Core.genruntimeconfig.cache
+C:\Users\Banhi\source\repos\aspnetcore\StocksAppWithCleanArchitecture\StocksApp.Core\obj\Debug\net10.0\ref\StocksApp.Core.dll

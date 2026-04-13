@@ -1,3 +1,7 @@
 <Solution>
-  <Project Path="StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture.csproj" />
+  <Folder Name="/src/">
+    <Project Path="StocksApp.Core/StocksApp.Core.csproj" />
+    <Project Path="StocksApp.Infrastructure/StocksApp.Infrastructure.csproj" />
+    <Project Path="StocksAppWithCleanArchitecture/StocksApp.UI.csproj" />
+  </Folder>
 </Solution>

@@ -21,3 +21,43 @@ build_property.MSBuildProjectDirectory = C:\Users\Banhi\source\repos\aspnetcore\
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Home/AllStocks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBbGxTdG9ja3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Home/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Home/Orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPcmRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Shared/Components/StockBox/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU3RvY2tCb3hcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Shared/Components/Test/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVzdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Banhi/source/repos/aspnetcore/StocksAppWithCleanArchitecture/StocksAppWithCleanArchitecture/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

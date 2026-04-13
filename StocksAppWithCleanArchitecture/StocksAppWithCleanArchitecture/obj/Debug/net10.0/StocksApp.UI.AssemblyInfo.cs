@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("d1be6f34-bc68-471a-8db3-a95d5b87c00e")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("StocksApp.UI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+88e5f530d868bb20fd96f7fb2a04393ea8d4a6d6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4bded721bdc213acac0a6280d96f9dd538380796")]
 [assembly: System.Reflection.AssemblyProductAttribute("StocksApp.UI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StocksApp.UI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

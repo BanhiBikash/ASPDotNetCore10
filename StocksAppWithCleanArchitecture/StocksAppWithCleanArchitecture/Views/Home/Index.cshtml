@@ -1,0 +1,37 @@
+﻿@model StockData
+@{
+    await Component.InvokeAsync("Test");
+}
+<div class="stock-container">
+    <h2 class="stock-name">@Model.stockName</h2>
+    <p class="stock-symbol">@Model.stockSymbol</p>
+    <p class="stock-price">Price: @Model.stockPrice</p>
+
+    <form asp-controller="Home" asp-action="PlaceOrder" class="order-section" method="post" enctype="multipart/form-data">
+
+        @* hidden inputs *@
+        <input name="stockName" value=@Model.stockName hidden/>
+        <input name="stockSymbol" value=@Model.stockSymbol hidden />
+        <input name="stockPrice" value=@Model.stockPrice hidden />
+
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" value="100" name="orderQuantity" class="order-input" />
+
+        <div class="order-buttons">
+            <button type="submit" class="btn btn-sell" name="orderAction" value="sell">Sell</button>
+            <button type="submit" class="btn btn-buy" name="orderAction" value="buy">Buy</button>
+        </div>
+    </form>
+
+    @* Success Message *@
+    @if(Model.SuccessMessages != null)
+    {
+        <div style="color:green">@foreach (string msg in Model.SuccessMessages) {<span>@msg</span> }</div>
+    }
+
+    @* Error Message *@
+    @if (Model.ErrorMessages != null)
+    {
+        <div style="color:red">@foreach (string msg in Model.ErrorMessages) {<span>@msg</span>}</div>
+    }
+</div>

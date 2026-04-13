@@ -1,9 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>d1be6f34-bc68-471a-8db3-a95d5b87c00e</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StocksApp.Core\StocksApp.Core.csproj" />
+    <ProjectReference Include="..\StocksApp.Infrastructure\StocksApp.Infrastructure.csproj" />
+  </ItemGroup>
 
 </Project>
