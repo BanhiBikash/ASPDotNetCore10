@@ -6,6 +6,9 @@ using ContactsManager.Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
 using ContactsManager.Domain.RepositoryContracts;
 using ContactsManager.Infrastructure.DBContext;
+using ContactsManager.Core.Domain.IdentityEntities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace ContactsManager.UI.ConfigureServicesExtension
 {
@@ -42,6 +45,13 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+
+            //use identity
+            service.AddIdentity<ApplicationUser, ApplicationRole>().
+                AddDefaultTokenProviders(). //token for otps etc
+                AddEntityFrameworkStores<ApplicationDbContext>().   //setting the db context/telling the database name
+                AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>().    //cause db can't be accessed directly so repository for UserTable
+                AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>(); //cause db can't be accessed directly so repository for RoleTable
 
             return service;
         }

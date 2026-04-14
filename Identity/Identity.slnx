@@ -1,8 +1,8 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="ContactsManager.Core/ContactsManager.Core.csproj" />
-    <Project Path="ContactsManager.Infrastructure/ContactsManager.Infrastructure.csproj" />
-    <Project Path="ContactsManager.UI/ContactsManager.UI.csproj" />
+    <Project Path="../CleanArchitecture/ContactsManager.Core/ContactsManager.Core.csproj" />
+    <Project Path="../CleanArchitecture/ContactsManager.Infrastructure/ContactsManager.Infrastructure.csproj" />
+    <Project Path="../CleanArchitecture/ContactsManager.UI/ContactsManager.UI.csproj" />
   </Folder>
   <Folder Name="/test/" />
 </Solution>
