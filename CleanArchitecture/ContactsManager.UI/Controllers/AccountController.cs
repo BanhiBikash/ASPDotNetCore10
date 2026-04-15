@@ -74,12 +74,22 @@ namespace ContactsManager.UI.Controllers
             return View();
         }
 
-        //[Route("[Action]")]
-        //[HttpPost]
-        //[TypeFilter(typeof(LoginActionFilter))]
-        //public async Task<IActionResult> Login(LoginDTO loginDTO)
-        //{
+        [Route("[Action]")]
+        [HttpPost]
+        [TypeFilter(typeof(LoginActionFilter))]
+        public async Task<IActionResult> Login(LoginDTO loginDTO)
+        {
+            var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password, isPersistent: false, lockoutOnFailure: false);
 
-        //}
+            if (result.Succeeded)
+            {
+                return RedirectToAction(nameof(PersonsController.Index),"Persons");
+            }
+            else
+            {
+                ViewBag.Error = new List<string>() { "Login Failed! Check Email and Password" };
+                return View(loginDTO);
+            }
+        }
     }
 }
