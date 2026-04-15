@@ -18,25 +18,8 @@ namespace ContactsManager.UI.Filters.ActionFilters
             }
             else          //checked if the registerDTO is null or any of its properties are null or empty
             {
+                //Action Arguments will be of type object, so we need to cast it to RegisterDTO
                 var registerDTO = context.ActionArguments["registerDTO"] as RegisterDTO;
-
-                //List<string>? Errors = null;
-
-                //foreach (var property in typeof(RegisterDTO).GetProperties())
-                //{
-
-                //    var value = property.GetValue(registerDTO) as string;
-                //    if (string.IsNullOrEmpty(value))
-                //    {
-                //        Errors.Add($"{property.Name} is required.");
-                //    }
-                //}
-
-                //if (Errors != null && Errors.Count > 0)
-                //{
-                //    controller.ViewData["Errors"] = Errors;
-                //    context.Result = controller.View("Register");
-                //}
 
                 //use model state to validate the registerDTO
                 if (!controller.ModelState.IsValid)

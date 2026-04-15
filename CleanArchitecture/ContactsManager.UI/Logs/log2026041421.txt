@@ -566,3 +566,828 @@ System.InvalidOperationException: Unable to resolve service for type 'Microsoft.
 2026-04-14 21:08:23.651 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 47.7659ms
 2026-04-14 21:08:23.677 +05:30 [DBG] Connection id "0HNKQ7F2BV9KB" completed keep alive response.
 2026-04-14 21:08:23.683 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.8226ms
+2026-04-14 21:12:10.580 +05:30 [DBG] debug-message
+2026-04-14 21:12:10.716 +05:30 [INF] information-message
+2026-04-14 21:12:10.720 +05:30 [WRN] warning-message
+2026-04-14 21:12:10.721 +05:30 [ERR] error-message
+2026-04-14 21:12:10.723 +05:30 [FTL] critical-message
+2026-04-14 21:12:10.948 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Account/Register.cshtml'.
+2026-04-14 21:12:10.958 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Countries/UploadFromExcel.cshtml'.
+2026-04-14 21:12:10.959 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Error.cshtml'.
+2026-04-14 21:12:10.961 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Create.cshtml'.
+2026-04-14 21:12:10.962 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Delete.cshtml'.
+2026-04-14 21:12:10.967 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Edit.cshtml'.
+2026-04-14 21:12:10.981 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Index.cshtml'.
+2026-04-14 21:12:10.982 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/PersonsPDF.cshtml'.
+2026-04-14 21:12:10.983 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_GridColumnHeader.cshtml'.
+2026-04-14 21:12:10.988 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-04-14 21:12:10.992 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-04-14 21:12:10.994 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-04-14 21:12:11.088 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-14 21:12:11.316 +05:30 [DBG] Hosting starting
+2026-04-14 21:12:11.354 +05:30 [INF] User profile is available. Using 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-14 21:12:11.409 +05:30 [DBG] Reading data from file 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys\key-213a9e69-f674-451a-87a6-89d04416c0e3.xml'.
+2026-04-14 21:12:11.469 +05:30 [DBG] Found key {213a9e69-f674-451a-87a6-89d04416c0e3}.
+2026-04-14 21:12:11.514 +05:30 [DBG] Considering key {213a9e69-f674-451a-87a6-89d04416c0e3} with expiration date 2026-05-10 15:23:00Z as default key.
+2026-04-14 21:12:11.529 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-14 21:12:11.538 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-14 21:12:11.548 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-14 21:12:11.560 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-14 21:12:11.569 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-14 21:12:11.575 +05:30 [DBG] Using key {213a9e69-f674-451a-87a6-89d04416c0e3} as the default key.
+2026-04-14 21:12:11.579 +05:30 [DBG] Key ring with default key {213a9e69-f674-451a-87a6-89d04416c0e3} was loaded during application startup.
+2026-04-14 21:12:11.600 +05:30 [DBG] Middleware loaded
+2026-04-14 21:12:11.613 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16521 B).
+2026-04-14 21:12:11.617 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-04-14 21:12:11.758 +05:30 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-04-14 21:12:11.763 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-14 21:12:11.769 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-04-14 21:12:11.832 +05:30 [INF] Now listening on: http://localhost:5012
+2026-04-14 21:12:11.834 +05:30 [DBG] Loaded hosting startup assembly ContactsManager.UI
+2026-04-14 21:12:11.834 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-04-14 21:12:11.835 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-04-14 21:12:11.837 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-04-14 21:12:11.857 +05:30 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-04-14 21:12:11.860 +05:30 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-04-14 21:12:11.995 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-14 21:12:11.999 +05:30 [DBG] Connection id "0HNKQ7HIJD3HC" accepted.
+2026-04-14 21:12:12.004 +05:30 [INF] Hosting environment: Development
+2026-04-14 21:12:12.003 +05:30 [DBG] Connection id "0HNKQ7HIJD3HC" received FIN.
+2026-04-14 21:12:12.036 +05:30 [DBG] Connection id "0HNKQ7HIJD3HC" started.
+2026-04-14 21:12:12.037 +05:30 [INF] Content root path: C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI
+2026-04-14 21:12:12.045 +05:30 [DBG] Hosting started
+2026-04-14 21:12:12.067 +05:30 [DBG] Connection id "0HNKQ7HIJD3HC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-14 21:12:12.075 +05:30 [DBG] Connection id "0HNKQ7HIJD3HC" disconnecting.
+2026-04-14 21:12:12.088 +05:30 [DBG] Connection id "0HNKQ7HIJD3HC" stopped.
+2026-04-14 21:12:13.309 +05:30 [DBG] Connection id "0HNKQ7HIJD3HD" accepted.
+2026-04-14 21:12:13.313 +05:30 [DBG] Connection id "0HNKQ7HIJD3HD" started.
+2026-04-14 21:12:13.501 +05:30 [DBG] Connection id "0HNKQ7HIJD3HE" accepted.
+2026-04-14 21:12:13.512 +05:30 [DBG] Connection id "0HNKQ7HIJD3HE" started.
+2026-04-14 21:12:13.529 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/ - null null
+2026-04-14 21:12:14.054 +05:30 [DBG] 1 candidate(s) found for the request path '/'
+2026-04-14 21:12:14.057 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)' with route pattern '' is valid for the request path '/'
+2026-04-14 21:12:14.061 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-04-14 21:12:14.148 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-14 21:12:14.160 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-14 21:12:14.170 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+If-Modified-Since: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-14 21:12:14.175 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-04-14 21:12:14.354 +05:30 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions) on controller ContactsManager.UI.Controllers.PersonsController (ContactsManager.UI).
+2026-04-14 21:12:14.383 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-14 21:12:14.386 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-14 21:12:14.394 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 3)","ContactsManager.UI.Filters.ActionFilters.IndexActionFilter","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 1)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-14 21:12:14.404 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-14 21:12:14.406 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter","ContactsManager.UI.Filters.ResultFilters.IndexResultFilter"]
+2026-04-14 21:12:14.423 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.PersonsController (ContactsManager.UI)
+2026-04-14 21:12:14.713 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-14 21:12:14.829 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.PersonsController (ContactsManager.UI)
+2026-04-14 21:12:14.852 +05:30 [DBG] Attempting to bind parameter 'searchBy' of type 'System.String' ...
+2026-04-14 21:12:14.862 +05:30 [DBG] Attempting to bind parameter 'searchBy' of type 'System.String' using the name '' in request data ...
+2026-04-14 21:12:14.867 +05:30 [DBG] Could not find a value in the request with name '' for binding parameter 'searchBy' of type 'System.String'.
+2026-04-14 21:12:14.871 +05:30 [DBG] Done attempting to bind parameter 'searchBy' of type 'System.String'.
+2026-04-14 21:12:14.874 +05:30 [DBG] Done attempting to bind parameter 'searchBy' of type 'System.String'.
+2026-04-14 21:12:14.875 +05:30 [DBG] Attempting to validate the bound parameter 'searchBy' of type 'System.String' ...
+2026-04-14 21:12:14.895 +05:30 [DBG] Done attempting to validate the bound parameter 'searchBy' of type 'System.String'.
+2026-04-14 21:12:14.899 +05:30 [DBG] Attempting to bind parameter 'searchString' of type 'System.String' ...
+2026-04-14 21:12:14.900 +05:30 [DBG] Attempting to bind parameter 'searchString' of type 'System.String' using the name '' in request data ...
+2026-04-14 21:12:14.903 +05:30 [DBG] Could not find a value in the request with name '' for binding parameter 'searchString' of type 'System.String'.
+2026-04-14 21:12:14.904 +05:30 [DBG] Done attempting to bind parameter 'searchString' of type 'System.String'.
+2026-04-14 21:12:14.906 +05:30 [DBG] Done attempting to bind parameter 'searchString' of type 'System.String'.
+2026-04-14 21:12:14.907 +05:30 [DBG] Attempting to validate the bound parameter 'searchString' of type 'System.String' ...
+2026-04-14 21:12:14.908 +05:30 [DBG] Done attempting to validate the bound parameter 'searchString' of type 'System.String'.
+2026-04-14 21:12:14.909 +05:30 [DBG] Attempting to bind parameter 'sortBy' of type 'System.String' ...
+2026-04-14 21:12:14.910 +05:30 [DBG] Attempting to bind parameter 'sortBy' of type 'System.String' using the name '' in request data ...
+2026-04-14 21:12:14.912 +05:30 [DBG] Could not find a value in the request with name '' for binding parameter 'sortBy' of type 'System.String'.
+2026-04-14 21:12:14.913 +05:30 [DBG] Done attempting to bind parameter 'sortBy' of type 'System.String'.
+2026-04-14 21:12:14.920 +05:30 [DBG] Done attempting to bind parameter 'sortBy' of type 'System.String'.
+2026-04-14 21:12:14.924 +05:30 [DBG] Attempting to validate the bound parameter 'sortBy' of type 'System.String' ...
+2026-04-14 21:12:14.927 +05:30 [DBG] Done attempting to validate the bound parameter 'sortBy' of type 'System.String'.
+2026-04-14 21:12:14.929 +05:30 [DBG] Attempting to bind parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions' ...
+2026-04-14 21:12:14.931 +05:30 [DBG] Attempting to bind parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions' using the name '' in request data ...
+2026-04-14 21:12:14.933 +05:30 [DBG] Could not find a value in the request with name '' for binding parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions'.
+2026-04-14 21:12:14.936 +05:30 [DBG] Done attempting to bind parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions'.
+2026-04-14 21:12:14.938 +05:30 [DBG] Done attempting to bind parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions'.
+2026-04-14 21:12:14.947 +05:30 [DBG] Attempting to validate the bound parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions' ...
+2026-04-14 21:12:14.953 +05:30 [DBG] Done attempting to validate the bound parameter 'sortOrder' of type 'ContactsManager.Core.ServiceContracts.Enums.SortOrderOptions'.
+2026-04-14 21:12:14.958 +05:30 [INF] ResponseHeaderFilter.Before method
+2026-04-14 21:12:14.961 +05:30 [INF] IndexActionFilter.OnActionExecuting method
+2026-04-14 21:12:14.962 +05:30 [INF] ResponseHeaderFilter.Before method
+2026-04-14 21:12:14.984 +05:30 [INF] Index Method of Persons Controller
+2026-04-14 21:12:14.998 +05:30 [INF] GetFilteredPersons of Persons Service
+2026-04-14 21:12:15.000 +05:30 [DBG] GetFilteredPersons of Persons Service, searchBy:, searchString: 
+2026-04-14 21:12:15.004 +05:30 [INF] GetAllPersons of PersonsRepository
+2026-04-14 21:12:16.550 +05:30 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<Guid>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-14 21:12:16.560 +05:30 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-14 21:12:17.204 +05:30 [DBG] Entity Framework Core 10.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.5' with options: EngineType=SqlServer 
+2026-04-14 21:12:17.288 +05:30 [DBG] Compiling query expression: 
+'DbSet<Person>()
+    .Include(p => p.Country)'
+2026-04-14 21:12:17.585 +05:30 [DBG] Including navigation: 'Person.Country'.
+2026-04-14 21:12:18.288 +05:30 [DBG] Generated query execution expression: 
+'queryContext => SingleQueryingEnumerable.Create<Person>(
+    relationalQueryContext: (RelationalQueryContext)queryContext, 
+    relationalCommandResolver: parameters => [LIFTABLE Constant: RelationalCommandCache.QueryExpression(
+        Client Projections:
+            0 -> Dictionary<IPropertyBase, int> { [Property: Person.PersonID (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Person.Address (string) MaxLength(200), 1], [Property: Person.CountryID (Guid?) FK Index, 2], [Property: Person.DateOfBirth (DateTime?), 3], [Property: Person.Email (string) MaxLength(40), 4], [Property: Person.Gender (string) MaxLength(10), 5], [Property: Person.PersonName (string) MaxLength(40), 6], [Property: Person.ReceiveNewsLetters (bool) Required, 7], [Property: Person.TIN (string) ValueGenerated.OnAdd, 8] }
+            1 -> Dictionary<IPropertyBase, int> { [Property: Country.CountryID (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 9], [Property: Country.CountryName (string), 10] }
+        SELECT p.PersonID, p.Address, p.CountryID, p.DateOfBirth, p.Email, p.Gender, p.PersonName, p.ReceiveNewsLetters, p.TaxIdentificationNumber, c.CountryID, c.CountryName
+        FROM PersonsData AS p
+        LEFT JOIN Countries AS c ON p.CountryID == c.CountryID) | Resolver: c => new RelationalCommandCache(
+        c.Dependencies.MemoryCache, 
+        c.RelationalDependencies.QuerySqlGeneratorFactory, 
+        c.RelationalDependencies.RelationalParameterBasedSqlProcessorFactory, 
+        Client Projections:
+            0 -> Dictionary<IPropertyBase, int> { [Property: Person.PersonID (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Person.Address (string) MaxLength(200), 1], [Property: Person.CountryID (Guid?) FK Index, 2], [Property: Person.DateOfBirth (DateTime?), 3], [Property: Person.Email (string) MaxLength(40), 4], [Property: Person.Gender (string) MaxLength(10), 5], [Property: Person.PersonName (string) MaxLength(40), 6], [Property: Person.ReceiveNewsLetters (bool) Required, 7], [Property: Person.TIN (string) ValueGenerated.OnAdd, 8] }
+            1 -> Dictionary<IPropertyBase, int> { [Property: Country.CountryID (Guid) Required PK AfterSave:Throw ValueGenerated.OnAdd, 9], [Property: Country.CountryName (string), 10] }
+        SELECT p.PersonID, p.Address, p.CountryID, p.DateOfBirth, p.Email, p.Gender, p.PersonName, p.ReceiveNewsLetters, p.TaxIdentificationNumber, c.CountryID, c.CountryName
+        FROM PersonsData AS p
+        LEFT JOIN Countries AS c ON p.CountryID == c.CountryID, 
+        False, 
+        MultipleParameters
+    )].GetRelationalCommandTemplate(parameters), 
+    readerColumns: null, 
+    shaper: (queryContext, dataReader, resultContext, resultCoordinator) => 
+    {
+        Person entity;
+        Country entity;
+        entity = 
+        {
+            MaterializationContext materializationContext1;
+            IEntityType entityType1;
+            Person instance1;
+            InternalEntityEntry entry1;
+            bool hasNullKey1;
+            materializationContext1 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance1 = default(Person);
+            entry1 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Person.PersonID PK | Resolver: c => c.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Person").FindPrimaryKey()], 
+                keyValues: new object[]{ (object)dataReader.GetGuid(0) }, 
+                throwOnNullKey: True, 
+                hasNullKey: hasNullKey1);
+            !(hasNullKey1) ? entry1 != default(InternalEntityEntry) ? 
+            {
+                entityType1 = entry1.EntityType;
+                return instance1 = (Person)entry1.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot1;
+                shadowSnapshot1 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType1 = [LIFTABLE Constant: EntityType: Person | Resolver: namelessParameter{0} => namelessParameter{0}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Person")];
+                instance1 = switch (entityType1)
+                {
+                    case [LIFTABLE Constant: EntityType: Person | Resolver: namelessParameter{1} => namelessParameter{1}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Person")]: 
+                        {
+                            return 
+                            {
+                                Person instance;
+                                instance = new Person();
+                                instance.<PersonID>k__BackingField = dataReader.GetGuid(0);
+                                instance.<Address>k__BackingField = dataReader.IsDBNull(1) ? default(string) : dataReader.GetString(1);
+                                instance.<CountryID>k__BackingField = dataReader.IsDBNull(2) ? default(Guid?) : (Guid?)dataReader.GetGuid(2);
+                                instance.<DateOfBirth>k__BackingField = dataReader.IsDBNull(3) ? default(DateTime?) : (DateTime?)dataReader.GetDateTime(3);
+                                instance.<Email>k__BackingField = dataReader.IsDBNull(4) ? default(string) : dataReader.GetString(4);
+                                instance.<Gender>k__BackingField = dataReader.IsDBNull(5) ? default(string) : dataReader.GetString(5);
+                                instance.<PersonName>k__BackingField = dataReader.IsDBNull(6) ? default(string) : dataReader.GetString(6);
+                                instance.<ReceiveNewsLetters>k__BackingField = dataReader.GetBoolean(7);
+                                instance.<TIN>k__BackingField = dataReader.IsDBNull(8) ? default(string) : dataReader.GetString(8);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext1.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Person | Resolver: namelessParameter{2} => namelessParameter{2}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Person")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Person)
+                }
+                ;
+                entry1 = entityType1 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType1, 
+                    entity: instance1, 
+                    snapshot: shadowSnapshot1);
+                return instance1;
+            } : default(void);
+            return instance1;
+        };
+        entity = 
+        {
+            MaterializationContext materializationContext2;
+            IEntityType entityType2;
+            Country instance2;
+            InternalEntityEntry entry2;
+            bool hasNullKey2;
+            materializationContext2 = new MaterializationContext(
+                [LIFTABLE Constant: ValueBuffer | Resolver: _ => (object)ValueBuffer.Empty], 
+                queryContext.Context
+            );
+            instance2 = default(Country);
+            entry2 = queryContext.TryGetEntry(
+                key: [LIFTABLE Constant: Key: Country.CountryID PK | Resolver: c => c.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Country").FindPrimaryKey()], 
+                keyValues: new object[]{ dataReader.IsDBNull(9) ? default(object) : (object)dataReader.GetGuid(9) }, 
+                throwOnNullKey: False, 
+                hasNullKey: hasNullKey2);
+            !(hasNullKey2) ? entry2 != default(InternalEntityEntry) ? 
+            {
+                entityType2 = entry2.EntityType;
+                return instance2 = (Country)entry2.Entity;
+            } : 
+            {
+                ISnapshot shadowSnapshot2;
+                shadowSnapshot2 = [LIFTABLE Constant: Snapshot | Resolver: _ => Snapshot.Empty];
+                entityType2 = [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{3} => namelessParameter{3}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Country")];
+                instance2 = switch (entityType2)
+                {
+                    case [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{4} => namelessParameter{4}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Country")]: 
+                        {
+                            return 
+                            {
+                                Country instance;
+                                instance = new Country();
+                                instance.<CountryID>k__BackingField = dataReader.IsDBNull(9) ? default(Guid) : dataReader.GetGuid(9);
+                                instance.<CountryName>k__BackingField = dataReader.IsDBNull(10) ? default(string) : dataReader.GetString(10);
+                                (instance is IInjectableService) ? ((IInjectableService)instance).Injected(
+                                    context: materializationContext2.Context, 
+                                    entity: instance, 
+                                    queryTrackingBehavior: TrackAll, 
+                                    structuralType: [LIFTABLE Constant: EntityType: Country | Resolver: namelessParameter{5} => namelessParameter{5}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Country")]) : default(void);
+                                return instance;
+                            }}
+                    default: 
+                        default(Country)
+                }
+                ;
+                entry2 = entityType2 == default(IEntityType) ? default(InternalEntityEntry) : queryContext.StartTracking(
+                    entityType: entityType2, 
+                    entity: instance2, 
+                    snapshot: shadowSnapshot2);
+                return instance2;
+            } : default(void);
+            return instance2;
+        };
+        ShaperProcessingExpressionVisitor.IncludeReference<Person, Person, Country>(
+            queryContext: queryContext, 
+            entity: entity, 
+            relatedEntity: entity, 
+            navigation: [LIFTABLE Constant: Navigation: Person.Country (Country) Optional ToPrincipal Country Inverse: Persons | Resolver: namelessParameter{6} => namelessParameter{6}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Person").FindNavigation("Country")], 
+            inverseNavigation: [LIFTABLE Constant: Navigation: Country.Persons (ICollection<Person>) Collection ToDependent Person Inverse: Country | Resolver: namelessParameter{7} => namelessParameter{7}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Country").FindNavigation("Persons")], 
+            fixup: (namelessParameter{8}, namelessParameter{9}) => 
+            {
+                namelessParameter{8}.<Country>k__BackingField = namelessParameter{9};
+                return [LIFTABLE Constant: ClrCollectionAccessor<Country, ICollection<Person>, Person> | Resolver: namelessParameter{10} => namelessParameter{10}.Dependencies.Model.FindEntityType("ContactsManager.Domain.Entities.Country").FindNavigation("Persons").GetCollectionAccessor()].Add(
+                    entity: namelessParameter{9}, 
+                    value: namelessParameter{8}, 
+                    forMaterialization: True);
+            }, 
+            trackingQuery: True);
+        return entity;
+    }, 
+    contextType: ContactsManager.Infrastructure.DBContext.ApplicationDbContext, 
+    standAloneStateManager: False, 
+    detailedErrorsEnabled: False, 
+    threadSafetyChecksEnabled: True)'
+2026-04-14 21:12:18.399 +05:30 [DBG] Creating DbConnection.
+2026-04-14 21:12:18.409 +05:30 [DBG] Created DbConnection. (6ms).
+2026-04-14 21:12:18.427 +05:30 [DBG] Opening connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:12:18.469 +05:30 [DBG] Opened connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:12:18.481 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-04-14 21:12:18.499 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2026-04-14 21:12:18.504 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (23ms).
+2026-04-14 21:12:18.525 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryID], [c].[CountryName]
+FROM [PersonsData] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2026-04-14 21:12:18.637 +05:30 [INF] Executed DbCommand (113ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonID], [p].[Address], [p].[CountryID], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryID], [c].[CountryName]
+FROM [PersonsData] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryID] = [c].[CountryID]
+2026-04-14 21:12:18.738 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.850 +05:30 [DBG] The navigation 'Person.Country' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.876 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.892 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.895 +05:30 [DBG] The navigation 'Person.Country' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.899 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.902 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.904 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.912 +05:30 [DBG] The navigation 'Person.Country' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.918 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.921 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.923 +05:30 [DBG] The navigation 'Person.Country' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.925 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.927 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.937 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.941 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.944 +05:30 [DBG] The navigation 'Person.Country' was detected as changed. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.947 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Country' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.949 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.952 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.960 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.965 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.969 +05:30 [DBG] Context 'ApplicationDbContext' started tracking 'Person' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2026-04-14 21:12:18.988 +05:30 [DBG] Closing data reader to 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:12:19.005 +05:30 [DBG] A data reader for 'CRUDExample' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 350ms reading results.
+2026-04-14 21:12:19.018 +05:30 [DBG] Closing connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:12:19.027 +05:30 [DBG] Closed connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB' (4ms).
+2026-04-14 21:12:19.041 +05:30 [INF] GetSortedPersons of PersonsService
+2026-04-14 21:12:19.048 +05:30 [DBG] GetSortedPersons of Persons Service sortBy:PersonName and SortOrderOptions:ASC
+2026-04-14 21:12:19.092 +05:30 [INF] ResponseHeaderFilter.After method
+2026-04-14 21:12:19.107 +05:30 [INF] IndexActionFilter.OnActionExecuted method
+2026-04-14 21:12:19.203 +05:30 [INF] ResponseHeaderFilter.After method
+2026-04-14 21:12:19.210 +05:30 [INF] IndexResultFilter.OnResultExecutionAsync-before
+2026-04-14 21:12:19.226 +05:30 [DBG] View lookup cache miss for view 'Index' in controller 'Persons'.
+2026-04-14 21:12:19.246 +05:30 [INF] Executing ViewResult, running view Index.
+2026-04-14 21:12:19.256 +05:30 [DBG] The view path '/Views/Persons/Index.cshtml' was found in 26.2698ms.
+2026-04-14 21:12:19.457 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-14 21:12:19.473 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-14 21:12:19.479 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-14 21:12:19.525 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Create (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Create (ContactsManager.UI)"] for address (action=[Create],controller=[Persons])
+2026-04-14 21:12:19.533 +05:30 [DBG] Successfully processed template Persons/Create for ContactsManager.UI.Controllers.PersonsController.Create (ContactsManager.UI) resulting in /Persons/Create and 
+2026-04-14 21:12:19.536 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Create (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Create (ContactsManager.UI)"] with result /Persons/Create
+2026-04-14 21:12:19.543 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.PersonsPDF (ContactsManager.UI)"] for address (action=[PersonsPDF],controller=[Persons])
+2026-04-14 21:12:19.552 +05:30 [DBG] Successfully processed template Persons/PersonsPDF for ContactsManager.UI.Controllers.PersonsController.PersonsPDF (ContactsManager.UI) resulting in /Persons/PersonsPDF and 
+2026-04-14 21:12:19.556 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.PersonsPDF (ContactsManager.UI)"] with result /Persons/PersonsPDF
+2026-04-14 21:12:19.561 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.PersonsCSV (ContactsManager.UI)"] for address (action=[PersonsCSV],controller=[Persons])
+2026-04-14 21:12:19.563 +05:30 [DBG] Successfully processed template Persons/PersonsCSV for ContactsManager.UI.Controllers.PersonsController.PersonsCSV (ContactsManager.UI) resulting in /Persons/PersonsCSV and 
+2026-04-14 21:12:19.565 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.PersonsCSV (ContactsManager.UI)"] with result /Persons/PersonsCSV
+2026-04-14 21:12:19.572 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.PersonsExcel (ContactsManager.UI)"] for address (action=[PersonsExcel],controller=[Persons])
+2026-04-14 21:12:19.580 +05:30 [DBG] Successfully processed template Persons/PersonsExcel for ContactsManager.UI.Controllers.PersonsController.PersonsExcel (ContactsManager.UI) resulting in /Persons/PersonsExcel and 
+2026-04-14 21:12:19.584 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.PersonsExcel (ContactsManager.UI)"] with result /Persons/PersonsExcel
+2026-04-14 21:12:19.688 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-14 21:12:19.695 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-14 21:12:19.698 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-14 21:12:19.703 +05:30 [DBG] View lookup cache miss for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.777 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.782 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.784 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.787 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.792 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.797 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.800 +05:30 [DBG] View lookup cache hit for view '_GridColumnHeader' in controller 'Persons'.
+2026-04-14 21:12:19.804 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[d15c6d9f-70b4-48c5-afd3-e71261f1a9be],action=[Edit],controller=[Persons])
+2026-04-14 21:12:19.807 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/d15c6d9f-70b4-48c5-afd3-e71261f1a9be and 
+2026-04-14 21:12:19.817 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/d15c6d9f-70b4-48c5-afd3-e71261f1a9be
+2026-04-14 21:12:19.824 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[d15c6d9f-70b4-48c5-afd3-e71261f1a9be],action=[Delete],controller=[Persons])
+2026-04-14 21:12:19.827 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/d15c6d9f-70b4-48c5-afd3-e71261f1a9be and 
+2026-04-14 21:12:19.831 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/d15c6d9f-70b4-48c5-afd3-e71261f1a9be
+2026-04-14 21:12:19.843 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[3f8e442a-ce2f-4650-8b6d-02c436aad9d7],action=[Edit],controller=[Persons])
+2026-04-14 21:12:19.847 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/3f8e442a-ce2f-4650-8b6d-02c436aad9d7 and 
+2026-04-14 21:12:19.849 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/3f8e442a-ce2f-4650-8b6d-02c436aad9d7
+2026-04-14 21:12:19.856 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[3f8e442a-ce2f-4650-8b6d-02c436aad9d7],action=[Delete],controller=[Persons])
+2026-04-14 21:12:19.862 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/3f8e442a-ce2f-4650-8b6d-02c436aad9d7 and 
+2026-04-14 21:12:19.866 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/3f8e442a-ce2f-4650-8b6d-02c436aad9d7
+2026-04-14 21:12:19.870 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[c6d50a47-f7e6-4482-8be0-4ddfc057fa6e],action=[Edit],controller=[Persons])
+2026-04-14 21:12:19.873 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/c6d50a47-f7e6-4482-8be0-4ddfc057fa6e and 
+2026-04-14 21:12:19.881 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/c6d50a47-f7e6-4482-8be0-4ddfc057fa6e
+2026-04-14 21:12:19.888 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[c6d50a47-f7e6-4482-8be0-4ddfc057fa6e],action=[Delete],controller=[Persons])
+2026-04-14 21:12:19.893 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/c6d50a47-f7e6-4482-8be0-4ddfc057fa6e and 
+2026-04-14 21:12:19.903 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/c6d50a47-f7e6-4482-8be0-4ddfc057fa6e
+2026-04-14 21:12:19.909 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[012107df-862f-4f16-ba94-e5c16886f005],action=[Edit],controller=[Persons])
+2026-04-14 21:12:19.912 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/012107df-862f-4f16-ba94-e5c16886f005 and 
+2026-04-14 21:12:19.915 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/012107df-862f-4f16-ba94-e5c16886f005
+2026-04-14 21:12:19.918 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[012107df-862f-4f16-ba94-e5c16886f005],action=[Delete],controller=[Persons])
+2026-04-14 21:12:19.930 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/012107df-862f-4f16-ba94-e5c16886f005 and 
+2026-04-14 21:12:19.933 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/012107df-862f-4f16-ba94-e5c16886f005
+2026-04-14 21:12:19.937 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[cb035f22-e7cf-4907-bd07-91cfee5240f3],action=[Edit],controller=[Persons])
+2026-04-14 21:12:19.942 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/cb035f22-e7cf-4907-bd07-91cfee5240f3 and 
+2026-04-14 21:12:19.951 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/cb035f22-e7cf-4907-bd07-91cfee5240f3
+2026-04-14 21:12:19.955 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[cb035f22-e7cf-4907-bd07-91cfee5240f3],action=[Delete],controller=[Persons])
+2026-04-14 21:12:19.959 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/cb035f22-e7cf-4907-bd07-91cfee5240f3 and 
+2026-04-14 21:12:19.961 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/cb035f22-e7cf-4907-bd07-91cfee5240f3
+2026-04-14 21:12:19.971 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[29339209-63f5-492f-8459-754943c74abf],action=[Edit],controller=[Persons])
+2026-04-14 21:12:19.979 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/29339209-63f5-492f-8459-754943c74abf and 
+2026-04-14 21:12:19.982 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/29339209-63f5-492f-8459-754943c74abf
+2026-04-14 21:12:19.994 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[29339209-63f5-492f-8459-754943c74abf],action=[Delete],controller=[Persons])
+2026-04-14 21:12:19.999 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/29339209-63f5-492f-8459-754943c74abf and 
+2026-04-14 21:12:20.002 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/29339209-63f5-492f-8459-754943c74abf
+2026-04-14 21:12:20.014 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[c03bbe45-9aeb-4d24-99e0-4743016ffce9],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.019 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/c03bbe45-9aeb-4d24-99e0-4743016ffce9 and 
+2026-04-14 21:12:20.023 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/c03bbe45-9aeb-4d24-99e0-4743016ffce9
+2026-04-14 21:12:20.033 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[c03bbe45-9aeb-4d24-99e0-4743016ffce9],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.040 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/c03bbe45-9aeb-4d24-99e0-4743016ffce9 and 
+2026-04-14 21:12:20.042 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/c03bbe45-9aeb-4d24-99e0-4743016ffce9
+2026-04-14 21:12:20.045 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[28d11936-9466-4a4b-b9c5-2f0a8e0cbde9],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.058 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/28d11936-9466-4a4b-b9c5-2f0a8e0cbde9 and 
+2026-04-14 21:12:20.061 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/28d11936-9466-4a4b-b9c5-2f0a8e0cbde9
+2026-04-14 21:12:20.065 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[28d11936-9466-4a4b-b9c5-2f0a8e0cbde9],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.073 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/28d11936-9466-4a4b-b9c5-2f0a8e0cbde9 and 
+2026-04-14 21:12:20.079 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/28d11936-9466-4a4b-b9c5-2f0a8e0cbde9
+2026-04-14 21:12:20.086 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[2a6d3738-9def-43ac-9279-0310edc7ceca],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.089 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/2a6d3738-9def-43ac-9279-0310edc7ceca and 
+2026-04-14 21:12:20.110 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/2a6d3738-9def-43ac-9279-0310edc7ceca
+2026-04-14 21:12:20.127 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[2a6d3738-9def-43ac-9279-0310edc7ceca],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.131 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/2a6d3738-9def-43ac-9279-0310edc7ceca and 
+2026-04-14 21:12:20.139 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/2a6d3738-9def-43ac-9279-0310edc7ceca
+2026-04-14 21:12:20.144 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[ac660a73-b0b7-4340-abc1-a914257a6189],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.149 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/ac660a73-b0b7-4340-abc1-a914257a6189 and 
+2026-04-14 21:12:20.151 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/ac660a73-b0b7-4340-abc1-a914257a6189
+2026-04-14 21:12:20.154 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[ac660a73-b0b7-4340-abc1-a914257a6189],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.161 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/ac660a73-b0b7-4340-abc1-a914257a6189 and 
+2026-04-14 21:12:20.167 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/ac660a73-b0b7-4340-abc1-a914257a6189
+2026-04-14 21:12:20.171 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[89e5f445-d89f-4e12-94e0-5ad5b235d704],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.174 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/89e5f445-d89f-4e12-94e0-5ad5b235d704 and 
+2026-04-14 21:12:20.176 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/89e5f445-d89f-4e12-94e0-5ad5b235d704
+2026-04-14 21:12:20.184 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[89e5f445-d89f-4e12-94e0-5ad5b235d704],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.190 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/89e5f445-d89f-4e12-94e0-5ad5b235d704 and 
+2026-04-14 21:12:20.193 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/89e5f445-d89f-4e12-94e0-5ad5b235d704
+2026-04-14 21:12:20.197 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[c3abddbd-cf50-41d2-b6c4-cc7d5a750928],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.199 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/c3abddbd-cf50-41d2-b6c4-cc7d5a750928 and 
+2026-04-14 21:12:20.202 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/c3abddbd-cf50-41d2-b6c4-cc7d5a750928
+2026-04-14 21:12:20.213 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[c3abddbd-cf50-41d2-b6c4-cc7d5a750928],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.217 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/c3abddbd-cf50-41d2-b6c4-cc7d5a750928 and 
+2026-04-14 21:12:20.219 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/c3abddbd-cf50-41d2-b6c4-cc7d5a750928
+2026-04-14 21:12:20.222 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] for address (personID=[a3b9833b-8a4d-43e9-8690-61e08df81a9a],action=[Edit],controller=[Persons])
+2026-04-14 21:12:20.224 +05:30 [DBG] Successfully processed template Persons/Edit/{personID} for ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI) resulting in /Persons/Edit/a3b9833b-8a4d-43e9-8690-61e08df81a9a and 
+2026-04-14 21:12:20.234 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Edit (ContactsManager.UI)"] with result /Persons/Edit/a3b9833b-8a4d-43e9-8690-61e08df81a9a
+2026-04-14 21:12:20.239 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] for address (personID=[a3b9833b-8a4d-43e9-8690-61e08df81a9a],action=[Delete],controller=[Persons])
+2026-04-14 21:12:20.244 +05:30 [DBG] Successfully processed template Persons/Delete/{personID} for ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI) resulting in /Persons/Delete/a3b9833b-8a4d-43e9-8690-61e08df81a9a and 
+2026-04-14 21:12:20.250 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Delete (ContactsManager.UI)"] with result /Persons/Delete/a3b9833b-8a4d-43e9-8690-61e08df81a9a
+2026-04-14 21:12:20.400 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-14 21:12:20.404 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-14 21:12:20.409 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-14 21:12:20.421 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-14 21:12:20.425 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-14 21:12:20.434 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-14 21:12:20.442 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-14 21:12:20.468 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-14 21:12:20.477 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-14 21:12:20.504 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-14 21:12:20.528 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-14 21:12:20.553 +05:30 [INF] Executed ViewResult - view Index executed in 1330.6494ms.
+2026-04-14 21:12:20.556 +05:30 [INF] IndexResultFilter.OnResultExecutionAsync-after
+2026-04-14 21:12:20.570 +05:30 [INF] Executed action ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) in 6151.5958ms
+2026-04-14 21:12:20.574 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-04-14 21:12:20.587 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-14 21:12:20.592 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Tue, 14 Apr 2026 15:42:19 GMT
+Server: Kestrel
+Last-Modified: Tuesday, April 14, 2026 9:12 PM
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+Key1: [Redacted]
+PesonControllerKey: [Redacted]
+2026-04-14 21:12:20.608 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-14 21:12:20.609 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-14 21:12:20.611 +05:30 [DBG] Connection id "0HNKQ7HIJD3HE" completed keep alive response.
+2026-04-14 21:12:20.616 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 28.7629ms
+2026-04-14 21:12:20.622 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-14 21:12:20.632 +05:30 [DBG] Connection id "0HNKQ7HIJD3HD" completed keep alive response.
+2026-04-14 21:12:20.647 +05:30 [DBG] 'ApplicationDbContext' disposed.
+2026-04-14 21:12:20.657 +05:30 [DBG] Disposing connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:12:20.663 +05:30 [DBG] Disposed connection to database '' on server '' (2ms).
+2026-04-14 21:12:20.671 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/ - 200 null text/html; charset=utf-8 7168.5286ms
+2026-04-14 21:12:20.677 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_vs/browserLink - null null
+2026-04-14 21:12:20.752 +05:30 [DBG] Connection id "0HNKQ7HIJD3HD" completed keep alive response.
+2026-04-14 21:12:20.757 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.8794ms
+2026-04-14 21:13:10.775 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Register - null null
+2026-04-14 21:13:10.811 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Register'
+2026-04-14 21:13:10.821 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)' with route pattern 'Account/Register' is valid for the request path '/Account/Register'
+2026-04-14 21:13:10.839 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-14 21:13:10.842 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-14 21:13:10.857 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-14 21:13:10.859 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Register
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-14 21:13:10.864 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-14 21:13:10.874 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-14 21:13:10.882 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-14 21:13:10.889 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-14 21:13:10.892 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-14 21:13:10.901 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-14 21:13:10.905 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-14 21:13:10.909 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-14 21:13:10.931 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-14 21:13:10.945 +05:30 [DBG] View lookup cache miss for view 'Register' in controller 'Account'.
+2026-04-14 21:13:10.949 +05:30 [INF] Executing ViewResult, running view Register.
+2026-04-14 21:13:10.951 +05:30 [DBG] The view path '/Views/Account/Register.cshtml' was found in 5.8439ms.
+2026-04-14 21:13:10.981 +05:30 [DBG] No endpoints found for address (action=[Login],controller=[Account])
+2026-04-14 21:13:10.984 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-14 21:13:10.986 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-14 21:13:10.994 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-14 21:13:11.025 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-14 21:13:11.149 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-14 21:13:11.154 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-14 21:13:11.156 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-14 21:13:11.158 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-14 21:13:11.169 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-14 21:13:11.173 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-14 21:13:11.176 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-14 21:13:11.188 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-14 21:13:11.196 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-14 21:13:11.234 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-14 21:13:11.236 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-14 21:13:11.237 +05:30 [INF] Executed ViewResult - view Register executed in 292.058ms.
+2026-04-14 21:13:11.248 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 339.5006ms
+2026-04-14 21:13:11.255 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-14 21:13:11.272 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Tue, 14 Apr 2026 15:43:10 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-14 21:13:11.280 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-14 21:13:11.295 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-14 21:13:11.300 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-14 21:13:11.303 +05:30 [DBG] Connection id "0HNKQ7HIJD3HD" completed keep alive response.
+2026-04-14 21:13:11.301 +05:30 [DBG] Connection id "0HNKQ7HIJD3HF" accepted.
+2026-04-14 21:13:11.366 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-14 21:13:11.373 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Register - 200 null text/html; charset=utf-8 598.5634ms
+2026-04-14 21:13:11.375 +05:30 [DBG] Connection id "0HNKQ7HIJD3HF" started.
+2026-04-14 21:13:11.378 +05:30 [DBG] Connection id "0HNKQ7HIJD3HE" completed keep alive response.
+2026-04-14 21:13:11.414 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_vs/browserLink - null null
+2026-04-14 21:13:11.423 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 122.7521ms
+2026-04-14 21:13:11.494 +05:30 [DBG] Connection id "0HNKQ7HIJD3HF" completed keep alive response.
+2026-04-14 21:13:11.505 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.4721ms
+2026-04-14 21:13:46.458 +05:30 [INF] Request starting HTTP/1.1 POST http://localhost:5012/Account/Register - application/x-www-form-urlencoded 288
+2026-04-14 21:13:46.470 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Register'
+2026-04-14 21:13:46.472 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)' with route pattern 'Account/Register' is valid for the request path '/Account/Register'
+2026-04-14 21:13:46.475 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-14 21:13:46.490 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-14 21:13:46.492 +05:30 [DBG] Static files was skipped as the request already matched an endpoint.
+2026-04-14 21:13:46.494 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /Account/Register
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cache-Control: max-age=0
+Content-Type: application/x-www-form-urlencoded
+Cookie: [Redacted]
+Origin: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Content-Length: 288
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-14 21:13:46.504 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-14 21:13:46.523 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register(ContactsManager.Core.DTO.RegisterDTO) on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-14 21:13:46.533 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-14 21:13:46.536 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-14 21:13:46.539 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.RegisterPostActionFilter","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-14 21:13:46.550 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-14 21:13:46.553 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-14 21:13:46.555 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-14 21:13:46.563 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-14 21:13:46.589 +05:30 [DBG] Connection id "0HNKQ7HIJD3HF", Request id "0HNKQ7HIJD3HF:00000002": started reading request body.
+2026-04-14 21:13:46.596 +05:30 [DBG] Connection id "0HNKQ7HIJD3HF", Request id "0HNKQ7HIJD3HF:00000002": done reading request body.
+2026-04-14 21:13:46.608 +05:30 [DBG] Attempting to bind parameter 'registerDTO' of type 'ContactsManager.Core.DTO.RegisterDTO' ...
+2026-04-14 21:13:46.612 +05:30 [DBG] Attempting to bind parameter 'registerDTO' of type 'ContactsManager.Core.DTO.RegisterDTO' using the name '' in request data ...
+2026-04-14 21:13:46.625 +05:30 [DBG] Attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.PersonName' of type 'System.String' using the name 'PersonName' in request data ...
+2026-04-14 21:13:46.632 +05:30 [DBG] Done attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.PersonName' of type 'System.String'.
+2026-04-14 21:13:46.636 +05:30 [DBG] Attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.Email' of type 'System.String' using the name 'Email' in request data ...
+2026-04-14 21:13:46.639 +05:30 [DBG] Done attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.Email' of type 'System.String'.
+2026-04-14 21:13:46.642 +05:30 [DBG] Attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.Phone' of type 'System.String' using the name 'Phone' in request data ...
+2026-04-14 21:13:46.645 +05:30 [DBG] Done attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.Phone' of type 'System.String'.
+2026-04-14 21:13:46.647 +05:30 [DBG] Attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.Password' of type 'System.String' using the name 'Password' in request data ...
+2026-04-14 21:13:46.655 +05:30 [DBG] Done attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.Password' of type 'System.String'.
+2026-04-14 21:13:46.660 +05:30 [DBG] Attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.ConfirmPassword' of type 'System.String' using the name 'ConfirmPassword' in request data ...
+2026-04-14 21:13:46.663 +05:30 [DBG] Done attempting to bind property 'ContactsManager.Core.DTO.RegisterDTO.ConfirmPassword' of type 'System.String'.
+2026-04-14 21:13:46.666 +05:30 [DBG] Done attempting to bind parameter 'registerDTO' of type 'ContactsManager.Core.DTO.RegisterDTO'.
+2026-04-14 21:13:46.668 +05:30 [DBG] Done attempting to bind parameter 'registerDTO' of type 'ContactsManager.Core.DTO.RegisterDTO'.
+2026-04-14 21:13:46.670 +05:30 [DBG] Attempting to validate the bound parameter 'registerDTO' of type 'ContactsManager.Core.DTO.RegisterDTO' ...
+2026-04-14 21:13:46.685 +05:30 [DBG] Done attempting to validate the bound parameter 'registerDTO' of type 'ContactsManager.Core.DTO.RegisterDTO'.
+2026-04-14 21:45:51.625 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-14 21:45:53.553 +05:30 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<Guid>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-14 21:45:53.556 +05:30 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-14 21:45:54.138 +05:30 [DBG] Entity Framework Core 10.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.5' with options: EngineType=SqlServer 
+2026-04-14 21:45:55.944 +05:30 [DBG] 'ApplicationDbContext' disposed.
+2026-04-14 21:46:17.604 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-14 21:46:18.709 +05:30 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<Guid>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2026-04-14 21:46:18.712 +05:30 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<Guid>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2026-04-14 21:46:19.254 +05:30 [DBG] Entity Framework Core 10.0.5 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:10.0.5' with options: EngineType=SqlServer 
+2026-04-14 21:46:19.701 +05:30 [DBG] Creating DbConnection.
+2026-04-14 21:46:19.708 +05:30 [DBG] Created DbConnection. (3ms).
+2026-04-14 21:46:19.711 +05:30 [DBG] Migrating using database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:19.731 +05:30 [DBG] Opening connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:19.738 +05:30 [DBG] Opened connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:19.753 +05:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-14 21:46:19.767 +05:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (13ms).
+2026-04-14 21:46:19.769 +05:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (26ms).
+2026-04-14 21:46:19.789 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-14 21:46:19.811 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-14 21:46:19.819 +05:30 [DBG] Closing connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:19.830 +05:30 [DBG] Closed connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB' (6ms).
+2026-04-14 21:46:19.831 +05:30 [DBG] Opening connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:19.831 +05:30 [DBG] Opened connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:19.839 +05:30 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2026-04-14 21:46:19.847 +05:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-14 21:46:19.847 +05:30 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2026-04-14 21:46:19.848 +05:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2026-04-14 21:46:19.849 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-04-14 21:46:19.931 +05:30 [INF] Executed DbCommand (82ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2026-04-14 21:46:20.182 +05:30 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-04-14 21:46:20.201 +05:30 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-04-14 21:46:20.203 +05:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-14 21:46:20.203 +05:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.209 +05:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (6ms).
+2026-04-14 21:46:20.210 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-04-14 21:46:20.221 +05:30 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2026-04-14 21:46:20.223 +05:30 [DBG] Committing transaction.
+2026-04-14 21:46:20.227 +05:30 [DBG] Committed transaction.
+2026-04-14 21:46:20.234 +05:30 [DBG] Disposing transaction.
+2026-04-14 21:46:20.242 +05:30 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2026-04-14 21:46:20.242 +05:30 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2026-04-14 21:46:20.245 +05:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-14 21:46:20.245 +05:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.246 +05:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.246 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-14 21:46:20.246 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2026-04-14 21:46:20.247 +05:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-14 21:46:20.247 +05:30 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2026-04-14 21:46:20.247 +05:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2026-04-14 21:46:20.247 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-14 21:46:20.249 +05:30 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2026-04-14 21:46:20.258 +05:30 [DBG] Creating DbCommand for 'ExecuteReader'.
+2026-04-14 21:46:20.259 +05:30 [DBG] Created DbCommand for 'ExecuteReader' (0ms).
+2026-04-14 21:46:20.259 +05:30 [DBG] Initialized DbCommand for 'ExecuteReader' (0ms).
+2026-04-14 21:46:20.260 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-14 21:46:20.286 +05:30 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2026-04-14 21:46:20.299 +05:30 [DBG] Closing data reader to 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:20.302 +05:30 [DBG] A data reader for 'CRUDExample' on server '(localdb)\MSSQLLocalDB' is being disposed after spending 12ms reading results.
+2026-04-14 21:46:20.325 +05:30 [INF] Applying migration '20260414161555_IdentityTables'.
+2026-04-14 21:46:20.514 +05:30 [DBG] Executing 5 update commands as a batch.
+2026-04-14 21:46:20.545 +05:30 [DBG] Executing 12 update commands as a batch.
+2026-04-14 21:46:20.561 +05:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-14 21:46:20.561 +05:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.562 +05:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.562 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2026-04-14 21:46:20.651 +05:30 [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] uniqueidentifier NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2026-04-14 21:46:20.652 +05:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-14 21:46:20.686 +05:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (34ms).
+2026-04-14 21:46:20.686 +05:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (34ms).
+2026-04-14 21:46:20.686 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] uniqueidentifier NOT NULL,
+    [PersonName] nvarchar(max) NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2026-04-14 21:46:20.730 +05:30 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetUsers] (
+    [Id] uniqueidentifier NOT NULL,
+    [PersonName] nvarchar(max) NULL,
+    [UserName] nvarchar(256) NULL,
+    [NormalizedUserName] nvarchar(256) NULL,
+    [Email] nvarchar(256) NULL,
+    [NormalizedEmail] nvarchar(256) NULL,
+    [EmailConfirmed] bit NOT NULL,
+    [PasswordHash] nvarchar(max) NULL,
+    [SecurityStamp] nvarchar(max) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    [PhoneNumber] nvarchar(max) NULL,
+    [PhoneNumberConfirmed] bit NOT NULL,
+    [TwoFactorEnabled] bit NOT NULL,
+    [LockoutEnd] datetimeoffset NULL,
+    [LockoutEnabled] bit NOT NULL,
+    [AccessFailedCount] int NOT NULL,
+    CONSTRAINT [PK_AspNetUsers] PRIMARY KEY ([Id])
+);
+2026-04-14 21:46:20.730 +05:30 [DBG] Creating DbCommand for 'ExecuteNonQuery'.
+2026-04-14 21:46:20.731 +05:30 [DBG] Created DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.731 +05:30 [DBG] Initialized DbCommand for 'ExecuteNonQuery' (0ms).
+2026-04-14 21:46:20.731 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Countries] (
+    [CountryID] uniqueidentifier NOT NULL,
+    [CountryName] nvarchar(max) NULL,
+    CONSTRAINT [PK_Countries] PRIMARY KEY ([CountryID])
+);
+2026-04-14 21:46:20.829 +05:30 [ERR] Failed executing DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Countries] (
+    [CountryID] uniqueidentifier NOT NULL,
+    [CountryName] nvarchar(max) NULL,
+    CONSTRAINT [PK_Countries] PRIMARY KEY ([CountryID])
+);
+2026-04-14 21:46:20.830 +05:30 [DBG] Disposing transaction.
+2026-04-14 21:46:20.841 +05:30 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2026-04-14 21:46:20.842 +05:30 [DBG] Created DbCommand for 'ExecuteScalar' (0ms).
+2026-04-14 21:46:20.842 +05:30 [DBG] Initialized DbCommand for 'ExecuteScalar' (0ms).
+2026-04-14 21:46:20.842 +05:30 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-04-14 21:46:20.861 +05:30 [INF] Executed DbCommand (18ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2026-04-14 21:46:20.861 +05:30 [DBG] Closing connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:20.862 +05:30 [DBG] Closed connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB' (0ms).
+2026-04-14 21:46:20.865 +05:30 [DBG] 'ApplicationDbContext' disposed.
+2026-04-14 21:46:20.873 +05:30 [DBG] Disposing connection to database 'CRUDExample' on server '(localdb)\MSSQLLocalDB'.
+2026-04-14 21:46:20.877 +05:30 [DBG] Disposed connection to database '' on server '' (5ms).

@@ -43,7 +43,9 @@ app.Logger.LogCritical("critical-message");
 Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 
 app.UseStaticFiles();
-app.MapControllers();
+app.UseAuthentication();    //Reads Identity cookie
+app.UseRouting();       //Matches the incoming request to the route template and selects the appropriate controller and action method
+app.MapControllers();   //executes the filter pipeline and the selected action method and generates a response
 app.UseHttpLogging();
 
 app.Run();

@@ -11,10 +11,12 @@ namespace ContactsManager.UI.Controllers
     {
 
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
         {
             _userManager = userManager;
+            _signInManager = signInManager;
         }
 
         [Route("[Action]")]
@@ -27,9 +29,42 @@ namespace ContactsManager.UI.Controllers
         [Route("[Action]")]
         [HttpPost]
         [TypeFilter(typeof(RegisterPostActionFilter))]
-        public IActionResult Register(RegisterDTO registerDTO)
+        public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
-            return RedirectToAction(nameof(PersonsController.Index), "Persons" );
+
+            ApplicationUser user = new ApplicationUser()
+            {
+                UserName = registerDTO.Email,
+                PersonName = registerDTO.PersonName,
+                Email = registerDTO.Email,
+                PhoneNumber = registerDTO.Phone
+            };
+
+            //add user to database
+            IdentityResult result = await _userManager.CreateAsync(user,registerDTO.Password);
+
+            if(!result.Succeeded)
+            {
+                foreach (IdentityError error in result.Errors)
+                {
+                    ModelState.AddModelError(string.Empty, error.Description);
+                }
+                return View(registerDTO);
+            }
+            else
+            {
+                await _signInManager.SignInAsync(user, isPersistent: false);
+                return RedirectToAction(nameof(PersonsController.Index), "Persons");
+            }
+        }
+
+        [Route("[Action]")]
+        [HttpGet]
+        [TypeFilter(typeof(LogOutActionFilter))]
+        public async Task<IActionResult?> Logout()
+        {
+            await _signInManager.SignOutAsync();
+            return View("Register");
         }
     }
 }

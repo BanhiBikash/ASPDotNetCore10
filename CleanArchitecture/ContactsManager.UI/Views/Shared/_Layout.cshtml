@@ -4,7 +4,7 @@
 <head>
  <meta name="viewport" content="width=device-width" />
  <title>@ViewBag.Title</title>
- <link href="~/Stylesheet1.css" rel="stylesheet" />
+ <link href="~/Stylesheet.css" rel="stylesheet" />
 
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -19,7 +19,20 @@
     <li>
      <a asp-controller="Persons" asp-action="Index">Persons</a>
      <a asp-controller="Countries" asp-action="UploadFromExcel">Upload Countries</a>
-     <a asp-controller="Account" asp-action="Register">Register</a>
+
+     @* whether to show register or logout *@
+
+     @if (!User.Identity.IsAuthenticated)
+     {
+        <a asp-controller="Account" asp-action="Register">Register</a>
+        <a asp-controller="Account" asp-action="Login">Login</a>
+     }
+     else
+     {
+         <i class="fa-solid fa-user"></i>
+        <a id="user-profile-icon">@User.Identity?.Name</a>
+        <a asp-controller="Account" asp-action="Logout">Logout</a>
+     }
     </li>
    </ul>
   </div>

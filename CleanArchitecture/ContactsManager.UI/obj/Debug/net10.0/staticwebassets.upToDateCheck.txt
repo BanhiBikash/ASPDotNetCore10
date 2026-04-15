@@ -1,9 +1,9 @@
 C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI\wwwroot\jquery.min.js
-C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI\wwwroot\StyleSheet1.css
 C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI\wwwroot\jquery.validate.min.js
+C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI\wwwroot\StyleSheet.css
 C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI\wwwroot\jquery.validate.unobtrusive.min.js
 wwwroot\Rotativa\wkhtmltopdf.exe
-wwwroot\StyleSheet1.css
+wwwroot\StyleSheet.css
 wwwroot\jquery.min.js
 wwwroot\jquery.validate.min.js
 wwwroot\jquery.validate.unobtrusive.min.js

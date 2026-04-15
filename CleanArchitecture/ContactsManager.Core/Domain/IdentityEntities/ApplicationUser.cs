@@ -7,6 +7,6 @@ namespace ContactsManager.Core.Domain.IdentityEntities
 {
     public class ApplicationUser:IdentityUser<Guid>
     {
-        public string? stringName { get ; set; }
+        public string? PersonName { get ; set; }
     }
 }

@@ -47,7 +47,14 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             });
 
             //use identity
-            service.AddIdentity<ApplicationUser, ApplicationRole>().
+            service.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+            {
+                options.Password.RequiredLength = 5;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireDigit = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredUniqueChars = 3;
+            }).
                 AddDefaultTokenProviders(). //token for otps etc
                 AddEntityFrameworkStores<ApplicationDbContext>().   //setting the db context/telling the database name
                 AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>().    //cause db can't be accessed directly so repository for UserTable
