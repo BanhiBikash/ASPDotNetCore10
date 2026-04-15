@@ -64,7 +64,22 @@ namespace ContactsManager.UI.Controllers
         public async Task<IActionResult?> Logout()
         {
             await _signInManager.SignOutAsync();
-            return View("Register");
+            return RedirectToAction("Index","Persons");
         }
+
+        [Route("[Action]")]
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        //[Route("[Action]")]
+        //[HttpPost]
+        //[TypeFilter(typeof(LoginActionFilter))]
+        //public async Task<IActionResult> Login(LoginDTO loginDTO)
+        //{
+
+        //}
     }
 }
