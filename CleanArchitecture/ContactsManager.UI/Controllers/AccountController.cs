@@ -79,12 +79,18 @@ namespace ContactsManager.UI.Controllers
         [Route("[Action]")]
         [HttpPost]
         [TypeFilter(typeof(LoginActionFilter))]
-        public async Task<IActionResult> Login(LoginDTO loginDTO)
+        public async Task<IActionResult> Login(LoginDTO loginDTO, string? ReturnUrl)
         {
             var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password, isPersistent: false, lockoutOnFailure: false);
 
             if (result.Succeeded)
             {
+                //if there is a return url and it is local, redirect to it. Otherwise, redirect to the home page
+                if (!string.IsNullOrEmpty(ReturnUrl) && Url.IsLocalUrl(ReturnUrl))
+                {
+                    return LocalRedirect(ReturnUrl);
+                }
+
                 return RedirectToAction(nameof(PersonsController.Index),"Persons");
             }
             else

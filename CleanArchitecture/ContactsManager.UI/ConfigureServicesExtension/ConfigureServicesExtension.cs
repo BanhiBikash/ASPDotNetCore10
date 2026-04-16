@@ -71,7 +71,7 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             //fallback policy for authorization, if no [AllowAnonymous] is used then it will require authentication by default
             service.ConfigureApplicationCookie(options =>
             {
-                options.LoginPath = "~/Account/Login";
+                options.LoginPath = "/Account/Login";
             });
 
 
