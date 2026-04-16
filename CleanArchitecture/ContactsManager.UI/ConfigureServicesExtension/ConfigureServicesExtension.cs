@@ -9,6 +9,7 @@ using ContactsManager.Infrastructure.DBContext;
 using ContactsManager.Core.Domain.IdentityEntities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactsManager.UI.ConfigureServicesExtension
 {
@@ -41,6 +42,8 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             service.AddScoped<IPersonsUpdateService, PersonsUpdateService>();
             service.AddTransient<IndexResultFilter>();
 
+
+            //adding database context
             service.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
@@ -59,6 +62,18 @@ namespace ContactsManager.UI.ConfigureServicesExtension
                 AddEntityFrameworkStores<ApplicationDbContext>().   //setting the db context/telling the database name
                 AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>().    //cause db can't be accessed directly so repository for UserTable
                 AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>(); //cause db can't be accessed directly so repository for RoleTable
+
+            service.AddAuthorization(options =>
+            {       //requires authorization for all controllers and actions by default, unless [AllowAnonymous] is used
+                options.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+            });
+
+            //fallback policy for authorization, if no [AllowAnonymous] is used then it will require authentication by default
+            service.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "~/Account/Login";
+            });
+
 
             return service;
         }

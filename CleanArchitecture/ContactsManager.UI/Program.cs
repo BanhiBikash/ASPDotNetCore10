@@ -42,10 +42,10 @@ app.Logger.LogCritical("critical-message");
 
 Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 
-app.UseStaticFiles();
-app.UseAuthentication();    //Reads Identity cookie
-app.UseRouting();       //Matches the incoming request to the route template and selects the appropriate controller and action method
-app.MapControllers();   //executes the filter pipeline and the selected action method and generates a response
 app.UseHttpLogging();
-
+app.UseStaticFiles(); 
+app.UseRouting();       //Matches the incoming request to the route template and selects the appropriate controller and action method
+app.UseAuthentication();    //Reads Identity cookie
+app.UseAuthorization();    //Checks if the user is authorized to access the resource or not based on the policies and roles defined in the application
+app.MapControllers();   //executes the filter pipeline and the selected action method and generates a response
 app.Run();

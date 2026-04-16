@@ -3,9 +3,11 @@ using ContactsManager.Core.DTO;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ContactsManager.UI.Filters.ActionFilters;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ContactsManager.UI.Controllers
 {
+    [AllowAnonymous]
     [Route("[Controller]")]
     public class AccountController : Controller
     {
