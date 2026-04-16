@@ -105,6 +105,16 @@ namespace ContactsManager.UI.Controllers
 
             if (result.Succeeded)
             {
+                //for admin redirect
+                ApplicationUser applicationUser = await _userManager.FindByEmailAsync(loginDTO.Email);
+                if (applicationUser != null) 
+                { 
+                    if(await _userManager.IsInRoleAsync(applicationUser, "Admin"))
+                    {
+                        return RedirectToAction("Index","Admin", new {area="Admin"});
+                    }
+                }
+
                 //if there is a return url and it is local, redirect to it. Otherwise, redirect to the home page
                 if (!string.IsNullOrEmpty(ReturnUrl) && Url.IsLocalUrl(ReturnUrl))
                 {
