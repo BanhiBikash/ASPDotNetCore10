@@ -1,0 +1,891 @@
+2026-04-16 12:32:58.722 +05:30 [DBG] debug-message
+2026-04-16 12:32:58.802 +05:30 [INF] information-message
+2026-04-16 12:32:58.804 +05:30 [WRN] warning-message
+2026-04-16 12:32:58.811 +05:30 [ERR] error-message
+2026-04-16 12:32:58.815 +05:30 [FTL] critical-message
+2026-04-16 12:32:59.107 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Account/Login.cshtml'.
+2026-04-16 12:32:59.294 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Account/Register.cshtml'.
+2026-04-16 12:32:59.302 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Countries/UploadFromExcel.cshtml'.
+2026-04-16 12:32:59.304 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Home/Error.cshtml'.
+2026-04-16 12:32:59.305 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Create.cshtml'.
+2026-04-16 12:32:59.307 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Delete.cshtml'.
+2026-04-16 12:32:59.308 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Edit.cshtml'.
+2026-04-16 12:32:59.312 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/Index.cshtml'.
+2026-04-16 12:32:59.317 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Persons/PersonsPDF.cshtml'.
+2026-04-16 12:32:59.321 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_GridColumnHeader.cshtml'.
+2026-04-16 12:32:59.323 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/Shared/_Layout.cshtml'.
+2026-04-16 12:32:59.326 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewImports.cshtml'.
+2026-04-16 12:32:59.341 +05:30 [DBG] Initializing Razor view compiler with compiled view: '/Views/_ViewStart.cshtml'.
+2026-04-16 12:32:59.423 +05:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2026-04-16 12:32:59.711 +05:30 [DBG] Hosting starting
+2026-04-16 12:32:59.752 +05:30 [INF] User profile is available. Using 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-04-16 12:32:59.810 +05:30 [DBG] Reading data from file 'C:\Users\Banhi\AppData\Local\ASP.NET\DataProtection-Keys\key-213a9e69-f674-451a-87a6-89d04416c0e3.xml'.
+2026-04-16 12:32:59.989 +05:30 [DBG] Found key {213a9e69-f674-451a-87a6-89d04416c0e3}.
+2026-04-16 12:33:00.049 +05:30 [DBG] Considering key {213a9e69-f674-451a-87a6-89d04416c0e3} with expiration date 2026-05-10 15:23:00Z as default key.
+2026-04-16 12:33:00.070 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-16 12:33:00.089 +05:30 [DBG] Decrypting secret element using Windows DPAPI.
+2026-04-16 12:33:00.094 +05:30 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=10.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2026-04-16 12:33:00.110 +05:30 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2026-04-16 12:33:00.114 +05:30 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2026-04-16 12:33:00.128 +05:30 [DBG] Using key {213a9e69-f674-451a-87a6-89d04416c0e3} as the default key.
+2026-04-16 12:33:00.135 +05:30 [DBG] Key ring with default key {213a9e69-f674-451a-87a6-89d04416c0e3} was loaded during application startup.
+2026-04-16 12:33:00.173 +05:30 [DBG] Middleware loaded
+2026-04-16 12:33:00.185 +05:30 [DBG] Middleware loaded. Script /_framework/aspnetcore-browser-refresh.js (16521 B).
+2026-04-16 12:33:00.190 +05:30 [DBG] Middleware loaded. Script /_framework/blazor-hotreload.js (799 B).
+2026-04-16 12:33:00.401 +05:30 [DBG] Middleware configuration started with options: {AllowedHosts = *, AllowEmptyHosts = True, IncludeFailureMessage = True}
+2026-04-16 12:33:00.407 +05:30 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2026-04-16 12:33:00.415 +05:30 [DBG] Middleware loaded: DOTNET_MODIFIABLE_ASSEMBLIES=debug, __ASPNETCORE_BROWSER_TOOLS=true
+2026-04-16 12:33:00.507 +05:30 [INF] Now listening on: http://localhost:5012
+2026-04-16 12:33:00.509 +05:30 [DBG] Loaded hosting startup assembly ContactsManager.UI
+2026-04-16 12:33:00.514 +05:30 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2026-04-16 12:33:00.523 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.ApiEndpointDiscovery
+2026-04-16 12:33:00.526 +05:30 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2026-04-16 12:33:00.559 +05:30 [DBG] Executing API description provider 'EndpointMetadataApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-04-16 12:33:00.563 +05:30 [DBG] Executing API description provider 'DefaultApiDescriptionProvider' from assembly Microsoft.AspNetCore.Mvc.ApiExplorer v10.0.0.0.
+2026-04-16 12:33:00.768 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-16 12:33:00.774 +05:30 [INF] Hosting environment: Development
+2026-04-16 12:33:00.776 +05:30 [INF] Content root path: C:\Users\Banhi\source\repos\aspnetcore\CleanArchitecture\ContactsManager.UI
+2026-04-16 12:33:00.790 +05:30 [DBG] Hosting started
+2026-04-16 12:33:00.846 +05:30 [DBG] Connection id "0HNKRGOP82PDD" received FIN.
+2026-04-16 12:33:00.846 +05:30 [DBG] Connection id "0HNKRGOP82PDC" received FIN.
+2026-04-16 12:33:00.875 +05:30 [DBG] Connection id "0HNKRGOP82PDC" accepted.
+2026-04-16 12:33:00.875 +05:30 [DBG] Connection id "0HNKRGOP82PDD" accepted.
+2026-04-16 12:33:00.880 +05:30 [DBG] Connection id "0HNKRGOP82PDC" started.
+2026-04-16 12:33:00.882 +05:30 [DBG] Connection id "0HNKRGOP82PDD" started.
+2026-04-16 12:33:00.915 +05:30 [DBG] Connection id "0HNKRGOP82PDC" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-16 12:33:00.915 +05:30 [DBG] Connection id "0HNKRGOP82PDD" sending FIN because: "The Socket transport's send loop completed gracefully."
+2026-04-16 12:33:00.929 +05:30 [DBG] Connection id "0HNKRGOP82PDC" disconnecting.
+2026-04-16 12:33:00.930 +05:30 [DBG] Connection id "0HNKRGOP82PDD" disconnecting.
+2026-04-16 12:33:00.986 +05:30 [DBG] Connection id "0HNKRGOP82PDC" stopped.
+2026-04-16 12:33:00.988 +05:30 [DBG] Connection id "0HNKRGOP82PDD" stopped.
+2026-04-16 12:33:02.676 +05:30 [DBG] Connection id "0HNKRGOP82PDE" accepted.
+2026-04-16 12:33:02.785 +05:30 [DBG] Connection id "0HNKRGOP82PDE" started.
+2026-04-16 12:33:03.016 +05:30 [DBG] Connection id "0HNKRGOP82PDF" accepted.
+2026-04-16 12:33:03.546 +05:30 [DBG] Connection id "0HNKRGOP82PDF" started.
+2026-04-16 12:33:03.683 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login - null null
+2026-04-16 12:33:03.683 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/ - null null
+2026-04-16 12:33:04.141 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:04.244 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:04.276 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:04.284 +05:30 [DBG] The request path / does not match a supported file type
+2026-04-16 12:33:04.429 +05:30 [DBG] 1 candidate(s) found for the request path '/'
+2026-04-16 12:33:04.430 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:04.457 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)' with route pattern '' is valid for the request path '/'
+2026-04-16 12:33:04.460 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:04.474 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)'
+2026-04-16 12:33:04.500 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:04.587 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:04.587 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:04.609 +05:30 [DBG] Policy authentication schemes  did not succeed
+2026-04-16 12:33:04.611 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:04.631 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-16 12:33:04.681 +05:30 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-16 12:33:04.749 +05:30 [INF] Response:
+StatusCode: 302
+Location: http://localhost:5012/Account/Login?ReturnUrl=%2F
+2026-04-16 12:33:04.799 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:04.858 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:05.151 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/ - 302 null null 1497.0604ms
+2026-04-16 12:33:05.165 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:05.177 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2F - null null
+2026-04-16 12:33:05.181 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:05.196 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+2026-04-16 12:33:05.202 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:05.212 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:05.226 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:05.238 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:05.241 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:05.246 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:05.261 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:05.262 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:05.278 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:05.310 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:05.417 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:05.430 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:05.437 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:05.445 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:05.457 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:05.511 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:05.521 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:05.934 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-16 12:33:05.934 +05:30 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2026-04-16 12:33:06.183 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:06.183 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:06.276 +05:30 [DBG] View lookup cache miss for view 'Login' in controller 'Account'.
+2026-04-16 12:33:06.276 +05:30 [DBG] View lookup cache miss for view 'Login' in controller 'Account'.
+2026-04-16 12:33:06.310 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:06.312 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:06.329 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 44.0899ms.
+2026-04-16 12:33:06.331 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 61.6391ms.
+2026-04-16 12:33:06.872 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:06.872 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:06.897 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:06.897 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:06.906 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:06.915 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:06.971 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[],action=[Login],controller=[Account])
+2026-04-16 12:33:06.987 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:06.995 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:06.998 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[/],action=[Login],controller=[Account])
+2026-04-16 12:33:07.015 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and ?ReturnUrl=%2F
+2026-04-16 12:33:07.024 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login?ReturnUrl=%2F
+2026-04-16 12:33:07.037 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:07.038 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:07.421 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:07.421 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:07.435 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:07.444 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:07.453 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:07.463 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:07.478 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:07.489 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:07.502 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:07.511 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:07.522 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:07.534 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:07.545 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:07.553 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:07.567 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:07.579 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:07.587 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:07.597 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:07.612 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:07.619 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:07.632 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:07.640 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:07.697 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:07.705 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:07.761 +05:30 [DBG] Connection id "0HNKRGOP82PDG" accepted.
+2026-04-16 12:33:07.768 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-16 12:33:07.768 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-16 12:33:07.783 +05:30 [DBG] Connection id "0HNKRGOP82PDG" started.
+2026-04-16 12:33:07.800 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2FPersons%2FIndex - null null
+2026-04-16 12:33:07.822 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-16 12:33:07.822 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-16 12:33:07.835 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:07.857 +05:30 [INF] Executed ViewResult - view Login executed in 1588.2025ms.
+2026-04-16 12:33:07.857 +05:30 [INF] Executed ViewResult - view Login executed in 1588.182ms.
+2026-04-16 12:33:07.857 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:07.868 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 2614.254ms
+2026-04-16 12:33:07.872 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 2351.5794ms
+2026-04-16 12:33:07.877 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:07.885 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:07.890 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:07.908 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:07 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:07.899 +05:30 [DBG] Connection id "0HNKRGOP82PDH" accepted.
+2026-04-16 12:33:07.899 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:07 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:07.893 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:07.931 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:07.922 +05:30 [DBG] Connection id "0HNKRGOP82PDH" started.
+2026-04-16 12:33:07.926 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-16 12:33:07.917 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-16 12:33:07.939 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:07.942 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Stylesheet.css - null null
+2026-04-16 12:33:07.947 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-16 12:33:07.947 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-16 12:33:07.948 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:07.962 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Stylesheet.css
+Accept: text/css,*/*;q=0.1
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+If-Modified-Since: [Redacted]
+If-None-Match: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:07.963 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:07.966 +05:30 [DBG] Connection id "0HNKRGOP82PDF" completed keep alive response.
+2026-04-16 12:33:07.974 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:08.040 +05:30 [INF] The file /Stylesheet.css was not modified
+2026-04-16 12:33:08.065 +05:30 [DBG] Handled. Status code: 304 File: /Stylesheet.css
+2026-04-16 12:33:08.048 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login - 200 null text/html; charset=utf-8 4405.4075ms
+2026-04-16 12:33:08.060 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:08.048 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2F - 200 null text/html; charset=utf-8 2870.5998ms
+2026-04-16 12:33:08.094 +05:30 [INF] Response:
+StatusCode: 304
+Content-Type: text/css
+Accept-Ranges: bytes
+ETag: [Redacted]
+Last-Modified: Wed, 15 Apr 2026 06:14:44 GMT
+2026-04-16 12:33:08.117 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 12:33:08.121 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:08.143 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_vs/browserLink - null null
+2026-04-16 12:33:08.149 +05:30 [DBG] Connection id "0HNKRGOP82PDH" completed keep alive response.
+2026-04-16 12:33:08.170 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-16 12:33:08.201 +05:30 [DBG] Connection id "0HNKRGOP82PDF" completed keep alive response.
+2026-04-16 12:33:08.187 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Stylesheet.css - 304 null text/css 245.0588ms
+2026-04-16 12:33:08.171 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:08.244 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 126.2372ms
+2026-04-16 12:33:08.271 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:08.296 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:08.305 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:08.443 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:08.486 +05:30 [DBG] View lookup cache hit for view 'Login' in controller 'Account'.
+2026-04-16 12:33:08.495 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:08.499 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 12.5529ms.
+2026-04-16 12:33:08.505 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:08.516 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:08.517 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:08.521 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:08.524 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_vs/browserLink - 200 null text/javascript; charset=UTF-8 381.6046ms
+2026-04-16 12:33:08.550 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[/Persons/Index],action=[Login],controller=[Account])
+2026-04-16 12:33:08.570 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and ?ReturnUrl=%2FPersons%2FIndex
+2026-04-16 12:33:08.576 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login?ReturnUrl=%2FPersons%2FIndex
+2026-04-16 12:33:08.611 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:08.624 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:08.637 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:08.647 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:08.662 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:08.670 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/favicon.ico - null null
+2026-04-16 12:33:08.676 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:08.684 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:08.695 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:08.702 +05:30 [DBG] The request path /favicon.ico does not match an existing file
+2026-04-16 12:33:08.712 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:08.718 +05:30 [DBG] No candidates found for the request path '/favicon.ico'
+2026-04-16 12:33:08.729 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:08.734 +05:30 [DBG] Request did not match any endpoints
+2026-04-16 12:33:08.739 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:08.747 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:08.755 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:08.758 +05:30 [DBG] Policy authentication schemes  did not succeed
+2026-04-16 12:33:08.769 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:08.773 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-16 12:33:08.778 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:08.787 +05:30 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-16 12:33:08.810 +05:30 [INF] Response:
+StatusCode: 302
+Location: http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:08.807 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-16 12:33:08.817 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:08.822 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-16 12:33:08.826 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/favicon.ico - 302 0 null 156.3383ms
+2026-04-16 12:33:08.830 +05:30 [INF] Executed ViewResult - view Login executed in 344.3418ms.
+2026-04-16 12:33:08.972 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - null null
+2026-04-16 12:33:08.973 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 668.2376ms
+2026-04-16 12:33:08.981 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:08.984 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:08.995 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:09.000 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:08 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:09.010 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:09.014 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-16 12:33:09.019 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:09.026 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-16 12:33:09.035 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:09.041 +05:30 [DBG] Connection id "0HNKRGOP82PDG" completed keep alive response.
+2026-04-16 12:33:09.046 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:09.052 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2FPersons%2FIndex - 200 null text/html; charset=utf-8 1252.9633ms
+2026-04-16 12:33:09.058 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:09.088 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:09.102 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:09.109 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:09.118 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:09.131 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:09.137 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:09.149 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:09.155 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:09.174 +05:30 [DBG] View lookup cache hit for view 'Login' in controller 'Account'.
+2026-04-16 12:33:09.184 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:09.189 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 14.9401ms.
+2026-04-16 12:33:09.199 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:09.229 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:09.309 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:09.319 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 12:33:09.463 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[/favicon.ico],action=[Login],controller=[Account])
+2026-04-16 12:33:09.489 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-16 12:33:09.498 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and ?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:09.503 +05:30 [DBG] Connection id "0HNKRGOP82PDG" completed keep alive response.
+2026-04-16 12:33:09.512 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:09.516 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 196.9287ms
+2026-04-16 12:33:09.528 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:09.546 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:09.553 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:09.564 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:09.572 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:09.584 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:09.592 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:09.605 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:09.617 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:09.625 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:09.638 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:09.652 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:09.667 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:09.682 +05:30 [INF] Executed ViewResult - view Login executed in 507.6528ms.
+2026-04-16 12:33:09.688 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 538.7332ms
+2026-04-16 12:33:09.692 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:09.699 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:08 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:09.706 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:09.715 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - 200 null text/html; charset=utf-8 742.8494ms
+2026-04-16 12:33:10.281 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/favicon.ico - null null
+2026-04-16 12:33:10.291 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:10.306 +05:30 [DBG] The request path /favicon.ico does not match an existing file
+2026-04-16 12:33:10.313 +05:30 [DBG] No candidates found for the request path '/favicon.ico'
+2026-04-16 12:33:10.322 +05:30 [DBG] Request did not match any endpoints
+2026-04-16 12:33:10.331 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:10.336 +05:30 [DBG] Policy authentication schemes  did not succeed
+2026-04-16 12:33:10.347 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-16 12:33:10.354 +05:30 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-16 12:33:10.362 +05:30 [INF] Response:
+StatusCode: 302
+Location: http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:10.369 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:10.375 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/favicon.ico - 302 0 null 93.2302ms
+2026-04-16 12:33:10.387 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - null null
+2026-04-16 12:33:10.399 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:10.406 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:10.415 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:10.420 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:10.435 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:10.448 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:10.463 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:10.470 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:10.488 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:10.497 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:10.506 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:10.522 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:10.533 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:10.549 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:10.564 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:10.593 +05:30 [DBG] View lookup cache hit for view 'Login' in controller 'Account'.
+2026-04-16 12:33:10.603 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:10.616 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 24.0447ms.
+2026-04-16 12:33:10.632 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:10.644 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:10.663 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:10.675 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[/favicon.ico],action=[Login],controller=[Account])
+2026-04-16 12:33:10.686 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and ?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:10.701 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:10.726 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:10.735 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:10.752 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:10.773 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:10.794 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:10.811 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:10.823 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:10.832 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:10.846 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:10.857 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:10.866 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:10.880 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:10.895 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:10.910 +05:30 [INF] Executed ViewResult - view Login executed in 317.8974ms.
+2026-04-16 12:33:10.919 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 369.4945ms
+2026-04-16 12:33:10.929 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:10.942 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:10 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:10.958 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:11.001 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - 200 null text/html; charset=utf-8 614.4183ms
+2026-04-16 12:33:11.153 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 12:33:11.166 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-16 12:33:11.170 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:11.174 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 20.4275ms
+2026-04-16 12:33:11.852 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/favicon.ico - null null
+2026-04-16 12:33:11.880 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:11.916 +05:30 [DBG] The request path /favicon.ico does not match an existing file
+2026-04-16 12:33:11.935 +05:30 [DBG] No candidates found for the request path '/favicon.ico'
+2026-04-16 12:33:12.148 +05:30 [DBG] Request did not match any endpoints
+2026-04-16 12:33:12.151 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:12.159 +05:30 [DBG] Policy authentication schemes  did not succeed
+2026-04-16 12:33:12.182 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-16 12:33:12.196 +05:30 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-16 12:33:12.209 +05:30 [INF] Response:
+StatusCode: 302
+Location: http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:12.222 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:12.248 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/favicon.ico - 302 0 null 395.8351ms
+2026-04-16 12:33:12.328 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - null null
+2026-04-16 12:33:12.335 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:12.349 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:12.367 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:12.380 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:12.392 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:12.399 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:12.417 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:12.421 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:12.427 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:12.435 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Register - null null
+2026-04-16 12:33:12.436 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:12.445 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Register
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-User: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:12.450 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:12.457 +05:30 [DBG] The request path /Account/Register does not match a supported file type
+2026-04-16 12:33:12.471 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:12.475 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Register'
+2026-04-16 12:33:12.484 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:12.493 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)' with route pattern 'Account/Register' is valid for the request path '/Account/Register'
+2026-04-16 12:33:12.504 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:12.516 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-16 12:33:12.523 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:12.529 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:12.547 +05:30 [DBG] View lookup cache hit for view 'Login' in controller 'Account'.
+2026-04-16 12:33:12.551 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-16 12:33:12.555 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:12.569 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 21.4388ms.
+2026-04-16 12:33:12.571 +05:30 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:12.578 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:12.602 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:12.616 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:12.623 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:12.633 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:12.640 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:12.652 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[/favicon.ico],action=[Login],controller=[Account])
+2026-04-16 12:33:12.666 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:12.680 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and ?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:12.685 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:12.692 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:12.701 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:12.712 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:12.719 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:12.725 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:12.762 +05:30 [DBG] View lookup cache miss for view 'Register' in controller 'Account'.
+2026-04-16 12:33:12.769 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:12.779 +05:30 [INF] Executing ViewResult, running view Register.
+2026-04-16 12:33:12.785 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:12.788 +05:30 [DBG] The view path '/Views/Account/Register.cshtml' was found in 26.7351ms.
+2026-04-16 12:33:12.802 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:12.819 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:12.831 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:12.838 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:12.848 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:12.851 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:12.864 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:12.871 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:12.881 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:12.891 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:12.906 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:12.914 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:12.925 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:12.936 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:12.944 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:12.956 +05:30 [INF] Executed ViewResult - view Login executed in 408.8074ms.
+2026-04-16 12:33:12.964 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:12.971 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 467.6907ms
+2026-04-16 12:33:12.984 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:12.990 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:12 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:12.997 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:13.011 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - 200 null text/html; charset=utf-8 682.7004ms
+2026-04-16 12:33:13.078 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.IsEmailAlreadyTaken (ContactsManager.UI)"] for address (action=[IsEmailAlreadyTaken],controller=[Account])
+2026-04-16 12:33:13.099 +05:30 [DBG] Successfully processed template Account for ContactsManager.UI.Controllers.AccountController.IsEmailAlreadyTaken (ContactsManager.UI) resulting in /Account and 
+2026-04-16 12:33:13.106 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.IsEmailAlreadyTaken (ContactsManager.UI)"] with result /Account
+2026-04-16 12:33:13.186 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:13.198 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:13.206 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:13.219 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:13.231 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:13.240 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:13.251 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:13.259 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:13.271 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:13.286 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:13.299 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:13.308 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:13.335 +05:30 [DBG] Response markup is scheduled to include Browser Link script injection.
+2026-04-16 12:33:13.340 +05:30 [DBG] Response markup is scheduled to include browser refresh script injection.
+2026-04-16 12:33:13.343 +05:30 [INF] Executed ViewResult - view Register executed in 581.8652ms.
+2026-04-16 12:33:13.353 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 652.3263ms
+2026-04-16 12:33:13.361 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2026-04-16 12:33:13.371 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:12 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:13.377 +05:30 [DBG] Response markup was updated to include Browser Link script injection.
+2026-04-16 12:33:13.380 +05:30 [DBG] Response markup was updated to include browser refresh script injection.
+2026-04-16 12:33:13.394 +05:30 [DBG] Connection id "0HNKRGOP82PDG" completed keep alive response.
+2026-04-16 12:33:13.404 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Register - 200 null text/html; charset=utf-8 968.968ms
+2026-04-16 12:33:13.422 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_vs/browserLink - null null
+2026-04-16 12:33:13.426 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - null null
+2026-04-16 12:33:13.446 +05:30 [DBG] Script injected: /_framework/aspnetcore-browser-refresh.js
+2026-04-16 12:33:13.449 +05:30 [DBG] Connection id "0HNKRGOP82PDG" completed keep alive response.
+2026-04-16 12:33:13.456 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_framework/aspnetcore-browser-refresh.js - 200 16521 application/javascript; charset=utf-8 29.8225ms
+2026-04-16 12:33:13.482 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:13.503 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/_vs/browserLink - 200 null text/javascript; charset=UTF-8 80.0859ms
+2026-04-16 12:33:13.582 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/favicon.ico - null null
+2026-04-16 12:33:13.630 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /favicon.ico
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:13.641 +05:30 [DBG] The request path /favicon.ico does not match an existing file
+2026-04-16 12:33:13.688 +05:30 [DBG] No candidates found for the request path '/favicon.ico'
+2026-04-16 12:33:13.696 +05:30 [DBG] Request did not match any endpoints
+2026-04-16 12:33:13.701 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:13.705 +05:30 [DBG] Policy authentication schemes  did not succeed
+2026-04-16 12:33:13.714 +05:30 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2026-04-16 12:33:13.719 +05:30 [INF] AuthenticationScheme: Identity.Application was challenged.
+2026-04-16 12:33:13.723 +05:30 [INF] Response:
+StatusCode: 302
+Location: http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:13.749 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:13.760 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/favicon.ico - 302 0 null 177.551ms
+2026-04-16 12:33:13.799 +05:30 [INF] Request starting HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - null null
+2026-04-16 12:33:13.818 +05:30 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Login
+Accept: image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Connection: keep-alive
+Host: localhost:5012
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 Edg/147.0.0.0
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: en-US,en;q=0.9
+Cookie: [Redacted]
+Referer: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+Sec-Fetch-Site: [Redacted]
+Sec-Fetch-Mode: [Redacted]
+Sec-Fetch-Dest: [Redacted]
+2026-04-16 12:33:13.832 +05:30 [DBG] The request path /Account/Login does not match a supported file type
+2026-04-16 12:33:13.843 +05:30 [DBG] 1 candidate(s) found for the request path '/Account/Login'
+2026-04-16 12:33:13.864 +05:30 [DBG] Endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)' with route pattern 'Account/Login' is valid for the request path '/Account/Login'
+2026-04-16 12:33:13.878 +05:30 [DBG] Request matched endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:13.883 +05:30 [DBG] AuthenticationScheme: Identity.Application was not authenticated.
+2026-04-16 12:33:13.887 +05:30 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:13.894 +05:30 [INF] Route matched with {action = "Login", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Login() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2026-04-16 12:33:13.903 +05:30 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2026-04-16 12:33:13.910 +05:30 [DBG] Execution plan of resource filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:13.925 +05:30 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.Filters.ControllerActionFilter (Order: -2147483648)","Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","ContactsManager.UI.Filters.ActionFilters.ResponseHeaderFilter (Order: 2)"]
+2026-04-16 12:33:13.937 +05:30 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2026-04-16 12:33:13.946 +05:30 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Filters.SaveTempDataFilter"]
+2026-04-16 12:33:13.953 +05:30 [DBG] Executing controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:13.966 +05:30 [DBG] Executed controller factory for controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI)
+2026-04-16 12:33:14.003 +05:30 [DBG] View lookup cache hit for view 'Login' in controller 'Account'.
+2026-04-16 12:33:14.006 +05:30 [INF] Executing ViewResult, running view Login.
+2026-04-16 12:33:14.013 +05:30 [DBG] The view path '/Views/Account/Login.cshtml' was found in 10.0494ms.
+2026-04-16 12:33:14.022 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:14.048 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:14.084 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:14.097 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (ReturnUrl=[/favicon.ico],action=[Login],controller=[Account])
+2026-04-16 12:33:14.104 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and ?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:14.117 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login?ReturnUrl=%2Ffavicon.ico
+2026-04-16 12:33:14.133 +05:30 [DBG] An antiforgery cookie token was reused.
+2026-04-16 12:33:14.147 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] for address (action=[Index],controller=[Persons])
+2026-04-16 12:33:14.154 +05:30 [DBG] Successfully processed template Persons/Index for ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI) resulting in /Persons/Index and 
+2026-04-16 12:33:14.164 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)","ContactsManager.UI.Controllers.PersonsController.Index (ContactsManager.UI)"] with result /Persons/Index
+2026-04-16 12:33:14.170 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] for address (action=[UploadFromExcel],controller=[Countries])
+2026-04-16 12:33:14.185 +05:30 [DBG] Successfully processed template Countries/UploadFromExcel for ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI) resulting in /Countries/UploadFromExcel and 
+2026-04-16 12:33:14.194 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)","ContactsManager.UI.Controllers.CountriesController.UploadFromExcel (ContactsManager.UI)"] with result /Countries/UploadFromExcel
+2026-04-16 12:33:14.202 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] for address (action=[Register],controller=[Account])
+2026-04-16 12:33:14.212 +05:30 [DBG] Successfully processed template Account/Register for ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) resulting in /Account/Register and 
+2026-04-16 12:33:14.218 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)"] with result /Account/Register
+2026-04-16 12:33:14.234 +05:30 [DBG] Found the endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] for address (action=[Login],controller=[Account])
+2026-04-16 12:33:14.245 +05:30 [DBG] Successfully processed template Account/Login for ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) resulting in /Account/Login and 
+2026-04-16 12:33:14.252 +05:30 [DBG] Link generation succeeded for endpoints ["ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)","ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)"] with result /Account/Login
+2026-04-16 12:33:14.265 +05:30 [INF] Executed ViewResult - view Login executed in 262.445ms.
+2026-04-16 12:33:14.272 +05:30 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI) in 318.8463ms
+2026-04-16 12:33:14.288 +05:30 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Login (ContactsManager.UI)'
+2026-04-16 12:33:14.327 +05:30 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Thu, 16 Apr 2026 07:03:13 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+Global-Key: [Redacted]
+2026-04-16 12:33:14.335 +05:30 [DBG] Connection id "0HNKRGOP82PDE" completed keep alive response.
+2026-04-16 12:33:14.341 +05:30 [INF] Request finished HTTP/1.1 GET http://localhost:5012/Account/Login?ReturnUrl=%2Ffavicon.ico - 200 null text/html; charset=utf-8 541.0916ms

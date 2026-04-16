@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ContactsManager.UI.Filters.ActionFilters;
 using Microsoft.AspNetCore.Authorization;
+using ContactsManager.Core.ServiceContracts.Enums;
 
 namespace ContactsManager.UI.Controllers
 {
@@ -14,11 +15,13 @@ namespace ContactsManager.UI.Controllers
 
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
 
         [Route("[Action]")]
@@ -55,6 +58,23 @@ namespace ContactsManager.UI.Controllers
             }
             else
             {
+                //check roles
+                if(registerDTO.UserType == UserType.Admin)
+                {
+                    //if admin role is not created then create first
+                    if((await _roleManager.FindByNameAsync(UserType.Admin.ToString())) is null)
+                    {
+                        await _roleManager.CreateAsync(new ApplicationRole() { Name = Convert.ToString(UserType.Admin) });
+                    }
+
+                    //add the user to admin role
+                    await _userManager.AddToRoleAsync(user,UserType.Admin.ToString());
+                }
+                else
+                { 
+                    await _userManager.AddToRoleAsync(user, UserType.User.ToString());
+                }
+
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 return RedirectToAction(nameof(PersonsController.Index), "Persons");
             }
