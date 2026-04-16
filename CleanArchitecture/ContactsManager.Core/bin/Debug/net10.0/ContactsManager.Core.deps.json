@@ -13,10 +13,12 @@
           "Microsoft.AspNetCore.Identity": "2.3.9",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.5",
           "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.3.9",
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.3.9",
           "Newtonsoft.Json": "13.0.4",
           "Serilog": "4.3.1",
           "Serilog.Extensions.Hosting": "10.0.0",
-          "SerilogTimings": "3.1.0"
+          "SerilogTimings": "3.1.0",
+          "System.Security.Cryptography.Xml": "10.0.6"
         },
         "runtime": {
           "ContactsManager.Core.dll": {}
@@ -35,8 +37,8 @@
           "EPPlus.Interfaces": "8.4.0",
           "Microsoft.Extensions.Configuration.Json": "10.0.0",
           "Microsoft.IO.RecyclableMemoryStream": "3.0.1",
-          "System.Security.Cryptography.Pkcs": "10.0.0",
-          "System.Security.Cryptography.Xml": "10.0.0"
+          "System.Security.Cryptography.Pkcs": "10.0.6",
+          "System.Security.Cryptography.Xml": "10.0.6"
         },
         "runtime": {
           "lib/net10.0/EPPlus.dll": {
@@ -50,6 +52,21 @@
           "lib/net10.0/EPPlus.Interfaces.dll": {
             "assemblyVersion": "8.4.0.0",
             "fileVersion": "8.4.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Antiforgery/2.3.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.DataProtection": "2.3.0",
+          "Microsoft.AspNetCore.Http.Abstractions": "2.3.0",
+          "Microsoft.AspNetCore.Http.Extensions": "2.3.0",
+          "Microsoft.AspNetCore.WebUtilities": "2.3.0",
+          "Microsoft.Extensions.ObjectPool": "8.0.11"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Antiforgery.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.25014"
           }
         }
       },
@@ -158,7 +175,7 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "10.0.5",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.5",
           "Microsoft.Extensions.Options": "10.0.5",
-          "System.Security.Cryptography.Xml": "10.0.0"
+          "System.Security.Cryptography.Xml": "10.0.6"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.dll": {
@@ -170,6 +187,14 @@
       "Microsoft.AspNetCore.DataProtection.Abstractions/2.3.0": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.DataProtection.Abstractions.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.25014"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Diagnostics.Abstractions/2.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Diagnostics.Abstractions.dll": {
             "assemblyVersion": "2.3.0.0",
             "fileVersion": "2.3.0.25014"
           }
@@ -195,6 +220,14 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Hosting.Server.Abstractions.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.25014"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Html.Abstractions/2.3.0": {
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Html.Abstractions.dll": {
             "assemblyVersion": "2.3.0.0",
             "fileVersion": "2.3.0.25014"
           }
@@ -276,6 +309,17 @@
           }
         }
       },
+      "Microsoft.AspNetCore.JsonPatch/2.3.0": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.25014"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Mvc.Abstractions/2.3.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Routing.Abstractions": "2.3.0",
@@ -317,6 +361,37 @@
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.DataAnnotations.dll": {
+            "assemblyVersion": "2.3.9.0",
+            "fileVersion": "2.3.9.26007"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.Formatters.Json/2.3.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.JsonPatch": "2.3.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.Formatters.Json.dll": {
+            "assemblyVersion": "2.3.0.0",
+            "fileVersion": "2.3.0.25014"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.ViewFeatures/2.3.9": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Antiforgery": "2.3.0",
+          "Microsoft.AspNetCore.Diagnostics.Abstractions": "2.3.0",
+          "Microsoft.AspNetCore.Html.Abstractions": "2.3.0",
+          "Microsoft.AspNetCore.Mvc.Core": "2.3.0",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.3.9",
+          "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.3.0",
+          "Microsoft.Extensions.WebEncoders": "8.0.11",
+          "Newtonsoft.Json": "13.0.4",
+          "Newtonsoft.Json.Bson": "1.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {
             "assemblyVersion": "2.3.9.0",
             "fileVersion": "2.3.9.26007"
           }
@@ -761,6 +836,17 @@
           }
         }
       },
+      "Newtonsoft.Json.Bson/1.0.2": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
       "Serilog/4.3.1": {
         "runtime": {
           "lib/net10.0/Serilog.dll": {
@@ -807,11 +893,11 @@
           }
         }
       },
-      "System.Security.Cryptography.Pkcs/10.0.0": {
+      "System.Security.Cryptography.Pkcs/10.0.6": {
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.Pkcs.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.626.17701"
           }
         },
         "runtimeTargets": {
@@ -819,18 +905,18 @@
             "rid": "win",
             "assetType": "runtime",
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.626.17701"
           }
         }
       },
-      "System.Security.Cryptography.Xml/10.0.0": {
+      "System.Security.Cryptography.Xml/10.0.6": {
         "dependencies": {
-          "System.Security.Cryptography.Pkcs": "10.0.0"
+          "System.Security.Cryptography.Pkcs": "10.0.6"
         },
         "runtime": {
           "lib/net10.0/System.Security.Cryptography.Xml.dll": {
             "assemblyVersion": "10.0.0.0",
-            "fileVersion": "10.0.25.52411"
+            "fileVersion": "10.0.626.17701"
           }
         }
       }
@@ -862,6 +948,13 @@
       "sha512": "sha512-QaEzDFG2vcQMPqUmoWv0vBTObtH8hffQmyDr2WkqRYF/nFSn2pkdBB4vudcd/EIv0N8M3P1fzzkPQgEWsFnUmA==",
       "path": "epplus.interfaces/8.4.0",
       "hashPath": "epplus.interfaces.8.4.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Antiforgery/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C4o0buZnlzyhCpBny7//4Z9sKcxpVdFo0TRfE14q9Lac6+xkgwunPON+47FWzyqbUXu52SaABEoAiHC5lMam0A==",
+      "path": "microsoft.aspnetcore.antiforgery/2.3.0",
+      "hashPath": "microsoft.aspnetcore.antiforgery.2.3.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication/2.3.0": {
       "type": "package",
@@ -933,6 +1026,13 @@
       "path": "microsoft.aspnetcore.dataprotection.abstractions/2.3.0",
       "hashPath": "microsoft.aspnetcore.dataprotection.abstractions.2.3.0.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.Diagnostics.Abstractions/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zlraKnYaX7UPhmVMlrQ1ecpUep2LxKjJQsTox5gEFv5tCfsLNmtY0B/5cKFkK9ee4U0EOg2/Hvpmnb4NKS7yrA==",
+      "path": "microsoft.aspnetcore.diagnostics.abstractions/2.3.0",
+      "hashPath": "microsoft.aspnetcore.diagnostics.abstractions.2.3.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Hosting.Abstractions/2.3.0": {
       "type": "package",
       "serviceable": true,
@@ -946,6 +1046,13 @@
       "sha512": "sha512-F5iHx7odAbFKBV1DNPDkFFcVmD5Tk7rk+tYm3LMQxHEFFdjlg5QcYb5XhHAefl5YaaPeG6ad+/ck8kSG3/D6kw==",
       "path": "microsoft.aspnetcore.hosting.server.abstractions/2.3.0",
       "hashPath": "microsoft.aspnetcore.hosting.server.abstractions.2.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Html.Abstractions/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RgoGZ0jTVDx2GT2YA93y2D9OckL3KyV2O1AUwNuKsJIwIHOlSctXEokXpphGyzdxgt+WtjKKKEZTXKZoOOvzyw==",
+      "path": "microsoft.aspnetcore.html.abstractions/2.3.0",
+      "hashPath": "microsoft.aspnetcore.html.abstractions.2.3.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Http/2.3.0": {
       "type": "package",
@@ -989,6 +1096,13 @@
       "path": "microsoft.aspnetcore.identity.entityframeworkcore/10.0.5",
       "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.10.0.5.nupkg.sha512"
     },
+    "Microsoft.AspNetCore.JsonPatch/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xrcdmMlZxwZM0n65T8gq8/erN0aW8HyBXJYhBk3cyfboVQsE/S9h9R59wILMgA4wal3glih+6l06XGs8AnELWA==",
+      "path": "microsoft.aspnetcore.jsonpatch/2.3.0",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.2.3.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Mvc.Abstractions/2.3.0": {
       "type": "package",
       "serviceable": true,
@@ -1009,6 +1123,20 @@
       "sha512": "sha512-u0hvwCzC2L5+KttpdWRskwcZmE/ksQvOtOOQy5yRsELDtUgfo6+eADf8qHMlXLm2nQH845lK9iafIKBAo2JaLA==",
       "path": "microsoft.aspnetcore.mvc.dataannotations/2.3.9",
       "hashPath": "microsoft.aspnetcore.mvc.dataannotations.2.3.9.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.Formatters.Json/2.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bh/nygMBuGoMNitOsstyoqWQj2L4SICecHhVdOVCsMXmkr0KQgzpTE5RwB34ZbxRTERG0p+eG5xnGGdgeoZ/eA==",
+      "path": "microsoft.aspnetcore.mvc.formatters.json/2.3.0",
+      "hashPath": "microsoft.aspnetcore.mvc.formatters.json.2.3.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.ViewFeatures/2.3.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sIp8ak1LLvLqZCsb+MbAdKzigTmA46wvvR0hsUzmyLBJOaR8S3/ZsBU54Z4UadG1gOs22A4P4OUPjRmTnPKSZQ==",
+      "path": "microsoft.aspnetcore.mvc.viewfeatures/2.3.9",
+      "hashPath": "microsoft.aspnetcore.mvc.viewfeatures.2.3.9.nupkg.sha512"
     },
     "Microsoft.AspNetCore.ResponseCaching.Abstractions/2.3.0": {
       "type": "package",
@@ -1276,6 +1404,13 @@
       "path": "newtonsoft.json/13.0.4",
       "hashPath": "newtonsoft.json.13.0.4.nupkg.sha512"
     },
+    "Newtonsoft.Json.Bson/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QYFyxhaABwmq3p/21VrZNYvCg3DaEoN/wUuw5nmfAf0X3HLjgupwhkEWdgfb9nvGAUIv3osmZoD3kKl4jxEmYQ==",
+      "path": "newtonsoft.json.bson/1.0.2",
+      "hashPath": "newtonsoft.json.bson.1.0.2.nupkg.sha512"
+    },
     "Serilog/4.3.1": {
       "type": "package",
       "serviceable": true,
@@ -1304,19 +1439,19 @@
       "path": "serilogtimings/3.1.0",
       "hashPath": "serilogtimings.3.1.0.nupkg.sha512"
     },
-    "System.Security.Cryptography.Pkcs/10.0.0": {
+    "System.Security.Cryptography.Pkcs/10.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-UPWqLSygJlFerRi9XNIuM0a1VC8gHUIufyP24xQ0sc+XimqUAEcjpOz9DhKpyDjH+5B/wO3RpC0KpkEeDj/ddg==",
-      "path": "system.security.cryptography.pkcs/10.0.0",
-      "hashPath": "system.security.cryptography.pkcs.10.0.0.nupkg.sha512"
+      "sha512": "sha512-88tquaGJ1htm4DHWS6x9jwER7sFET2SVRN7HqO1FYZwE0diDcUmz0ajhVa8ZD2HGhDJBueSPjP/gqyP3gXtT2A==",
+      "path": "system.security.cryptography.pkcs/10.0.6",
+      "hashPath": "system.security.cryptography.pkcs.10.0.6.nupkg.sha512"
     },
-    "System.Security.Cryptography.Xml/10.0.0": {
+    "System.Security.Cryptography.Xml/10.0.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Vb1vrLKtg0icvKk0GCzCErclNRH6NB7TMZ9BgXH9xqQ0lFlByQeoVwbewteJDuOPh1774GuVLD7rQrxhrpCCuA==",
-      "path": "system.security.cryptography.xml/10.0.0",
-      "hashPath": "system.security.cryptography.xml.10.0.0.nupkg.sha512"
+      "sha512": "sha512-71yFkEElPZKZ9jbZQTe1CWeHYXEtnCXwZnHnfeA8pP47tCXBUoWk+6zSIZ7RXO90nZjXgPNil6BFGWb1OBqA5w==",
+      "path": "system.security.cryptography.xml/10.0.6",
+      "hashPath": "system.security.cryptography.xml.10.0.6.nupkg.sha512"
     }
   }
 }

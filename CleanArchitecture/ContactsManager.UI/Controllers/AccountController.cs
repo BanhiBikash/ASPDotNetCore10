@@ -99,5 +99,19 @@ namespace ContactsManager.UI.Controllers
                 return View(loginDTO);
             }
         }
+
+        public async Task<IActionResult> IsEmailAlreadyTaken(string? email)
+        {
+            ApplicationUser? User = await _userManager.FindByEmailAsync(email);
+
+            if(User == null)
+            {
+                return Json(true);
+            }
+            else
+            {
+                return Json(false);
+            }
+        }
     }
 }
