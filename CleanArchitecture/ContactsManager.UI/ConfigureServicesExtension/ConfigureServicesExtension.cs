@@ -10,6 +10,7 @@ using ContactsManager.Core.Domain.IdentityEntities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContactsManager.UI.ConfigureServicesExtension
 {
@@ -21,7 +22,9 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             var logger = service.BuildServiceProvider().GetService<ILogger<ResponseHeaderFilter>>();
 
             //creating global filters Add(filter1,filter2)
-            service.AddControllersWithViews(options => options.Filters.Add(new ResponseHeaderFilter(logger, "Global-Key", "Global-Value", 2)));
+            service.AddControllersWithViews(options => { options.Filters.Add(new ResponseHeaderFilter(logger, "Global-Key", "Global-Value", 2));
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
+            });
 
             service.AddHttpLogging(options =>
             {

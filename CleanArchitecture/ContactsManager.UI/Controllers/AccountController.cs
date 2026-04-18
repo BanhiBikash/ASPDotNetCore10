@@ -36,7 +36,6 @@ namespace ContactsManager.UI.Controllers
         [HttpPost]
         [Authorize("NotAuthenticated")]
         [TypeFilter(typeof(RegisterPostActionFilter))]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
 
@@ -109,7 +108,6 @@ namespace ContactsManager.UI.Controllers
         [HttpPost]
         [TypeFilter(typeof(LoginActionFilter))]
         [Authorize("NotAuthenticated")]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginDTO loginDTO, string? ReturnUrl)
         {
             var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password, isPersistent: false, lockoutOnFailure: false);
