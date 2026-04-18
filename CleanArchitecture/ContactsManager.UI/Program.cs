@@ -34,14 +34,21 @@ else
     app.UseExceptionHandler("/Error");
 }
 
-    app.Logger.LogDebug("debug-message");
+//use https redirection
+app.UseHsts();
+app.UseHttpsRedirection();
+
+//logger
+app.Logger.LogDebug("debug-message");
 app.Logger.LogInformation("information-message");
 app.Logger.LogWarning("warning-message");
 app.Logger.LogError("error-message");
 app.Logger.LogCritical("critical-message");
 
+//rotavita for pdf generation
 Rotativa.AspNetCore.RotativaConfiguration.Setup("wwwroot", wkhtmltopdfRelativePath: "Rotativa");
 
+//middlewares
 app.UseHttpLogging();
 app.UseStaticFiles(); 
 app.UseRouting();       //Matches the incoming request to the route template and selects the appropriate controller and action method

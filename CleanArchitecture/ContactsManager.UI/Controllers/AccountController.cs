@@ -85,7 +85,6 @@ namespace ContactsManager.UI.Controllers
         [Route("[Action]")]
         [HttpGet]
         [TypeFilter(typeof(LogOutActionFilter))]
-        [Authorize("NotAuthenticated")]
         public async Task<IActionResult?> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -103,6 +102,7 @@ namespace ContactsManager.UI.Controllers
         [Route("[Action]")]
         [HttpPost]
         [TypeFilter(typeof(LoginActionFilter))]
+        [Authorize("NotAuthenticated")]
         public async Task<IActionResult> Login(LoginDTO loginDTO, string? ReturnUrl)
         {
             var result = await _signInManager.PasswordSignInAsync(loginDTO.Email, loginDTO.Password, isPersistent: false, lockoutOnFailure: false);
