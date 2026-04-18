@@ -8,7 +8,7 @@ using ContactsManager.Core.ServiceContracts.Enums;
 
 namespace ContactsManager.UI.Controllers
 {
-    [AllowAnonymous]
+    //[AllowAnonymous]
     [Route("[Controller]")]
     public class AccountController : Controller
     {
@@ -26,6 +26,7 @@ namespace ContactsManager.UI.Controllers
 
         [Route("[Action]")]
         [HttpGet]
+        [Authorize("NotAuthenticated")]
         public IActionResult Register()
         {
             return View();
@@ -33,6 +34,7 @@ namespace ContactsManager.UI.Controllers
 
         [Route("[Action]")]
         [HttpPost]
+        [Authorize("NotAuthenticated")]
         [TypeFilter(typeof(RegisterPostActionFilter))]
         public async Task<IActionResult> Register(RegisterDTO registerDTO)
         {
@@ -83,6 +85,7 @@ namespace ContactsManager.UI.Controllers
         [Route("[Action]")]
         [HttpGet]
         [TypeFilter(typeof(LogOutActionFilter))]
+        [Authorize("NotAuthenticated")]
         public async Task<IActionResult?> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -91,6 +94,7 @@ namespace ContactsManager.UI.Controllers
 
         [Route("[Action]")]
         [HttpGet]
+        [Authorize("NotAuthenticated")]
         public IActionResult Login()
         {
             return View();

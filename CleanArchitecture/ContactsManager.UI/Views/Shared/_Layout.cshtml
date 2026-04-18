@@ -29,6 +29,11 @@
      }
      else
      {
+            @if (User.IsInRole("Admin"))
+             {
+                  <a asp-controller="Admin" asp-action="Index" asp-area="Admin">Admin Dash</a>
+              }
+
          <i class="fa-solid fa-user"></i>
         <a id="user-profile-icon">@User.Identity?.Name</a>
         <a asp-controller="Account" asp-action="Logout">Logout</a>

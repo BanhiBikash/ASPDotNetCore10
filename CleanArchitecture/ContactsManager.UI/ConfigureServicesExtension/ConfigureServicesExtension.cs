@@ -63,9 +63,18 @@ namespace ContactsManager.UI.ConfigureServicesExtension
                 AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>().    //cause db can't be accessed directly so repository for UserTable
                 AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>(); //cause db can't be accessed directly so repository for RoleTable
 
+            //authorize
             service.AddAuthorization(options =>
             {       //requires authorization for all controllers and actions by default, unless [AllowAnonymous] is used
                 options.FallbackPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+
+                options.AddPolicy("NotAuthenticated", policy =>
+                {
+                    policy.RequireAssertion(context =>
+                    {
+                        return !context.User.Identity.IsAuthenticated;
+                    });
+                });
             });
 
             //fallback policy for authorization, if no [AllowAnonymous] is used then it will require authentication by default
