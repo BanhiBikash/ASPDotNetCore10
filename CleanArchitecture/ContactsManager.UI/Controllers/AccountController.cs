@@ -74,7 +74,12 @@ namespace ContactsManager.UI.Controllers
                     await _userManager.AddToRoleAsync(user,UserType.Admin.ToString());
                 }
                 else
-                { 
+                {
+                    if ((await _roleManager.FindByNameAsync(UserType.User.ToString())) is null)
+                    {
+                        await _roleManager.CreateAsync(new ApplicationRole() { Name = Convert.ToString(UserType.User) });
+                    }
+
                     await _userManager.AddToRoleAsync(user, UserType.User.ToString());
                 }
 
