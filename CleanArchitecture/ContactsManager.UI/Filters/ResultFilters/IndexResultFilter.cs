@@ -7,7 +7,6 @@ namespace ContactsManager.UI.Filters.ResultFilters
         private readonly string? _key;
         private readonly string? _value;
 
-
         public IndexResultFilterAttribute(string? key, string? value) 
         { 
            _key = key;

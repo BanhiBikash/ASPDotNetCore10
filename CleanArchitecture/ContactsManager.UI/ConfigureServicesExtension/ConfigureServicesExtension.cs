@@ -45,7 +45,6 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             service.AddScoped<IPersonsUpdateService, PersonsUpdateService>();
             service.AddTransient<IndexResultFilter>();
 
-
             //adding database context
             service.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -85,7 +84,6 @@ namespace ContactsManager.UI.ConfigureServicesExtension
             {
                 options.LoginPath = "/Account/Login";
             });
-
 
             return service;
         }
