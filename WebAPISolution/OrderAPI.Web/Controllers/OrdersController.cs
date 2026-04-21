@@ -49,7 +49,7 @@ namespace OrderAPI.Web.Controllers
         {
             if (id != order.OrderID)
             {
-                return BadRequest();
+                return Problem(detail:"Failed to update Order", statusCode:400, title:"Order Update Action" );
             }
 
             _context.Entry(order).State = EntityState.Modified;
@@ -78,6 +78,13 @@ namespace OrderAPI.Web.Controllers
         [HttpPost]
         public async Task<ActionResult<Order>> PostOrder(Order order)
         {
+            //setting order number if not provided
+            if (string.IsNullOrEmpty(order.OrderNo))
+            {
+                int orderNumber = _context.Orders.Count() + 1;
+                order.OrderNo = $"Order_{DateTime.Now.Ticks}_{orderNumber}";
+            }
+
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
 
