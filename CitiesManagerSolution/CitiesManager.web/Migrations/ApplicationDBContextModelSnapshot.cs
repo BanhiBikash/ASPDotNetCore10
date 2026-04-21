@@ -29,6 +29,7 @@ namespace CitiesManager.web.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CityName")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CityId");

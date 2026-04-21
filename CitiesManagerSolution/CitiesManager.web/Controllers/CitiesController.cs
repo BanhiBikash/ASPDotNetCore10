@@ -10,9 +10,9 @@ using CitiesManager.web.Models;
 
 namespace CitiesManager.web.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CitiesController : ControllerBase
+    //[Route("api/[controller]")]
+    //[ApiController]
+    public class CitiesController : CustomControllerBase
     {
         private readonly ApplicationDBContext _context;
 
@@ -36,7 +36,7 @@ namespace CitiesManager.web.Controllers
 
             if (city == null)
             {
-                return NotFound();
+                return Problem(detail:"City not found!", statusCode:400, title:"City ID search.");
             }
 
             return city;

@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="OrderAPI.Core/OrderAPI.Core.csproj" />
+    <Project Path="OrderAPI.Infrastructure/OrderAPI.Infrastructure.csproj" />
+    <Project Path="OrderAPI.Web/OrderAPI.Web.csproj" />
+  </Folder>
+</Solution>
