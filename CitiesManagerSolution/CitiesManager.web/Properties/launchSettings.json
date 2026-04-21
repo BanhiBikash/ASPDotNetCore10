@@ -5,7 +5,7 @@
         "commandName": "Project",
         "dotnetRunMessages": true,
         "launchBrowser": true,
-        "launchUrl": "api/test/Index",
+        "launchUrl": "swagger",
         "applicationUrl": "http://localhost:5003",
         "environmentVariables": {
             "ASPNETCORE_ENVIRONMENT": "Development"
@@ -15,7 +15,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
         "launchBrowser": true,
-      "launchUrl": "api/test/Index",
+      "launchUrl": "swagger",
       "applicationUrl": "https://localhost:5003",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CitiesManager.web</name>
+    </assembly>
+    <members>
+        <member name="M:CitiesManager.web.Controllers.CitiesController.GetCities">
+            <summary>
+            Retrieves all cities from the data store.
+            </summary>
+            <returns>A task that represents the asynchronous operation. The task result contains an <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>
+            with a collection of <see cref="T:CitiesManager.web.Models.City"/> objects representing all available cities.</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.CitiesController.GetCity(System.Guid)">
+            <summary>
+            Retrieves the city with the specified unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the city to retrieve.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains an <see
+            cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/> representing the city with the specified identifier if found; otherwise, a
+            problem response indicating that the city was not found.</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.CitiesController.PutCity(System.Guid,CitiesManager.web.Models.City)">
+            <summary>
+            Updates the details of an existing city with the specified identifier.
+            </summary>
+            <remarks>If the specified city does not exist, the method returns a 404 Not Found response. If
+            the <paramref name="id"/> does not match the <c>CityId</c> of the provided <paramref name="city"/>, the
+            method returns a 400 Bad Request response. Concurrency conflicts during the update will result in an
+            exception unless the city no longer exists.</remarks>
+            <param name="id">The unique identifier of the city to update.</param>
+            <param name="city">The updated city data. The <see cref="P:CitiesManager.web.Models.City.CityId"/> property must match the <paramref name="id"/>
+            parameter.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> indicating the result of the operation. Returns <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/>
+            if the update is successful; <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/> if the city does not exist; or <see
+            cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/> if the identifiers do not match.</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.CitiesController.PostCity(CitiesManager.web.Models.City)">
+            <summary>
+            Creates a new city and adds it to the data store.
+            </summary>
+            <remarks>If the operation is successful, the response has HTTP status code 201 (Created) and
+            includes the created city in the response body. The location header points to the endpoint for retrieving
+            the newly created city.</remarks>
+            <param name="city">The city entity to add. Must not be null.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/> containing the created city and a location header with a URI to retrieve
+            the city by its identifier.</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.CitiesController.DeleteCity(System.Guid)">
+            <summary>
+            Deletes the city with the specified unique identifier.
+            </summary>
+            <param name="id">The unique identifier of the city to delete.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> that represents the result of the delete operation. Returns <see
+            cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/> if the city does not exist; otherwise, returns <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/> on
+            successful deletion.</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.TestController.Index">
+            <summary>
+            Handles HTTP GET requests and returns a simple greeting message.
+            </summary>
+            <returns>A string containing the greeting message "Hello World!".</returns>
+        </member>
+        <member name="T:CitiesManager.web.Migrations.CreateTableCities">
+            <inheritdoc />
+        </member>
+        <member name="M:CitiesManager.web.Migrations.CreateTableCities.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitiesManager.web.Migrations.CreateTableCities.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitiesManager.web.Migrations.CreateTableCities.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CitiesManager.web.Migrations.CityNameRequired">
+            <inheritdoc />
+        </member>
+        <member name="M:CitiesManager.web.Migrations.CityNameRequired.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitiesManager.web.Migrations.CityNameRequired.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitiesManager.web.Migrations.CityNameRequired.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:Program">
+            <summary>
+            Auto-generated public partial Program class for top-level statement apps.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type)">
+            <summary>
+            Generates a documentation comment ID for a type.
+            Example: T:Namespace.Outer+Inner`1 becomes T:Namespace.Outer.Inner`1
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.PropertyInfo)">
+            <summary>
+            Generates a documentation comment ID for a property.
+            Example: P:Namespace.ContainingType.PropertyName or for an indexer P:Namespace.ContainingType.Item(System.Int32)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Type,System.String)">
+            <summary>
+            Generates a documentation comment ID for a property given its container type and property name.
+            Example: P:Namespace.ContainingType.PropertyName
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.CreateDocumentationId(System.Reflection.MethodInfo)">
+            <summary>
+            Generates a documentation comment ID for a method (or constructor).
+            For example:
+              M:Namespace.ContainingType.MethodName(ParamType1,ParamType2)~ReturnType
+              M:Namespace.ContainingType.#ctor(ParamType)
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.GetTypeDocId(System.Type,System.Boolean,System.Boolean)">
+            <summary>
+            Generates a documentation ID string for a type.
+            This method handles nested types (replacing '+' with '.'),
+            generic types, arrays, pointers, by-ref types, and generic parameters.
+            The <paramref name="includeGenericArguments"/> flag controls whether
+            constructed generic type arguments are emitted, while <paramref name="omitGenericArity"/>
+            controls whether the generic arity marker (e.g. "`1") is appended.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.OpenApi.Generated.DocumentationCommentIdHelper.NormalizeDocId(System.String)">
+            <summary>
+            Normalizes a documentation comment ID to match the compiler-style format.
+            Strips the return type suffix for ordinary methods but retains it for conversion operators.
+            </summary>
+            <param name="docId">The documentation comment ID to normalize.</param>
+            <returns>The normalized documentation comment ID.</returns>
+        </member>
+    </members>
+</doc>

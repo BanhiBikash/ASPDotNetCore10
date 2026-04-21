@@ -269,3 +269,10 @@ C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\b
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\api.xml
