@@ -5,29 +5,6 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/v2/Cities": {
-      "get": {
-        "tags": [
-          "Cities"
-        ],
-        "summary": "Retrieves all cities from the data store.",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/v1/Cities": {
       "get": {
         "tags": [

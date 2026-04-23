@@ -273,3 +273,13 @@ C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net
 C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
 C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Asp.Versioning.Abstractions.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Asp.Versioning.Http.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Asp.Versioning.Mvc.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Asp.Versioning.Mvc.ApiExplorer.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Banhi\source\repos\aspnetcore\WebAPISolution\OrderAPI.Web\obj\Debug\net10.0\OrderAPI.Web.MvcApplicationPartsAssemblyInfo.cs

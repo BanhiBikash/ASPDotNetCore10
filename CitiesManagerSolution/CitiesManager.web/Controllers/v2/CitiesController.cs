@@ -7,7 +7,7 @@ using CitiesManager.web.Controllers;
 
 namespace CitiesManager.web.Controllers.v2
 {
-    [Route("api/v2/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     [ApiVersion("2.0")]
     public class CitiesController : CustomControllerBase
     {

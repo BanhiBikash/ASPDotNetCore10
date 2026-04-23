@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CitiesManager.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a1ab3ede31d07e30cf852097e728008fdd604a5b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cfac1aff238434873eb453112c07fc50b0ac4277")]
 [assembly: System.Reflection.AssemblyProductAttribute("CitiesManager.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CitiesManager.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
