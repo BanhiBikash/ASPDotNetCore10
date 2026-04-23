@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "CitiesManager.web",
+    "title": "Orders Version 1",
     "version": "1.0"
   },
   "paths": {
@@ -156,7 +156,7 @@
         }
       }
     },
-    "/Index": {
+    "/api/v1/Test/Index": {
       "get": {
         "tags": [
           "Test"
@@ -197,13 +197,5 @@
         "additionalProperties": false
       }
     }
-  },
-  "tags": [
-    {
-      "name": "Cities"
-    },
-    {
-      "name": "Test"
-    }
-  ]
+  }
 }

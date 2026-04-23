@@ -103,6 +103,24 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CitiesManager.web.Controllers.TestController",
+    "Method": "Index",
+    "RelativePath": "api/v1/Test/Index",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CitiesManager.web.Controllers.v2.CitiesController",
     "Method": "GetCities",
     "RelativePath": "api/v2/Cities",
@@ -113,24 +131,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
-        "MediaTypes": [
-          "application/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "CitiesManager.web.Controllers.TestController",
-    "Method": "Index",
-    "RelativePath": "Index",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "System.String",
         "MediaTypes": [
           "application/json"
         ],
