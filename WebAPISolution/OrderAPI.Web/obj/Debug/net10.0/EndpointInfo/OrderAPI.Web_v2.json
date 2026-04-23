@@ -2,10 +2,10 @@
   "openapi": "3.0.4",
   "info": {
     "title": "Orders Version 1",
-    "version": "1.0"
+    "version": "2.0"
   },
   "paths": {
-    "/api/v1/OrderItems": {
+    "/api/v2/OrderItems": {
       "get": {
         "tags": [
           "OrderItems"
@@ -89,7 +89,7 @@
         }
       }
     },
-    "/api/v1/OrderItems/{id}": {
+    "/api/v2/OrderItems/{id}": {
       "get": {
         "tags": [
           "OrderItems"
@@ -190,7 +190,7 @@
         }
       }
     },
-    "/api/v1/Orders": {
+    "/api/v2/Orders": {
       "get": {
         "tags": [
           "Orders"
@@ -274,7 +274,7 @@
         }
       }
     },
-    "/api/v1/Orders/{id}": {
+    "/api/v2/Orders/{id}": {
       "get": {
         "tags": [
           "Orders"
