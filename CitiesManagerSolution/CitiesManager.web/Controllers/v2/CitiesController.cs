@@ -7,7 +7,7 @@ using CitiesManager.web.Controllers;
 
 namespace CitiesManager.web.Controllers.v2
 {
-    //[Route("api/[controller]")]
+    [Route("api/v2/[controller]")]
     [ApiVersion("2.0")]
     public class CitiesController : CustomControllerBase
     {
@@ -26,7 +26,6 @@ namespace CitiesManager.web.Controllers.v2
         /// with a collection of <see cref="City"/> objects representing all available cities.</returns>
         [HttpGet]
         [Produces("application/json")]
-        [MapToApiVersion("2.0")]
         public async Task<ActionResult<IEnumerable<string>>> GetCities()
         {
             List<City> CityList = await _context.Cities.ToListAsync();

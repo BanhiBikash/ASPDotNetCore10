@@ -696,28 +696,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.OpenApi/10.0.6": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.OpenApi": "2.0.0"
-        },
-        "compile": {
-          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll": {
-            "related": ".xml"
-          }
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ],
-        "build": {
-          "build/Microsoft.AspNetCore.OpenApi.targets": {}
-        }
-      },
       "Microsoft.AspNetCore.Razor.Language/6.0.24": {
         "type": "package",
         "compile": {
@@ -1731,7 +1709,7 @@
           }
         }
       },
-      "Microsoft.OpenApi/2.4.1": {
+      "Microsoft.OpenApi/3.5.2": {
         "type": "package",
         "compile": {
           "lib/net8.0/Microsoft.OpenApi.dll": {
@@ -3358,24 +3336,6 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
-      ]
-    },
-    "Microsoft.AspNetCore.OpenApi/10.0.6": {
-      "sha512": "WTAQe7MAbbKztRyeCRGZOqqlIqpMHDBz+jKo7LLY6hp4qRqn7iucR24u32KJVxV7mF3tSEfwXH96NgGSiDBw7A==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.openapi/10.0.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "PACKAGE.md",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/Microsoft.AspNetCore.OpenApi.SourceGenerators.dll",
-        "build/Microsoft.AspNetCore.OpenApi.targets",
-        "lib/net10.0/Microsoft.AspNetCore.OpenApi.dll",
-        "lib/net10.0/Microsoft.AspNetCore.OpenApi.xml",
-        "microsoft.aspnetcore.openapi.10.0.6.nupkg.sha512",
-        "microsoft.aspnetcore.openapi.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -5492,10 +5452,10 @@
         "ref/netstandard2.0/Microsoft.NET.StringTools.xml"
       ]
     },
-    "Microsoft.OpenApi/2.4.1": {
-      "sha512": "u7QhXCISMQuab3flasb1hoaiERmUqyWsW7tmQODyILoQ7mJV5IRGM+2KKZYo0QUfC13evEOcHAb6TPWgqEQtrw==",
+    "Microsoft.OpenApi/3.5.2": {
+      "sha512": "AaNCVaa5lH1p+zkYySMYfsig1+UKZykqW8UPcEg60z+xch7wqAXAtBeLn9JZpf52zEaalcPa7SSA++Os53hBiw==",
       "type": "package",
-      "path": "microsoft.openapi/2.4.1",
+      "path": "microsoft.openapi/3.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5506,7 +5466,7 @@
         "lib/netstandard2.0/Microsoft.OpenApi.dll",
         "lib/netstandard2.0/Microsoft.OpenApi.pdb",
         "lib/netstandard2.0/Microsoft.OpenApi.xml",
-        "microsoft.openapi.2.4.1.nupkg.sha512",
+        "microsoft.openapi.3.5.2.nupkg.sha512",
         "microsoft.openapi.nuspec"
       ]
     },
@@ -6738,10 +6698,10 @@
     "net10.0": [
       "Asp.Versioning.Mvc >= 10.0.0",
       "Asp.Versioning.Mvc.ApiExplorer >= 10.0.0",
-      "Microsoft.AspNetCore.OpenApi >= 10.0.6",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.6",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.6",
       "Microsoft.EntityFrameworkCore.Tools >= 10.0.6",
+      "Microsoft.OpenApi >= 3.5.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 10.0.2",
       "NuGet.Packaging >= 7.3.1",
       "NuGet.Protocol >= 7.3.1",
@@ -6806,10 +6766,6 @@
             "target": "Package",
             "version": "[10.0.0, )"
           },
-          "Microsoft.AspNetCore.OpenApi": {
-            "target": "Package",
-            "version": "[10.0.6, )"
-          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -6825,6 +6781,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[10.0.6, )"
+          },
+          "Microsoft.OpenApi": {
+            "target": "Package",
+            "version": "[3.5.2, )"
           },
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
