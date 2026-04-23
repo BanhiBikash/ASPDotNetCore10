@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CitiesManager.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e25dc66d9853a659bdfc5e881560981936300d88")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cac66c66ac5830343ed3f663b438a2d5894a2ffb")]
 [assembly: System.Reflection.AssemblyProductAttribute("CitiesManager.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CitiesManager.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,10 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using CitiesManager.web.DBcontext;
 using CitiesManager.web.Models;
 using Asp.Versioning;
+using CitiesManager.web.Controllers;
 
 namespace CitiesManager.web.Controllers.v1
 {
-    [Route("api/v1/[controller]")]
+    //[Route("api/[controller]")]
     [ApiVersion("1.0")]
     public class CitiesController : CustomControllerBase
     {

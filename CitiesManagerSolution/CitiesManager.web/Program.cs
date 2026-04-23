@@ -24,7 +24,11 @@ builder.Services.AddSwaggerGen(options =>
 //enable api versioning
 builder.Services.AddApiVersioning(options =>
 {
-    options.ApiVersionReader = new UrlSegmentApiVersionReader();
+    //options.ApiVersionReader = new UrlSegmentApiVersionReader();
+    options.ApiVersionReader = new QueryStringApiVersionReader();
+
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
 });
 
 

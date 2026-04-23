@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CitiesManager.web.DBcontext;
 using CitiesManager.web.Models;
 using Asp.Versioning;
+using CitiesManager.web.Controllers;
 
 namespace CitiesManager.web.Controllers.v2
 {
-    [Route("api/v2/[controller]")]
+    //[Route("api/[controller]")]
     [ApiVersion("2.0")]
     public class CitiesController : CustomControllerBase
     {
