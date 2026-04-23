@@ -4,14 +4,20 @@
         <name>CitiesManager.web</name>
     </assembly>
     <members>
-        <member name="M:CitiesManager.web.Controllers.CitiesController.GetCities">
+        <member name="M:CitiesManager.web.Controllers.TestController.Index">
+            <summary>
+            Handles HTTP GET requests and returns a simple greeting message.
+            </summary>
+            <returns>A string containing the greeting message "Hello World!".</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.GetCities">
             <summary>
             Retrieves all cities from the data store.
             </summary>
             <returns>A task that represents the asynchronous operation. The task result contains an <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>
             with a collection of <see cref="T:CitiesManager.web.Models.City"/> objects representing all available cities.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.CitiesController.GetCity(System.Guid)">
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.GetCity(System.Guid)">
             <summary>
             Retrieves the city with the specified unique identifier.
             </summary>
@@ -20,7 +26,7 @@
             cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/> representing the city with the specified identifier if found; otherwise, a
             problem response indicating that the city was not found.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.CitiesController.PutCity(System.Guid,CitiesManager.web.Models.City)">
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.PutCity(System.Guid,CitiesManager.web.Models.City)">
             <summary>
             Updates the details of an existing city with the specified identifier.
             </summary>
@@ -35,7 +41,7 @@
             if the update is successful; <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/> if the city does not exist; or <see
             cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/> if the identifiers do not match.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.CitiesController.PostCity(CitiesManager.web.Models.City)">
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.PostCity(CitiesManager.web.Models.City)">
             <summary>
             Creates a new city and adds it to the data store.
             </summary>
@@ -46,7 +52,7 @@
             <returns>An <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/> containing the created city and a location header with a URI to retrieve
             the city by its identifier.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.CitiesController.DeleteCity(System.Guid)">
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.DeleteCity(System.Guid)">
             <summary>
             Deletes the city with the specified unique identifier.
             </summary>
@@ -55,11 +61,12 @@
             cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/> if the city does not exist; otherwise, returns <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/> on
             successful deletion.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.TestController.Index">
+        <member name="M:CitiesManager.web.Controllers.v2.CitiesController.GetCities">
             <summary>
-            Handles HTTP GET requests and returns a simple greeting message.
+            Retrieves all cities from the data store.
             </summary>
-            <returns>A string containing the greeting message "Hello World!".</returns>
+            <returns>A task that represents the asynchronous operation. The task result contains an <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>
+            with a collection of <see cref="T:CitiesManager.web.Models.City"/> objects representing all available cities.</returns>
         </member>
         <member name="T:CitiesManager.web.Migrations.CreateTableCities">
             <inheritdoc />

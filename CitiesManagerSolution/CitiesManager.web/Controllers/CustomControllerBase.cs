@@ -2,8 +2,8 @@
 
 namespace CitiesManager.web.Controllers
 {
+    //[Route("api/v{version:apiVersion}/[controller]")]
     [ApiController]
-    [Route("api/[controller]")]
     public class CustomControllerBase: ControllerBase
     {
     }

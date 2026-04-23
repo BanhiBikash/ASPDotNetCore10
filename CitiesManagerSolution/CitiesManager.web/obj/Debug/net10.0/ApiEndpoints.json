@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "CitiesManager.web.Controllers.CitiesController",
+    "ContainingType": "CitiesManager.web.Controllers.v1.CitiesController",
     "Method": "GetCities",
-    "RelativePath": "api/Cities",
+    "RelativePath": "api/v1/Cities",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -11,18 +11,16 @@
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[CitiesManager.web.Models.City, CitiesManager.web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "CitiesManager.web.Controllers.CitiesController",
+    "ContainingType": "CitiesManager.web.Controllers.v1.CitiesController",
     "Method": "PostCity",
-    "RelativePath": "api/Cities",
+    "RelativePath": "api/v1/Cities",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -37,18 +35,16 @@
       {
         "Type": "CitiesManager.web.Models.City",
         "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "CitiesManager.web.Controllers.CitiesController",
+    "ContainingType": "CitiesManager.web.Controllers.v1.CitiesController",
     "Method": "GetCity",
-    "RelativePath": "api/Cities/{id}",
+    "RelativePath": "api/v1/Cities/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -63,18 +59,16 @@
       {
         "Type": "CitiesManager.web.Models.City",
         "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "StatusCode": 200
       }
     ]
   },
   {
-    "ContainingType": "CitiesManager.web.Controllers.CitiesController",
+    "ContainingType": "CitiesManager.web.Controllers.v1.CitiesController",
     "Method": "PutCity",
-    "RelativePath": "api/Cities/{id}",
+    "RelativePath": "api/v1/Cities/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -93,9 +87,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "CitiesManager.web.Controllers.CitiesController",
+    "ContainingType": "CitiesManager.web.Controllers.v1.CitiesController",
     "Method": "DeleteCity",
-    "RelativePath": "api/Cities/{id}",
+    "RelativePath": "api/v1/Cities/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -109,9 +103,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CitiesManager.web.Controllers.v2.CitiesController",
+    "Method": "GetCities",
+    "RelativePath": "api/v2/Cities",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=10.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "CitiesManager.web.Controllers.TestController",
     "Method": "Index",
-    "RelativePath": "api/Test/Index",
+    "RelativePath": "Index",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -120,9 +132,7 @@
       {
         "Type": "System.String",
         "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
+          "application/json"
         ],
         "StatusCode": 200
       }

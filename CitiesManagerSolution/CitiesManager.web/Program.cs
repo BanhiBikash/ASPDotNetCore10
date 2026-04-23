@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using CitiesManager.web.DBcontext;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,13 @@ builder.Services.AddSwaggerGen(options =>
 {
     options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, "api.xml"));
 });       //generate the open api specification document (swagger doc) for the API, which can be used to describe the API's endpoints, request/response models, and other details in a standardized format.
+
+//enable api versioning
+builder.Services.AddApiVersioning(options =>
+{
+    options.ApiVersionReader = new UrlSegmentApiVersionReader();
+});
+
 
 var app = builder.Build();
 

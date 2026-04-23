@@ -7,11 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using CitiesManager.web.DBcontext;
 using CitiesManager.web.Models;
+using Asp.Versioning;
 
-namespace CitiesManager.web.Controllers
+namespace CitiesManager.web.Controllers.v1
 {
-    //[Route("api/[controller]")]
-    //[ApiController]
+    [Route("api/v1/[controller]")]
+    [ApiVersion("1.0")]
     public class CitiesController : CustomControllerBase
     {
         private readonly ApplicationDBContext _context;

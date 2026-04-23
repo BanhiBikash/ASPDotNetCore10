@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "z+CfsrcTBxE=",
+  "dgSpecHash": "pLDxkgvr9Vc=",
   "success": true,
   "projectFilePath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CitiesManagerSolution\\CitiesManager.web\\CitiesManager.web.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Banhi\\.nuget\\packages\\asp.versioning.abstractions\\10.0.0\\asp.versioning.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\Banhi\\.nuget\\packages\\asp.versioning.http\\10.0.0\\asp.versioning.http.10.0.0.nupkg.sha512",
+    "C:\\Users\\Banhi\\.nuget\\packages\\asp.versioning.mvc\\10.0.0\\asp.versioning.mvc.10.0.0.nupkg.sha512",
+    "C:\\Users\\Banhi\\.nuget\\packages\\asp.versioning.mvc.apiexplorer\\10.0.0\\asp.versioning.mvc.apiexplorer.10.0.0.nupkg.sha512",
     "C:\\Users\\Banhi\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Banhi\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
     "C:\\Users\\Banhi\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",

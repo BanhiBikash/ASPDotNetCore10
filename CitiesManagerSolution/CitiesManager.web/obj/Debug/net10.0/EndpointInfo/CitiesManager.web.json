@@ -5,7 +5,7 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Cities": {
+    "/api/v2/Cities": {
       "get": {
         "tags": [
           "Cities"
@@ -15,23 +15,30 @@
           "200": {
             "description": "OK",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/City"
-                  }
-                }
-              },
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/City"
+                    "type": "string"
                   }
                 }
-              },
-              "text/json": {
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/Cities": {
+      "get": {
+        "tags": [
+          "Cities"
+        ],
+        "summary": "Retrieves all cities from the data store.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
@@ -57,11 +64,6 @@
                 "$ref": "#/components/schemas/City"
               }
             },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/City"
-              }
-            },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/City"
@@ -73,17 +75,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/City"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/City"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/City"
                 }
@@ -93,7 +85,7 @@
         }
       }
     },
-    "/api/Cities/{id}": {
+    "/api/v1/Cities/{id}": {
       "get": {
         "tags": [
           "Cities"
@@ -115,17 +107,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/City"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/City"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/City"
                 }
@@ -156,11 +138,6 @@
           "description": "The updated city data. The CitiesManager.web.Models.City.CityId property must match the id\r\n            parameter.",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/City"
-              }
-            },
-            "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/City"
               }
@@ -202,7 +179,7 @@
         }
       }
     },
-    "/api/Test/Index": {
+    "/Index": {
       "get": {
         "tags": [
           "Test"
@@ -212,17 +189,7 @@
           "200": {
             "description": "OK",
             "content": {
-              "text/plain": {
-                "schema": {
-                  "type": "string"
-                }
-              },
               "application/json": {
-                "schema": {
-                  "type": "string"
-                }
-              },
-              "text/json": {
                 "schema": {
                   "type": "string"
                 }
