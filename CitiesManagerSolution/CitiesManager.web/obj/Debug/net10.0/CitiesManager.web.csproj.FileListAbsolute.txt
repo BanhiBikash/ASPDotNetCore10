@@ -172,3 +172,7 @@ C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\o
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.pdb
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.genruntimeconfig.cache
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\ref\CitiesManager.web.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\CitiesReactApp\package-lock.json
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\CitiesReactApp\package.json
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\package-lock.json
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\package.json

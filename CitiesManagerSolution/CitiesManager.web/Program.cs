@@ -16,6 +16,18 @@ builder.Services.AddControllers(options =>
 
 builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration.GetValue<string>("ConnectionStrings:DefaultConnection")));
 
+//cors policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp",
+        policy =>
+        {
+            policy.WithOrigins("http://localhost:5174") // your Vite dev server
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 //swagger
 builder.Services.AddEndpointsApiExplorer(); //reading all the endpoints in the project and generate the swagger doc for them
 builder.Services.AddSwaggerGen(options =>
@@ -47,7 +59,7 @@ builder.Services.AddApiVersioning(options =>
 
 var app = builder.Build();
 
-
+app.UseCors("AllowReactApp");
 
 //var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
 
