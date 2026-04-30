@@ -73,7 +73,7 @@ namespace CitiesManager.web.Controllers.v1
                 return BadRequest();
             }
 
-            var cityEntry = await _context.Cities.FindAsync(city);
+            var cityEntry = await _context.Cities.FindAsync(id);
 
             if(cityEntry == null)   //npt found
             {
