@@ -15,7 +15,7 @@
             Retrieves all cities from the data store.
             </summary>
             <returns>A task that represents the asynchronous operation. The task result contains an <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>
-            with a collection of <see cref="T:CitiesManager.web.Models.City"/> objects representing all available cities.</returns>
+            with a collection of <see cref="T:CitiesManager.Core.Entities.City"/> objects representing all available cities.</returns>
         </member>
         <member name="M:CitiesManager.web.Controllers.v1.CitiesController.GetCity(System.Guid)">
             <summary>
@@ -26,7 +26,7 @@
             cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/> representing the city with the specified identifier if found; otherwise, a
             problem response indicating that the city was not found.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.PutCity(System.Guid,CitiesManager.web.Models.City)">
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.PutCity(System.Guid,CitiesManager.Core.Entities.City)">
             <summary>
             Updates the details of an existing city with the specified identifier.
             </summary>
@@ -35,13 +35,13 @@
             method returns a 400 Bad Request response. Concurrency conflicts during the update will result in an
             exception unless the city no longer exists.</remarks>
             <param name="id">The unique identifier of the city to update.</param>
-            <param name="city">The updated city data. The <see cref="P:CitiesManager.web.Models.City.CityId"/> property must match the <paramref name="id"/>
+            <param name="city">The updated city data. The <see cref="P:CitiesManager.Core.Entities.City.CityId"/> property must match the <paramref name="id"/>
             parameter.</param>
             <returns>An <see cref="T:Microsoft.AspNetCore.Mvc.IActionResult"/> indicating the result of the operation. Returns <see cref="T:Microsoft.AspNetCore.Mvc.NoContentResult"/>
             if the update is successful; <see cref="T:Microsoft.AspNetCore.Mvc.NotFoundResult"/> if the city does not exist; or <see
             cref="T:Microsoft.AspNetCore.Mvc.BadRequestResult"/> if the identifiers do not match.</returns>
         </member>
-        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.PostCity(CitiesManager.web.Models.City)">
+        <member name="M:CitiesManager.web.Controllers.v1.CitiesController.PostCity(CitiesManager.Core.Entities.City)">
             <summary>
             Creates a new city and adds it to the data store.
             </summary>
@@ -66,31 +66,7 @@
             Retrieves all cities from the data store.
             </summary>
             <returns>A task that represents the asynchronous operation. The task result contains an <see cref="T:Microsoft.AspNetCore.Mvc.ActionResult`1"/>
-            with a collection of <see cref="T:CitiesManager.web.Models.City"/> objects representing all available cities.</returns>
-        </member>
-        <member name="T:CitiesManager.web.Migrations.CreateTableCities">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.web.Migrations.CreateTableCities.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.web.Migrations.CreateTableCities.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.web.Migrations.CreateTableCities.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="T:CitiesManager.web.Migrations.CityNameRequired">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.web.Migrations.CityNameRequired.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.web.Migrations.CityNameRequired.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
-            <inheritdoc />
-        </member>
-        <member name="M:CitiesManager.web.Migrations.CityNameRequired.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
-            <inheritdoc />
+            with a collection of <see cref="T:CitiesManager.Core.Entities.City"/> objects representing all available cities.</returns>
         </member>
         <member name="T:Program">
             <summary>

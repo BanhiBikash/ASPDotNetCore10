@@ -112,7 +112,7 @@
           }
         ],
         "requestBody": {
-          "description": "The updated city data. The CitiesManager.web.Models.City.CityId property must match the id\r\n            parameter.",
+          "description": "The updated city data. The CitiesManager.Core.Entities.City.CityId property must match the id\r\n            parameter.",
           "content": {
             "application/json": {
               "schema": {

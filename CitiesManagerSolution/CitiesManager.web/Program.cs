@@ -1,7 +1,10 @@
 using Asp.Versioning;
 using Microsoft.EntityFrameworkCore;
-using CitiesManager.web.DBcontext;
+using CitiesManager.Infrastructure.DBcontext;
 using Microsoft.AspNetCore.Mvc;
+using CitiesManager.Core.Entities.IdentityUser;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -56,6 +59,16 @@ builder.Services.AddApiVersioning(options =>
     options.SubstituteApiVersionInUrl = true;
 }); ;
 
+builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequireNonAlphanumeric = false;
+    options.Password.RequiredLength = 5;
+
+}).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders().AddUserStore<UserStore<ApplicationUser,ApplicationRole,ApplicationDBContext,Guid>>()
+.AddRoleStore<RoleStore<ApplicationRole,ApplicationDBContext,Guid>>();
 
 var app = builder.Build();
 
@@ -75,6 +88,8 @@ app.UseSwaggerUI(options =>
 app.UseHsts();
 app.UseHttpsRedirection();
 
+app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

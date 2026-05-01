@@ -1,3 +1,5 @@
 <Solution>
+  <Project Path="CitiesManager.Core/CitiesManager.Core.csproj" Id="4f86d7b9-ff0b-4678-b23d-7cb2f19023eb" />
+  <Project Path="CitiesManager.Infrastructure/CitiesManager.Infrastructure.csproj" Id="3aefeaaf-eab0-4620-86a3-c54c60021b4a" />
   <Project Path="CitiesManager.web/CitiesManager.web.csproj" />
 </Solution>

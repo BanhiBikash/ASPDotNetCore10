@@ -4,7 +4,6 @@ C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\o
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.AssemblyInfoInputs.cache
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.AssemblyInfo.cs
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.csproj.CoreCompileInputs.cache
-C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.sourcelink.json
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\appsettings.Development.json
@@ -176,3 +175,9 @@ C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\b
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\CitiesReactApp\package.json
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\package-lock.json
 C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\ClientApp\package.json
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\CitiesManager.Core.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\CitiesManager.Infrastructure.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\CitiesManager.Core.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\CitiesManager.Infrastructure.pdb
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\Banhi\source\repos\aspnetcore\CitiesManagerSolution\CitiesManager.web\obj\Debug\net10.0\CitiesManager.web.MvcApplicationPartsAssemblyInfo.cs

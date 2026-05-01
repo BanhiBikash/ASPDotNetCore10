@@ -115,6 +115,22 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/10.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "10.0.7"
+        },
+        "compile": {
+          "lib/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.OpenApi/9.0.8": {
         "type": "package",
         "dependencies": {
@@ -1301,6 +1317,34 @@
         "build": {
           "buildTransitive/net8.0/_._": {}
         }
+      },
+      "CitiesManager.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.7"
+        },
+        "compile": {
+          "bin/placeholder/CitiesManager.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CitiesManager.Core.dll": {}
+        }
+      },
+      "CitiesManager.Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CitiesManager.Core": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "10.0.7",
+          "Microsoft.EntityFrameworkCore.SqlServer": "10.0.7"
+        },
+        "compile": {
+          "bin/placeholder/CitiesManager.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CitiesManager.Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -1429,6 +1473,22 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/10.0.7": {
+      "sha512": "WAMNMV7m019wBaem9YAyK+nsR6r5ixBL/kOPybO9QhEkwG4dOeVG3vvTTkI5I6q6fp5+MN6IuYxxV/2HYiI9vw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/10.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll",
+        "lib/net10.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
+        "microsoft.aspnetcore.identity.entityframeworkcore.10.0.7.nupkg.sha512",
+        "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
       ]
     },
     "Microsoft.AspNetCore.OpenApi/9.0.8": {
@@ -3871,12 +3931,25 @@
         "system.security.cryptography.protecteddata.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "CitiesManager.Core/1.0.0": {
+      "type": "project",
+      "path": "../CitiesManager.Core/CitiesManager.Core.csproj",
+      "msbuildProject": "../CitiesManager.Core/CitiesManager.Core.csproj"
+    },
+    "CitiesManager.Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../CitiesManager.Infrastructure/CitiesManager.Infrastructure.csproj",
+      "msbuildProject": "../CitiesManager.Infrastructure/CitiesManager.Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
       "Asp.Versioning.Mvc >= 8.1.0",
       "Asp.Versioning.Mvc.ApiExplorer >= 8.1.0",
+      "CitiesManager.Core >= 1.0.0",
+      "CitiesManager.Infrastructure >= 1.0.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 10.0.7",
       "Microsoft.AspNetCore.OpenApi >= 9.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 10.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 10.0.7",
@@ -3917,7 +3990,14 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CitiesManagerSolution\\CitiesManager.Core\\CitiesManager.Core.csproj": {
+              "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CitiesManagerSolution\\CitiesManager.Core\\CitiesManager.Core.csproj"
+            },
+            "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CitiesManagerSolution\\CitiesManager.Infrastructure\\CitiesManager.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\Banhi\\source\\repos\\aspnetcore\\CitiesManagerSolution\\CitiesManager.Infrastructure\\CitiesManager.Infrastructure.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -3943,6 +4023,10 @@
           "Asp.Versioning.Mvc.ApiExplorer": {
             "target": "Package",
             "version": "[8.1.0, )"
+          },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[10.0.7, )"
           },
           "Microsoft.AspNetCore.OpenApi": {
             "target": "Package",
