@@ -10,6 +10,27 @@
             </summary>
             <returns>A string containing the greeting message "Hello World!".</returns>
         </member>
+        <member name="M:CitiesManager.web.Controllers.v1.AccountController.Register(CitiesManager.Core.DTO.RegisterDTO)">
+            <summary>
+            Registers a new user account with the specified registration details.
+            </summary>
+            <remarks>If the specified email address is already registered, the method returns a problem
+            response. The method also assigns the user to the specified role, creating the role if it does not exist.
+            The user is automatically signed in upon successful registration. This endpoint expects a valid RegisterDTO
+            payload and should be called via HTTP POST.</remarks>
+            <param name="registerDTO">An object containing the user's registration information, including email, password, display name, desired
+            role, and sign-in preferences. Cannot be null. All required fields must be valid.</param>
+            <returns>An ActionResult containing the created ApplicationUser if registration succeeds; otherwise, a problem
+            response describing the error (such as validation failures or duplicate email).</returns>
+        </member>
+        <member name="M:CitiesManager.web.Controllers.v1.AccountController.IsEmailAlreadyTaken(System.String)">
+            <summary>
+            Checks whether the specified email address is already associated with an existing user account.
+            </summary>
+            <param name="email">The email address to check for availability. Can be null.</param>
+            <returns>An <see cref="T:Microsoft.AspNetCore.Mvc.OkObjectResult"/> containing <see langword="true"/> if the email is already taken; otherwise,
+            <see langword="false"/>.</returns>
+        </member>
         <member name="M:CitiesManager.web.Controllers.v1.CitiesController.GetCities">
             <summary>
             Retrieves all cities from the data store.

@@ -71,7 +71,7 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 .AddRoleStore<RoleStore<ApplicationRole,ApplicationDBContext,Guid>>();
 
 var app = builder.Build();
-
+app.UseStaticFiles();
 app.UseCors("AllowReactApp");
 
 //var provider = app.Services.GetRequiredService<IApiVersionDescriptionProvider>();
