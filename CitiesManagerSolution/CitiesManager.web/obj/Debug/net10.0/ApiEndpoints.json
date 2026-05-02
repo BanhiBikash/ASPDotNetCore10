@@ -27,7 +27,7 @@
     "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
     "Method": "IsEmailAlreadyTaken",
     "RelativePath": "api/v1/Account",
-    "HttpMethod": "",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [

@@ -45,7 +45,7 @@ namespace CitiesManager.web.Controllers.v1
                 return Problem(errors);
             }
 
-            if( (await _userManager.FindByEmailAsync(registerDTO.Email)) != null)
+            if ((await _userManager.FindByEmailAsync(registerDTO.Email)) != null)
             {
                 return Problem("Email already registered");
             }
@@ -53,7 +53,7 @@ namespace CitiesManager.web.Controllers.v1
             {
                 ApplicationUser applicationUser = new ApplicationUser()
                 {
-                    PersonName = registerDTO.PeronName,
+                    PersonName = registerDTO.PersonName,
                     UserName = registerDTO.Email,
                     Email = registerDTO.Email,
                 };
@@ -65,7 +65,7 @@ namespace CitiesManager.web.Controllers.v1
                     //sign-in user
                     _signInManager.SignInAsync(applicationUser, isPersistent: registerDTO.stayLoggedIn);
 
-                    if(registerDTO.UserRole == Role.User)
+                    if (registerDTO.UserRole == Role.User.ToString())
                     {
                         if (await _roleManager.FindByNameAsync(Convert.ToString(Role.User)) is null)
                         {
@@ -77,13 +77,15 @@ namespace CitiesManager.web.Controllers.v1
                             {
                                 Problem($"Failed to create {Role.User.ToString()} role.");
                             }
-
-                            await _userManager.AddToRoleAsync(applicationUser,Role.User.ToString());
                         }
+
+                        await _userManager.AddToRoleAsync(applicationUser, Role.User.ToString());
+
+                        return Ok(applicationUser);
                     }
-                    else if(registerDTO.UserRole == Role.Admin)
+                    else if (registerDTO.UserRole == Role.Admin.ToString())
                     {
-                        if(await _roleManager.FindByNameAsync(Convert.ToString(Role.Admin)) is null)
+                        if (await _roleManager.FindByNameAsync(Convert.ToString(Role.Admin)) is null)
                         {
                             try
                             {
@@ -93,16 +95,15 @@ namespace CitiesManager.web.Controllers.v1
                             {
                                 Problem($"Failed to create {Role.Admin.ToString()} role.");
                             }
-
-                            await _userManager.AddToRoleAsync(applicationUser, Role.Admin.ToString());
                         }
+
+                        await _userManager.AddToRoleAsync(applicationUser, Role.Admin.ToString());
+                        return Ok(applicationUser);
                     }
                     else
                     {
                         return Problem("Either role not assigned or invalid role");
                     }
-
-                        return null;
                 }
                 else
                 {
@@ -118,6 +119,7 @@ namespace CitiesManager.web.Controllers.v1
         /// <param name="email">The email address to check for availability. Can be null.</param>
         /// <returns>An <see cref="OkObjectResult"/> containing <see langword="true"/> if the email is already taken; otherwise,
         /// <see langword="false"/>.</returns>
+        [HttpGet]
         public async Task<IActionResult> IsEmailAlreadyTaken(string? email)
         {
             if (_userManager.FindByEmailAsync(email) is null)

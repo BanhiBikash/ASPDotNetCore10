@@ -7,7 +7,7 @@ namespace CitiesManager.Core.DTO
     public class RegisterDTO
     {
         [Required(ErrorMessage ="Person Name can't be blank")]
-        public string? PeronName { get; set; }
+        public string? PersonName { get; set; }
 
         [Required(ErrorMessage ="Email address is required")]
         [EmailAddress(ErrorMessage ="Invalid email")]
@@ -22,7 +22,7 @@ namespace CitiesManager.Core.DTO
         public string? ConfirmPassword { get; set; }
 
         [Required(ErrorMessage ="Please assign a role")]
-        public Role UserRole { get; set; } = Role.User;
+        public string UserRole { get; set; } = Role.User.ToString();
 
         public bool stayLoggedIn { get; set; } = false;
     }
