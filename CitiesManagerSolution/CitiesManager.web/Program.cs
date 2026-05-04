@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using CitiesManager.Core.Entities.IdentityUser;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using CitiesManager.Core.ServiceContracts;
+using CitiesManager.Core.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -69,6 +71,8 @@ builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
 
 }).AddEntityFrameworkStores<ApplicationDBContext>().AddDefaultTokenProviders().AddUserStore<UserStore<ApplicationUser,ApplicationRole,ApplicationDBContext,Guid>>()
 .AddRoleStore<RoleStore<ApplicationRole,ApplicationDBContext,Guid>>();
+
+builder.Services.AddScoped<IJWTService,JWTService>();
 
 var app = builder.Build();
 app.UseStaticFiles();

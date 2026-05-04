@@ -1,7 +1,9 @@
 ﻿using Asp.Versioning;
 using CitiesManager.Core.DTO;
 using CitiesManager.Core.Entities.IdentityUser;
+using CitiesManager.Core.ServiceContracts;
 using CitiesManager.Core.ServiceContracts.Enums;
+using CitiesManager.Core.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -17,12 +19,14 @@ namespace CitiesManager.web.Controllers.v1
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly RoleManager<ApplicationRole> _roleManager;
+        private readonly IJWTService _jwtService;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager, IJWTService jWTService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
+            _jwtService = jWTService;
         }
 
         /// <summary>
@@ -37,6 +41,7 @@ namespace CitiesManager.web.Controllers.v1
         /// <returns>An ActionResult containing the created ApplicationUser if registration succeeds; otherwise, a problem
         /// response describing the error (such as validation failures or duplicate email).</returns>
         [HttpPost]
+        [Route("[action]")]
         public async Task<ActionResult<ApplicationUser>> Register(RegisterDTO registerDTO)
         {
             if (!ModelState.IsValid)
@@ -63,7 +68,7 @@ namespace CitiesManager.web.Controllers.v1
                 if (createResult.Succeeded)
                 {
                     //sign-in user
-                    _signInManager.SignInAsync(applicationUser, isPersistent: registerDTO.stayLoggedIn);
+                    await _signInManager.SignInAsync(applicationUser, isPersistent: registerDTO.stayLoggedIn);
 
                     if (registerDTO.UserRole == Role.User.ToString())
                     {
@@ -81,7 +86,9 @@ namespace CitiesManager.web.Controllers.v1
 
                         await _userManager.AddToRoleAsync(applicationUser, Role.User.ToString());
 
-                        return Ok(applicationUser);
+                        AuthResponseDTO authResponse = _jwtService.CreateJWTToken(applicationUser);
+
+                        return Ok(authResponse);
                     }
                     else if (registerDTO.UserRole == Role.Admin.ToString())
                     {
@@ -93,7 +100,7 @@ namespace CitiesManager.web.Controllers.v1
                             }
                             catch (Exception e)
                             {
-                                Problem($"Failed to create {Role.Admin.ToString()} role.");
+                                return Problem($"Failed to create {Role.Admin.ToString()} role.");
                             }
                         }
 
@@ -109,6 +116,41 @@ namespace CitiesManager.web.Controllers.v1
                 {
                     string? errors = String.Join(",", createResult.Errors.Select(err => err.Description));
                     return Problem(errors);
+                }
+            }
+        }
+
+        [HttpPost]
+        [Route("[Action]")]
+        public async Task<ActionResult<ApplicationUser>> Login(LoginDTO loginDTO)
+
+        {
+            if (loginDTO is null)
+            {
+                return Problem("Invalid login data");
+            }
+            else
+            {
+                ApplicationUser? user = await _userManager.FindByEmailAsync(loginDTO.Email);
+
+                if (user is null)
+                {
+                    return Problem("Invalid email or password");
+                }
+                else
+                {
+                    Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, loginDTO.Password, isPersistent: loginDTO.stayLoggedIn, lockoutOnFailure: false);
+                    
+                    if (signInResult.Succeeded)
+                    {
+                        AuthResponseDTO authResponse = _jwtService.CreateJWTToken(user);
+
+                        return Ok(authResponse);
+                    }
+                    else
+                    {
+                        return Problem("Wrong email or password.");
+                    }
                 }
             }
         }

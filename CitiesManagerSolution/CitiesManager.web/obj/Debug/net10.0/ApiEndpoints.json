@@ -1,8 +1,48 @@
 [
   {
     "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
-    "Method": "Register",
+    "Method": "IsEmailAlreadyTaken",
     "RelativePath": "api/v1/Account",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
+    "Method": "Login",
+    "RelativePath": "api/v1/Account/Login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDTO",
+        "Type": "CitiesManager.Core.DTO.LoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CitiesManager.Core.Entities.IdentityUser.ApplicationUser",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
+    "Method": "Register",
+    "RelativePath": "api/v1/Account/Register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -22,22 +62,6 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
-    "Method": "IsEmailAlreadyTaken",
-    "RelativePath": "api/v1/Account",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": false
-      }
-    ],
-    "ReturnTypes": []
   },
   {
     "ContainingType": "CitiesManager.web.Controllers.v1.CitiesController",
