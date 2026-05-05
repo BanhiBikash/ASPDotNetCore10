@@ -30,12 +30,14 @@ namespace CitiesManager.Core.Services
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
+                new Claim(JwtRegisteredClaimNames.Iat,
+          new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds().ToString(),
+          ClaimValueTypes.Integer64),
                 new Claim(ClaimTypes.NameIdentifier, user.Email),
                 new Claim(ClaimTypes.Name, user.PersonName ?? string.Empty)
             };
 
-            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]?? "This is Secret"));
+            SymmetricSecurityKey key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:SecretKey"]));
         
             SigningCredentials signingCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
         

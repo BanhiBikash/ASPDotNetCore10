@@ -3,9 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using CitiesManager.Infrastructure.DBcontext;
 using CitiesManager.Core.Entities;
 using Asp.Versioning;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CitiesManager.web.Controllers.v1
 {
+    [Authorize]
     [ApiVersion("1.0")]
     public class CitiesController : CustomControllerBase
     {
