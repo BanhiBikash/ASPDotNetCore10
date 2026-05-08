@@ -17,6 +17,30 @@
   },
   {
     "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
+    "Method": "GetNewToken",
+    "RelativePath": "api/v1/Account/GetNewToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Token",
+        "Type": "CitiesManager.Core.DTO.Tokens",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CitiesManager.Core.Entities.IdentityUser.ApplicationUser",
+        "MediaTypes": [
+          "application/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CitiesManager.web.Controllers.v1.AccountController",
     "Method": "Login",
     "RelativePath": "api/v1/Account/Login",
     "HttpMethod": "POST",

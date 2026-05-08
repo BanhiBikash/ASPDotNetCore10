@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using System.Security.Claims;
 
 namespace CitiesManager.web.Controllers.v1
 {
@@ -87,6 +88,10 @@ namespace CitiesManager.web.Controllers.v1
                         await _userManager.AddToRoleAsync(applicationUser, Role.User.ToString());
 
                         AuthResponseDTO authResponse = _jwtService.CreateJWTToken(applicationUser);
+                        //store the refresh token in the database
+                        applicationUser.RefreshToken = authResponse.RefreshToken;
+                        applicationUser.RefreshTokenExpiration = authResponse.RefreshTokenExpiration;
+                        await _userManager.UpdateAsync(applicationUser);
 
                         return Ok(authResponse);
                     }
@@ -140,10 +145,15 @@ namespace CitiesManager.web.Controllers.v1
                 else
                 {
                     Microsoft.AspNetCore.Identity.SignInResult signInResult = await _signInManager.PasswordSignInAsync(user, loginDTO.Password, isPersistent: loginDTO.stayLoggedIn, lockoutOnFailure: false);
-                    
+
                     if (signInResult.Succeeded)
                     {
                         AuthResponseDTO authResponse = _jwtService.CreateJWTToken(user);
+
+                        //setting refresh token
+                        user.RefreshToken = authResponse.RefreshToken;
+                        user.RefreshTokenExpiration = authResponse.RefreshTokenExpiration;
+                        await _userManager.UpdateAsync(user);
 
                         return Ok(authResponse);
                     }
@@ -153,6 +163,52 @@ namespace CitiesManager.web.Controllers.v1
                     }
                 }
             }
+        }
+
+        [HttpPost]
+        [Route("[Action]")]
+        public async Task<ActionResult<ApplicationUser>> GetNewToken(Tokens? Token)
+        {
+            if (Token.token is null || Token.refreshToken is null || Token is null)
+            {
+                return Problem("Null token error");
+            }
+            else
+            {
+                string? jwtToken = Token.token;
+                string? refreshToken = Token.refreshToken;
+            }
+
+            ClaimsPrincipal? principal = _jwtService.GetPrincipalFromExpiredToken(Token.token);
+
+            if(principal is null)
+            {
+                return BadRequest("Invalid jwt token");
+            }
+
+            //string? email  = principal.FindFirstValue(ClaimTypes.NameIdentifier);
+            var emailClaim = principal.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier && c.Value.Contains("@"));
+            string? email = emailClaim?.Value;
+
+
+            //find the user
+            ApplicationUser? user = await _userManager.FindByEmailAsync(email);
+
+            //check if the user exists and the refresh token matches and is not expired
+            if(user is null || user.RefreshToken != Token.refreshToken || user.RefreshTokenExpiration <= DateTime.UtcNow)
+            {
+                return BadRequest("Invalid User or refresh token, try logging in again.");
+            }
+
+            //create new JWT token
+            AuthResponseDTO authResponse = _jwtService.CreateJWTToken(user);
+
+            //setting new refresh token and adding to the database
+            user.RefreshToken = authResponse.RefreshToken;
+            user.RefreshTokenExpiration = authResponse.RefreshTokenExpiration;
+            await _userManager.UpdateAsync(user);
+
+            return Ok(authResponse);
         }
 
         /// <summary>
