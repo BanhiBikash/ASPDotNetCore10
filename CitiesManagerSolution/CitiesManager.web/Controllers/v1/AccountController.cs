@@ -195,7 +195,7 @@ namespace CitiesManager.web.Controllers.v1
             ApplicationUser? user = await _userManager.FindByEmailAsync(email);
 
             //check if the user exists and the refresh token matches and is not expired
-            if(user is null || user.RefreshToken != Token.refreshToken || user.RefreshTokenExpiration <= DateTime.UtcNow)
+            if(user is null || user.RefreshToken != Token.refreshToken)
             {
                 return BadRequest("Invalid User or refresh token, try logging in again.");
             }
