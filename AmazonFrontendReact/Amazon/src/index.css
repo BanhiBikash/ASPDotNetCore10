@@ -6,7 +6,7 @@ html, body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color: #eaeded; /* The iconic light gray backdrop of Amazon storefronts */
+  background-color: #eaeded; 
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   box-sizing: border-box;
 }
@@ -22,10 +22,9 @@ html, body {
   position: relative;
 }
 
-/* Fluid landing container with no fixed max-width limits to display wide-bleed graphics */
 .main-content-fluid {
   flex: 1;
-  padding-top: 70px; /* Accounts for the fixed 70px navbar */
+  padding-top: 70px; 
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -93,6 +92,7 @@ html, body {
   height: 24px;
   width: auto;
   cursor: pointer;
+  /* Native coloration preserved - no inversion filter map applied */
 }
 
 
@@ -105,28 +105,15 @@ html, body {
   box-sizing: border-box;
 }
 
-/* Update your hero layout rule to have a solid background color fallback */
 .hero-banner-slider {
   width: 100%;
-  height: 45vw; /* Sets a dynamic relative height based on viewport width */
+  height: 45vw; 
   max-height: 500px;
-  min-height: 300px; /* 👈 Keeps the frame open even if images load slowly */
-  background-color: #cbd2d6; /* Fallback gray background matches banner aesthetics */
+  min-height: 300px; 
+  background-color: #cbd2d6; 
   position: relative;
   overflow: hidden;
   z-index: 1;
-}
-
-/* Update your grid margin pull-up slightly to account for the safer hero box framework */
-.home-content-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.25rem;
-  max-width: 1500px;
-  margin: -180px auto 0 auto; /* 👈 Shifted down from -280px to safely clear headers */
-  padding: 0 1.25rem;
-  position: relative;
-  z-index: 5;
 }
 
 .hero-image {
@@ -135,7 +122,6 @@ html, body {
   object-fit: cover;
 }
 
-/* The magic gradient that blends the bottom of the hero banner into the grey page body */
 .hero-gradient-overlay {
   position: absolute;
   bottom: 0;
@@ -145,7 +131,17 @@ html, body {
   background: linear-gradient(to bottom, rgba(234, 237, 237, 0) 0%, rgba(234, 237, 237, 1) 100%);
 }
 
-/* Amazon Quad Product Storage Blocks */
+.home-content-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  max-width: 1500px;
+  margin: -180px auto 0 auto; 
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 5;
+}
+
 .product-card-container {
   background-color: #ffffff;
   padding: 20px;
@@ -164,7 +160,6 @@ html, body {
   line-height: 1.25;
 }
 
-/* The 2x2 Grid setup for standard category blocks */
 .quad-image-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -192,7 +187,6 @@ html, body {
   line-height: 1.3;
 }
 
-/* Single Feature Variant Layout */
 .single-image-wrapper {
   width: 100%;
   flex-grow: 1;
@@ -221,7 +215,6 @@ html, body {
   text-decoration: underline;
 }
 
-/* Custom Gateway Authentication Module */
 .gateway-auth-promo {
   background-color: transparent !important;
   box-shadow: none !important;
@@ -261,7 +254,6 @@ html, body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
-/* Wide Breakout Carousel Strip Elements */
 .wide-deals-strip-container {
   background-color: #ffffff;
   max-width: 1460px;
@@ -284,7 +276,6 @@ html, body {
   padding-bottom: 10px;
 }
 
-/* Hide scrollbars elegantly but keep swipe interaction functionality */
 .horizontal-scroll-row::-webkit-scrollbar {
   height: 6px;
 }
@@ -418,11 +409,11 @@ html, body {
 
 
 /* ==========================================================================
-   5. RESPONSIVE DEVICE INTERCEPT LAYOUTS
+   5. RESPONSIVE DEVICE INTERCEPT LAYOUTS (HOME & NAV)
    ========================================================================== */
 @media screen and (max-width: 1100px) {
   .home-content-grid {
-    grid-template-columns: repeat(2, 1fr); /* Snaps cards to a 2x2 cluster block */
+    grid-template-columns: repeat(2, 1fr);
     margin-top: -120px;
   }
 }
@@ -440,11 +431,238 @@ html, body {
 
 @media screen and (max-width: 600px) {
   .home-content-grid {
-    grid-template-columns: 1fr; /* Stack cards vertically on phones */
+    grid-template-columns: 1fr;
     margin-top: -40px;
   }
   .footer-links-grid {
     grid-template-columns: 1fr;
     text-align: center;
   }
+}
+
+
+/* ==========================================================================
+   6. HIGH-FIDELITY SPLIT AUTHENTICATION STYLES (LOGIN & REGISTER)
+   ========================================================================== */
+.auth-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff; /* Forms override global gray to standard solid white layout */
+  min-height: calc(100vh - 70px);
+  width: 100%;
+  padding: 25px 20px 40px 20px;
+  box-sizing: border-box;
+}
+
+.auth-logo-header {
+  margin-bottom: 18px;
+}
+
+.auth-brand-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0); /* Clean conversion rule to absolute stark black text aesthetics */
+}
+
+/* Centralized Card Storage Component Box */
+.auth-card-box {
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px 26px;
+  box-sizing: border-box;
+}
+
+.auth-card-title {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 14px 0;
+}
+
+.auth-form-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.auth-input-group label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.auth-input-group input {
+  height: 31px;
+  padding: 3px 7px;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  outline: none;
+  font-size: 0.85rem;
+  color: #0f1111;
+  box-shadow: 0 1px 0 rgba(255,255,255,.5), inset 0 1px 0 rgba(0,0,0,.07);
+  transition: border-color 0.15s ease;
+}
+
+/* Amazon crisp glow activation highlights */
+.auth-input-group input:focus {
+  border-color: #e77600;
+  box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+/* Dedicated Action Primary Push Trigger Button */
+.auth-action-btn-gold {
+  background: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 8px;
+  color: #0f1111;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 6px;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.auth-action-btn-gold:hover {
+  background: #f7ca00;
+  border-color: #f2c200;
+}
+
+.auth-legal-disclaimer {
+  font-size: 0.7rem;
+  line-height: 1.4;
+  color: #333333;
+  margin: 18px 0;
+}
+
+.auth-legal-disclaimer a {
+  color: #0066c0;
+  text-decoration: none;
+}
+
+.auth-legal-disclaimer a:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+/* Toggle Context Interactivity Panels */
+.auth-toggle-context-tray {
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.auth-toggle-context-tray.style-inline {
+  border-top: 1px solid #e7e7e7;
+  padding-top: 15px;
+  align-items: flex-start;
+}
+
+.auth-toggle-context-tray p {
+  font-size: 0.8rem;
+  color: #0f1111;
+  margin: 0;
+}
+
+.auth-switch-link {
+  color: #0066c0;
+  cursor: pointer;
+}
+
+.auth-switch-link:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+/* Subtle separator bar separating new user creation blocks */
+.auth-divider-break {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.auth-divider-break::before {
+  content: "";
+  border-top: 1px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.auth-divider-break h5 {
+  background: #ffffff;
+  color: #767676;
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0 8px;
+}
+
+.auth-secondary-create-btn {
+  background: #ffffff;
+  border: 1px solid #adb1b8;
+  border-radius: 8px;
+  color: #0f1111;
+  width: 100%;
+  padding: 6px 0;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.auth-secondary-create-btn:hover {
+  background: #f7f8fa;
+  border-color: #a2a6ac;
+}
+
+/* Specialized Base Authentication fineprint footer */
+.auth-minimal-footer {
+  margin-top: 30px;
+  border-top: 1px solid #eeeeee;
+  width: 100%;
+  max-width: 500px;
+  padding-top: 18px;
+  text-align: center;
+}
+
+.auth-footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 10px;
+}
+
+.auth-footer-links a {
+  color: #0066c0;
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
+.auth-footer-links a:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.auth-footer-copyright {
+  font-size: 0.65rem;
+  color: #555555;
+  margin: 0;
 }
