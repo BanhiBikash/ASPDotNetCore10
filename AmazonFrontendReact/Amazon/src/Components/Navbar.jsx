@@ -25,7 +25,7 @@ const Navbar = () => {
       {/* Navigation Links (Public E-Commerce Routes) */}
       <div className="nav-links">
         <Link to="/" className="nav-items">Home</Link>
-        <Link to="/products" className="nav-items">Shop Products</Link>
+        <Link to="/product" className="nav-items">Shop Products</Link>
         <Link to="/login" className="nav-items">Login / Register</Link>
       </div>
     </div>

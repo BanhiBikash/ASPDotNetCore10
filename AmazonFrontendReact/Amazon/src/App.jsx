@@ -12,7 +12,7 @@ function App() {
       <Route path="/" element={<Amazon />}>
         <Route index element={<Home />} />                {/* Matches layout root "/" */}
         <Route path="login" element={<Login />} />        {/* Matches "/login" */}
-        <Route path="product" element={<Product />} />    {/* Matches "/product" */}
+        <Route path="product/:productID" element={<Product />} />    {/* Matches "/product" */}
       </Route>
     )
   );
