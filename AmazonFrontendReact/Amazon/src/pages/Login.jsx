@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/Amazon-Logo.png';
+import UserContext from '../context/UserContext';
 
 const Login = () => {
   // Master switch toggling between standalone card components
@@ -41,6 +42,10 @@ const Login = () => {
    📦 STANDALONE COMPONENTS 1: LOGIN CARD
    ========================================================================== */
 const LoginCard = ({ switchToRegister }) => {
+
+  //variable to set userdata
+  const { setUser } = useContext(UserContext)
+
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
@@ -63,7 +68,7 @@ const LoginCard = ({ switchToRegister }) => {
   return (
     <div className="auth-card-box">
       <h1 className="auth-card-title">Sign in</h1>
-      
+
       <form onSubmit={handleLoginSubmit} className="auth-form-flow">
         <div className="auth-input-group">
           <label htmlFor="login-email">Email</label>
@@ -123,6 +128,10 @@ const LoginCard = ({ switchToRegister }) => {
    📦 STANDALONE COMPONENT 2: REGISTER CARD (FIXED GRID LAYOUT)
    ========================================================================== */
 const RegisterCard = ({ switchToLogin }) => {
+
+  //variable to set userdata
+  const { setUser } = useContext(UserContext)
+
   const [registerData, setRegisterData] = useState({
     email: '',
     firstName: '',
@@ -136,7 +145,7 @@ const RegisterCard = ({ switchToLogin }) => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
+    setRegisterData({
       ...registerData,
       [name]: type === 'checkbox' ? checked : value
     });
@@ -149,15 +158,18 @@ const RegisterCard = ({ switchToLogin }) => {
       dateOfBirth: registerData.dateOfBirth ? registerData.dateOfBirth : null,
       gender: parseInt(registerData.gender, 10)
     };
+
+    //code to register user
     console.log('Sending RegisterDTO Payload to .NET API:', registerPayload);
+
   };
 
   return (
     <div className="auth-card-box register-card-wide">
       <h1 className="auth-card-title">Create account</h1>
-      
+
       <form onSubmit={handleRegisterSubmit} className="auth-form-flow">
-        
+
         {/* ROW 1: First Name & Last Name sitting cleanly side-by-side */}
         <div className="auth-form-row-grid">
           <div className="auth-input-group">
