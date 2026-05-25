@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/Amazon-Logo.png';
 import UserContext from '../context/UserContext';
+import api from '../api/axiosConfig'; // 📡 Centralized Axios instance with interceptors
 
 const Login = () => {
   // Master switch toggling between standalone card components
@@ -16,7 +17,7 @@ const Login = () => {
         </Link>
       </div>
 
-      {/* Conditionally mount the completely independent form blocks */}
+      {/* Conditionally mount the independent form blocks */}
       {isLoginView ? (
         <LoginCard switchToRegister={() => setIsLoginView(false)} />
       ) : (
@@ -39,18 +40,20 @@ const Login = () => {
 };
 
 /* ==========================================================================
-   📦 STANDALONE COMPONENTS 1: LOGIN CARD
+   📦 STANDALONE COMPONENT 1: LOGIN CARD
    ========================================================================== */
 const LoginCard = ({ switchToRegister }) => {
-
-  //variable to set userdata
-  const { setUser } = useContext(UserContext)
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
     email: '',
     password: '',
     stayLoggedIn: false
   });
+
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -60,14 +63,39 @@ const LoginCard = ({ switchToRegister }) => {
     });
   };
 
-  const handleLoginSubmit = (e) => {
+  const handleLoginSubmit = async (e) => {
     e.preventDefault();
-    console.log('Sending Login Payload to .NET API:', loginData);
+    setLoading(true);
+    setError(null);
+
+    try {
+      // API request utilizing raw JSON body mapping
+      const response = await api.post('/v1/Account/Login', loginData);
+      
+      const { jwtToken, refreshToken, email, firstName, lastName } = response.data;
+
+      // Secure token tracking initialization
+      localStorage.setItem('token', jwtToken);
+      localStorage.setItem('refreshToken', refreshToken);
+
+      // Hydrate global state context 
+      setUser({ email, name: `${firstName} ${lastName}` });
+
+      console.log('Login success! Session initialized.');
+      navigate('/'); 
+    } catch (err) {
+      console.error('Login engine failed:', err);
+      setError(err.response?.data?.error || 'Invalid email or password.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="auth-card-box">
       <h1 className="auth-card-title">Sign in</h1>
+
+      {error && <div className="auth-error-alert-box">{error}</div>}
 
       <form onSubmit={handleLoginSubmit} className="auth-form-flow">
         <div className="auth-input-group">
@@ -78,6 +106,7 @@ const LoginCard = ({ switchToRegister }) => {
             name="email"
             value={loginData.email}
             onChange={handleChange}
+            disabled={loading}
             required
           />
         </div>
@@ -90,6 +119,7 @@ const LoginCard = ({ switchToRegister }) => {
             name="password"
             value={loginData.password}
             onChange={handleChange}
+            disabled={loading}
             required
           />
         </div>
@@ -101,11 +131,14 @@ const LoginCard = ({ switchToRegister }) => {
             name="stayLoggedIn"
             checked={loginData.stayLoggedIn}
             onChange={handleChange}
+            disabled={loading}
           />
           <label htmlFor="login-stay">Keep me signed in</label>
         </div>
 
-        <button type="submit" className="auth-action-btn-gold">Continue</button>
+        <button type="submit" className="auth-action-btn-gold" disabled={loading}>
+          {loading ? 'Signing in...' : 'Continue'}
+        </button>
       </form>
 
       <p className="auth-legal-disclaimer">
@@ -116,7 +149,7 @@ const LoginCard = ({ switchToRegister }) => {
         <div className="auth-divider-break">
           <h5>New to Amazon?</h5>
         </div>
-        <button type="button" className="auth-secondary-create-btn" onClick={switchToRegister}>
+        <button type="button" className="auth-secondary-create-btn" onClick={switchToRegister} disabled={loading}>
           Create your Amazon account
         </button>
       </div>
@@ -128,9 +161,8 @@ const LoginCard = ({ switchToRegister }) => {
    📦 STANDALONE COMPONENT 2: REGISTER CARD (FIXED GRID LAYOUT)
    ========================================================================== */
 const RegisterCard = ({ switchToLogin }) => {
-
-  //variable to set userdata
-  const { setUser } = useContext(UserContext)
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const [registerData, setRegisterData] = useState({
     email: '',
@@ -143,6 +175,10 @@ const RegisterCard = ({ switchToLogin }) => {
     stayLoggedIn: false
   });
 
+  const [loading, setLoading] = useState(false);
+  const [errorFields, setErrorFields] = useState({});
+  const [generalError, setGeneralError] = useState(null);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setRegisterData({
@@ -151,22 +187,57 @@ const RegisterCard = ({ switchToLogin }) => {
     });
   };
 
-  const handleRegisterSubmit = (e) => {
+  const handleRegisterSubmit = async (e) => {
     e.preventDefault();
+    
+    if (registerData.password !== registerData.confirmPassword) {
+      setErrorFields({ confirmPassword: ['Passwords do not match.'] });
+      return;
+    }
+
+    setLoading(true);
+    setErrorFields({});
+    setGeneralError(null);
+
+    // ✨ Clean JSON Payload layout matching your successful Postman structure
     const registerPayload = {
       ...registerData,
-      dateOfBirth: registerData.dateOfBirth ? registerData.dateOfBirth : null,
-      gender: parseInt(registerData.gender, 10)
+      gender: parseInt(registerData.gender, 10),
+      dateOfBirth: registerData.dateOfBirth ? new Date(registerData.dateOfBirth).toISOString() : null
     };
 
-    //code to register user
-    console.log('Sending RegisterDTO Payload to .NET API:', registerPayload);
+    try {
+      // Firing pure application/json structure directly
+      const response = await api.post('/v1/Account/Register', registerPayload);
+      
+      const { jwtToken, refreshToken, email, firstName, lastName } = response.data;
 
+      localStorage.setItem('token', jwtToken);
+      localStorage.setItem('refreshToken', refreshToken);
+
+      setUser({ email, name: `${firstName} ${lastName}` });
+
+      console.log('Account registered via JSON and verified successfully.');
+      navigate('/');
+    } catch (err) {
+      console.error('Registration subsystem failed:', err);
+      
+      if (err.response?.data?.errors) {
+        // Maps backend ModelState error strings seamlessly underneath input inputs
+        setErrorFields(err.response.data.errors);
+      } else {
+        setGeneralError(err.response?.data?.error || 'An error occurred during account creation.');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="auth-card-box register-card-wide">
       <h1 className="auth-card-title">Create account</h1>
+
+      {generalError && <div className="auth-error-alert-box">{generalError}</div>}
 
       <form onSubmit={handleRegisterSubmit} className="auth-form-flow">
 
@@ -181,8 +252,10 @@ const RegisterCard = ({ switchToLogin }) => {
               maxLength={50}
               value={registerData.firstName}
               onChange={handleChange}
+              disabled={loading}
               required
             />
+            {errorFields.FirstName && <span className="input-validation-err">{errorFields.FirstName[0]}</span>}
           </div>
           <div className="auth-input-group">
             <label htmlFor="lastName">Last name</label>
@@ -193,8 +266,10 @@ const RegisterCard = ({ switchToLogin }) => {
               maxLength={50}
               value={registerData.lastName}
               onChange={handleChange}
+              disabled={loading}
               required
             />
+            {errorFields.LastName && <span className="input-validation-err">{errorFields.LastName[0]}</span>}
           </div>
         </div>
 
@@ -208,7 +283,9 @@ const RegisterCard = ({ switchToLogin }) => {
               name="dateOfBirth"
               value={registerData.dateOfBirth}
               onChange={handleChange}
+              disabled={loading}
             />
+            {errorFields.DateOfBirth && <span className="input-validation-err">{errorFields.DateOfBirth[0]}</span>}
           </div>
           <div className="auth-input-group">
             <label htmlFor="gender">Gender</label>
@@ -218,6 +295,7 @@ const RegisterCard = ({ switchToLogin }) => {
               value={registerData.gender}
               onChange={handleChange}
               className="auth-select-field"
+              disabled={loading}
               required
             >
               <option value="0">Male</option>
@@ -236,8 +314,10 @@ const RegisterCard = ({ switchToLogin }) => {
             name="email"
             value={registerData.email}
             onChange={handleChange}
+            disabled={loading}
             required
           />
+          {errorFields.Email && <span className="input-validation-err">{errorFields.Email[0]}</span>}
         </div>
 
         <div className="auth-input-group">
@@ -251,8 +331,10 @@ const RegisterCard = ({ switchToLogin }) => {
             placeholder="At least 6 characters"
             value={registerData.password}
             onChange={handleChange}
+            disabled={loading}
             required
           />
+          {errorFields.Password && <span className="input-validation-err">{errorFields.Password[0]}</span>}
         </div>
 
         <div className="auth-input-group">
@@ -263,9 +345,18 @@ const RegisterCard = ({ switchToLogin }) => {
             name="confirmPassword"
             value={registerData.confirmPassword}
             onChange={handleChange}
+            disabled={loading}
             required
           />
+          {errorFields.confirmPassword && <span className="input-validation-err">{errorFields.confirmPassword[0]}</span>}
         </div>
+
+        {/* Catches administrative block errors or role violations from the API */}
+        {errorFields.UserRole && (
+          <div className="auth-error-alert-box inner-form-alert">
+            {errorFields.UserRole[0]}
+          </div>
+        )}
 
         <div className="auth-checkbox-group">
           <input
@@ -274,11 +365,14 @@ const RegisterCard = ({ switchToLogin }) => {
             name="stayLoggedIn"
             checked={registerData.stayLoggedIn}
             onChange={handleChange}
+            disabled={loading}
           />
           <label htmlFor="reg-stay">Keep me signed in</label>
         </div>
 
-        <button type="submit" className="auth-action-btn-gold">Add Account</button>
+        <button type="submit" className="auth-action-btn-gold" disabled={loading}>
+          {loading ? 'Creating Account...' : 'Add Account'}
+        </button>
       </form>
 
       <p className="auth-legal-disclaimer">

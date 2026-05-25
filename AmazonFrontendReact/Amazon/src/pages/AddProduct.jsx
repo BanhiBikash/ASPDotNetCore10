@@ -23,7 +23,7 @@ const ProductAdd = () => {
   useEffect(() => {
     const fetchMetadata = async () => {
       try {
-        const response = await api.get('/Products/GetCategories');
+        const response = await api.get('v1/Products/GetCategories');
         const { categories, subCategories } = response.data;
         
         setCategories(categories);
@@ -142,7 +142,7 @@ const ProductAdd = () => {
     }
 
     try {
-      await api.post('/Products', multiPartForm);
+      await api.post('/v1/Products', multiPartForm);
       setUiStatus(prev => ({ ...prev, loading: false, success: 'Product successfully saved to database catalog!', error: null }));
       
       // Clear standard text values while keeping dropdown structural positions intact

@@ -9,7 +9,7 @@ const Product = () => {
   useEffect(() => {
     const fetchCatalog = async () => {
       try {
-        const response = await api.get('/Products');
+        const response = await api.get('/v1/Products');
         
         // Maps perfectly to your direct JSON array return pipeline
         const catalogData = Array.isArray(response.data) ? response.data : [];
