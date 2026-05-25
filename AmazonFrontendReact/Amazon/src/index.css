@@ -94,6 +94,16 @@ html, body {
   cursor: pointer;
 }
 
+.nav-items-nav-account-link-profile{
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.15s ease-in-out;
+}
 
 /* ==========================================================================
    3. HIGH-FIDELITY AMAZON HOME LANDING COMPONENT STYLES
@@ -465,6 +475,11 @@ html, body {
   filter: brightness(0); /* Amazon high-contrast stark black branding aesthetic */
 }
 
+.nav-profile-arrow-icon{
+  width: 22px;
+  height: auto;
+}
+
 /* Base Card Shell Structurator */
 .auth-card-box {
   border: 1px solid #d5d9d9;
@@ -782,5 +797,137 @@ html, body {
   .auth-form-row-grid {
     grid-template-columns: 1fr; /* Collapses grids down to structured stack containers on phones */
     gap: 12px;
+  }
+}
+
+
+/* ==========================================================================
+   7. HIGH-FIDELITY AMAZON ACCOUNT DASHBOARD MODULE STYLES
+   ========================================================================== */
+.account-dashboard-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.account-dashboard-header {
+  margin-bottom: 25px;
+}
+
+.account-dashboard-header h1 {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 6px 0;
+}
+
+.account-dashboard-header p {
+  font-size: 0.88rem;
+  color: #565959;
+  margin: 0;
+}
+
+.account-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.account-dash-card {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: background-color 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.account-dash-card:hover {
+  background-color: #f7f8fa;
+}
+
+.dash-card-icon-box {
+  font-size: 2.2rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.account-dash-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f1111;
+  margin: 0 0 4px 0;
+}
+
+.account-dash-card p {
+  font-size: 0.82rem;
+  color: #565959;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.account-dashboard-action-tray {
+  margin-top: 35px;
+  border-top: 1px solid #d5d9d9;
+  padding-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.account-dash-logout-btn {
+  background: #ffffff;
+  border: 1px solid #adb1b8;
+  border-radius: 8px;
+  color: #0f1111;
+  padding: 7px 18px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213,217,217,.15);
+  transition: background-color 0.1s ease;
+}
+
+.account-dash-logout-btn:hover {
+  background: #f7f8fa;
+  border-color: #a2a6ac;
+}
+
+.account-dashboard-fallback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: calc(100vh - 160px);
+  padding: 20px;
+}
+
+.account-dashboard-fallback h2 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin-bottom: 20px;
+}
+
+/* Dashboard Responsive Layout Intercepts */
+@media screen and (max-width: 850px) {
+  .account-dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .account-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .account-dashboard-header h1 {
+    font-size: 1.5rem;
   }
 }
