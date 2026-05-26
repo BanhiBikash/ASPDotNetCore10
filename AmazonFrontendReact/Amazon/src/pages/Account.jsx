@@ -35,7 +35,7 @@ const Account = () => {
       <div className="account-dashboard-grid">
         
         {/* Module 1: Profile Modifications */}
-        <Link to="/account/update" className="account-dash-card">
+        <Link to="../Account_Update" className="account-dash-card">
           <div className="dash-card-icon-box">👤</div>
           <h3>Login & Security</h3>
           <p>Edit name, update baseline delivery communication strings, or change authentication passwords.</p>
