@@ -79,7 +79,7 @@ const LoginCard = ({ switchToRegister }) => {
       localStorage.setItem('refreshToken', refreshToken);
 
       // Hydrate global state context 
-      setUser({ email, name: `${firstName} ${lastName}` });
+      setUser({ email:email, name: `${firstName} ${lastName}` });
 
       console.log('Login success! Session initialized.');
       navigate('/'); 
