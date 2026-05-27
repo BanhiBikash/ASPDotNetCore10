@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api/axiosConfig';
+import { CartContext } from '../context/CartContext';
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -48,11 +49,11 @@ const Product = () => {
   }
 
   return (
-    <div className="main-content-fluid" style={{ padding: '30px 20px' }}>
-      <div style={{ maxWidth: '1460px', margin: '0 auto' }}>
+    <div className="main-content-fluid">
+      <div style={{ maxWidth: '1460px', margin: '0 auto', padding: '0 20px' }}>
         
         {/* Dashboard Catalog Monitor Title */}
-        <div style={{ borderBottom: '1px solid #ddd', paddingBottom: '10px', marginBottom: '25px' }}>
+        <div style={{ borderBottom: '1px solid #ddd', paddingBottom: '10px', marginBottom: '25px', marginTop: '20px' }}>
           <h1 style={{ fontSize: '1.7rem', fontWeight: '400', margin: 0, color: '#0f1111' }}>
             Live Inventory Catalog
           </h1>
@@ -73,7 +74,8 @@ const Product = () => {
         <div style={{ 
           display: 'grid', 
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
-          gap: '20px' 
+          gap: '20px',
+          marginBottom: '40px'
         }}>
           {products
             .filter(item => !item.isDeleted) // Filters out any soft-deleted items automatically
@@ -90,34 +92,14 @@ const Product = () => {
                 : item.subCategory;
 
               return (
-                <div key={item.id} style={{
-                  background: '#ffffff',
-                  border: '1px solid #e7e7e7',
-                  borderRadius: '8px',
-                  padding: '15px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'between',
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                  position: 'relative'
-                }}>
+                <div key={item.id} className="product-card-container">
                   
                   {/* Product Image Frame */}
-                  <div style={{ 
-                    width: '100%', 
-                    height: '220px', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    background: '#f7f7f7',
-                    borderRadius: '4px',
-                    overflow: 'hidden',
-                    marginBottom: '12px'
-                  }}>
+                  <div className="single-image-wrapper" style={{ height: '220px', background: '#f7f7f7', borderRadius: '4px', overflow: 'hidden', marginBottom: '12px', width: '100%' }}>
                     <img 
                       src={imageSource} 
                       alt={item.name} 
-                      style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                      className="single-card-img"
                       onError={(e) => {
                         e.target.onerror = null;
                         e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
@@ -139,7 +121,7 @@ const Product = () => {
                   </div>
 
                   {/* Info Text Layout Blocks */}
-                  <h2 style={{ fontSize: '1rem', fontWeight: '700', color: '#0f1111', margin: '0 0 6px 0', lineHeight: '1.3', height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                  <h2 className="card-title" style={{ height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                     {item.name}
                   </h2>
 
