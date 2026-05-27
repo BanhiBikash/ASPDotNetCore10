@@ -4,6 +4,7 @@ import logo from '../assets/Amazon-Logo.png';
 import nav_icon from "../assets/hamburger.png";
 import UserContext from '../context/UserContext'; // 🌐 Global authentication context
 import userLogo from "../assets/user.png";
+import cartLogo from "../assets/cart.png"
 
 const Navbar = () => {
   const { user } = useContext(UserContext); // Track logged-in account structure
@@ -52,8 +53,9 @@ const Navbar = () => {
         ) : (
           <Link to="/login" className="nav-items">Login / Register</Link>
         )}
+        <Link to="./Cart" className='cartLogo'><img src={cartLogo} alt="Cart Logo" /><span>3</span></Link>
+        </div>
       </div>
-    </div>
   );
 };
 

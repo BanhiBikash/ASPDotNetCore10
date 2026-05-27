@@ -105,6 +105,51 @@ html, body {
   transition: color 0.15s ease-in-out;
 }
 
+/* ==========================================================================
+   🛒 Cart Logo & Perfect Centered Badge Span Architecture
+   ========================================================================== */
+.cartLogo {
+  position: relative; /* Essential: Forms the boundary frame that containing coordinates follow */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  text-decoration: none;
+}
+
+.cartLogo img {
+  width: 30px;  /* Optimal standard dimension for header item navigation */
+  height: 30px;
+  object-fit: contain;
+}
+
+/* The badge count node formatting matrix */
+.cartLogo span {
+  position: absolute; /* Plucks layout straight out of standard sequence */
+  top: -2px;          /* Positions it perfectly on the top-right curve of the cart icon */
+  right: -2px;
+
+  /* The Perfect Centering Framework */
+  display: flex;
+  align-items: center;     /* Centers number vertically */
+  justify-content: center;  /* Centers number horizontally */
+
+  /* Sizing, Geometrical Shape & Layout */
+  min-width: 18px;
+  height: 18px;
+  padding: 2px; /* Retains its perfect circle properties even if double digits happen (e.g., 12) */
+  border-radius: 50%; /* Cuts corners flawlessly into a clean circle */
+
+  /* Colors and Typography */
+  background-color: #f08804; /* Distinctive Amazon Vibrant Yellow Accent */
+  color: #131921;            /* Deep dark contrast color for optimal font readability */
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1; /* Completely eliminates default line heights from pushing text off-center */
+  
+  /* Creates a clean boundary gap separating the indicator badge from the icon below */
+  border: 2px solid #131921; 
+}
 
 /* ==========================================================================
    3. HIGH-FIDELITY AMAZON HOME LANDING COMPONENT STYLES
