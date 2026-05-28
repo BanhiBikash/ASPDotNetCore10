@@ -21,8 +21,8 @@ const Product = () => {
       } catch (err) {
         console.error('Handshake catalog error context:', err);
         const backendErrorMessage = err.response?.data || err.message || 'Failed to sync product inventory.';
-        setUiStatus({ 
-          loading: false, 
+        setUiStatus({
+          loading: false,
           error: typeof backendErrorMessage === 'string' ? backendErrorMessage : 'Database service context offline.'
         });
       }
@@ -45,7 +45,7 @@ const Product = () => {
         };
 
         await api.post(`/v1/Cart/UpdateCart?userId=${user.id}`, payload);
-        
+
         if (!silent) {
           alert(`Successfully added "${product.name}" to your account cart!`);
         }
@@ -57,8 +57,8 @@ const Product = () => {
       } finally {
         setActionLoading(prev => ({ ...prev, [productId]: false }));
       }
-    } 
-    
+    }
+
     // 👥 CASE B: User is not logged in -> Fallback to LocalStorage Guest Cart
     else {
       try {
@@ -104,15 +104,20 @@ const Product = () => {
     }
   };
 
-  // ⚡ Handle Buy Now (Add to cart silently first, then immediate express checkout navigation)
-  const handleBuyNow = async (product) => {
-    // Pass true for silent execution to skip the alert notification flash sequence
-    const success = await handleAddToCart(product, true);
-    if (success) {
-      navigate('/Checkout'); // Bypasses basket overview screen entirely
+  // ⚡ Handle Buy Now (Direct express checkout navigation without modifying the cart)
+  const handleBuyNow = (product) => {
+    if (!user || !user.id) {
+      // If you want to allow guest checkout via localStorage, you can skip this check
+      alert('Authentication required. Please log in to complete an express purchase.');
+      navigate('/login');
+      return;
     }
+
+    // 🎯 Bypasses the cart endpoint entirely and passes the product object via location state
+    navigate(`/Checkout/${product.id}`, { state: { directPurchaseItem: product } });
   };
 
+  //the page is loading
   if (uiStatus.loading) {
     return (
       <div className="auth-page-container" style={{ justifyContent: 'center' }}>
@@ -135,7 +140,7 @@ const Product = () => {
   return (
     <div className="main-content-fluid" style={{ padding: '30px 20px' }}>
       <div style={{ maxWidth: '1460px', margin: '0 auto' }}>
-        
+
         {/* Dashboard Catalog Monitor Title */}
         <div style={{ borderBottom: '1px solid #ddd', paddingBottom: '10px', marginBottom: '25px' }}>
           <h1 style={{ fontSize: '1.7rem', fontWeight: '400', margin: 0, color: '#0f1111' }}>
@@ -155,15 +160,15 @@ const Product = () => {
         )}
 
         {/* 🏪 High-Fidelity Catalog Matrix Display Grid */}
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
-          gap: '20px' 
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+          gap: '20px'
         }}>
           {products
             .filter(item => !item.isDeleted)
             .map((item) => {
-              
+
               const imageSource = item.imageUrl
                 ? (item.imageUrl.startsWith('http') ? item.imageUrl : `https://localhost:7130${item.imageUrl}`)
                 : 'https://placehold.co/300?text=No+Image';
@@ -176,13 +181,13 @@ const Product = () => {
 
               return (
                 <div key={item.id} className="product-card-container">
-                  
+
                   <div>
                     {/* Product Image Frame */}
                     <div className="single-image-wrapper" style={{ height: '220px', background: '#f7f7f7', borderRadius: '4px', overflow: 'hidden', marginBottom: '12px', width: '100%' }}>
-                      <img 
-                        src={imageSource} 
-                        alt={item.name} 
+                      <img
+                        src={imageSource}
+                        alt={item.name}
                         className="single-card-img"
                         onError={(e) => {
                           e.target.onerror = null;
@@ -217,9 +222,9 @@ const Product = () => {
                       )}
                     </p>
 
-                    <p style={{ 
-                      fontSize: '0.8rem', 
-                      color: '#333', 
+                    <p style={{
+                      fontSize: '0.8rem',
+                      color: '#333',
                       margin: '0 0 15px 0',
                       height: '50px',
                       overflow: 'hidden',
@@ -244,7 +249,7 @@ const Product = () => {
 
                     {/* Action Button Segment Layer */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      
+
                       {/* Button A: Add to Cart */}
                       <button
                         onClick={() => handleAddToCart(item)}
