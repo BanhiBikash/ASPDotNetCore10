@@ -207,6 +207,12 @@ html, body {
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
+.product-card-container button{
+  height: 30px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 .card-title {
   font-size: 1.3rem;
   font-weight: 700;
