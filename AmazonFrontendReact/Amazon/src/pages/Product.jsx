@@ -31,41 +31,85 @@ const Product = () => {
     fetchCatalog();
   }, []);
 
-  // 🛒 Handle Add to Cart API Call Strategy
-  const handleAddToCart = async (productId, productName) => {
-    if (!user || !user.id) {
-      alert('Authentication required. Please log in to manage your shopping cart.');
-      navigate('/login');
-      return false;
-    }
-
+  // 🛒 Handle Add to Cart Strategy (Supports Database Sync OR LocalStorage Fallback)
+  const handleAddToCart = async (product, silent = false) => {
+    const productId = product.id;
     setActionLoading(prev => ({ ...prev, [productId]: true }));
 
-    try {
-      // 🎯 Directly hits your unified, optimized single round-trip endpoint
-      const payload = {
-        productId: productId,
-        quantity: 1 // Default to incrementing by 1 on list view click
-      };
+    // 🔐 CASE A: User is logged in -> Stream directly to Database pipeline layer
+    if (user && user.id) {
+      try {
+        const payload = {
+          productId: productId,
+          quantity: 1 // Default to incrementing by 1
+        };
 
-      await api.post(`/v1/Cart/UpdateCart?userId=${user.id}`, payload);
-      
-      alert(`Successfully added "${productName}" to your cart!`);
-      return true;
-    } catch (err) {
-      console.error('Cart operation failure context:', err);
-      alert(err.response?.data || 'Failed to update shopping cart allocation.');
-      return false;
-    } finally {
-      setActionLoading(prev => ({ ...prev, [productId]: false }));
+        await api.post(`/v1/Cart/UpdateCart?userId=${user.id}`, payload);
+        
+        if (!silent) {
+          alert(`Successfully added "${product.name}" to your account cart!`);
+        }
+        return true;
+      } catch (err) {
+        console.error('Cart operation failure context:', err);
+        alert(err.response?.data || 'Failed to update shopping cart allocation.');
+        return false;
+      } finally {
+        setActionLoading(prev => ({ ...prev, [productId]: false }));
+      }
+    } 
+    
+    // 👥 CASE B: User is not logged in -> Fallback to LocalStorage Guest Cart
+    else {
+      try {
+        // Retrieve existing guest cart collection or initialize a clean array
+        const localCartRaw = localStorage.getItem('guest_cart');
+        let guestCart = localCartRaw ? JSON.parse(localCartRaw) : [];
+
+        // Check if item metadata structure is already assigned inside the collection
+        const existingItemIndex = guestCart.findIndex(item => item.productId === productId);
+
+        if (existingItemIndex !== -1) {
+          // Increment its allocation count matrix safely
+          guestCart[existingItemIndex].quantity += 1;
+        } else {
+          // Append a fresh custom Cartesian line DTO mirror block representation
+          guestCart.push({
+            productId: product.id,
+            productName: product.name,
+            price: product.price,
+            imageUrl: product.imageUrl,
+            category: product.category,
+            quantity: 1
+          });
+        }
+
+        // Commit state updates right back onto browser cache parameters
+        localStorage.setItem('guest_cart', JSON.stringify(guestCart));
+
+        // 🔔 Dispatches a custom window storage event object to alert Navbar component counts instantly 
+        window.dispatchEvent(new Event('storage'));
+
+        if (!silent) {
+          alert(`"${product.name}" added to guest cart! (Saved to local storage)`);
+        }
+        return true;
+      } catch (err) {
+        console.error('Local storage cart operation exception context:', err);
+        alert('Failed to update local guest cart matrix space.');
+        return false;
+      } finally {
+        setActionLoading(prev => ({ ...prev, [productId]: false }));
+      }
     }
   };
 
-  // ⚡ Handle Buy Now (Add to cart first, then immediate checkout navigation)
-  const handleBuyNow = async (productId, productName) => {
-    const success = await handleAddToCart(productId, productName);
+  // ⚡ Handle Buy Now (Add to cart silently first, then immediate express checkout navigation)
+  const handleBuyNow = async (product) => {
+    // Pass true for silent execution to skip the alert notification flash sequence
+    const success = await handleAddToCart(product, true);
     if (success) {
-      navigate('/Cart'); // Redirect user directly to checkout page route matrix
+      navigate('/Checkout'); // Bypasses basket overview screen entirely
     }
   };
 
@@ -131,35 +175,15 @@ const Product = () => {
               const isItemBusy = actionLoading[item.id] || false;
 
               return (
-                <div key={item.id} style={{
-                  background: '#ffffff',
-                  border: '1px solid #e7e7e7',
-                  borderRadius: '8px',
-                  padding: '15px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between', // Changed to standard space-between layout allocation
-                  boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
-                  position: 'relative'
-                }}>
+                <div key={item.id} className="product-card-container">
                   
                   <div>
                     {/* Product Image Frame */}
-                    <div style={{ 
-                      width: '100%', 
-                      height: '220px', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      background: '#f7f7f7',
-                      borderRadius: '4px',
-                      overflow: 'hidden',
-                      marginBottom: '12px'
-                    }}>
+                    <div className="single-image-wrapper" style={{ height: '220px', background: '#f7f7f7', borderRadius: '4px', overflow: 'hidden', marginBottom: '12px', width: '100%' }}>
                       <img 
                         src={imageSource} 
                         alt={item.name} 
-                        style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
+                        className="single-card-img"
                         onError={(e) => {
                           e.target.onerror = null;
                           e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
@@ -181,7 +205,7 @@ const Product = () => {
                     </div>
 
                     {/* Info Text Layout Blocks */}
-                    <h2 style={{ fontSize: '1rem', fontWeight: '700', color: '#0f1111', margin: '0 0 6px 0', lineHeight: '1.3', height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                    <h2 className="card-title" style={{ height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                       {item.name}
                     </h2>
 
@@ -223,20 +247,13 @@ const Product = () => {
                       
                       {/* Button A: Add to Cart */}
                       <button
-                        onClick={() => handleAddToCart(item.id, item.name)}
+                        onClick={() => handleAddToCart(item)}
                         disabled={!item.inStock || isItemBusy}
                         style={{
-                          width: '100%',
-                          padding: '9px 0',
-                          fontSize: '0.85rem',
-                          borderRadius: '20px',
                           border: '1px solid #a88734',
                           background: item.inStock ? 'linear-gradient(to bottom, #f7dfa5, #f0c14b)' : '#e7e9ec',
                           color: item.inStock ? '#111' : '#a2a6ac',
-                          cursor: item.inStock && !isItemBusy ? 'pointer' : 'not-allowed',
-                          fontWeight: '500',
-                          boxShadow: '0 1px 0 rgba(255,255,255,.4) inset',
-                          transition: 'background 0.1s linear'
+                          boxShadow: '0 1px 0 rgba(255,255,255,.4) inset'
                         }}
                       >
                         {isItemBusy ? 'Syncing...' : 'Add to Cart'}
@@ -244,19 +261,12 @@ const Product = () => {
 
                       {/* Button B: Buy Now */}
                       <button
-                        onClick={() => handleBuyNow(item.id, item.name)}
+                        onClick={() => handleBuyNow(item)}
                         disabled={!item.inStock || isItemBusy}
                         style={{
-                          width: '100%',
-                          padding: '9px 0',
-                          fontSize: '0.85rem',
-                          borderRadius: '20px',
                           border: '1px solid #a88734',
                           background: item.inStock ? 'linear-gradient(to bottom, #f5b74a, #e69a10)' : '#eff1f3',
-                          color: item.inStock ? '#111' : '#c8cbcc',
-                          cursor: item.inStock && !isItemBusy ? 'pointer' : 'not-allowed',
-                          fontWeight: '500',
-                          transition: 'background 0.1s linear'
+                          color: item.inStock ? '#111' : '#c8cbcc'
                         }}
                       >
                         Buy Now
@@ -271,7 +281,7 @@ const Product = () => {
         </div>
       </div>
     </div>
-    );
-  };
+  );
+};
 
 export default Product;
