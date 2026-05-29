@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
-import UserContext from '../context/UserContext'; // 🌐 Consume global identity framework context
+import UserContext from '../context/UserContext'; 
+import { useCart } from '../context/CartContext'; // 🎯 Added: Import your centralized custom hook 
 
 const Product = () => {
-  const { user } = useContext(UserContext); // Access logged-in state structure
+  const { user } = useContext(UserContext); 
+  const { cart, setCart } = useCart(); // 🎯 Added: Connect component to the global state tracker
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [uiStatus, setUiStatus] = useState({ loading: true, error: null });
-  const [actionLoading, setActionLoading] = useState({}); // Tracks loading states per specific product item button click
+  const [actionLoading, setActionLoading] = useState({}); 
 
   // 📡 Fetch catalog array on component mount
   useEffect(() => {
@@ -31,73 +33,77 @@ const Product = () => {
     fetchCatalog();
   }, []);
 
-  // 🛒 Handle Add to Cart Strategy (Supports Database Sync OR LocalStorage Fallback)
+  // 🛒 Handle Add to Cart Strategy (Updates global state layout instantly)
   const handleAddToCart = async (product, silent = false) => {
     const productId = product.id;
     setActionLoading(prev => ({ ...prev, [productId]: true }));
 
-    // 🔐 CASE A: User is logged in -> Stream directly to Database pipeline layer
-    if (user && user.id) {
+    // 1️⃣ Create a copy of your existing state items array to alter safely
+    let updatedItemsArray = [...cart.cart];
+    
+    // Check if the item already exists using a safe dual-schema fallback lookup
+    const existingItemIndex = updatedItemsArray.findIndex(item => 
+      item.productId === productId || (item.product && item.product.id === productId)
+    );
+
+    if (existingItemIndex !== -1) {
+      updatedItemsArray[existingItemIndex].quantity += 1;
+    } else {
+      // Append a dual-schema object block matching both guest and backend DTO layouts
+      updatedItemsArray.push({
+        productId: product.id,
+        quantity: 1,
+        name: product.name,
+        price: product.price,
+        imageUrl: product.imageUrl,
+        product: {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          imageUrl: product.imageUrl
+        }
+      });
+    }
+
+    // 🔐 CASE A: User is logged in -> Stream directly to clean token endpoint
+    if (user && user.email) {
       try {
+        // Target your parameterless backend endpoint. Token interceptor automatically signs it!
         const payload = {
           productId: productId,
-          quantity: 1 // Default to incrementing by 1
+          quantity: existingItemIndex !== -1 ? updatedItemsArray[existingItemIndex].quantity : 1
         };
 
-        await api.post(`/v1/Cart/UpdateCart?userId=${user.id}`, payload);
+        await api.post('/v1/Cart/UpdateCart', payload);
+
+        // Commit directly to global state so Navbar updates instantly
+        setCart({ cart: updatedItemsArray, isBusy: false });
 
         if (!silent) {
           alert(`Successfully added "${product.name}" to your account cart!`);
         }
-        return true;
       } catch (err) {
         console.error('Cart operation failure context:', err);
         alert(err.response?.data || 'Failed to update shopping cart allocation.');
-        return false;
       } finally {
         setActionLoading(prev => ({ ...prev, [productId]: false }));
       }
     }
-
     // 👥 CASE B: User is not logged in -> Fallback to LocalStorage Guest Cart
     else {
       try {
-        // Retrieve existing guest cart collection or initialize a clean array
-        const localCartRaw = localStorage.getItem('guest_cart');
-        let guestCart = localCartRaw ? JSON.parse(localCartRaw) : [];
+        // Commit state updates back onto browser cache parameter strings
+        localStorage.setItem('guest_cart', JSON.stringify(updatedItemsArray));
 
-        // Check if item metadata structure is already assigned inside the collection
-        const existingItemIndex = guestCart.findIndex(item => item.productId === productId);
-
-        if (existingItemIndex !== -1) {
-          // Increment its allocation count matrix safely
-          guestCart[existingItemIndex].quantity += 1;
-        } else {
-          // Append a fresh custom Cartesian line DTO mirror block representation
-          guestCart.push({
-            productId: product.id,
-            productName: product.name,
-            price: product.price,
-            imageUrl: product.imageUrl,
-            category: product.category,
-            quantity: 1
-          });
-        }
-
-        // Commit state updates right back onto browser cache parameters
-        localStorage.setItem('guest_cart', JSON.stringify(guestCart));
-
-        // 🔔 Dispatches a custom window storage event object to alert Navbar component counts instantly 
-        window.dispatchEvent(new Event('storage'));
+        // Commit to context state instantly
+        setCart({ cart: updatedItemsArray, isBusy: false });
 
         if (!silent) {
-          alert(`"${product.name}" added to guest cart! (Saved to local storage)`);
+          alert(`"${product.name}" added to guest cart!`);
         }
-        return true;
       } catch (err) {
         console.error('Local storage cart operation exception context:', err);
         alert('Failed to update local guest cart matrix space.');
-        return false;
       } finally {
         setActionLoading(prev => ({ ...prev, [productId]: false }));
       }
@@ -106,18 +112,14 @@ const Product = () => {
 
   // ⚡ Handle Buy Now (Direct express checkout navigation without modifying the cart)
   const handleBuyNow = (product) => {
-    if (!user || !user.id) {
-      // If you want to allow guest checkout via localStorage, you can skip this check
+    if (!user || !user.email) {
       alert('Authentication required. Please log in to complete an express purchase.');
       navigate('/login');
       return;
     }
-
-    // 🎯 Bypasses the cart endpoint entirely and passes the product object via location state
     navigate(`/Checkout/${product.id}`, { state: { directPurchaseItem: product } });
   };
 
-  //the page is loading
   if (uiStatus.loading) {
     return (
       <div className="auth-page-container" style={{ justifyContent: 'center' }}>
@@ -141,7 +143,6 @@ const Product = () => {
     <div className="main-content-fluid" style={{ padding: '30px 20px' }}>
       <div style={{ maxWidth: '1460px', margin: '0 auto' }}>
 
-        {/* Dashboard Catalog Monitor Title */}
         <div style={{ borderBottom: '1px solid #ddd', paddingBottom: '10px', marginBottom: '25px' }}>
           <h1 style={{ fontSize: '1.7rem', fontWeight: '400', margin: 0, color: '#0f1111' }}>
             Live Inventory Catalog
@@ -151,7 +152,6 @@ const Product = () => {
           </p>
         </div>
 
-        {/* Empty Catalog Fallback View */}
         {products.length === 0 && (
           <div style={{ textAlign: 'center', padding: '60px 20px', background: '#fff', border: '1px solid #d5d9d9', borderRadius: '8px' }}>
             <h3 style={{ fontWeight: '500', color: '#0f1111' }}>Your Inventory is Empty</h3>
@@ -159,7 +159,6 @@ const Product = () => {
           </div>
         )}
 
-        {/* 🏪 High-Fidelity Catalog Matrix Display Grid */}
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
@@ -181,9 +180,7 @@ const Product = () => {
 
               return (
                 <div key={item.id} className="product-card-container">
-
                   <div>
-                    {/* Product Image Frame */}
                     <div className="single-image-wrapper" style={{ height: '220px', background: '#f7f7f7', borderRadius: '4px', overflow: 'hidden', marginBottom: '12px', width: '100%' }}>
                       <img
                         src={imageSource}
@@ -196,7 +193,6 @@ const Product = () => {
                       />
                     </div>
 
-                    {/* Stock Status Badge Overlay */}
                     <div style={{ marginBottom: '8px' }}>
                       {item.inStock ? (
                         <span style={{ fontSize: '0.7rem', color: '#007600', background: '#e6f4ea', padding: '3px 8px', borderRadius: '12px', fontWeight: '700' }}>
@@ -209,12 +205,10 @@ const Product = () => {
                       )}
                     </div>
 
-                    {/* Info Text Layout Blocks */}
                     <h2 className="card-title" style={{ height: '40px', overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
                       {item.name}
                     </h2>
 
-                    {/* Categories & SubCategories */}
                     <p style={{ fontSize: '0.75rem', color: '#565959', margin: '0 0 10px 0' }}>
                       Category: <strong style={{ color: '#0f1111' }}>{item.category}</strong>
                       {item.subCategory && (
@@ -237,9 +231,7 @@ const Product = () => {
                     </p>
                   </div>
 
-                  {/* Pricing and Action Operational Control Center Wrapper */}
                   <div style={{ marginTop: 'auto' }}>
-                    {/* Pricing Display */}
                     <div style={{ display: 'flex', alignItems: 'baseline', gap: '4px', borderTop: '1px solid #f3f3f3', paddingTop: '10px', marginBottom: '12px' }}>
                       <span style={{ fontSize: '0.75rem', color: '#0f1111', fontWeight: '500' }}>₹</span>
                       <span style={{ fontSize: '1.4rem', fontWeight: '700', color: '#0f1111' }}>
@@ -247,10 +239,7 @@ const Product = () => {
                       </span>
                     </div>
 
-                    {/* Action Button Segment Layer */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-
-                      {/* Button A: Add to Cart */}
                       <button
                         onClick={() => handleAddToCart(item)}
                         disabled={!item.inStock || isItemBusy}
@@ -264,7 +253,6 @@ const Product = () => {
                         {isItemBusy ? 'Syncing...' : 'Add to Cart'}
                       </button>
 
-                      {/* Button B: Buy Now */}
                       <button
                         onClick={() => handleBuyNow(item)}
                         disabled={!item.inStock || isItemBusy}
@@ -276,10 +264,8 @@ const Product = () => {
                       >
                         Buy Now
                       </button>
-
                     </div>
                   </div>
-
                 </div>
               );
             })}
