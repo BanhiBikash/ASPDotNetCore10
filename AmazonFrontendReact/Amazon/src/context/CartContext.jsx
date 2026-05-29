@@ -4,7 +4,22 @@ import UserContext from '../context/UserContext'; // Clean default import
 
 // 1. 🎯 Define the safe fallback blueprint object directly
 const defaultCartState = {
-  cart: [],
+  cart: [
+    {
+      id: 1,
+      productId: 1,
+      name: "Test Wireless Earbuds",
+      price: 2999,
+      quantity: 2 // This should contribute 2 to the count
+    },
+    {
+      id: 2,
+      productId: 2,
+      name: "Test Mechanical Keyboard",
+      price: 4500,
+      quantity: 1 // This should contribute 1 to the count
+    }
+  ],
   setCart: () => {},
   cartLoading: true,
   totalItemsCount: 0
@@ -42,7 +57,7 @@ export function CartContextProvider({ children }) {
         const localCartRaw = localStorage.getItem('guest_cart');
         setCart(localCartRaw ? JSON.parse(localCartRaw) : []);
       }
-      
+      console.log({cart})
       setCartLoading(false);
     };
 

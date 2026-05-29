@@ -5,12 +5,12 @@ import nav_icon from "../assets/hamburger.png";
 import UserContext from '../context/UserContext'; 
 import userLogo from "../assets/user.png";
 import cartLogo from "../assets/cart.png";
-import useCart from '../context/CartContext'; 
+import {useCart} from '../context/CartContext'; 
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
   
-  // 🛒 Destructuring cart safely using your default hook export
+  // 🛒 useCart() returns our state object: { cart: { cart: [], isBusy: false }, setCart }
   const { cart } = useCart(); 
 
   // Extract just the first name from user profile state if available
@@ -21,8 +21,10 @@ const Navbar = () => {
 
   // 🧮 Compute the total sum of item quantities safely
   const getTotalCartCount = () => {
-    if (!cart || !Array.isArray(cart)) return 0;
-    return cart.reduce((total, item) => total + (item.quantity || 0), 0);
+    // 🎯 FIXED: Direct the check and reduction loop to look inside the inner 'cart.cart' array
+    if (!cart || !cart.cart || !Array.isArray(cart.cart)) return 0;
+    
+    return cart.cart.reduce((total, item) => total + (item.quantity || 0), 0);
   };
 
   const totalCount = getTotalCartCount();
@@ -69,7 +71,7 @@ const Navbar = () => {
         <Link to="/Cart" className='cartLogo'>
           <img src={cartLogo} alt="Cart Logo" />
           
-          {/* 🎯 Elegant Short-circuit: Only renders the span node if items exist, avoiding structural layout issues */}
+          {/* 🎯 Elegant Short-circuit: Only renders the span node if items exist */}
           {totalCount > 0 && (
             <span>{totalCount}</span>
           )}
