@@ -151,6 +151,7 @@ html, body {
   border: 2px solid #131921; 
 }
 
+
 /* ==========================================================================
    3. HIGH-FIDELITY AMAZON HOME LANDING COMPONENT STYLES
    ========================================================================== */
@@ -1043,4 +1044,349 @@ html, body {
   font-size: 1.8rem;
   color: #767676;
   user-select: none;
+}
+
+
+/* ==========================================================================
+   9. HIGH-FIDELITY SHOPPING CART & DUAL CHECKOUT SIDEBAR MODULES
+   ========================================================================== */
+.cart-page-fluid-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  box-sizing: border-box;
+}
+
+.cart-main-layout-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Main left-side cart table card container */
+.cart-items-collection-panel {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.cart-header-title-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.cart-header-title-block h1 {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: #0f1111;
+  margin: 0;
+}
+
+.cart-price-header-label {
+  font-size: 0.88rem;
+  color: #565959;
+  margin-bottom: 4px;
+}
+
+.cart-layout-divider {
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  margin: 12px 0 20px 0;
+}
+
+/* Individual line item rows */
+.cart-item-row-node {
+  display: flex;
+  padding: 16px 0;
+  border-bottom: 1px solid #e7e7e7;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.cart-item-image-wrapper {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-item-image-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cart-item-details-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-item-title-text {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #0f1111;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.cart-item-stock-status {
+  font-size: 0.75rem;
+  color: #007600; /* Amazon signature green stock confirmation typography */
+  margin: 2px 0;
+}
+
+.cart-item-shipping-promo {
+  font-size: 0.75rem;
+  color: #565959;
+  margin: 2px 0 10px 0;
+}
+
+/* Quantities toggler assembly */
+.cart-item-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.cart-quantity-selector-container {
+  display: flex;
+  align-items: center;
+  background-color: #f0f2f2;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+  overflow: hidden;
+}
+
+.cart-quantity-selector-container button {
+  background: transparent;
+  border: none;
+  padding: 4px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0f1111;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.cart-quantity-selector-container button:hover:not(:disabled) {
+  background-color: #e3e6e6;
+}
+
+.cart-quantity-selector-container button:disabled {
+  color: #a6a6a6;
+  cursor: not-allowed;
+}
+
+.cart-quantity-display-value {
+  padding: 0 6px;
+  font-size: 0.88rem;
+  color: #0f1111;
+  font-weight: 500;
+  min-width: 16px;
+  text-align: center;
+}
+
+.cart-action-split-pipe {
+  color: #d5d9d9;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+.cart-delete-trigger-btn {
+  background: transparent;
+  border: none;
+  color: #007185;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cart-delete-trigger-btn:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.cart-item-price-column {
+  text-align: right;
+  min-width: 100px;
+}
+
+.cart-item-calculated-price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.cart-subtotal-summary-row {
+  text-align: right;
+  padding-top: 18px;
+}
+
+.cart-subtotal-summary-row h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0;
+}
+
+.cart-subtotal-summary-row strong {
+  font-weight: 700;
+}
+
+/* 💳 Right-hand side sticky checkout checkout component panels */
+.cart-checkout-sticky-panel {
+  width: 320px;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 94px; /* Pins panel just below fixed 70px header with spacing */
+  box-sizing: border-box;
+}
+
+.checkout-widget-block {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.checkout-widget-block.boundary-bottom-split {
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 20px;
+}
+
+.checkout-widget-block.padding-top-spacing {
+  padding-top: 20px;
+}
+
+.checkout-subtotal-preview h2 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.checkout-subtotal-preview strong {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.checkout-free-shipping-indicator {
+  font-size: 0.78rem;
+  color: #0f1111;
+  margin-bottom: 16px;
+}
+
+.checkout-free-shipping-indicator .checkmark-icon {
+  color: #007600;
+  font-weight: 800;
+}
+
+.checkout-action-btn-w100 {
+  width: 100%;
+  display: block;
+  font-weight: 400 !important;
+  font-size: 0.88rem !important;
+  padding: 10px 0 !important;
+}
+
+.checkout-action-btn-w100.alternate-color-btn {
+  background: #ffa41c; /* Secondary dark deep orange accessibility tone button tint */
+  border-color: #ff8f00;
+}
+
+.checkout-action-btn-w100.alternate-color-btn:hover {
+  background: #f59200;
+}
+
+.checkout-urgency-notice {
+  font-size: 0.75rem;
+  color: #cc0c39;
+  line-height: 1.4;
+  margin: 0 0 14px 0;
+}
+
+.cart-empty-state-fallback {
+  padding: 40px 10px;
+  text-align: left;
+}
+
+.cart-empty-state-fallback h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 0 0 8px 0;
+}
+
+.cart-empty-state-fallback p {
+  font-size: 0.88rem;
+  color: #565959;
+  margin: 0 0 20px 0;
+}
+
+.amazon-primary-btn.style-inline {
+  display: inline-block;
+  padding: 8px 24px;
+}
+
+.cart-loading-spinner-box {
+  width: 100%;
+  text-align: center;
+  padding: 100px 20px;
+  font-size: 1.1rem;
+  color: #565959;
+}
+
+.border-top-split {
+  border-top: 1px solid #e7e7e7;
+}
+
+
+/* ==========================================================================
+   📱 SCOPED MOBILE INTERCEPT MEDIA QUERIES FOR CART MANAGEMENT
+   ========================================================================== */
+@media screen and (max-width: 990px) {
+  /* Strictly scoped to protect global grid scaffolding and keep Navbar aligned */
+  div.cart-main-layout-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  div.cart-main-layout-wrapper .cart-checkout-sticky-panel {
+    width: 100%;
+    position: static;
+    order: -1; /* Shifts pricing panel safely inside the page layout context only */
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  div.cart-main-layout-wrapper .cart-item-row-node {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  div.cart-main-layout-wrapper .cart-item-image-wrapper {
+    width: 100%;
+    height: 160px;
+    margin-bottom: 8px;
+  }
+
+  div.cart-main-layout-wrapper .cart-item-price-column {
+    text-align: left;
+    margin-top: 8px;
+    min-width: auto;
+  }
 }

@@ -73,9 +73,10 @@ api.interceptors.response.use(
   }
 );
 
-const handleLogout = () => {
+export const handleLogout = () => {
   localStorage.removeItem('token');
   localStorage.removeItem('refreshToken');
+  LocalStorage.removeItem('guest_cart');
   window.location.href = '/login';
 };
 

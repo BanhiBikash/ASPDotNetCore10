@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import api from '../api/axiosConfig';
-import UserContext from '../context/UserContext'; // Clean default import
+import UserContext from './UserContext'; // Clean default import
 
 // 1. 🎯 Define the safe fallback blueprint object directly
 const defaultCartState = {
