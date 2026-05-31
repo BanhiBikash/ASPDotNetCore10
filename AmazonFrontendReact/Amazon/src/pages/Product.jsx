@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import UserContext from '../context/UserContext'; 
 import { useCart } from '../context/CartContext'; // 🎯 Added: Import your centralized custom hook 
+import { baseUrl } from '../api/keyUrls';
 
 const Product = () => {
   const { user } = useContext(UserContext); 
@@ -55,7 +56,7 @@ const Product = () => {
         quantity: 1,
         name: product.name,
         price: product.price,
-        imageUrl: product.imageUrl,
+        imageUrl: baseUrl+product.imageUrl,
         product: {
           id: product.id,
           name: product.name,

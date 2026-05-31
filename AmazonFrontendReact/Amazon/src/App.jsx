@@ -8,7 +8,7 @@ import ProductAdd from './pages/AddProduct';
 import Account from './pages/Account';
 import Account_Update from './pages/Account_Update';
 import Cart from "./pages/Cart"
-import Checkout from './Checkout';
+import Checkout from './pages/Checkout';
 
 function App() {
   // 1. Declare your layout routes cleanly inside your browser router creation hook

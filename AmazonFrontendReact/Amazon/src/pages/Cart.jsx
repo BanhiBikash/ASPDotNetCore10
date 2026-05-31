@@ -1,14 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig'; // 🎯 Synced with your Context file path
-import {baseUrl} from "../api/keyUrls"
+import { baseUrl } from "../api/keyUrls"
 
 const Cart = () => {
   // 🎯 FIXED: Destructure 'cart' and 'setCart' from context.
   // Note: 'cart' here represents the state object wrapper { cart: [], isBusy: false }
   const { cart: cartState, setCart } = useCart();
   const { cart: itemsArray, isBusy } = cartState;
+
+  //for creating and storing cart
+  const [order, setOrder] = useState({ items: [], ShippingAddress: null, PostalCode: null, City: null, Country: null });
 
   itemsArray.forEach(element => {
     console.log(element)
@@ -25,13 +28,13 @@ const Cart = () => {
      ========================================================================== */
   const handleQuantityChange = async (productId, currentQuantity, newQuantity) => {
     if (newQuantity < 1) return;
-    
+
     // Optimistic UI Update matching your provider state blueprint
     const originalItemsArray = [...itemsArray];
-    const updatedLocalItems = itemsArray.map(item => 
+    const updatedLocalItems = itemsArray.map(item =>
       item.productId === productId ? { ...item, quantity: newQuantity } : item
     );
-    
+
     setCart({ cart: updatedLocalItems, isBusy: false });
 
     const token = localStorage.getItem('token');
@@ -56,7 +59,7 @@ const Cart = () => {
   const handleRemoveItem = async (productId) => {
     const originalItemsArray = [...itemsArray];
     const updatedLocalItems = itemsArray.filter(item => item.productId !== productId);
-    
+
     setCart({ cart: updatedLocalItems, isBusy: false });
 
     const token = localStorage.getItem('token');
@@ -73,12 +76,34 @@ const Cart = () => {
   };
 
   const handleCheckoutNavigation = () => {
+
+    //check if user is logged in then move to checkout otherwise send to login
     const token = localStorage.getItem('token');
-    if (token) {
-      navigate('/checkout');
-    } else {
+    if (!token) {
       navigate('/login?redirect=checkout');
     }
+
+    //live cart state to specific backend entity field names
+    const formattedOrderItems = itemsArray.map(item => ({
+      productId: item.productId,
+      productName: item.name || item.productName || '',
+      imageUrl: item.imageUrl || '',
+      quantity: item.quantity || 0,
+      unitPrice: item.price || item.unitPrice || 0
+    }));
+
+    //Packaged the items and pricing into a complete order prop structure
+    const orderDataPayload = {
+      items: formattedOrderItems,
+      totalAmount: totalCartPrice,
+      shippingAddress: "", // Initializing empty for the form inputs next page
+      postalCode: "",
+      city: "",
+      country: ""
+    };
+
+    // 🚀 Navigate and attach the payload property into the browser's history state
+    navigate('/checkout', { state: { orderData: orderDataPayload } });
   };
 
   if (isBusy) {
@@ -92,7 +117,7 @@ const Cart = () => {
   return (
     <div className="cart-page-fluid-container">
       <div className="cart-main-layout-wrapper">
-        
+
         {/* 📦 LEFT COLUMN: MAIN SHOPPING CART DETAILS LIST */}
         <div className="cart-items-collection-panel">
           <div className="cart-header-title-block">
@@ -111,20 +136,20 @@ const Cart = () => {
             itemsArray.map((item) => (
               <div key={item.productId} className="cart-item-row-node">
                 <div className="cart-item-image-wrapper">
-                  <img 
-                    src={baseUrl+item.imageUrl || 'https://via.placeholder.com/150?text=Product'} 
-                    alt={item.name || 'Catalog Product'} 
+                  <img
+                    src={item.imageUrl || 'https://via.placeholder.com/150?text=Product'}
+                    alt={item.name || 'Catalog Product'}
                   />
                 </div>
-                
+
                 <div className="cart-item-details-body">
                   <h2 className="cart-item-title-text">{item.name || "Amazon Verified Product"}</h2>
                   <p className="cart-item-stock-status">In Stock</p>
                   <p className="cart-item-shipping-promo">Eligible for FREE Shipping</p>
-                  
+
                   <div className="cart-item-actions-row">
                     <div className="cart-quantity-selector-container">
-                      <button 
+                      <button
                         type="button"
                         onClick={() => handleQuantityChange(item.productId, item.quantity, item.quantity - 1)}
                         disabled={item.quantity <= 1}
@@ -132,7 +157,7 @@ const Cart = () => {
                         -
                       </button>
                       <span className="cart-quantity-display-value">{item.quantity}</span>
-                      <button 
+                      <button
                         type="button"
                         onClick={() => handleQuantityChange(item.productId, item.quantity, item.quantity + 1)}
                       >
@@ -140,8 +165,8 @@ const Cart = () => {
                       </button>
                     </div>
                     <span className="cart-action-split-pipe">|</span>
-                    <button 
-                      type="button" 
+                    <button
+                      type="button"
                       className="cart-delete-trigger-btn"
                       onClick={() => handleRemoveItem(item.productId)}
                     >
@@ -169,7 +194,7 @@ const Cart = () => {
         {/* 💳 RIGHT COLUMN: DOUBLE-CHECKOUT ACCESSIBILITY PANEL */}
         {itemsArray && itemsArray.length > 0 && (
           <div className="cart-checkout-sticky-panel">
-            
+
             {/* 🎯 CONVENIENCE CHECKOUT MODULE 1: TOP POSITION */}
             <div className="checkout-widget-block boundary-bottom-split">
               <div className="checkout-subtotal-preview">
@@ -178,8 +203,8 @@ const Cart = () => {
               <div className="checkout-free-shipping-indicator">
                 <span className="checkmark-icon">✓</span> Your order qualifies for FREE Delivery.
               </div>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="amazon-primary-btn checkout-action-btn-w100"
                 onClick={handleCheckoutNavigation}
               >
@@ -190,8 +215,8 @@ const Cart = () => {
             {/* 🎯 CONVENIENCE CHECKOUT MODULE 2: BOTTOM POSITION */}
             <div className="checkout-widget-block padding-top-spacing">
               <p className="checkout-urgency-notice">Items in your cart are not reserved. Secure your order before stocks fluctuate.</p>
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="amazon-primary-btn checkout-action-btn-w100 alternate-color-btn"
                 onClick={handleCheckoutNavigation}
               >
