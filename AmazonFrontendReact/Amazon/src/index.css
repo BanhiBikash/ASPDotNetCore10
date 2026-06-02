@@ -35,120 +35,147 @@ html, body {
    2. NAVBAR COMPONENT VIEWPORT ENGINE
    ========================================================================== */
 .Navbar {
-  display: flex;
+  display: flex !important;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 70px;
-  background-color: #131921; 
-  padding: 0 2rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  background-color: #131921; /* Iconic dark slate Amazon backdrop */
+  padding: 10px 20px;
+  height: auto !important;
+  min-height: 60px;
+  gap: 15px;
+  z-index: 1100;
 }
 
-.Navbar > div:first-child {
+/* Icons block tracking */
+.Navbar .icons {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
+  gap: 10px;
 }
 
-.logo-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
-
-.logo {
-  height: 38px;
-  width: auto;
-  object-fit: contain;
-  cursor: pointer;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.nav-items {
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  transition: color 0.15s ease-in-out;
-}
-
-.nav-items:hover {
-  color: #ff9900; 
-}
-
-.Nav-linksLogo-mobile {
-  display: none;
-  height: 24px;
-  width: auto;
-  cursor: pointer;
-}
-
-.nav-items-nav-account-link-profile{
-  display: flex;
-  align-items: center;
-  color: #ffffff;
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  transition: color 0.15s ease-in-out;
-}
-
-/* ==========================================================================
-   🛒 Cart Logo & Perfect Centered Badge Span Architecture
-   ========================================================================== */
-.cartLogo {
-  position: relative; /* Essential: Forms the boundary frame that containing coordinates follow */
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  text-decoration: none;
-}
-
-.cartLogo img {
-  width: 30px;  /* Optimal standard dimension for header item navigation */
+.Navbar .logo {
   height: 30px;
   object-fit: contain;
+  display: block;
 }
 
-/* The badge count node formatting matrix */
-.cartLogo span {
-  position: absolute; /* Plucks layout straight out of standard sequence */
-  top: -2px;          /* Positions it perfectly on the top-right curve of the cart icon */
-  right: -2px;
-
-  /* The Perfect Centering Framework */
+/* Core Search Input Form Wrapper */
+.nav-search-bar-container {
   display: flex;
-  align-items: center;     /* Centers number vertically */
-  justify-content: center;  /* Centers number horizontally */
+  flex: 1;
+  max-width: 800px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 2px solid transparent;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
 
-  /* Sizing, Geometrical Shape & Layout */
-  min-width: 18px;
-  height: 18px;
-  padding: 2px; /* Retains its perfect circle properties even if double digits happen (e.g., 12) */
-  border-radius: 50%; /* Cuts corners flawlessly into a clean circle */
+/* Simulates the glowing orange Amazon border state focus ring */
+.nav-search-bar-container:focus-within {
+  border-color: #f3a847;
+  box-shadow: 0 0 0 2px rgba(243, 168, 71, 0.5);
+}
 
-  /* Colors and Typography */
-  background-color: #f08804; /* Distinctive Amazon Vibrant Yellow Accent */
-  color: #131921;            /* Deep dark contrast color for optimal font readability */
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1; /* Completely eliminates default line heights from pushing text off-center */
-  
-  /* Creates a clean boundary gap separating the indicator badge from the icon below */
-  border: 2px solid #131921; 
+/* Category Filter Dropdown Left Anchor */
+.nav-search-dropdown {
+  background-color: #f3f3f3;
+  border: none;
+  border-right: 1px solid #cccccc;
+  padding: 0 12px;
+  font-size: 0.85rem;
+  color: #555555;
+  cursor: pointer;
+  outline: none;
+  font-family: inherit;
+  max-width: 130px;
+}
+
+.nav-search-dropdown:hover {
+  background-color: #dadada;
+  color: #111111;
+}
+
+/* Main input input segment field string text catcher */
+.nav-search-input {
+  flex: 1;
+  border: none;
+  padding: 0 12px;
+  font-size: 0.95rem;
+  color: #111111;
+  outline: none;
+  width: 100%;
+}
+
+/* Orange Submit Button Right Anchor */
+.nav-search-submit-btn {
+  background-color: #febd69;
+  border: none;
+  width: 45px;
+  min-width: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+}
+
+.nav-search-submit-btn:hover {
+  background-color: #f3a847;
+}
+
+/* Right Navigation Side Anchors adjustments */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.nav-items.text-link-node {
+  color: #ffffff !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.nav-items.text-link-node:hover {
+  color: #f3a847 !important;
+}
+
+/* Cart Icon Structure Base Positioning Rules */
+.cartLogo {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cart-icon-wrapper img {
+  height: 26px;
+  object-fit: contain;
+}
+
+/* Absolute Floating Cart Counter Badge Badge text identifier */
+.nav-cart-badge-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #f3a847;
+  color: #111111;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 1px 6px;
+  min-width: 16px;
+  text-align: center;
+  line-height: 14px;
 }
 
 
@@ -480,11 +507,38 @@ html, body {
   }
 }
 
-@media screen and (max-width: 768px) {
-  .Navbar { padding: 0 1.25rem; }
-  .nav-links { display: none; }
-  .Nav-linksLogo-mobile { display: block; }
+/* ==========================================================================
+   📱 NAVBAR RESPONSIVE MEDIA BREAKPOINTS
+   ========================================================================== */
 
+@media screen and (max-width: 768px) {
+  /* 1. Wrap Navbar Content into Multi-Row Stack Configuration */
+  .Navbar {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+  }
+
+  /* 2. Push search container to full width on its own dedicated line below header */
+  .nav-search-bar-container {
+    order: 3;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 4px;
+    height: 38px;
+  }
+
+  /* Shrink category selector field width limits on compact screens */
+  .nav-search-dropdown {
+    padding: 0 6px;
+    font-size: 0.75rem;
+    max-width: 95px;
+  }
+
+  /* Hide raw utility layout text options links to clean interface bloat */
+  .nav-items.text-link-node {
+    display: none; /* Keeps layout dedicated strictly to Brand Logo, Identity and Cart elements */
+  }
+  
   .footer-links-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -1388,5 +1442,438 @@ html, body {
     text-align: left;
     margin-top: 8px;
     min-width: auto;
+  }
+}
+
+/* ==========================================================================
+   📦 AMAZON SEARCH STRUCTURAL SCALPEL LAYOUT EXTENSION
+   ========================================================================== */
+.catalog-root-override {
+  padding: 0 !important;
+  background-color: #ffffff !important;
+}
+
+.fallback-center {
+  justify-content: center;
+}
+
+.catalog-loading-text {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.alert-constrained {
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.catalog-meta-banner {
+  border-bottom: 1px solid #e7e7e7;
+  padding: 12px 20px;
+  background: #fafafa;
+}
+
+.catalog-meta-banner p {
+  font-size: 0.85rem;
+  color: #565959;
+  margin: 0;
+}
+
+.catalog-meta-banner span {
+  color: #c45500;
+  font-weight: 700;
+}
+
+/* Two-column view frame scaffolding */
+.catalog-scaffolding {
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Left side filter dashboard column layout */
+.catalog-filter-sidebar {
+  width: 240px;
+  min-width: 240px;
+  padding: 20px;
+  border-right: 1px solid #e7e7e7;
+  align-self: stretch;
+  box-sizing: border-box;
+}
+
+.sidebar-filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-filter-header h3 {
+  font-size: 0.95rem;
+  fontWeight: 700;
+  margin: 0;
+  color: #0f1111;
+}
+
+.clear-filters-btn {
+  background: none;
+  border: none;
+  color: #007185;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.filter-group-block {
+  margin-bottom: 22px;
+}
+
+.filter-group-block h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #0f1111;
+}
+
+.sidebar-select-input {
+  width: 100%;
+  padding: 6px;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  border-color: #bcc1c8;
+  background: #f0f2f2;
+  outline: none;
+}
+
+.filter-radio-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter-radio-stack label {
+  font-size: 0.8rem;
+  color: #0f1111;
+  cursor: pointer;
+}
+
+.filter-radio-stack input[type="radio"] {
+  margin-right: 6px;
+}
+
+.rating-star-filter-link {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0;
+  font-size: 0.8rem;
+  color: #007185;
+  cursor: pointer;
+}
+
+.rating-star-filter-link.active {
+  color: #c45500;
+  font-weight: 700;
+}
+
+/* Right Content Column ViewSpace */
+.catalog-results-viewspace {
+  flex: 1;
+  padding: 20px;
+}
+
+.catalog-empty-container {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+}
+
+.catalog-empty-container h3 {
+  font-weight: 500;
+  color: #0f1111;
+  margin: 0 0 6px 0;
+}
+
+.catalog-empty-container p {
+  font-size: 0.85rem;
+  color: #565959;
+  margin: 0;
+}
+
+.catalog-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Target Individual Search Result Row-Based Cards */
+.search-result-row-card {
+  display: flex;
+  flex-direction: row;
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  padding: 16px;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.row-card-image-viewport {
+  height: 200px;
+  width: 200px;
+  min-width: 200px;
+  background: #f7f7f7;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.row-card-image-viewport img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.row-card-details-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.row-card-headline {
+  margin: 0 0 4px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #0f1111;
+  line-height: 1.3;
+}
+
+.row-card-rating-line {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.stars-gold {
+  color: #febd69;
+  font-size: 0.9rem;
+}
+
+.rating-count-link {
+  font-size: 0.75rem;
+  color: #007185;
+}
+
+.row-card-category-meta {
+  font-size: 0.75rem;
+  color: #565959;
+  margin: 0 0 10px 0;
+}
+
+.row-card-category-meta strong {
+  color: #0f1111;
+}
+
+.row-card-description-body {
+  font-size: 0.82rem;
+  color: #0f1111;
+  margin: 0;
+  line-height: 1.4;
+  max-height: 56px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* Row-Card Price Point and Action Footer blocks */
+.row-card-footer-action-panel {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.price-tag-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-tag-digits {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.currency-symbol {
+  font-size: 0.85rem;
+  color: #0f1111;
+  font-weight: 400;
+}
+
+.amount-number {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #0f1111;
+  line-height: 1;
+}
+
+.stock-indicator-height {
+  height: 20px;
+}
+
+.stock-indicator-badge {
+  font-size: 0.75rem;
+}
+
+.stock-indicator-badge.in-stock {
+  color: #007600;
+  font-weight: 400;
+}
+
+.stock-indicator-badge.out-of-stock {
+  color: #b12704;
+  font-weight: 700;
+}
+
+.row-card-buttons-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 160px;
+}
+
+/* Amazon Custom Pill Button Profiles */
+.amazon-pill-btn {
+  width: 100%;
+  height: 28px;
+  border-radius: 20px;
+  border: 1px solid #a88734;
+  font-size: 0.8rem;
+  font-weight: 400;
+  outline: none;
+  cursor: pointer;
+}
+
+.amazon-pill-btn.cart {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  color: #111;
+}
+
+.amazon-pill-btn.buy-now {
+  background: linear-gradient(to bottom, #f5b74a, #e69a10);
+  color: #111;
+}
+
+.amazon-pill-btn.disabled {
+  background: #e7e9ec !important;
+  color: #a2a6ac !important;
+  border-color: #a88734 !important;
+  cursor: not-allowed !important;
+}
+/* ==========================================================================
+   📱 MOBILE & TABLET RESPONSIVE DECORATOR INTERCEPTS FOR CATALOG
+   ========================================================================== */
+
+@media screen and (max-width: 820px) {
+  /* 1. Stack the layout columns vertically */
+  .catalog-scaffolding {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* 2. Reposition Sidebar Filters to form a top bar utility panel */
+  .catalog-filter-sidebar {
+    width: 100% !important;
+    min-width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 15px 20px;
+    background: #ffffff;
+  }
+
+  /* Arrange filter components horizontally on tablet/mobile devices */
+  .sidebar-filter-groups-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .filter-group-block {
+    margin-bottom: 0 !important;
+    flex: 1;
+    min-width: 160px;
+  }
+
+  /* 3. Drop down horizontal list cards into single column layout structures */
+  .search-result-row-card {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px !important;
+    padding: 16px;
+  }
+
+  /* Max out image size containers */
+  .row-card-image-viewport {
+    width: 100% !important;
+    height: 220px !important;
+    min-width: 100% !important;
+  }
+
+  .row-card-details-frame {
+    width: 100%;
+  }
+
+  /* Increase max text height fallback space for visible summaries */
+  .row-card-description-body {
+    max-height: none !important;
+    -webkit-line-clamp: unset !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* Compress the top filter block to occupy a tight layout scroll space */
+  .sidebar-filter-groups-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .filter-group-block {
+    width: 100%;
+  }
+
+  /* Collapse price panel rows to sit vertically on compact handheld interfaces */
+  .row-card-footer-action-panel {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 16px;
+  }
+
+  .row-card-buttons-group {
+    width: 100% !important; /* Button actions fill full-width for easy thumb tapping */
+  }
+
+  .amazon-pill-btn {
+    height: 36px !important; /* Larger hit target area on mobile screens */
+    font-size: 0.9rem !important;
   }
 }

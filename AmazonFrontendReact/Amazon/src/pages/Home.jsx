@@ -1,14 +1,38 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import api from "../api/axiosConfig";
+import UserContext from "../context/UserContext";
 
 const Home = () => {
+
+  //get user
+  const { user } = useContext(UserContext)
+
+  const [quad, setQuad] = useState([])
+
+  async function getQuad() {
+    //get quad items
+    const quad_items = await api.get('/v1/Products/category/Furniture');
+
+    if (quad_items != null) {
+      console.log("data received")
+    }
+    console.log(quad_items.data)
+    setQuad(quad_items.data)
+  }
+
+  //load the items on render
+  useEffect(function () {
+    getQuad()
+  }, [])
+
   return (
     <div className="home-page-container">
       {/* 1. HERO BANNER BACKGROUND CAROUSEL */}
       <div className="hero-banner-slider">
-        <img 
-          src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Sports/November/GW/Herobar/DesktopHero_3000x1200._CB542387654_.jpg" 
-          alt="Amazon Feature Deals Banner" 
+        <img
+          src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Sports/November/GW/Herobar/DesktopHero_3000x1200._CB542387654_.jpg"
+          alt="Amazon Feature Deals Banner"
           className="hero-image"
         />
         <div className="hero-gradient-overlay" />
@@ -16,27 +40,33 @@ const Home = () => {
 
       {/* 2. OVERLAPPING OVERVIEW HUB MATRIX GRID */}
       <div className="home-content-grid">
-        
+
         {/* Card 1: Quad Component layout */}
         <div className="product-card-container">
           <h2 className="card-title">Revamp your home | Up to 60% off</h2>
+
+          {/* go through first 4 items and display them */}
           <div className="quad-image-grid">
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Electronics/372x232_1._CB413583643_.jpg" alt="Home Decor" />
-              <span>Cushion covers & bedsheets</span>
-            </div>
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Electronics/372x232_2._CB413583643_.jpg" alt="Lighting" />
-              <span>Lighting solutions</span>
-            </div>
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Electronics/372x232_3._CB413583643_.jpg" alt="Storage" />
-              <span>Storage & organizers</span>
-            </div>
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Electronics/372x232_4._CB413583643_.jpg" alt="Laundry" />
-              <span>Laundry baskets</span>
-            </div>
+            {Array.isArray(quad) && quad.slice(0, 4).map((item) => {
+              // Optional: strips out database prefix underscores if present (e.g., "Decor_Mirrors" -> "Mirrors")
+              const displaySubCategory = item.subCategory && item.subCategory.includes('_')
+                ? item.subCategory.split('_')[1]
+                : item.subCategory;
+
+              return (
+                <div className="quad-item" key={item.id || item.productId}>
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name || "Home Decor"}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
+                    }}
+                  />
+                  <span>{displaySubCategory || 'View Item'}</span>
+                </div>
+              );
+            })}
           </div>
           <Link to="/product" className="card-explore-link">See more deals</Link>
         </div>
@@ -45,9 +75,9 @@ const Home = () => {
         <div className="product-card-container">
           <h2 className="card-title">Latest Devices | Fire TV & Echo</h2>
           <div className="single-image-wrapper">
-            <img 
-              src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Devices/GW/PC_CC_1x._CB625983421_.jpg" 
-              alt="Amazon Echo Devices" 
+            <img
+              src="https://helios-i.mashable.com/imagery/comparisons/00fRDHtInqzkLrGIuQ4dwtw-item2.fit_lim.size_1028x578.v1742572179.png"
+              alt="Amazon Echo Devices"
               className="single-card-img"
             />
           </div>
@@ -78,19 +108,19 @@ const Home = () => {
           <Link to="/product" className="card-explore-link">Check dynamic pricing</Link>
         </div>
 
-        {/* Card 4: Quick Sign-In Module Callout */}
-        <div className="product-card-container gateway-auth-promo">
+        {/* Card 4: Quick Sign-In Module Callout - if no user */}
+        {!{ user } && <div className="product-card-container gateway-auth-promo">
           <div className="promo-inner-block">
             <h2 className="card-title">Sign in for your best experience</h2>
             <Link to="/login" className="amazon-primary-btn">Sign in securely</Link>
           </div>
           <div className="promo-banner-footer-img">
-            <img 
-              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Avatar/GWBanners/AmazonPay_Short_Grid._CB443928132_.jpg" 
-              alt="Amazon Pay Integration Promo" 
+            <img
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Avatar/GWBanners/AmazonPay_Short_Grid._CB443928132_.jpg"
+              alt="Amazon Pay Integration Promo"
             />
           </div>
-        </div>
+        </div>}
 
       </div>
 
