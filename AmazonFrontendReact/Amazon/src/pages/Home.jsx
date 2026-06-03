@@ -12,7 +12,7 @@ const Home = () => {
   const [quad2, setQuad2] = useState([])
   const [row, setRow] = useState([])
 
-  // 1. Initialized with your specified default banner layout values
+  //Initialized with your specified default banner layout values
   const [banner, setBanner] = useState({
     bannerUrl: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1500&h=500&fit=crop&crop=center",
     bannerAlt: "Banner Alt"
@@ -45,12 +45,12 @@ const Home = () => {
       setCurrentSlideIndex((prevIndex) =>
         prevIndex === bannerSlides.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000); // ⏱️ Changes image every 4000ms (4 seconds)
+    }, 4000); // Changes image every 4000ms
 
     return () => clearInterval(timer); // Clean up memory on unmount
   }, [bannerSlides.length]);
 
-  // 3. STATE SYNC EFFECT: Updates the banner object when the active index updates
+  // Updating the banner object when the active index updates
   useEffect(() => {
     const activeSlide = bannerSlides[currentSlideIndex];
     setBanner({

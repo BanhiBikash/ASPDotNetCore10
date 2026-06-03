@@ -212,18 +212,6 @@ const Cart = () => {
               </button>
             </div>
 
-            {/* 🎯 CONVENIENCE CHECKOUT MODULE 2: BOTTOM POSITION */}
-            <div className="checkout-widget-block padding-top-spacing">
-              <p className="checkout-urgency-notice">Items in your cart are not reserved. Secure your order before stocks fluctuate.</p>
-              <button
-                type="button"
-                className="amazon-primary-btn checkout-action-btn-w100 alternate-color-btn"
-                onClick={handleCheckoutNavigation}
-              >
-                Proceed to Checkout (Bottom)
-              </button>
-            </div>
-
           </div>
         )}
 
