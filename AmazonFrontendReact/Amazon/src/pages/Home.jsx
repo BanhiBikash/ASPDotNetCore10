@@ -9,6 +9,8 @@ const Home = () => {
   const { user } = useContext(UserContext)
 
   const [quad, setQuad] = useState([])
+  const [quad2, setQuad2] = useState([])
+  const [row, setRow] = useState([])
 
   async function getQuad() {
     //get quad items
@@ -21,9 +23,32 @@ const Home = () => {
     setQuad(quad_items.data)
   }
 
+  async function getQuad2() {
+    //get quad items
+    const quad_items = await api.get('/v1/Products/category/HomeAppliances');
+
+    if (quad_items != null) {
+      console.log("data received")
+    }
+    console.log(quad_items.data)
+    setQuad2(quad_items.data)
+  }
+
+  async function getRow() {
+    
+    //get itens
+    const response = await api.get('/v1/Products/category/Mobile');
+
+    if (quad_items != null) {
+      console.log("data not received mobile")
+    }
+    console.log(quad_items.data)
+    setRow(quad_items.data)
+  }
+
   //load the items on render
   useEffect(function () {
-    getQuad()
+    getQuad(); getQuad2(); getRow();
   }, [])
 
   return (
@@ -84,28 +109,34 @@ const Home = () => {
           <Link to="/product" className="card-explore-link">Explore smart features</Link>
         </div>
 
-        {/* Card 3: Quad Component layout (Appliances) */}
+        {/* Card 1: Quad Component layout */}
         <div className="product-card-container">
-          <h2 className="card-title">Appliances for your home</h2>
+          <h2 className="card-title">Revamp your home | Up to 60% off</h2>
+
+          {/* go through first 4 items and display them */}
           <div className="quad-image-grid">
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Appliances/Quad_AirCond._CB624538902_.jpg" alt="AC" />
-              <span>Air Conditioners</span>
-            </div>
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Appliances/Quad_Fridges._CB624538902_.jpg" alt="Fridges" />
-              <span>Refrigerators</span>
-            </div>
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Appliances/Quad_Microwaves._CB624538902_.jpg" alt="Microwaves" />
-              <span>Microwaves</span>
-            </div>
-            <div className="quad-item">
-              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Gatewway/Appliances/Quad_Washing._CB624538902_.jpg" alt="Washing Machine" />
-              <span>Washing Machines</span>
-            </div>
+            {Array.isArray(quad2) && quad2.slice(0, 4).map((item) => {
+              // Optional: strips out database prefix underscores if present (e.g., "Decor_Mirrors" -> "Mirrors")
+              const displaySubCategory = item.subCategory && item.subCategory.includes('_')
+                ? item.subCategory.split('_')[1]
+                : item.subCategory;
+
+              return (
+                <div className="quad-item" key={item.id || item.productId}>
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name || "Home Decor"}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
+                    }}
+                  />
+                  <span>{displaySubCategory || 'View Item'}</span>
+                </div>
+              );
+            })}
           </div>
-          <Link to="/product" className="card-explore-link">Check dynamic pricing</Link>
+          <Link to="/product" className="card-explore-link">See more deals</Link>
         </div>
 
         {/* Card 4: Quick Sign-In Module Callout - if no user */}

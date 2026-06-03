@@ -145,6 +145,15 @@ html, body {
   color: #f3a847 !important;
 }
 
+.nav-items-nav-account-link-profile{
+color: #ffffff !important;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
 /* Cart Icon Structure Base Positioning Rules */
 .cartLogo {
   display: inline-block;
