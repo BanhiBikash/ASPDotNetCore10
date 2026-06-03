@@ -206,6 +206,7 @@ color: #ffffff !important;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border: 2px solid black;
 }
 
 .hero-image {
@@ -228,7 +229,6 @@ color: #ffffff !important;
   grid-template-columns: repeat(4, 1fr);
   gap: 1.25rem;
   max-width: 1500px;
-  margin: -180px auto 0 auto; /* Pulls cards upwards safely over the banner graphic image */
   padding: 0 1.25rem;
   position: relative;
   z-index: 5;

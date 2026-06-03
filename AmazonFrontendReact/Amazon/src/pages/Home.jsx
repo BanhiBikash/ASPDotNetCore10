@@ -12,7 +12,15 @@ const Home = () => {
   const [quad2, setQuad2] = useState([])
   const [row, setRow] = useState([])
 
-  //banner images
+  // 1. Initialized with your specified default banner layout values
+  const [banner, setBanner] = useState({
+    bannerUrl: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1500&h=500&fit=crop&crop=center",
+    bannerAlt: "Banner Alt"
+  });
+
+  // Keep track of the current active array index tracking
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
   const bannerSlides = [
     {
       id: 1,
@@ -30,6 +38,26 @@ const Home = () => {
       alt: "Mega Flash Clearance Event"
     }
   ];
+
+  // 2. TIMER EFFECT: Cycles through the slides index array positions
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlideIndex((prevIndex) =>
+        prevIndex === bannerSlides.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // ⏱️ Changes image every 4000ms (4 seconds)
+
+    return () => clearInterval(timer); // Clean up memory on unmount
+  }, [bannerSlides.length]);
+
+  // 3. STATE SYNC EFFECT: Updates the banner object when the active index updates
+  useEffect(() => {
+    const activeSlide = bannerSlides[currentSlideIndex];
+    setBanner({
+      bannerUrl: activeSlide.image,
+      bannerAlt: activeSlide.alt
+    });
+  }, [currentSlideIndex]);
 
   async function getQuad() {
     //get quad items
@@ -74,16 +102,11 @@ const Home = () => {
     <div className="home-page-container">
       {/* 1. HERO BANNER BACKGROUND CAROUSEL */}
       <div className="hero-banner-slider">
-        {/* {Array.isArray(bannerSlides) && bannerSlides.map(item => {
-          return (
-            <img
-              src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Sports/November/GW/Herobar/DesktopHero_3000x1200._CB542387654_.jpg"
-              alt="Amazon Feature Deals Banner"
-              className="hero-image"
-            />
-          )
-        })} */}
-        <div className="hero-gradient-overlay" />
+        <img
+          src={banner.bannerUrl}
+          alt={banner.bannerAlt}
+          className="hero-image"
+        />
       </div>
 
       {/* 2. OVERLAPPING OVERVIEW HUB MATRIX GRID */}
@@ -163,18 +186,21 @@ const Home = () => {
         </div>
 
         {/* Card 4: Quick Sign-In Module Callout - if no user */}
-        {!{ user } && <div className="product-card-container gateway-auth-promo">
-          <div className="promo-inner-block">
-            <h2 className="card-title">Sign in for your best experience</h2>
-            <Link to="/login" className="amazon-primary-btn">Sign in securely</Link>
+        {!user && (
+          <div className="product-card-container gateway-auth-promo">
+            <div className="promo-inner-block">
+              <h2 className="card-title">Sign in for your best experience</h2>
+              <Link to="/login" className="amazon-primary-btn">Sign in securely</Link>
+            </div>
+            <div className="promo-banner-footer-img">
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Avatar/GWBanners/AmazonPay_Short_Grid._CB443928132_.jpg"
+                alt="Amazon Pay Integration Promo"
+              />
+            </div>
           </div>
-          <div className="promo-banner-footer-img">
-            <img
-              src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Avatar/GWBanners/AmazonPay_Short_Grid._CB443928132_.jpg"
-              alt="Amazon Pay Integration Promo"
-            />
-          </div>
-        </div>}
+        )}
+
 
       </div>
 
