@@ -12,6 +12,25 @@ const Home = () => {
   const [quad2, setQuad2] = useState([])
   const [row, setRow] = useState([])
 
+  //banner images
+  const bannerSlides = [
+    {
+      id: 1,
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1500&h=500&fit=crop&crop=top",
+      alt: "New Tech Vanguard Arrival Deals"
+    },
+    {
+      id: 2,
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1500&h=500&fit=crop&crop=center",
+      alt: "Summer Fashion Collection Sale"
+    },
+    {
+      id: 3,
+      image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=1500&h=500&fit=crop&crop=center",
+      alt: "Mega Flash Clearance Event"
+    }
+  ];
+
   async function getQuad() {
     //get quad items
     const quad_items = await api.get('/v1/Products/category/Furniture');
@@ -35,15 +54,15 @@ const Home = () => {
   }
 
   async function getRow() {
-    
-    //get itens
-    const response = await api.get('/v1/Products/category/Mobile');
 
-    if (quad_items != null) {
-      console.log("data not received mobile")
+    //get itens
+    const response = await api.get('/v1/Products/category/Mobiles');
+
+    if (response != null) {
+      console.log("data received mobile")
     }
-    console.log(quad_items.data)
-    setRow(quad_items.data)
+    console.log(response.data)
+    setRow(response.data)
   }
 
   //load the items on render
@@ -55,11 +74,15 @@ const Home = () => {
     <div className="home-page-container">
       {/* 1. HERO BANNER BACKGROUND CAROUSEL */}
       <div className="hero-banner-slider">
-        <img
-          src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Sports/November/GW/Herobar/DesktopHero_3000x1200._CB542387654_.jpg"
-          alt="Amazon Feature Deals Banner"
-          className="hero-image"
-        />
+        {/* {Array.isArray(bannerSlides) && bannerSlides.map(item => {
+          return (
+            <img
+              src="https://images-eu.ssl-images-amazon.com/images/G/31/img24/Sports/November/GW/Herobar/DesktopHero_3000x1200._CB542387654_.jpg"
+              alt="Amazon Feature Deals Banner"
+              className="hero-image"
+            />
+          )
+        })} */}
         <div className="hero-gradient-overlay" />
       </div>
 
@@ -159,26 +182,13 @@ const Home = () => {
       <div className="wide-deals-strip-container">
         <h2 className="strip-section-title">Today's Deals | Handpicked Top Offers</h2>
         <div className="horizontal-scroll-row">
-          <div className="deal-thumb-box">
-            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Wireless/Samsung/CatPage/Tiles/New/M34._CB573981290_.png" alt="Phone" />
-            <span className="deal-badge">Up to 35% Off</span>
-            <p className="deal-desc">Samsung Galaxy Series</p>
-          </div>
-          <div className="deal-thumb-box">
-            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wired/Headphones/Boat/Dual_Desktop._CB612349503_.jpg" alt="Audio" />
-            <span className="deal-badge">Min 50% Off</span>
-            <p className="deal-desc">boAt Rockerz & Audio Audio</p>
-          </div>
-          <div className="deal-thumb-box">
-            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Computers/Laptops/Gateway/March/Corei5._CB580392011_.jpg" alt="Laptops" />
-            <span className="deal-badge">Up to ₹20,000 Off</span>
-            <p className="deal-desc">Core i5 Thin & Light Laptops</p>
-          </div>
-          <div className="deal-thumb-box">
-            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img23/Fashion/Event/Gateway/Deals/3._CB574920401_.jpg" alt="Footwear" />
-            <span className="deal-badge">40% - 70% Off</span>
-            <p className="deal-desc">Sports Running Shoes catalog</p>
-          </div>
+          {Array.isArray(row) && row.map(item => {
+            return (<div className="deal-thumb-box">
+              <img src={item.imageUrl} alt={item.name} />
+              <span className="deal-badge">Up to 35% Off</span>
+              <p className="deal-desc">{item.name}</p>
+            </div>)
+          })}
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ const Navbar = () => {
   // ⚡ Handle Form Submit Navigation 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    
+
     const trimmedQuery = searchQuery.trim();
     if (!trimmedQuery && searchCategory === 'All') return;
 
