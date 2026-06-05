@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import logo from "../assets/Amazon-Logo.png"
 import api from '../api/axiosConfig'; // Ensure this points correctly to your configured axios instance/interceptor
 
 const Checkout = () => {
@@ -12,6 +13,7 @@ const Checkout = () => {
 
   // 🎯 2. Local state to capture user profile information from the API endpoint
   const [userProfile, setUserProfile] = useState({
+    userId: '', // 🚀 Track the raw Guid UserId safely for the payload contract
     name: 'Customer',
     address: '',
     city: '',
@@ -38,15 +40,16 @@ const Checkout = () => {
         });
 
         const data = response.data;
-        
+
         // Assemble name safely out of your backend's firstName and lastName properties
-        const fullName = data.firstName && data.lastName 
-          ? `${data.firstName} ${data.lastName}` 
+        const fullName = data.firstName && data.lastName
+          ? `${data.firstName} ${data.lastName}`
           : 'Customer';
 
         setUserProfile({
+          userId: data.userId || '', // 🚀 Store the backend generated Guid UserId value securely
           name: fullName,
-          address: data.address || 'No primary address configured.',
+          address: data.address || '',
           city: data.city || '',
           state: data.state || '',
           postalCode: data.postalCode || '',
@@ -62,31 +65,126 @@ const Checkout = () => {
     fetchProfileDetails();
   }, []);
 
-  // 🎯 4. Submit fully constructed payload straight to your Order Controller
+  //razorpay helper function
+  const loadRazorpayScript = () => {
+    return new Promise((resolve) => {
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.async = true;
+      script.onload = () => resolve(true);
+      script.onerror = () => resolve(false);
+      document.body.appendChild(script);
+    });
+  };
+
+  // Submit fully constructed payload straight to Order Controller
   const handlePaymentSubmit = async () => {
+
+    // Load the script check
+    const isScriptLoaded = await loadRazorpayScript();
+    if (!isScriptLoaded) {
+      alert("Razorpay SDK failed to load. Are you online?");
+      return;
+    }
+
+    // The backend now extracts userid safely from JWT Bearer token claims.
     const completedBackendPayload = {
-      shippingAddress: userProfile.address,
-      postalCode: userProfile.postalCode,
-      city: userProfile.city,
-      country: userProfile.country,
-      items: items.map(item => ({
-        productId: item.productId,
-        productName: item.productName,
-        imageUrl: item.imageUrl,
-        quantity: item.quantity,
-        unitPrice: item.unitPrice
+      ShippingAddress: userProfile.address || "No primary address configured.",
+      PostalCode: userProfile.postalCode || "000000",
+      City: userProfile.city || "Default City",
+      Country: userProfile.country || "India",
+
+      // Mapped items matching your OrderItem schema requirements precisely
+      Items: items.map(item => ({
+        ProductId: item.productId,
+        ProductName: item.productName || "Product Name",
+        ImageUrl: item.imageUrl || "https://via.placeholder.com/80?text=Product",
+        Quantity: parseInt(item.quantity, 10) || 1,
+        UnitPrice: parseFloat(item.unitPrice) || 0
       }))
     };
 
     try {
-      console.log("Submitting order payload to backend:", completedBackendPayload);
+      console.log("Submitting secure payload to backend:", completedBackendPayload);
       const response = await api.post('/v1/orders/ReceiveOrder', completedBackendPayload);
-      
+
+      //order is successfull go to transaction
       if (response.status === 200 || response.status === 201) {
-         navigate('/order-success');
+
+        //extract orderId and amount
+        const { id, totalAmount } = response.data;
+        console.log(response.data)
+
+        //check if the details are valid, amount>0 and valid guid order id
+        if (totalAmount > 0 && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
+
+          //divert to razorpay
+          console.log("Phase 2: Initiating Razorpay Gateway UI...");
+          const options = {
+            key: "rzp_test_SxxtiUPuMmx0Iy", // Replace with your Test/Live Key ID from Razorpay Dashboard
+            amount: totalAmount * 100, // Razorpay expects amount in paisa (e.g., ₹500 = 50000 paisa)
+            currency: "INR",
+            name: "Amazon Clone by Banhi",
+            description: `Payment for Order #${orderId}`,
+            image: "https://www.bing.com/images/search?view=detailV2&ccid=bvdmZIag&id=1205845242B5E5416E8D660E151D97BCCB2B33E1&thid=OIP.bvdmZIaghz-ThwkCLvyc4wHaFs&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f06%2f28%2f7e%2f06287ea10082eb312719c7b5fc4456df.png&exph=591&expw=768&q=amazon&FORM=IRPRST&ck=129CD779CF8948FDD685F2BFBEE5710A&selectedIndex=2&itb=0",
+
+            // Hand over the unique database OrderId to track inside Razorpay dashboard metadata
+            notes: {
+              company_order_id: id
+            },
+            prefill: {
+              name: userProfile.name,
+              // email and contact can be added here if available in your userProfile state
+            },
+            theme: {
+              color: "#ff9900" // Matches your current Amazon orange color accents
+            },
+
+            // Callback executed instantly when bank authentication succeeds
+            handler: async function (razorpayResponse) {
+              console.log("Razorpay payment captured successfully:", razorpayResponse);
+
+              // 🎯 PHASE 3: Send confirmation credentials back to the backend to finalize
+              const confirmationPayload = {
+                OrderId: id,
+                RazorpayPaymentId: razorpayResponse.razorpay_payment_id,
+                RazorpayOrderId: razorpayResponse.razorpay_order_id || "", // Used if utilizing Razorpay orders API
+                RazorpaySignature: razorpayResponse.razorpay_signature
+              };
+
+              //backend transaction logic
+              try {
+                console.log("Phase 3: Confirming payment with application backend...");
+                const confirmResponse = await api.post('/v1/Transaction/ConfirmPayment', confirmationPayload);
+
+                if (confirmResponse.status === 200 || confirmResponse.status === 201) {
+                  console.log("Home navigation on success.")
+                  navigate('/Home');
+                } else {
+                  console.log("Cart navigation on success.")
+                  navigate('/Cart')
+                }
+              } catch (confirmError) {
+                console.error("Backend failed to verify payment signature:", confirmError);
+                alert("Payment verified at bank but failed internal verification layout. Contact support.");
+              }
+            }
+          };
+
+          const rzp = new window.Razorpay(options);
+
+          // Handle payment dismissal/failures gracefully
+          rzp.on('payment.failed', function (failedResponse) {
+            console.error("Payment gate transaction terminated:", failedResponse.error);
+            alert(`Payment Failed: ${failedResponse.error.description}`);
+          });
+
+          rzp.open();
+        }
       }
     } catch (error) {
-      console.error("Order processing encountered an issue:", error);
+      console.error("Order workflow execution crashed:", error);
+      alert("Checkout Halted: " + (error.response?.data || "Stock allocation issue or network failure."));
     }
   };
 
@@ -115,15 +213,15 @@ const Checkout = () => {
       <div style={styles.addressCard}>
         <div style={styles.addressHeader}>
           <h3 style={styles.sectionTitle}>Shipping Address</h3>
-          <button 
-            style={styles.linkBtn} 
+          <button
+            style={styles.linkBtn}
             onClick={() => navigate('/account_update')}
           >
             Change Address
           </button>
         </div>
         <p style={styles.userName}>{userProfile.name}</p>
-        <p style={styles.addressText}>{userProfile.address}</p>
+        <p style={styles.addressText}>{userProfile.address || 'No primary address configured.'}</p>
         {(userProfile.city || userProfile.state || userProfile.postalCode) && (
           <p style={styles.addressText}>
             {userProfile.city}
@@ -137,22 +235,22 @@ const Checkout = () => {
       {/* 📦 SECTION B: Flat Order Summary List */}
       <div style={styles.itemsCard}>
 
-      {/* 💰 TOP BUTTON: Quick Pay Action Row */}
-      <div style={styles.actionRow}>
-        <button style={styles.paymentBtn} onClick={handlePaymentSubmit}>
-          Pay ₹{totalAmount.toLocaleString('en-IN')}
-        </button>
-      </div>
+        {/* 💰 TOP BUTTON: Quick Pay Action Row */}
+        <div style={styles.actionRow}>
+          <button style={styles.paymentBtn} onClick={handlePaymentSubmit}>
+            Pay ₹{totalAmount.toLocaleString('en-IN')}
+          </button>
+        </div>
 
-      {/* itemslist */}
+        {/* itemslist */}
         <h3 style={styles.sectionTitle}>Review Items</h3>
         <div style={styles.itemsList}>
           {items.map((item) => (
             <div key={item.productId} style={styles.itemRow}>
-              <img 
-                src={item.imageUrl} 
-                alt={item.productName} 
-                style={styles.productImg} 
+              <img
+                src={item.imageUrl}
+                alt={item.productName}
+                style={styles.productImg}
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/80?text=Product'; }}
               />
               <div style={styles.itemDetails}>
@@ -164,12 +262,12 @@ const Checkout = () => {
           ))}
         </div>
 
-      {/* 💰 BOTTOM BUTTON: Standard Flow Pay Button (Not Sticky) */}
-      <div style={styles.bottomActionRow}>
-        <button style={styles.paymentBtn} onClick={handlePaymentSubmit}>
-          Pay ₹{totalAmount.toLocaleString('en-IN')}
-        </button>
-      </div>
+        {/* 💰 BOTTOM BUTTON: Standard Flow Pay Button (Not Sticky) */}
+        <div style={styles.bottomActionRow}>
+          <button style={styles.paymentBtn} onClick={handlePaymentSubmit}>
+            Pay ₹{totalAmount.toLocaleString('en-IN')}
+          </button>
+        </div>
       </div>
     </div>
   );
@@ -180,7 +278,7 @@ const styles = {
   container: {
     maxWidth: '650px',
     margin: '20px auto',
-    padding: '0 15px 40px 15px', // Normal padding since there's no fixed footer overlap
+    padding: '0 15px 40px 15px',
     fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
   },
   heading: {
@@ -285,10 +383,10 @@ const styles = {
   bottomActionRow: {
     width: '100%',
     textAlign: 'center',
-    marginTop: '24px', // Space out cleanly below the item summary card block
+    marginTop: '24px',
   },
   paymentBtn: {
-    background: '#ff9900', 
+    background: '#ff9900',
     border: '1px solid #a88734',
     borderRadius: '4px',
     width: '100%',
