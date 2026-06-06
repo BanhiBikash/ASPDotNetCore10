@@ -1886,3 +1886,215 @@ color: #ffffff !important;
     font-size: 0.9rem !important;
   }
 }
+
+/* ==========================================================================
+   10. HIGH-FIDELITY ORDER SUCCESS SYSTEM LANDING VIEW MODULE
+   ========================================================================== */
+.order-success-fluid-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.order-success-card-panel {
+  background-color: #ffffff;
+  padding: 30px;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Success Alert Layout Engine Banner */
+.success-header-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.success-checkmark-circle {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border: 2px solid #007600;
+  color: #007600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.success-title-text-block h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #007600; /* Amazon Classic Confirmation Green Accent */
+  margin: 0 0 6px 0;
+  line-height: 1.25;
+}
+
+.success-delivery-subtext {
+  font-size: 0.88rem;
+  color: #0f1111;
+  margin: 0;
+}
+
+.success-layout-divider {
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  margin: 20px 0;
+}
+
+/* System Details Row Mappings Layout */
+.success-metadata-summary-box {
+  background-color: #f8f9f9;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.metadata-row-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.metadata-label {
+  color: #565959;
+  font-weight: 500;
+}
+
+.metadata-value {
+  color: #0f1111;
+  font-weight: 700;
+}
+
+.metadata-value.identifier-hash {
+  font-family: monospace;
+  font-size: 0.92rem;
+  color: #555555;
+}
+
+.metadata-value.amount-text-amber {
+  color: #b12704; /* Amazon Deep Amber/Red pricing highlight layout metric */
+  font-size: 1rem;
+}
+
+/* Navigation Trays & Custom Local Pill Buttons */
+.success-actions-redirection-tray {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.amazon-pill-btn-success {
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  height: 32px;
+  line-height: 30px;
+  padding: 0 18px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+}
+
+.amazon-pill-btn-success.primary-gold {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  color: #111111;
+}
+
+.amazon-pill-btn-success.primary-gold:hover {
+  background: linear-gradient(to bottom, #f5d17c, #ecb21f);
+}
+
+.amazon-pill-btn-success.secondary-gray {
+  background: #ffffff;
+  border: 1px solid #adb1b8;
+  color: #0f1111;
+}
+
+.amazon-pill-btn-success.secondary-gray:hover {
+  background: #f7f8fa;
+  border-color: #a2a6ac;
+}
+
+/* Secondary Context Information Blocks */
+.success-security-disclaimer {
+  padding-top: 20px;
+}
+
+.success-security-disclaimer p {
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #565959;
+  margin: 0;
+}
+
+.success-security-disclaimer a {
+  color: #007185;
+  text-decoration: none;
+}
+
+.success-security-disclaimer a:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   導 RESPONSIVE MEDIA QUERIES FOR ORDER SUCCESS WINDOWS
+   ========================================================================== */
+@media screen and (max-width: 580px) {
+  .order-success-fluid-container {
+    margin: 15px auto;
+  }
+
+  .order-success-card-panel {
+    padding: 20px;
+  }
+
+  .success-header-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .success-title-text-block h1 {
+    font-size: 1.3rem;
+  }
+
+  .success-actions-redirection-tray {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .amazon-pill-btn-success {
+    width: 100%;
+    height: 38px;
+    line-height: 36px; /* Larger hit layout dimensions for thumb tapping */
+  }
+
+  .metadata-row-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+  }
+}

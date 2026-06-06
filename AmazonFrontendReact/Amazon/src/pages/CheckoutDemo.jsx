@@ -99,7 +99,7 @@ const CheckoutDemo = () => {
 
           if (confirmResponse.status === 200 || confirmResponse.status === 201) {
             console.log("[DEMO FLOW] Payment mocked successfully. Moving to success screen.");
-            navigate('/order_success'); 
+            navigate(`/order_success?orderNo=${confirmResponse.data.orderId}&totalAmount=${totalAmount}`); 
           } else {
             alert("Demo confirmation endpoint rejected payload layout.");
           }

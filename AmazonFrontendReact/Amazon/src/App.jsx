@@ -11,6 +11,7 @@ import Cart from "./pages/Cart"
 import Checkout from './pages/Checkout';
 import CheckoutDemo from './pages/CheckoutDemo';
 import SearchResult from './pages/SearchResult';
+import Order_Success from './pages/Order_Success';
 
 function App() {
   // 1. Declare your layout routes cleanly inside your browser router creation hook
@@ -26,7 +27,8 @@ function App() {
         <Route path="Cart" element={<Cart />} />    {/* Matches "/add_product" */}
         <Route path="Checkout" element={<Checkout />} /> {/* The direct, express gateway page bypass */}
         <Route path="CheckoutDemo" element={<CheckoutDemo />} /> {/* The direct, express gateway page bypass */}
-        <Route path="SearchResult" element={<SearchResult/>} />
+        <Route path="SearchResult" element={<SearchResult />} />
+        <Route path="Order_Success" element={<Order_Success />}/>
       </Route>
     )
   );

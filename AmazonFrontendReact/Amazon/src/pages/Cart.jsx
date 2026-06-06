@@ -1,26 +1,18 @@
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
-import api from '../api/axiosConfig'; // 🎯 Synced with your Context file path
-import { baseUrl } from "../api/keyUrls"
-import { checkoutUrl } from '../api/keyUrls';
+import api from '../api/axiosConfig'; 
+import { baseUrl, checkoutUrl } from '../api/keyUrls'; // 🎯 FIXED: Cleaned up duplicate inline declarations and grouped imports
 
 const Cart = () => {
-  // 🎯 FIXED: Destructure 'cart' and 'setCart' from context.
-  // Note: 'cart' here represents the state object wrapper { cart: [], isBusy: false }
   const { cart: cartState, setCart } = useCart();
   const { cart: itemsArray, isBusy } = cartState;
 
-  //for creating and storing cart
   const [order, setOrder] = useState({ items: [], ShippingAddress: null, PostalCode: null, City: null, Country: null });
-
-  itemsArray.forEach(element => {
-    console.log(element)
-  });
 
   const navigate = useNavigate();
 
-  // 🧮 Compute high-fidelity mathematical totals using the isolated array
+  // Compute pricing summaries safely
   const totalItemsCount = itemsArray?.reduce((sum, item) => sum + (item.quantity || 0), 0) || 0;
   const totalCartPrice = itemsArray?.reduce((sum, item) => sum + ((item.price || 0) * (item.quantity || 0)), 0) || 0;
 
@@ -30,7 +22,6 @@ const Cart = () => {
   const handleQuantityChange = async (productId, currentQuantity, newQuantity) => {
     if (newQuantity < 1) return;
 
-    // Optimistic UI Update matching your provider state blueprint
     const originalItemsArray = [...itemsArray];
     const updatedLocalItems = itemsArray.map(item =>
       item.productId === productId ? { ...item, quantity: newQuantity } : item
@@ -76,19 +67,20 @@ const Cart = () => {
     }
   };
 
+  /* ==========================================================================
+     🚀 SECURE ROUTING DISPATCHER
+     ========================================================================== */
   const handleCheckoutNavigation = () => {
-
-    //check if user is logged in then move to checkout otherwise send to login
     const token = localStorage.getItem('token');
+    
     if (!token) {
-      //commenting this for development
-      // navigate('/login?redirect=checkout');
-
-      //this is development demo page, comment this for production
+      console.log("No authorization token detected. Redirecting to authentication pathway...");
+      // 🎯 FIXED: Added crucial return statement to prevent subsequent lines from executing
       navigate('/login?redirect=checkoutdemo');
+      return; 
     }
 
-    //live cart state to specific backend entity field names
+    // Map properties out to match backend entity schema expectations precisely
     const formattedOrderItems = itemsArray.map(item => ({
       productId: item.productId,
       productName: item.name || item.productName || '',
@@ -97,18 +89,19 @@ const Cart = () => {
       unitPrice: item.price || item.unitPrice || 0
     }));
 
-    //Packaged the items and pricing into a complete order prop structure
     const orderDataPayload = {
       items: formattedOrderItems,
       totalAmount: totalCartPrice,
-      shippingAddress: "", // Initializing empty for the form inputs next page
+      shippingAddress: "", 
       postalCode: "",
       city: "",
       country: ""
     };
 
-    // Production - Navigate and attach the payload property into the browser's history state
-    navigate({checkoutUrl}, { state: { orderData: orderDataPayload } });
+    console.log(`Navigating securely to environment route: ${checkoutUrl}`);
+    
+    // 🎯 FIXED: Passed 'checkoutUrl' directly as a string parameter without wrapping it in an object literal {}
+    navigate(checkoutUrl, { state: { orderData: orderDataPayload } });
   };
 
   if (isBusy) {
@@ -123,7 +116,7 @@ const Cart = () => {
     <div className="cart-page-fluid-container">
       <div className="cart-main-layout-wrapper">
 
-        {/* 📦 LEFT COLUMN: MAIN SHOPPING CART DETAILS LIST */}
+        {/* LEFT COLUMN: SHOPPING CART ITEM ROW */}
         <div className="cart-items-collection-panel">
           <div className="cart-header-title-block">
             <h1>Shopping Cart</h1>
@@ -141,10 +134,7 @@ const Cart = () => {
             itemsArray.map((item) => (
               <div key={item.productId} className="cart-item-row-node">
                 <div className="cart-item-image-wrapper">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name || 'Catalog Product'}
-                  />
+                  <img src={item.imageUrl} alt={item.name || 'Catalog Product'} />
                 </div>
 
                 <div className="cart-item-details-body">
@@ -196,11 +186,9 @@ const Cart = () => {
           )}
         </div>
 
-        {/* 💳 RIGHT COLUMN: DOUBLE-CHECKOUT ACCESSIBILITY PANEL */}
+        {/* RIGHT COLUMN: STICKY ACCESSIBILITY PANEL */}
         {itemsArray && itemsArray.length > 0 && (
           <div className="cart-checkout-sticky-panel">
-
-            {/* 🎯 CONVENIENCE CHECKOUT MODULE 1: TOP POSITION */}
             <div className="checkout-widget-block boundary-bottom-split">
               <div className="checkout-subtotal-preview">
                 <h2>Subtotal ({totalItemsCount} items): <br /><strong>₹{totalCartPrice.toLocaleString('en-IN')}</strong></h2>
@@ -213,10 +201,9 @@ const Cart = () => {
                 className="amazon-primary-btn checkout-action-btn-w100"
                 onClick={handleCheckoutNavigation}
               >
-                Proceed to Checkout (Top)
+                Proceed to Checkout
               </button>
             </div>
-
           </div>
         )}
 
