@@ -80,7 +80,11 @@ const Cart = () => {
     //check if user is logged in then move to checkout otherwise send to login
     const token = localStorage.getItem('token');
     if (!token) {
-      navigate('/login?redirect=checkout');
+      //commenting this for development
+      // navigate('/login?redirect=checkout');
+
+      //this is development demo page, comment this for production
+      navigate('/login?redirect=checkoutdemo');
     }
 
     //live cart state to specific backend entity field names
@@ -137,7 +141,7 @@ const Cart = () => {
               <div key={item.productId} className="cart-item-row-node">
                 <div className="cart-item-image-wrapper">
                   <img
-                    src={item.imageUrl || 'https://via.placeholder.com/150?text=Product'}
+                    src={item.imageUrl}
                     alt={item.name || 'Catalog Product'}
                   />
                 </div>

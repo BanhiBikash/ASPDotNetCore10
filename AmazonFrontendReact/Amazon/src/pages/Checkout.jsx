@@ -125,7 +125,7 @@ const Checkout = () => {
             amount: totalAmount * 100, // Razorpay expects amount in paisa (e.g., ₹500 = 50000 paisa)
             currency: "INR",
             name: "Amazon Clone by Banhi",
-            description: `Payment for Order #${orderId}`,
+            description: `Payment for Order #${id}`,
             image: "https://www.bing.com/images/search?view=detailV2&ccid=bvdmZIag&id=1205845242B5E5416E8D660E151D97BCCB2B33E1&thid=OIP.bvdmZIaghz-ThwkCLvyc4wHaFs&mediaurl=https%3a%2f%2fi.pinimg.com%2foriginals%2f06%2f28%2f7e%2f06287ea10082eb312719c7b5fc4456df.png&exph=591&expw=768&q=amazon&FORM=IRPRST&ck=129CD779CF8948FDD685F2BFBEE5710A&selectedIndex=2&itb=0",
 
             // Hand over the unique database OrderId to track inside Razorpay dashboard metadata
@@ -148,25 +148,27 @@ const Checkout = () => {
               const confirmationPayload = {
                 OrderId: id,
                 RazorpayPaymentId: razorpayResponse.razorpay_payment_id,
-                RazorpayOrderId: razorpayResponse.razorpay_order_id || "", // Used if utilizing Razorpay orders API
-                RazorpaySignature: razorpayResponse.razorpay_signature
+                RazorpayOrderId: razorpayResponse.razorpay_order_id || "",
+                RazorpaySignature: razorpayResponse.razorpay_signature,
+                // 🎯 Pass the instrument method string down to your new backend property
+                // If your frontend checkout script tracks whether the user selected card or upi, map it here.
+                // Otherwise, 'UPI' or 'Card' can be safely specified depending on your local choice state tracker.
+                PaymentMethod: "UPI"
               };
 
-              //backend transaction logic
               try {
                 console.log("Phase 3: Confirming payment with application backend...");
                 const confirmResponse = await api.post('/v1/Transaction/ConfirmPayment', confirmationPayload);
 
                 if (confirmResponse.status === 200 || confirmResponse.status === 201) {
-                  console.log("Home navigation on success.")
-                  navigate('/Home');
+                  navigate('/order-success');
                 } else {
-                  console.log("Cart navigation on success.")
-                  navigate('/Cart')
+                  navigate('/');
                 }
               } catch (confirmError) {
-                console.error("Backend failed to verify payment signature:", confirmError);
-                alert("Payment verified at bank but failed internal verification layout. Contact support.");
+                console.error("Backend validation failed:", confirmError);
+                alert("Transaction auditing sequence failure.");
+                navigate('/cart');
               }
             }
           };
@@ -251,7 +253,7 @@ const Checkout = () => {
                 src={item.imageUrl}
                 alt={item.productName}
                 style={styles.productImg}
-                onError={(e) => { e.target.src = 'https://via.placeholder.com/80?text=Product'; }}
+                onError={(e) => { e.target.src = ''; }}
               />
               <div style={styles.itemDetails}>
                 <h4 style={styles.productName}>{item.productName}</h4>
