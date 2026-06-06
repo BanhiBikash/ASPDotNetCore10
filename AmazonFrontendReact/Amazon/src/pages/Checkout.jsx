@@ -161,7 +161,7 @@ const Checkout = () => {
                 const confirmResponse = await api.post('/v1/Transaction/ConfirmPayment', confirmationPayload);
 
                 if (confirmResponse.status === 200 || confirmResponse.status === 201) {
-                  navigate('/order-success');
+                  navigate('/order_success');
                 } else {
                   navigate('/');
                 }

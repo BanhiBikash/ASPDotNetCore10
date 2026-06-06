@@ -3,6 +3,7 @@ import { useCart } from '../context/CartContext';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig'; // 🎯 Synced with your Context file path
 import { baseUrl } from "../api/keyUrls"
+import { checkoutUrl } from '../api/keyUrls';
 
 const Cart = () => {
   // 🎯 FIXED: Destructure 'cart' and 'setCart' from context.
@@ -106,8 +107,8 @@ const Cart = () => {
       country: ""
     };
 
-    // 🚀 Navigate and attach the payload property into the browser's history state
-    navigate('/checkout', { state: { orderData: orderDataPayload } });
+    // Production - Navigate and attach the payload property into the browser's history state
+    navigate({checkoutUrl}, { state: { orderData: orderDataPayload } });
   };
 
   if (isBusy) {

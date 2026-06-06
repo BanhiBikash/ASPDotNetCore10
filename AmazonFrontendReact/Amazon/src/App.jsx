@@ -9,6 +9,7 @@ import Account from './pages/Account';
 import Account_Update from './pages/Account_Update';
 import Cart from "./pages/Cart"
 import Checkout from './pages/Checkout';
+import CheckoutDemo from './pages/CheckoutDemo';
 import SearchResult from './pages/SearchResult';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
         <Route path="add_product" element={<ProductAdd />} />    {/* Matches "/add_product" */}
         <Route path="Cart" element={<Cart />} />    {/* Matches "/add_product" */}
         <Route path="Checkout" element={<Checkout />} /> {/* The direct, express gateway page bypass */}
+        <Route path="CheckoutDemo" element={<CheckoutDemo />} /> {/* The direct, express gateway page bypass */}
         <Route path="SearchResult" element={<SearchResult/>} />
       </Route>
     )

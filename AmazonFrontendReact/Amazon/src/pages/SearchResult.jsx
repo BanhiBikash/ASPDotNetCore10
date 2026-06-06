@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import api from '../api/axiosConfig';
 import UserContext from '../context/UserContext'; 
 import { useCart } from '../context/CartContext'; 
-import { baseUrl } from '../api/keyUrls';
+import { baseUrl, checkoutUrl } from '../api/keyUrls';
 
 const SearchResult = () => {
   const { user } = useContext(UserContext); 
@@ -143,7 +143,7 @@ const SearchResult = () => {
       navigate('/login');
       return;
     }
-    navigate(`/Checkout/${product.id}`, { state: { directPurchaseItem: product } });
+    navigate(`${checkoutUrl}/${product.id}`, { state: { directPurchaseItem: product } });
   };
 
   const clearFilters = () => {
