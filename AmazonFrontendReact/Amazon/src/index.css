@@ -2653,4 +2653,170 @@ color: #ffffff !important;
     bottom: 16px;
     right: 0;
   }
+}/* ==========================================================================
+   16. DECORATIVE COLORED VARIANT OVERRIDES FOR INTERACTIVE ACTION BUTTONS
+   ========================================================================== */
+
+/* 🎯 Update Address: Amazon Blue Border Variant */
+.amazon-address-update-btn.btn-accent-blue {
+  color: #fff;
+  border: 1px solid #007185;
+  background-color: #007185;
+}
+
+.amazon-address-update-btn.btn-accent-blue:hover:not(:disabled) {
+  background-color: #f4fafd;
+  border-color: #004b58;
+  color: #004b58;
+}
+
+/* Form Save Changes: Amazon Solid Blue Accent Button */
+.inline-form-btn.btn-accent-blue-solid {
+  background: linear-gradient(to bottom, #008296, #007185);
+  border-color: #005b6b;
+  color: #ffffff;
+}
+
+.inline-form-btn.btn-accent-blue-solid:hover:not(:disabled) {
+  background: linear-gradient(to bottom, #006878, #005b6b);
+}
+
+/* 🎯 Cancel Order: Amazon Soft Matte Red Accent Button */
+.amazon-order-cancel-btn.btn-accent-red {
+  color: #fff;
+  border: 1px solid #cc0c39;
+  background-color: #cc0c39;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 6px 12px;
+}
+
+.amazon-order-cancel-btn.btn-accent-red:hover:not(:disabled) {
+  background-color: #fdf3f4;
+  border-color: #a00a2c;
+  color: #a00a2c;
+}
+
+/* Combined Absolute Safety Fallback for Disabled States */
+.amazon-address-update-btn.btn-accent-blue:disabled,
+.inline-form-btn.btn-accent-blue-solid:disabled,
+.amazon-order-cancel-btn.btn-accent-red:disabled {
+  background: #f7f8f8 !important;
+  border-color: #e7e9ec !important;
+  color: #a6a6a6 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}/* ==========================================================================
+   14. INLINE EMBEDDED ADDRESS EDITING FORM COMPONENT INTERFACE
+   ========================================================================== */
+.address-card-box-override {
+  min-height: auto !important; /* Resizes automatically to clean form heights */
+}
+
+.inline-address-update-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.inline-address-update-form h3 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #111111;
+  margin-bottom: 12px !important;
+}
+
+.inline-form-error-toast {
+  background-color: #fff6f6;
+  border: 1px solid #d9534f;
+  color: #b94a48;
+  font-size: 0.78rem;
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.form-input-group-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.form-input-group-row label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #333333;
+}
+
+.form-input-group-row input {
+  height: 28px;
+  padding: 3px 7px;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  font-size: 0.82rem;
+  color: #0f1111;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.5), inset 0 1px 0 rgba(0,0,0,0.07);
+  box-sizing: border-box;
+}
+
+.form-input-group-row input:focus {
+  border-color: #e77600;
+  box-shadow: 0 0 3px 2px rgba(228,121,17,0.5);
+}
+
+.form-input-split-two-col {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.form-actions-pill-row-tray {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid #f0f2f2;
+}
+
+.inline-form-btn {
+  height: 28px;
+  line-height: 26px;
+  padding: 0 14px;
+  font-size: 0.78rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 1px solid;
+  box-sizing: border-box;
+}
+
+.inline-form-btn.primary-gold {
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border-color: #a88734;
+  color: #111111;
+}
+
+.inline-form-btn.primary-gold:hover:not(:disabled) {
+  background: linear-gradient(to bottom, #f5d17c, #ecb21f);
+}
+
+.inline-form-btn.secondary-gray {
+  background: #ffffff;
+  border-color: #adb1b8;
+  color: #0f1111;
+}
+
+.inline-form-btn.secondary-gray:hover:not(:disabled) {
+  background: #f7f8fa;
+}
+
+.inline-form-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }

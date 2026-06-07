@@ -1,12 +1,27 @@
-import React from 'react';
-import { useLocation, Link, useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import api from '../api/axiosConfig';
 
 const Order = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   
-  // Safely fetch state with optional chaining to prevent crashes on page refresh
-  const orderData = location.state?.orderData;
+  // 1. Manage order detail local state so updates render instantly on screen
+  const [orderData, setOrderData] = useState(location.state?.orderData);
+  
+  // 2. Inline form management toggles and state maps matching OrderUpdateRequest
+  const [isEditing, setIsEditing] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isCancelling, setIsCancelling] = useState(false); 
+  const [formError, setFormError] = useState(null);
+  
+  const [formData, setFormData] = useState({
+    id: orderData?.id || '',
+    shippingAddress: orderData?.shippingAddress || '',
+    city: orderData?.city || '',
+    postalCode: orderData?.postalCode || '',
+    country: orderData?.country || 'India',
+    status: orderData?.orderStatus || 'Pending' 
+  });
 
   if (!orderData) {
     return (
@@ -35,22 +50,117 @@ const Order = () => {
     }
   };
 
-  // Helper function to format timestamps safely
   const formatDate = (dateString) => {
     if (!dateString) return "N/A";
     const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
     return new Date(dateString).toLocaleDateString(undefined, options);
   };
 
-  // 🎯 Check if the status allows address updates (Only true for Pending or Processing)
+  // Status restriction conditions
   const currentStatus = orderData.orderStatus?.toLowerCase();
   const isEditable = currentStatus === 'pending' || currentStatus === 'processing';
+  
+  // Cancel Order validation constraint: Only active if NOT delivered, cancelled, or failed
+  const isCancellable = currentStatus !== 'delivered' && currentStatus !== 'cancelled' && currentStatus !== 'failed';
 
-  // Handler for updating the address redirect layout flow
-  const handleUpdateAddressClick = () => {
-    console.log("Navigating to address edit form for Order:", orderData.id);
-    // Redirect to your edit configuration view passing down the existing order state details
-    navigate(`/account/update-address?orderId=${orderData.id}`, { state: { orderData } });
+  // Handle local text inputs
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  // Submit address update request to ASP.NET Core API
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setFormError(null);
+
+    if (formData.shippingAddress.length > 200) {
+      setFormError("Shipping address cannot exceed 200 characters.");
+      return;
+    }
+    if (formData.postalCode.length !== 6) {
+      setFormError("Postal code should be of 6 digits.");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+      
+      const updatePayload = {
+        Id: formData.id,
+        ShippingAddress: formData.shippingAddress,
+        PostalCode: formData.postalCode,
+        City: formData.city,
+        Country: formData.country,
+        Status: formData.status 
+      };
+
+      //send update request
+      const response = await api.post('v1/orders/UpdateOrder', updatePayload);
+      
+      //store data in a const
+      const updatedOrder = response.data;
+
+      if(response.data){
+        //set data
+      setOrderData(prev => ({
+        ...prev,
+        shippingAddress: updatedOrder.shippingAddress,
+        city: updatedOrder.city,
+        postalCode: updatedOrder.postalCode,
+        country: updatedOrder.country
+      }));
+
+      setIsEditing(false);
+      setIsSubmitting(false);
+      }else{
+        console.error("Failed to receive response data.")
+      }
+    } catch (err) {
+      console.error("API Error updating shipment destination details:", err);
+      setFormError(err.response?.data || "Failed to update address.");
+      setIsSubmitting(false);
+    }
+  };
+
+  // 🎯 Cancel Action handler logic sending update payload with status set to "Cancelled"
+  const handleCancelOrder = async () => {
+    const confirmCancel = window.confirm("Are you sure you want to cancel this order? This action cannot be undone.");
+    if (!confirmCancel) return;
+
+    try {
+      setIsCancelling(true);
+
+      // 🎯 Matches your backend public OrderUpdateRequest class properties exactly
+      const cancelPayload = {
+        Id: orderData.id,
+        ShippingAddress: orderData.shippingAddress,
+        PostalCode: orderData.postalCode,
+        City: orderData.city,
+        Country: orderData.country,
+        Status: "Cancelled" // Explicit status modifier mapped to backend enum name/index
+      };
+
+      await api.post('v1/orders/UpdateOrder', cancelPayload);
+
+      // Instantly refresh localized context to display visual changes
+      setOrderData(prev => ({
+        ...prev,
+        orderStatus: 'Cancelled'
+      }));
+
+      // Keep form inline state synced as well
+      setFormData(prev => ({
+        ...prev,
+        status: 'Cancelled'
+      }));
+
+      setIsCancelling(false);
+    } catch (err) {
+      console.error("Failed to abort transaction record state:", err);
+      alert(err.response?.data || "Could not cancel order at this stage.");
+      setIsCancelling(false);
+    }
   };
 
   return (
@@ -70,41 +180,130 @@ const Order = () => {
       {/* Grid Summary Panel: Shipping, Payment, and Summary snapshots */}
       <div className="order-summary-top-card-grid">
         
-        {/* Box 1: Shipping Physical Destination + Conditional Action Button */}
+        {/* Box 1: Dynamic Shipping Destination Panel / Form */}
+        <div className="summary-grid-card unique-flex-layout-card address-card-box-override">
+          {!isEditing ? (
+            <>
+              <div className="card-top-content-area">
+                <h3>Shipping Address</h3>
+                <div className="card-inner-address-text">
+                  <p className="shipping-user-name">Fulfillment Delivery</p>
+                  <p>{orderData.shippingAddress}</p>
+                  <p>{orderData.city}, {orderData.postalCode}</p>
+                  <p>{orderData.country || "India"}</p>
+                </div>
+              </div>
+              
+              <div className="card-bottom-action-tray">
+                <button 
+                  className={`amazon-address-update-btn btn-accent-blue ${!isEditable ? 'btn-disabled-state' : ''}`}
+                  disabled={!isEditable}
+                  onClick={() => setIsEditing(true)}
+                  title={isEditable ? "Change delivery destination particulars" : "Addresses cannot be modified once an order has left processing status"}
+                >
+                  Update Address
+                </button>
+              </div>
+            </>
+          ) : (
+            <form onSubmit={function(e){handleFormSubmit(e)}} className="inline-address-update-form">
+              <h3>Edit Shipping Address</h3>
+              {formError && <div className="inline-form-error-toast">{formError}</div>}
+              
+              <div className="form-input-group-row">
+                <label>Street Address</label>
+                <input 
+                  type="text" 
+                  name="shippingAddress"
+                  value={formData.shippingAddress} 
+                  onChange={handleInputChange}
+                  required
+                  maxLength={200}
+                />
+              </div>
+
+              <div className="form-input-split-two-col">
+                <div className="form-input-group-row">
+                  <label>City</label>
+                  <input 
+                    type="text" 
+                    name="city"
+                    value={formData.city} 
+                    onChange={handleInputChange}
+                    required
+                    maxLength={100}
+                  />
+                </div>
+                <div className="form-input-group-row">
+                  <label>Postal Code</label>
+                  <input 
+                    type="text" 
+                    name="postalCode"
+                    value={formData.postalCode} 
+                    onChange={handleInputChange}
+                    required
+                    maxLength={20}
+                  />
+                </div>
+              </div>
+
+              <div className="form-input-group-row">
+                <label>Country</label>
+                <input 
+                  type="text" 
+                  name="country"
+                  value={formData.country} 
+                  onChange={handleInputChange}
+                  required
+                  maxLength={100}
+                />
+              </div>
+
+              <div className="form-actions-pill-row-tray">
+                <button 
+                  type="button" 
+                  className="inline-form-btn secondary-gray" 
+                  onClick={() => setIsEditing(false)}
+                  disabled={isSubmitting}
+                >
+                  Cancel
+                </button>
+                <button 
+                  type="submit" 
+                  className="inline-form-btn btn-accent-blue-solid"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Saving..." : "Save Changes"}
+                </button>
+              </div>
+            </form>
+          )}
+        </div>
+
+        {/* Box 2: Payment Execution Event Tracking + Cancel Order */}
         <div className="summary-grid-card unique-flex-layout-card">
           <div className="card-top-content-area">
-            <h3>Shipping Address</h3>
+            <h3>Payment Method</h3>
             <div className="card-inner-address-text">
-              <p className="shipping-user-name">Fulfillment Delivery</p>
-              <p>{orderData.shippingAddress}</p>
-              <p>{orderData.city}, {orderData.postalCode}</p>
-              <p>{orderData.country || "India"}</p>
+              <p className="payment-method-row">
+                <span className="bullet-dot">✓</span> Digital Electronic Transaction Verified
+              </p>
+              <p className="payment-status-badge-label">
+                Status: <span className={`status-pill-indicator ${getStatusBadgeClass(orderData.orderStatus)}`}>{orderData.orderStatus}</span>
+              </p>
             </div>
           </div>
           
-          {/* 🎯 The Live Update Address Button */}
           <div className="card-bottom-action-tray">
-            <button 
-              className={`amazon-address-update-btn ${!isEditable ? 'btn-disabled-state' : ''}`}
-              disabled={!isEditable}
-              onClick={handleUpdateAddressClick}
-              title={isEditable ? "Change delivery destination particulars" : "Addresses cannot be modified once an order has left processing status"}
+            <button
+              type="button"
+              className={`amazon-order-cancel-btn btn-accent-red ${!isCancellable ? 'btn-disabled-state' : ''}`}
+              disabled={!isCancellable || isCancelling}
+              onClick={handleCancelOrder}
+              title={isCancellable ? "Abort this transaction shipment entirely" : "Delivered, completed or aborted invoices cannot be cancelled"}
             >
-              Update Address
+              {isCancelling ? "Cancelling..." : "Cancel Order"}
             </button>
-          </div>
-        </div>
-
-        {/* Box 2: Payment Execution Event Tracking */}
-        <div className="summary-grid-card">
-          <h3>Payment Method</h3>
-          <div className="card-inner-address-text">
-            <p className="payment-method-row">
-              <span className="bullet-dot">✓</span> Digital Electronic Transaction Verified
-            </p>
-            <p className="payment-status-badge-label">
-              Status: <span className={`status-pill-indicator ${getStatusBadgeClass(orderData.orderStatus)}`}>{orderData.orderStatus}</span>
-            </p>
           </div>
         </div>
 
