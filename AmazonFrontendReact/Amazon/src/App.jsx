@@ -12,6 +12,7 @@ import Checkout from './pages/Checkout';
 import CheckoutDemo from './pages/CheckoutDemo';
 import SearchResult from './pages/SearchResult';
 import Order_Success from './pages/Order_Success';
+import Orders from './pages/Orders';
 
 function App() {
   // 1. Declare your layout routes cleanly inside your browser router creation hook
@@ -29,6 +30,7 @@ function App() {
         <Route path="CheckoutDemo" element={<CheckoutDemo />} /> {/* The direct, express gateway page bypass */}
         <Route path="SearchResult" element={<SearchResult />} />
         <Route path="Order_Success" element={<Order_Success />}/>
+        <Route path="Orders" element={<Orders />} />
       </Route>
     )
   );

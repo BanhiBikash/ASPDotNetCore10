@@ -2098,3 +2098,339 @@ color: #ffffff !important;
     gap: 2px;
   }
 }
+/* ==========================================================================
+   11. AMAZON-THEMED HISTORICAL ORDERS DASHBOARD LANDING PROFILE
+   ========================================================================== */
+.orders-dashboard-fluid-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.orders-breadcrumb-trail {
+  font-size: 0.78rem;
+  color: #565959;
+  margin-bottom: 12px;
+}
+
+.orders-breadcrumb-trail a {
+  color: #007185;
+  text-decoration: none;
+}
+
+.orders-breadcrumb-trail a:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.orders-breadcrumb-trail .active-trail {
+  color: #c45500;
+  font-weight: 500;
+}
+
+.orders-page-main-heading {
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 20px 0;
+}
+
+/* Empty History Visual State */
+.orders-empty-history-card {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.orders-empty-history-card p {
+  font-size: 1.05rem;
+  color: #0f1111;
+  margin: 0 0 20px 0;
+}
+
+.continue-shopping-pill-btn {
+  display: inline-block;
+  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
+  border: 1px solid #a88734;
+  color: #111111;
+  border-radius: 20px;
+  padding: 8px 24px;
+  font-size: 0.88rem;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(213,217,217,.3);
+  transition: opacity 0.1s ease;
+}
+
+.continue-shopping-pill-btn:hover {
+  background: linear-gradient(to bottom, #f5d17c, #ecb21f);
+}
+
+/* Primary Card Core Containers Stack */
+.orders-history-list-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.order-history-card-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Dual Header Sections */
+.order-card-panel-header {
+  background-color: #f0f2f2;
+  border-bottom: 1px solid #d5d9d9;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.header-meta-left-group {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.meta-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #565959;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.meta-value-text {
+  font-size: 0.84rem;
+  color: #0f1111;
+  font-weight: 400;
+}
+
+.meta-value-text.highlight-price {
+  font-weight: 700;
+  color: #b12704;
+}
+
+.meta-value-text.target-address-link {
+  color: #007185;
+  cursor: pointer;
+}
+
+.meta-value-text.target-address-link:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+.header-meta-right-group .meta-label-text {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #565959;
+  word-break: break-all;
+}
+
+/* Card Main Internal Payload Content Area */
+.order-card-panel-body {
+  padding: 18px;
+}
+
+.order-status-timeline-strip {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Customized Colored Status Pills */
+.status-pill-indicator {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-badge-blue { background-color: #e8f4fd; color: #0066c0; border: 1px solid #bce0fd; }
+.status-badge-amber { background-color: #fff8e7; color: #b47000; border: 1px solid #ffe8b5; }
+.status-badge-green { background-color: #edf7ed; color: #007600; border: 1px solid #c8e6c9; }
+.status-badge-red { background-color: #fdf2f2; color: #ba0000; border: 1px solid #f8cbcb; }
+.status-badge-gray { background-color: #f3f3f3; color: #565959; border: 1px solid #d5d9d9; }
+
+/* Order Line Item Arrays Layout */
+.order-items-inner-collection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-item-row-layout {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed #e7e7e7;
+}
+
+.order-item-row-layout:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.order-item-thumbnail-pic {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border: 1px solid #e7e7e7;
+  border-radius: 4px;
+  background-color: #fafafa;
+  flex-shrink: 0;
+}
+
+.order-item-core-details {
+  flex: 1;
+}
+
+.order-item-title-anchor {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #007185;
+  text-decoration: none;
+  line-height: 1.3;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.order-item-title-anchor:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+.order-item-meta-pricing-specs {
+  font-size: 0.84rem;
+  color: #565959;
+  margin: 0 0 12px 0;
+}
+
+.order-item-meta-pricing-specs .dark-bold {
+  color: #0f1111;
+  font-weight: 600;
+}
+
+.action-btn-pill-small {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  color: #0f1111;
+  border-radius: 8px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: background-color 0.1s;
+}
+
+.action-btn-pill-small:hover {
+  background-color: #f7f8fa;
+  border-color: #a2a6ac;
+}
+
+/* System State Loading Fallback Shimmers */
+.orders-loading-spinner-wrapper,
+.orders-error-panel-boundary {
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.amazon-loading-shimmer-circle {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #e09310;
+  border-radius: 50%;
+  animation: ordersRotate 0.8s linear infinite;
+  margin: 0 auto 16px auto;
+}
+
+@keyframes ordersRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-alert-box {
+  background-color: #fffdff;
+  border: 1px solid #ba0000;
+  border-left: 4px solid #ba0000;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: left;
+}
+
+.error-alert-box h5 {
+  margin: 0 0 6px 0;
+  color: #ba0000;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.error-alert-box p {
+  margin: 0;
+  font-size: 0.84rem;
+  color: #333333;
+}
+
+/* ==========================================================================
+   導 RESPONSIVE MEDIA QUERIES FOR ORDERS TIMELINE ENGINE
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .header-meta-left-group {
+    gap: 16px;
+  }
+  
+  .order-card-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px;
+  }
+
+  .header-meta-right-group {
+    width: 100%;
+    border-top: 1px dashed #d5d9d9;
+    padding-top: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ship-to-block-hide {
+    display: none;
+  }
+
+  .order-item-row-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .order-item-thumbnail-pic {
+    width: 120px;
+    height: 120px;
+  }
+}

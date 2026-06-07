@@ -64,7 +64,7 @@ const Product = () => {
         quantity: 1,
         name: product.name,
         price: product.price,
-        imageUrl: baseUrl + product.imageUrl,
+        imageUrl: product.imageUrl,
         product: {
           id: product.id,
           name: product.name,

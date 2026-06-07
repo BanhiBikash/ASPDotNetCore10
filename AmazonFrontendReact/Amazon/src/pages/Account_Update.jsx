@@ -183,7 +183,7 @@ const Account_Update = () => {
                         <div className="profile-avatar-management-node" style={{ backgroundColor: '#ffffff', justifyContent: 'center' }}>
                             <div className="profile-avatar-preview-shell" style={{ width: '90px', height: '90px' }}>
                                 {user.profileImageUrl ? (
-                                    <img src={'https://localhost:7130/' + user.profileImageUrl} alt="Current Avatar" className="profile-avatar-circle" />
+                                    <img src={user.profileImageUrl} alt="Current Avatar" className="profile-avatar-circle" />
                                 ) : (
                                     <div className="profile-avatar-placeholder" style={{ fontSize: '2.5rem' }}>👤</div>
                                 )}
@@ -239,7 +239,7 @@ const Account_Update = () => {
                                 {previewUrl ? (
                                     <img
                                         /* 🎯 FIX: If it's a freshly chosen local file blob, use it directly. Otherwise, point to the backend host. */
-                                        src={previewUrl.startsWith('blob:') ? previewUrl : 'https://localhost:7130/' + previewUrl}
+                                        src={previewUrl.startsWith('blob:') ? previewUrl : previewUrl}
                                         alt="Profile Image"
                                         className="profile-avatar-circle"
                                     />
