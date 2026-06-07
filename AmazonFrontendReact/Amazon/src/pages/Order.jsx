@@ -141,12 +141,16 @@ const Order = () => {
         Status: "Cancelled" // Explicit status modifier mapped to backend enum name/index
       };
 
-      await api.post('v1/orders/UpdateOrder', cancelPayload);
+      //make request and store the response
+      const response = await api.post('v1/orders/UpdateOrder', cancelPayload);
+
+      //deconstruct and store the status reponse
+      const {status} = response.data;
 
       // Instantly refresh localized context to display visual changes
       setOrderData(prev => ({
         ...prev,
-        orderStatus: 'Cancelled'
+        orderStatus: status
       }));
 
       // Keep form inline state synced as well
