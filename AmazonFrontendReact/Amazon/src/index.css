@@ -2433,4 +2433,224 @@ color: #ffffff !important;
     width: 120px;
     height: 120px;
   }
+}/* ==========================================================================
+   13. CUSTOM CONDITIONAL ADDRESS MANIPULATION ELEMENT COMPONENTS
+   ========================================================================== */
+.unique-flex-layout-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 195px; /* Ensures all top layout cards maintain uniform proportions */
+}
+
+.card-bottom-action-tray {
+  margin-top: 14px;
+  width: 100%;
+}
+
+.amazon-address-update-btn {
+  width: 100%;
+  background: #f0f2f2;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 6px 12px;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #0f1111;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213,217,217,.3);
+  transition: all 0.1s linear;
+}
+
+.amazon-address-update-btn:hover:not(:disabled) {
+  background-color: #e7e9ec;
+  border-color: #a2a6ac;
+}
+
+.amazon-address-update-btn:active:not(:disabled) {
+  background-color: #f0f2f2;
+  box-shadow: none;
+}
+
+/* 🎯 Disabled layout styling blocks matching browser validation states */
+.amazon-address-update-btn:disabled,
+.amazon-address-update-btn.btn-disabled-state {
+  background: #f7f8f8 !important;
+  border-color: #e7e9ec !important;
+  color: #a6a6a6 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+  transform: none !important;
+}/* ==========================================================================
+   12. SINGLE ORDER SPECIFIC DETAIL PANEL INTERFACE MODULE
+   ========================================================================== */
+.single-order-detail-fluid-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 30px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.single-order-meta-title-row {
+  margin-bottom: 22px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 12px;
+}
+
+.single-order-meta-title-row h1 {
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 6px 0;
+}
+
+.meta-subtitle-details {
+  font-size: 0.84rem;
+  color: #565959;
+  margin: 0;
+}
+
+.meta-subtitle-details .divider-bar {
+  color: #ccc;
+  margin: 0 8px;
+}
+
+.meta-subtitle-details .mono-id {
+  font-family: monospace;
+  font-size: 0.88rem;
+  color: #111;
+  font-weight: 500;
+}
+
+/* Three Column Meta Details Grid Structure Layout */
+.order-summary-top-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-grid-card {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 16px 20px;
+  box-sizing: border-box;
+}
+
+.summary-grid-card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f1111;
+  margin: 0 0 10px 0;
+}
+
+.card-inner-address-text p {
+  font-size: 0.84rem;
+  color: #0f1111;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+}
+
+.card-inner-address-text .shipping-user-name {
+  font-weight: 700;
+}
+
+.payment-method-row {
+  color: #007600 !important;
+  font-weight: 500;
+}
+
+.payment-method-row .bullet-dot {
+  font-weight: 800;
+  margin-right: 4px;
+}
+
+.payment-status-badge-label {
+  margin-top: 10px !important;
+  font-weight: 500;
+  color: #565959;
+}
+
+/* Invoice Calculations Sheet side blocks */
+.invoice-rows-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+  color: #565959;
+}
+
+.invoice-row .green-free {
+  color: #007600;
+  font-weight: 500;
+}
+
+.invoice-split-line {
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  margin: 6px 0;
+}
+
+.total-row-highlight {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b12704;
+}
+
+.single-order-view-header {
+  background-color: #f6f6f6 !important;
+}
+
+.items-count-indicator {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+/* Subtotal Row Alignments on Left/Right Spans */
+.order-item-right-pricing-block {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.item-calculated-subtotal {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.divider-spacer {
+  margin: 0 8px;
+  color: #ddd;
+}
+
+.continue-shopping-pill-btn.special-buy-again-size {
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   導 RESPONSIVE MEDIA QUERIES FOR SINGLE ORDER PREVIEW WINDOWS
+   ========================================================================== */
+@media screen and (max-width: 680px) {
+  .order-item-row-layout {
+    position: relative;
+    padding-bottom: 45px !important;
+  }
+
+  .order-item-right-pricing-block {
+    position: absolute;
+    bottom: 16px;
+    right: 0;
+  }
 }
