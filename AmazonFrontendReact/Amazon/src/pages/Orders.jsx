@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchUserOrders = async () => {
@@ -66,6 +67,28 @@ const Orders = () => {
     );
   }
 
+  //direct to individual Order
+  const toOrder = (order)=>{
+
+    console.log(order)
+
+    const orderPayload = {
+        id:order.id,
+        userId: order.userId,
+        ordeDate: order.orderDate,
+        city: order.city,
+        country: order.country,
+        postalCode: order.postalCode,
+        shippingAddress: order.shippingAddress,
+        totalAmount: order.totalAmount,
+        orderStatus: order.status,
+        items: order.items
+    }
+
+    //go to that page
+    navigate('/Order',{state:{orderData: orderPayload}});
+  }
+
   return (
     <div className="orders-dashboard-fluid-container">
       <nav className="orders-breadcrumb-trail">
@@ -82,7 +105,7 @@ const Orders = () => {
       ) : (
         <div className="orders-history-list-stream">
           {orders.map((order) => (
-            <div key={order.id} className="order-history-card-wrapper">
+            <div key={order.id} className="order-history-card-wrapper" onClick={function(){toOrder(order)}}>
               
               {/* Card Meta-Header Bar */}
               <div className="order-card-panel-header">
