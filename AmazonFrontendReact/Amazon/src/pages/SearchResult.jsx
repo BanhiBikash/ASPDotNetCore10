@@ -5,12 +5,21 @@ import UserContext from '../context/UserContext';
 import { useCart } from '../context/CartContext'; 
 import { baseUrl, checkoutUrl } from '../api/keyUrls';
 import ProductBox from '../Components/ProductBox';
+import WarningDialog from '../Components/WarningDialog';
 
 const SearchResult = () => {
   const { user } = useContext(UserContext); 
   const { cart, setCart } = useCart(); 
   const navigate = useNavigate();
   const location = useLocation();
+  
+  // 🎛️ Warning Dialog Overlay States
+  const [dialog, setDialog] = useState({ isOpen: false, message: '' });
+  
+  // Helper trigger to handle open dialogue shifts
+  const triggerWarning = (msg) => {
+    setDialog({ isOpen: true, message: msg });
+  };
 
   const [products, setProducts] = useState([]);
   const [uiStatus, setUiStatus] = useState({ loading: true, error: null });
@@ -113,11 +122,11 @@ const SearchResult = () => {
         setCart({ cart: updatedItemsArray, isBusy: false });
 
         if (!silent) {
-          alert(`Successfully added "${product.name}" to your account cart!`);
+          console.log(`Successfully added "${product.name}" to your account cart!`);
         }
       } catch (err) {
         console.error('Cart operation failure context:', err);
-        alert(err.response?.data || 'Failed to update shopping cart allocation.');
+        triggerWarning(err.response?.data || 'Failed to update shopping cart allocation.');
       } finally {
         setActionLoading(prev => ({ ...prev, [productId]: false }));
       }
@@ -127,11 +136,11 @@ const SearchResult = () => {
         setCart({ cart: updatedItemsArray, isBusy: false });
 
         if (!silent) {
-          alert(`"${product.name}" added to guest cart!`);
+          console.log(`"${product.name}" added to guest cart!`);
         }
       } catch (err) {
         console.error('Local storage cart operation exception context:', err);
-        alert('Failed to update local guest cart matrix space.');
+        triggerWarning('Failed to update local guest cart matrix space.');
       } finally {
         setActionLoading(prev => ({ ...prev, [productId]: false }));
       }
@@ -140,7 +149,7 @@ const SearchResult = () => {
 
   const handleBuyNow = (product) => {
     if (!user || !user.email) {
-      alert('Authentication required. Please log in to complete an express purchase.');
+      triggerWarning('Authentication required. Please log in to complete an express purchase.');
       navigate('/login');
       return;
     }
