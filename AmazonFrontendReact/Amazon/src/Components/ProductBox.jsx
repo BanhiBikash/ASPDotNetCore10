@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from '../context/CartContext';
+import api from '../api/axiosConfig'; // Imported to handle silent backend updates for decrementing
 
 const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }) => {
   const imageSource = item.imageUrl || 'https://placehold.co/300?text=No+Image';
@@ -6,6 +8,54 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
   const displaySubCategory = item.subCategory && item.subCategory.includes('_')
     ? item.subCategory.split('_')[1]
     : item.subCategory;
+
+  // Handling cart context
+  const { cart: cartData, setCart } = useContext(CartContext);
+  const { cart: itemsArray } = cartData;
+    console.log(itemsArray)
+  // 🎯 Find if the current item is already present in the cart array
+  const existingCartItem = itemsArray?.find(cartItem => 
+    cartItem.productId === item.id || (cartItem.product && cartItem.product.id === item.id)
+  );
+
+  // 🔄 Handle Decrementing Item Quantity
+  const handleRemoveOneOrDecrement = async () => {
+    if (!existingCartItem) return;
+
+    // Create a shallow copy of the items array to modify safely
+    let updatedItemsArray = [...itemsArray];
+    const itemIndex = updatedItemsArray.findIndex(cartItem => 
+      cartItem.productId === item.id || (cartItem.product && cartItem.product.id === item.id)
+    );
+
+    if (existingCartItem.quantity > 1) {
+      // Reduce local memory count by 1
+      updatedItemsArray[itemIndex].quantity -= 1;
+    } else {
+      // If quantity is 1, remove the object entirely from the list
+      updatedItemsArray.splice(itemIndex, 1);
+    }
+
+    // Sync state locally immediately for responsive UI snapping
+    setCart(prev => ({ ...prev, cart: updatedItemsArray }));
+
+    // Optional: If you have a logged-in user session, update backend server pipeline silently
+    const savedUser = localStorage.getItem('user') || null; // standard key or read from UserContext if passed down
+    if (savedUser) {
+      try {
+        const payload = {
+          productId: item.id,
+          quantity: existingCartItem.quantity > 1 ? existingCartItem.quantity - 1 : 0
+        };
+        await api.post('/v1/Cart/UpdateCart', payload);
+      } catch (err) {
+        console.error('Failed syncing decrement subtraction step with server:', err);
+      }
+    } else {
+      // Guest cart fallback persist state
+      localStorage.setItem('guest_cart', JSON.stringify(updatedItemsArray));
+    }
+  };
 
   return (
     <div className="search-result-row-card">
@@ -69,13 +119,35 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
 
           {/* Express Checkout Action Buttons Stack */}
           <div className="row-card-buttons-group">
-            <button
-              onClick={() => handleAddToCart(item)}
-              disabled={!item.inStock || isItemBusy}
-              className={`amazon-pill-btn cart ${!item.inStock ? 'disabled' : ''}`}
-            >
-              {isItemBusy ? 'Syncing...' : 'Add to Cart'}
-            </button>
+
+            {/* 🎯 CONDITIONAL CART CONTROL TOGGLE */}
+            {existingCartItem ? (    
+                    <div className="cart-quantity-selector-container" style={{display:'flex',alignItems:'center',justifyContent:'space-evenly'}}>
+                      <button
+                        type="button"
+                        onClick={handleRemoveOneOrDecrement}
+                        disabled={isItemBusy}
+                      >
+                        -
+                      </button>
+                      <span className="cart-quantity-display-value">{existingCartItem.quantity}</span>
+                      <button
+                        type="button"
+                        onClick={() => handleAddToCart(item, true)}
+                        disabled={!item.inStock || isItemBusy || existingCartItem.quantity >= item.stock}
+                      >
+                        +
+                      </button>
+                    </div>
+            ) : (
+              <button
+                onClick={() => handleAddToCart(item)}
+                disabled={!item.inStock || isItemBusy}
+                className={`amazon-pill-btn cart ${!item.inStock ? 'disabled' : ''}`}
+              >
+                {isItemBusy ? 'Syncing...' : 'Add to Cart'}
+              </button>
+            )}
 
             <button
               onClick={() => handleBuyNow(item)}
