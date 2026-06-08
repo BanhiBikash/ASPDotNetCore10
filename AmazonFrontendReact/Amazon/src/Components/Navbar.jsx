@@ -54,23 +54,36 @@ const Navbar = () => {
     e.preventDefault();
 
     const trimmedQuery = searchQuery.trim();
-    if (!trimmedQuery && searchCategory === 'All') return;
+
+    //if nothing is typed return
+    if (!trimmedQuery) return;
 
     const params = new URLSearchParams();
 
-    if (trimmedQuery) {
-      // 🎯 RULE: If text input exists, search exclusively by that string and IGNORE the category dropdown completely
-      params.append('q', trimmedQuery);
-    } else if (searchCategory !== 'All') {
-      // Otherwise, if input is empty, fall back to matching the explicit category path parameter
-      params.append('category', searchCategory);
-    }
+    //append the input
+    params.append('q', trimmedQuery);
+
     //empty the input text
     setSearchQuery('')
 
     // Directs browser routing target using the exact matching casing matching your App routes ("SearchResult")
     navigate(`/SearchResult?${params.toString()}`);
   };
+
+  //search by Category
+  const searchByCategory = (e)=>{
+    //set the search category
+    setSearchCategory(e.target.value)
+    
+    const params = new URLSearchParams();
+    params.append('category',e.target.value)
+
+    //empty the input text
+    setSearchQuery('')
+
+    // Directs browser routing target using the exact matching casing matching your App routes ("SearchResult")
+    navigate(`/SearchResult?${params.toString()}`);
+  }
 
   return (
     <div className="Navbar">
@@ -94,7 +107,7 @@ const Navbar = () => {
         <select
           className="nav-search-dropdown"
           value={searchCategory}
-          onChange={(e) => setSearchCategory(e.target.value)}
+          onChange={(e) => searchByCategory(e)}
         >
           <option value="All">All Categories</option>
           {Array.isArray(category) && category.map((item, index) => (
