@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
+import UserContext from '../context/UserContext';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  
+    //get user
+    const {user} = useContext(UserContext)
+
+    //send to login if not logged in 
+    if(!user){
+      navigate('/')
+    }
 
   useEffect(() => {
     const fetchUserOrders = async () => {

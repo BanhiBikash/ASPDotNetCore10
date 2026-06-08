@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import React, { use, useState } from 'react';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
 import api from '../api/axiosConfig';
 
 const Order = () => {
   const location = useLocation();
-  
+  const {user} = useContext(UserContext);
+  const navigate = useNavigate();
+
+  //send to login if not logged in 
+  if(!user){
+    navigate('/')
+  }
+
   // 1. Manage order detail local state so updates render instantly on screen
   const [orderData, setOrderData] = useState(location.state?.orderData);
   
