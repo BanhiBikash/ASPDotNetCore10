@@ -15,7 +15,7 @@ const Orders = () => {
 
     //send to login if not logged in 
     if(!user){
-      navigate('/')
+      navigate('/login')
     }
 
   useEffect(() => {

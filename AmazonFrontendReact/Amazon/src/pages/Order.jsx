@@ -11,7 +11,7 @@ const Order = () => {
 
   //send to login if not logged in 
   if(!user){
-    navigate('/')
+    navigate('/login')
   }
 
   // 1. Manage order detail local state so updates render instantly on screen
