@@ -24,7 +24,7 @@ function App() {
         <Route path="account" element={<Account />} />                {/* Matches layout root "/" */}
         <Route path="Account_Update" element={<Account_Update />} />                {/* Matches layout root "/" */}
         <Route path="login" element={<Login />} />        {/* Matches "/login" */}
-        <Route path="product" element={<Product />} />    {/* Matches "/product" */}
+        <Route path="product/:id" element={<Product />} />    {/* Matches "/product" */}
         <Route path="add_product" element={<ProductAdd />} />    {/* Matches "/add_product" */}
         <Route path="Cart" element={<Cart />} />    {/* Matches "/add_product" */}
         <Route path="Checkout" element={<Checkout />} /> {/* The direct, express gateway page bypass */}

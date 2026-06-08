@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
 import CartContext from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig'; // Imported to handle silent backend updates for decrementing
 
 const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }) => {
   const imageSource = item.imageUrl || 'https://placehold.co/300?text=No+Image';
-  
+  const navigate = useNavigate();
   const displaySubCategory = item.subCategory && item.subCategory.includes('_')
     ? item.subCategory.split('_')[1]
     : item.subCategory;
@@ -69,6 +70,7 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
             e.target.onerror = null;
             e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
           }}
+          onClick={function(){navigate(`../product/${item.id}`)}}
         />
       </div>
 
