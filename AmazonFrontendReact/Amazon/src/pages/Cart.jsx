@@ -134,7 +134,7 @@ const Cart = () => {
             itemsArray.map((item) => (
               <div key={item.productId} className="cart-item-row-node">
                 <div className="cart-item-image-wrapper">
-                  <img src={item.imageUrl} alt={item.name || 'Catalog Product'} />
+                  <img src={item.imageUrl} alt={item.name || 'Catalog Product'} onClick={function(){navigate(`../product/${item.productId}`)}} />
                 </div>
 
                 <div className="cart-item-details-body">

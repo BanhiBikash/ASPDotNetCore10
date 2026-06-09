@@ -1,17 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import api from '../api/axiosConfig';
-import UserContext from '../context/UserContext'; 
-import { useCart } from '../context/CartContext'; 
+import UserContext from '../context/UserContext';
+import { useCart } from '../context/CartContext';
 import { baseUrl, checkoutUrl } from '../api/keyUrls';
+import ProductRow from '../Components/ProductRow';
+
+//get icons
+import cod from "../assets/cod.png"
+import free_shipping from "../assets/icon_free_shipping.png"
+import secure_pay from "../assets/secure_pay.png"
+import top_brand from "../assets/top_brand.png"
 
 const Product = () => {
   // 🎯 Extract id from the routing path (e.g., /product/:id)
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { user } = useContext(UserContext); 
-  const { cart: cartData, setCart } = useCart(); 
+  const { user } = useContext(UserContext);
+  const { cart: cartData, setCart } = useCart();
   const { cart: itemsArray } = cartData;
 
   const [product, setProduct] = useState(null);
@@ -20,7 +27,7 @@ const Product = () => {
   const [actionLoading, setActionLoading] = useState({});
 
   // 🎯 Track if the main viewed item is already present in your active cart state
-  const existingCartItem = itemsArray?.find(cartItem => 
+  const existingCartItem = itemsArray?.find(cartItem =>
     cartItem.productId === id || (cartItem.product && cartItem.product.id === id)
   );
 
@@ -29,7 +36,7 @@ const Product = () => {
     const fetchProductDataAndRelated = async () => {
       if (!id) return;
       setUiStatus(prev => ({ ...prev, loading: true }));
-      
+
       try {
         // 1. Fetch main targeted product profile
         const productResponse = await api.get(`/v1/Products/${id}`);
@@ -40,7 +47,7 @@ const Product = () => {
         if (currentItem && currentItem.subCategory) {
           const relatedResponse = await api.get(`/v1/Products/subcategory/${encodeURIComponent(currentItem.subCategory)}`);
           const matchingList = Array.isArray(relatedResponse.data) ? relatedResponse.data : [];
-          
+
           // Filter out the current active item so it doesn't recommend itself
           setRelatedProducts(matchingList.filter(item => item.id !== currentItem.id && !item.isDeleted));
         }
@@ -65,7 +72,7 @@ const Product = () => {
     setActionLoading(prev => ({ ...prev, [productId]: true }));
 
     let updatedItemsArray = [...itemsArray];
-    const existingItemIndex = updatedItemsArray.findIndex(item => 
+    const existingItemIndex = updatedItemsArray.findIndex(item =>
       item.productId === productId || (item.product && item.product.id === productId)
     );
 
@@ -110,7 +117,7 @@ const Product = () => {
 
     setActionLoading(prev => ({ ...prev, [productId]: true }));
     let updatedItemsArray = [...itemsArray];
-    const itemIndex = updatedItemsArray.findIndex(item => 
+    const itemIndex = updatedItemsArray.findIndex(item =>
       item.productId === productId || (item.product && item.product.id === productId)
     );
 
@@ -173,10 +180,10 @@ const Product = () => {
 
   return (
     <div className="main-content-fluid product-details-page-override">
-      
+
       {/* 🛠️ UPPER SECTION: Main Focus Product Split Frame */}
       <div className="product-showcase-container" style={styles.showcaseFlex}>
-        
+
         {/* Left Side: Massive Image Viewport Block */}
         <div className="product-image-hero-frame" style={styles.imageHeroBox}>
           <img
@@ -193,7 +200,7 @@ const Product = () => {
         {/* Right Side: Identity, Specs, and Actions Panel */}
         <div className="product-specs-info-panel" style={styles.infoPanel}>
           <h1 className="product-main-title" style={styles.mainTitle}>{product.name}</h1>
-          
+
           <div className="row-card-rating-line" style={{ marginBottom: '12px' }}>
             <span className="stars-gold">★★★★☆</span>
             <span className="rating-count-link" style={{ marginLeft: '8px' }}>2,410 customer reviews</span>
@@ -202,7 +209,7 @@ const Product = () => {
           <hr style={styles.divider} />
 
           <p style={styles.metaRow}>
-            Category: <strong style={{ textTransform: 'capitalize' }}>{product.category}</strong> 
+            Category: <strong style={{ textTransform: 'capitalize' }}>{product.category}</strong>
             {product.subCategory && (
               <span> | Subcategory: <strong style={{ textTransform: 'capitalize' }}>{displaySubCategory}</strong></span>
             )}
@@ -211,7 +218,7 @@ const Product = () => {
           <div className="product-pricing-block" style={styles.priceContainer}>
             <span style={styles.currencySymbol}>₹</span>
             <span style={styles.priceDigits}>{Intl.NumberFormat('en-IN').format(product.price)}</span>
-            
+
             <div style={{ marginTop: '8px' }}>
               {product.inStock ? (
                 <span className="stock-indicator-badge in-stock">In Stock ({product.stock} items left)</span>
@@ -225,21 +232,37 @@ const Product = () => {
             <h4>Product Information</h4>
             <p style={styles.descBody}>{product.description || 'Detailed technical specs haven\'t been allocated for this model option.'}</p>
           </div>
+        </div>
+
+        {/* right-most section */}
+        <div className="products-specs-purchase-panel">
+
+          {/* Delivery Data */}
+          <span>Free Delivery in 3 days</span>
+          <span>Delivery to your location</span>
+
+          {/* Icons Row */}
+          <div className="product_amazon_icon">
+            <img className='product_promise' src={secure_pay} alt="secure-pay" />
+            <img className='product_promise' src={free_shipping} alt="free_shipping" />
+            <img className='product_promise' src={cod} alt="cod_icon" />
+            <img className='product_promise' src={top_brand} alt="top_brand" />
+          </div>
 
           {/* 🔘 ACTION ROW CONTROLS */}
           <div className="product-express-checkout-row" style={styles.actionButtonRow}>
             {existingCartItem ? (
               <div style={styles.qtyPill}>
-                <button 
-                  onClick={() => handleDecrementCart(product)} 
+                <button
+                  onClick={() => handleDecrementCart(product)}
                   disabled={actionLoading[product.id]}
                   style={styles.qtyBtn}
                 >
                   −
                 </button>
                 <span style={{ fontWeight: '600', color: '#0f1111' }}>{existingCartItem.quantity}</span>
-                <button 
-                  onClick={() => handleAddToCart(product, true)} 
+                <button
+                  onClick={() => handleAddToCart(product, true)}
                   disabled={!product.inStock || actionLoading[product.id] || existingCartItem.quantity >= product.stock}
                   style={styles.qtyBtn}
                 >
@@ -267,26 +290,27 @@ const Product = () => {
             </button>
           </div>
         </div>
+
       </div>
 
       {/* 🛠️ LOWER SECTION: Same SubCategory Recommendations Carousel Track */}
       <div className="related-cross-sell-shelf" style={styles.relatedShelf}>
         <h3 style={styles.shelfTitle}>Customers Who Bought Items In "{displaySubCategory}" Also Viewed</h3>
-        
+
         {relatedProducts.length === 0 ? (
           <p style={{ color: '#666', fontStyle: 'italic', padding: '10px 0' }}>No complementary items available in this category cluster yet.</p>
         ) : (
           <div className="related-items-horizontal-track" style={styles.horizontalScrollTrack}>
             {relatedProducts.map((item) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 style={styles.suggestionCard}
                 onClick={() => navigate(`/product/${item.id}`)} // Route jumping updates view smoothly
               >
                 <div style={styles.suggestImgWrap}>
-                  <img 
-                    src={item.imageUrl || 'https://placehold.co/150?text=No+Image'} 
-                    alt={item.name} 
+                  <img
+                    src={item.imageUrl || 'https://placehold.co/150?text=No+Image'}
+                    alt={item.name}
                     style={styles.suggestImg}
                   />
                 </div>
@@ -456,6 +480,14 @@ const styles = {
     fontWeight: '600',
     color: '#b12704',
     margin: 0
+  },product_amazon_icon:{
+    display:'flex',
+    justifyContent:'space-evenly',
+    alignItems: 'center'
+  },
+  product_promise: {
+    width:'4px',
+    height:'4px'
   }
 };
 
