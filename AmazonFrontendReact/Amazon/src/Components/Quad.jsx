@@ -39,7 +39,7 @@ const Quad = (props) => {
               );
             })}
           </div>
-          <Link to={referUrl} className="card-explore-link">See more deals</Link>
+          <Link to={referUrl} className="card-explore-link">Check out</Link>
         </div>
   )
 }
