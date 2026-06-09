@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import api from "../api/axiosConfig";
 import UserContext from "../context/UserContext";
+import Quad from "../Components/Quad";
 
 const Home = () => {
 
@@ -113,34 +114,7 @@ const Home = () => {
       <div className="home-content-grid">
 
         {/* Card 1: Quad Component layout */}
-        <div className="product-card-container">
-          <h2 className="card-title">Revamp your home | Up to 60% off</h2>
-
-          {/* go through first 4 items and display them */}
-          <div className="quad-image-grid">
-            {Array.isArray(quad) && quad.slice(0, 4).map((item) => {
-              // Optional: strips out database prefix underscores if present (e.g., "Decor_Mirrors" -> "Mirrors")
-              const displaySubCategory = item.subCategory && item.subCategory.includes('_')
-                ? item.subCategory.split('_')[1]
-                : item.subCategory;
-
-              return (
-                <div className="quad-item" key={item.id || item.productId}>
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name || "Home Decor"}
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
-                    }}
-                  />
-                  <span>{displaySubCategory || 'View Item'}</span>
-                </div>
-              );
-            })}
-          </div>
-          <Link to="/product" className="card-explore-link">See more deals</Link>
-        </div>
+        <Quad items = {quad} referTo="/login" topic = "Revamp your home | Up to 60% off" />
 
         {/* Card 2: Single Large Item display */}
         <div className="product-card-container">
@@ -156,34 +130,7 @@ const Home = () => {
         </div>
 
         {/* Card 1: Quad Component layout */}
-        <div className="product-card-container">
-          <h2 className="card-title">Revamp your home | Up to 60% off</h2>
-
-          {/* go through first 4 items and display them */}
-          <div className="quad-image-grid">
-            {Array.isArray(quad2) && quad2.slice(0, 4).map((item) => {
-              // Optional: strips out database prefix underscores if present (e.g., "Decor_Mirrors" -> "Mirrors")
-              const displaySubCategory = item.subCategory && item.subCategory.includes('_')
-                ? item.subCategory.split('_')[1]
-                : item.subCategory;
-
-              return (
-                <div className="quad-item" key={item.id || item.productId}>
-                  <img
-                    src={item.imageUrl}
-                    alt={item.name || "Home Decor"}
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = 'https://placehold.co/300?text=Image+Load+Error';
-                    }}
-                  />
-                  <span>{displaySubCategory || 'View Item'}</span>
-                </div>
-              );
-            })}
-          </div>
-          <Link to="/product" className="card-explore-link">See more deals</Link>
-        </div>
+        <Quad items = {quad2} referTo="/orders" topic = "Your home Electronics | Up to 60% off" />
 
         {/* Card 4: Quick Sign-In Module Callout - if no user */}
         {!user && (
