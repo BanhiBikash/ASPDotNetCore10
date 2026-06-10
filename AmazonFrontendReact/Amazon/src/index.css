@@ -146,7 +146,7 @@ html, body {
 }
 
 .nav-items-nav-account-link-profile{
-color: #ffffff !important;
+  color: #ffffff !important;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -519,7 +519,6 @@ color: #ffffff !important;
 /* ==========================================================================
    📱 NAVBAR RESPONSIVE MEDIA BREAKPOINTS
    ========================================================================== */
-
 @media screen and (max-width: 768px) {
   /* 1. Wrap Navbar Content into Multi-Row Stack Configuration */
   .Navbar {
@@ -562,6 +561,362 @@ color: #ffffff !important;
   .footer-links-grid {
     grid-template-columns: 1fr;
     text-align: center;
+  }
+}
+
+
+/* ==========================================================================
+   📦 HIGH-FIDELITY THREE-COLUMN AMAZON PRODUCT STAGE ENGINE
+   ========================================================================== */
+.product-details-page-override {
+  max-width: 1350px;
+  margin: 20px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* Three-column container engine layout */
+.product-showcase-container {
+  display: grid;
+  grid-template-columns: 4.5fr 4.5fr 3fr;
+  gap: 30px;
+  align-items: flex-start;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+/* Left Image Stage Window */
+.product-image-hero-frame {
+  width: 100%;
+  border: 1px solid #f2f2f2;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 400px;
+}
+
+.product-image-hero-frame img {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+/* Middle Information Panel Column */
+.product-specs-info-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-main-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0f1111;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.row-card-rating-line {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.stars-gold {
+  color: #de7921;
+  letter-spacing: 1px;
+}
+
+.rating-count-link {
+  color: #007185;
+  margin-left: 8px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.rating-count-link:hover {
+  color: #c45500;
+  text-decoration: underline;
+}
+
+/* Meta Category Tags */
+.product-specs-info-panel p {
+  font-size: 0.9rem;
+  color: #565959;
+  margin: 0 0 12px 0;
+}
+
+/* Price Section */
+.product-pricing-block {
+  margin: 15px 0;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 15px 0;
+}
+
+.product-pricing-block .currencySymbol {
+  font-size: 1.1rem;
+  color: #0f1111;
+  position: relative;
+  top: -0.6rem;
+}
+
+.product-pricing-block .priceDigits {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #0f1111;
+}
+
+.stock-indicator-badge {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-top: 8px;
+  display: block;
+}
+
+.stock-indicator-badge.in-stock {
+  color: #007600;
+}
+
+.stock-indicator-badge.out-of-stock {
+  color: #b12704;
+}
+
+/* Info Section */
+.product-description-container h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f1111;
+  margin: 10px 0 6px 0;
+}
+
+.product-description-container .descBody {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* Right-most Isolated Purchase Checkout Column */
+.products-specs-purchase-panel {
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 18px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.products-specs-purchase-panel > span {
+  display: block;
+  font-size: 0.9rem;
+  color: #565959;
+  margin-bottom: 6px;
+}
+
+.products-specs-purchase-panel > span:first-of-type {
+  color: #007600;
+  font-weight: 600;
+}
+
+/* Amazon Promise Icons Layout Control Grid */
+.product_amazon_icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  gap: 8px;
+  border-bottom: 1px solid #e7e7e7;
+  padding-bottom: 15px;
+}
+
+.product_promise {
+  width: 45px !important;  
+  height: 45px !important; 
+  object-fit: contain;
+}
+
+/* Action Control Pill Buttons Frame Tray */
+.product-express-checkout-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.amazon-pill-btn {
+  width: 100%;
+  height: 38px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  border: 1px solid;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+  transition: background-color 0.1s ease;
+  box-sizing: border-box;
+}
+
+.amazon-pill-btn.cart {
+  background-color: #ffd814;
+  border-color: #fcd200;
+  color: #0f1111;
+}
+
+.amazon-pill-btn.cart:hover {
+  background-color: #f7ca00;
+}
+
+.amazon-pill-btn.buy-now {
+  background-color: #ffa41c;
+  border-color: #ff8f00;
+  color: #0f1111;
+}
+
+.amazon-pill-btn.buy-now:hover {
+  background-color: #f59200;
+}
+
+.amazon-pill-btn.disabled {
+  background-color: #f0f2f2 !important;
+  border-color: #d5d9d9 !important;
+  color: #a6a6a6 !important;
+  cursor: not-allowed !important;
+  box-shadow: none !important;
+}
+
+/* Step Incrementor Quantity Pill */
+.qtyPill-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  border-radius: 20px;
+  width: 100%;
+  height: 38px;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.qtyPill-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 16px;
+  height: 100%;
+  color: #0f1111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qtyPill-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Lower Related Shelf Section */
+.related-cross-sell-shelf {
+  margin-top: 30px;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.related-cross-sell-shelf h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #cc6600;
+  margin: 0 0 20px 0;
+}
+
+.related-items-horizontal-track {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.suggestionCard {
+  flex: 0 0 180px;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  padding: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+  box-sizing: border-box;
+  transition: border-color 0.1s ease;
+}
+
+.suggestionCard:hover {
+  border-color: #c45500;
+}
+
+.suggestImgWrap {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.suggestImg {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.suggestName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #007185;
+  margin: 0 0 5px 0;
+  height: 34px;
+  overflow: hidden;
+  display: -webkit-box;
+  WebkitLineClamp: 2;
+  WebkitBoxOrient: 'vertical';
+}
+
+.suggestPrice {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #b12704;
+  margin: 0;
+}
+
+/* Responsive Structural Collapse */
+@media screen and (max-width: 1024px) {
+  .product-showcase-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .products-specs-purchase-panel {
+    grid-column: span 2;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product-showcase-container {
+    grid-template-columns: 1fr;
+    padding: 15px;
+  }
+  .products-specs-purchase-panel {
+    grid-column: span 1;
   }
 }
 
@@ -1426,7 +1781,6 @@ color: #ffffff !important;
     flex-direction: column;
     align-items: stretch;
   }
-  
   div.cart-main-layout-wrapper .cart-checkout-sticky-panel {
     width: 100%;
     position: static;
@@ -1440,19 +1794,18 @@ color: #ffffff !important;
     flex-direction: column;
     align-items: flex-start;
   }
-
   div.cart-main-layout-wrapper .cart-item-image-wrapper {
     width: 100%;
     height: 160px;
     margin-bottom: 8px;
   }
-
   div.cart-main-layout-wrapper .cart-item-price-column {
     text-align: left;
     margin-top: 8px;
     min-width: auto;
   }
 }
+
 
 /* ==========================================================================
    📦 AMAZON SEARCH STRUCTURAL SCALPEL LAYOUT EXTENSION
@@ -1522,7 +1875,7 @@ color: #ffffff !important;
 
 .sidebar-filter-header h3 {
   font-size: 0.95rem;
-  fontWeight: 700;
+  font-weight: 700;
   margin: 0;
   color: #0f1111;
 }
@@ -1647,1874 +2000,116 @@ color: #ffffff !important;
   justify-content: center;
   padding: 10px;
   box-sizing: border-box;
-}
-
-.row-card-image-viewport img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-.row-card-details-frame {
+}/* ==========================================================================
+   Checkout Panel Layout Optimization Extensions
+   ========================================================================== */
+.checkout-delivery-promise-block {
+  margin-bottom: 12px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  flex: 1;
-}
-
-.row-card-headline {
-  margin: 0 0 4px 0;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: #0f1111;
-  line-height: 1.3;
-}
-
-.row-card-rating-line {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  margin-bottom: 6px;
-}
-
-.stars-gold {
-  color: #febd69;
-  font-size: 0.9rem;
-}
-
-.rating-count-link {
-  font-size: 0.75rem;
-  color: #007185;
-}
-
-.row-card-category-meta {
-  font-size: 0.75rem;
-  color: #565959;
-  margin: 0 0 10px 0;
-}
-
-.row-card-category-meta strong {
-  color: #0f1111;
-}
-
-.row-card-description-body {
-  font-size: 0.82rem;
-  color: #0f1111;
-  margin: 0;
-  line-height: 1.4;
-  max-height: 56px;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-/* Row-Card Price Point and Action Footer blocks */
-.row-card-footer-action-panel {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 16px;
-  margin-top: 12px;
-}
-
-.price-tag-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.price-tag-digits {
-  display: flex;
-  align-items: baseline;
   gap: 2px;
-  margin-bottom: 4px;
 }
 
-.currency-symbol {
-  font-size: 0.85rem;
-  color: #0f1111;
-  font-weight: 400;
-}
-
-.amount-number {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #0f1111;
-  line-height: 1;
-}
-
-.stock-indicator-height {
-  height: 20px;
-}
-
-.stock-indicator-badge {
-  font-size: 0.75rem;
-}
-
-.stock-indicator-badge.in-stock {
-  color: #007600;
-  font-weight: 400;
-}
-
-.stock-indicator-badge.out-of-stock {
-  color: #b12704;
-  font-weight: 700;
-}
-
-.row-card-buttons-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 160px;
-}
-
-/* Amazon Custom Pill Button Profiles */
-.amazon-pill-btn {
-  width: 100%;
-  height: 28px;
-  border-radius: 20px;
-  border: 1px solid #a88734;
-  font-size: 0.8rem;
-  font-weight: 400;
-  outline: none;
-  cursor: pointer;
-}
-
-.amazon-pill-btn.cart {
-  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-  color: #111;
-}
-
-.amazon-pill-btn.buy-now {
-  background: linear-gradient(to bottom, #f5b74a, #e69a10);
-  color: #111;
-}
-
-.amazon-pill-btn.disabled {
-  background: #e7e9ec !important;
-  color: #a2a6ac !important;
-  border-color: #a88734 !important;
-  cursor: not-allowed !important;
-}
-/* ==========================================================================
-   📱 MOBILE & TABLET RESPONSIVE DECORATOR INTERCEPTS FOR CATALOG
-   ========================================================================== */
-
-@media screen and (max-width: 820px) {
-  /* 1. Stack the layout columns vertically */
-  .catalog-scaffolding {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  /* 2. Reposition Sidebar Filters to form a top bar utility panel */
-  .catalog-filter-sidebar {
-    width: 100% !important;
-    min-width: 100% !important;
-    border-right: none !important;
-    border-bottom: 1px solid #e7e7e7;
-    padding: 15px 20px;
-    background: #ffffff;
-  }
-
-  /* Arrange filter components horizontally on tablet/mobile devices */
-  .sidebar-filter-groups-wrapper {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: flex-start;
-    margin-top: 10px;
-  }
-
-  .filter-group-block {
-    margin-bottom: 0 !important;
-    flex: 1;
-    min-width: 160px;
-  }
-
-  /* 3. Drop down horizontal list cards into single column layout structures */
-  .search-result-row-card {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 15px !important;
-    padding: 16px;
-  }
-
-  /* Max out image size containers */
-  .row-card-image-viewport {
-    width: 100% !important;
-    height: 220px !important;
-    min-width: 100% !important;
-  }
-
-  .row-card-details-frame {
-    width: 100%;
-  }
-
-  /* Increase max text height fallback space for visible summaries */
-  .row-card-description-body {
-    max-height: none !important;
-    -webkit-line-clamp: unset !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  /* Compress the top filter block to occupy a tight layout scroll space */
-  .sidebar-filter-groups-wrapper {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .filter-group-block {
-    width: 100%;
-  }
-
-  /* Collapse price panel rows to sit vertically on compact handheld interfaces */
-  .row-card-footer-action-panel {
-    flex-direction: column;
-    align-items: flex-start !important;
-    gap: 16px;
-  }
-
-  .row-card-buttons-group {
-    width: 100% !important; /* Button actions fill full-width for easy thumb tapping */
-  }
-
-  .amazon-pill-btn {
-    height: 36px !important; /* Larger hit target area on mobile screens */
-    font-size: 0.9rem !important;
-  }
-}
-
-/* ==========================================================================
-   10. HIGH-FIDELITY ORDER SUCCESS SYSTEM LANDING VIEW MODULE
-   ========================================================================== */
-.order-success-fluid-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.order-success-card-panel {
-  background-color: #ffffff;
-  padding: 30px;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Success Alert Layout Engine Banner */
-.success-header-banner {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}
-
-.success-checkmark-circle {
-  width: 30px;
-  height: 30px;
-  background-color: #ffffff;
-  border: 2px solid #007600;
-  color: #007600;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.15rem;
-  font-weight: 800;
-  flex-shrink: 0;
-  margin-top: 4px;
-}
-
-.success-title-text-block h1 {
-  font-size: 1.45rem;
-  font-weight: 700;
-  color: #007600; /* Amazon Classic Confirmation Green Accent */
-  margin: 0 0 6px 0;
-  line-height: 1.25;
-}
-
-.success-delivery-subtext {
-  font-size: 0.88rem;
-  color: #0f1111;
-  margin: 0;
-}
-
-.success-layout-divider {
-  border: 0;
-  border-top: 1px solid #e7e7e7;
-  margin: 20px 0;
-}
-
-/* System Details Row Mappings Layout */
-.success-metadata-summary-box {
-  background-color: #f8f9f9;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-  padding: 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 24px;
-}
-
-.metadata-row-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-}
-
-.metadata-label {
-  color: #565959;
-  font-weight: 500;
-}
-
-.metadata-value {
-  color: #0f1111;
-  font-weight: 700;
-}
-
-.metadata-value.identifier-hash {
-  font-family: monospace;
+.delivery-highlight-date {
   font-size: 0.92rem;
-  color: #555555;
-}
-
-.metadata-value.amount-text-amber {
-  color: #b12704; /* Amazon Deep Amber/Red pricing highlight layout metric */
-  font-size: 1rem;
-}
-
-/* Navigation Trays & Custom Local Pill Buttons */
-.success-actions-redirection-tray {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 30px;
-}
-
-.amazon-pill-btn-success {
-  display: inline-block;
-  text-align: center;
-  text-decoration: none;
-  height: 32px;
-  line-height: 30px;
-  padding: 0 18px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 400;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213,217,217,.5);
-  transition: background-color 0.1s ease;
-  box-sizing: border-box;
-}
-
-.amazon-pill-btn-success.primary-gold {
-  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-  border: 1px solid #a88734;
-  color: #111111;
-}
-
-.amazon-pill-btn-success.primary-gold:hover {
-  background: linear-gradient(to bottom, #f5d17c, #ecb21f);
-}
-
-.amazon-pill-btn-success.secondary-gray {
-  background: #ffffff;
-  border: 1px solid #adb1b8;
   color: #0f1111;
 }
 
-.amazon-pill-btn-success.secondary-gray:hover {
-  background: #f7f8fa;
-  border-color: #a2a6ac;
-}
-
-/* Secondary Context Information Blocks */
-.success-security-disclaimer {
-  padding-top: 20px;
-}
-
-.success-security-disclaimer p {
-  font-size: 0.78rem;
-  line-height: 1.45;
-  color: #565959;
-  margin: 0;
-}
-
-.success-security-disclaimer a {
-  color: #007185;
-  text-decoration: none;
-}
-
-.success-security-disclaimer a:hover {
-  color: #c45500;
-  text-decoration: underline;
-}
-
-/* ==========================================================================
-   導 RESPONSIVE MEDIA QUERIES FOR ORDER SUCCESS WINDOWS
-   ========================================================================== */
-@media screen and (max-width: 580px) {
-  .order-success-fluid-container {
-    margin: 15px auto;
-  }
-
-  .order-success-card-panel {
-    padding: 20px;
-  }
-
-  .success-header-banner {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .success-title-text-block h1 {
-    font-size: 1.3rem;
-  }
-
-  .success-actions-redirection-tray {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .amazon-pill-btn-success {
-    width: 100%;
-    height: 38px;
-    line-height: 36px; /* Larger hit layout dimensions for thumb tapping */
-  }
-
-  .metadata-row-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
-  }
-}
-/* ==========================================================================
-   11. AMAZON-THEMED HISTORICAL ORDERS DASHBOARD LANDING PROFILE
-   ========================================================================== */
-.orders-dashboard-fluid-container {
-  width: 100%;
-  max-width: 1050px;
-  margin: 30px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.orders-breadcrumb-trail {
-  font-size: 0.78rem;
-  color: #565959;
-  margin-bottom: 12px;
-}
-
-.orders-breadcrumb-trail a {
-  color: #007185;
-  text-decoration: none;
-}
-
-.orders-breadcrumb-trail a:hover {
-  color: #c45500;
-  text-decoration: underline;
-}
-
-.orders-breadcrumb-trail .active-trail {
-  color: #c45500;
-  font-weight: 500;
-}
-
-.orders-page-main-heading {
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: #0f1111;
-  margin: 0 0 20px 0;
-}
-
-/* Empty History Visual State */
-.orders-empty-history-card {
-  background-color: #ffffff;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  padding: 40px;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.orders-empty-history-card p {
-  font-size: 1.05rem;
-  color: #0f1111;
-  margin: 0 0 20px 0;
-}
-
-.continue-shopping-pill-btn {
-  display: inline-block;
-  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-  border: 1px solid #a88734;
-  color: #111111;
-  border-radius: 20px;
-  padding: 8px 24px;
-  font-size: 0.88rem;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(213,217,217,.3);
-  transition: opacity 0.1s ease;
-}
-
-.continue-shopping-pill-btn:hover {
-  background: linear-gradient(to bottom, #f5d17c, #ecb21f);
-}
-
-/* Primary Card Core Containers Stack */
-.orders-history-list-stream {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.order-history-card-wrapper {
-  background-color: #ffffff;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-/* Dual Header Sections */
-.order-card-panel-header {
-  background-color: #f0f2f2;
-  border-bottom: 1px solid #d5d9d9;
-  padding: 14px 18px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.header-meta-left-group {
-  display: flex;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.meta-info-block {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.meta-label-text {
-  font-size: 0.72rem;
-  font-weight: 500;
-  color: #565959;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-
-.meta-value-text {
-  font-size: 0.84rem;
-  color: #0f1111;
-  font-weight: 400;
-}
-
-.meta-value-text.highlight-price {
-  font-weight: 700;
-  color: #b12704;
-}
-
-.meta-value-text.target-address-link {
-  color: #007185;
-  cursor: pointer;
-}
-
-.meta-value-text.target-address-link:hover {
-  text-decoration: underline;
-  color: #c45500;
-}
-
-.header-meta-right-group .meta-label-text {
-  font-family: monospace;
-  font-size: 0.8rem;
-  color: #565959;
-  word-break: break-all;
-}
-
-/* Card Main Internal Payload Content Area */
-.order-card-panel-body {
-  padding: 18px;
-}
-
-.order-status-timeline-strip {
-  margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-}
-
-/* Customized Colored Status Pills */
-.status-pill-indicator {
-  display: inline-block;
-  padding: 4px 12px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.status-badge-blue { background-color: #e8f4fd; color: #0066c0; border: 1px solid #bce0fd; }
-.status-badge-amber { background-color: #fff8e7; color: #b47000; border: 1px solid #ffe8b5; }
-.status-badge-green { background-color: #edf7ed; color: #007600; border: 1px solid #c8e6c9; }
-.status-badge-red { background-color: #fdf2f2; color: #ba0000; border: 1px solid #f8cbcb; }
-.status-badge-gray { background-color: #f3f3f3; color: #565959; border: 1px solid #d5d9d9; }
-
-/* Order Line Item Arrays Layout */
-.order-items-inner-collection {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.order-item-row-layout {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-  padding-bottom: 16px;
-  border-bottom: 1px dashed #e7e7e7;
-}
-
-.order-item-row-layout:last-child {
-  padding-bottom: 0;
-  border-bottom: none;
-}
-
-.order-item-thumbnail-pic {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  border: 1px solid #e7e7e7;
-  border-radius: 4px;
-  background-color: #fafafa;
-  flex-shrink: 0;
-}
-
-.order-item-core-details {
-  flex: 1;
-}
-
-.order-item-title-anchor {
-  font-size: 0.95rem;
-  font-weight: 500;
-  color: #007185;
-  text-decoration: none;
-  line-height: 1.3;
-  display: block;
-  margin-bottom: 6px;
-}
-
-.order-item-title-anchor:hover {
-  color: #c45500;
-  text-decoration: underline;
-}
-
-.order-item-meta-pricing-specs {
-  font-size: 0.84rem;
-  color: #565959;
-  margin: 0 0 12px 0;
-}
-
-.order-item-meta-pricing-specs .dark-bold {
-  color: #0f1111;
-  font-weight: 600;
-}
-
-.action-btn-pill-small {
-  display: inline-block;
-  background-color: #ffffff;
-  border: 1px solid #d5d9d9;
-  color: #0f1111;
-  border-radius: 8px;
-  padding: 5px 14px;
-  font-size: 0.78rem;
-  text-decoration: none;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-  transition: background-color 0.1s;
-}
-
-.action-btn-pill-small:hover {
-  background-color: #f7f8fa;
-  border-color: #a2a6ac;
-}
-
-/* System State Loading Fallback Shimmers */
-.orders-loading-spinner-wrapper,
-.orders-error-panel-boundary {
-  width: 100%;
-  max-width: 400px;
-  margin: 100px auto;
-  text-align: center;
-}
-
-.amazon-loading-shimmer-circle {
-  width: 40px;
-  height: 40px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #e09310;
-  border-radius: 50%;
-  animation: ordersRotate 0.8s linear infinite;
-  margin: 0 auto 16px auto;
-}
-
-@keyframes ordersRotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.error-alert-box {
-  background-color: #fffdff;
-  border: 1px solid #ba0000;
-  border-left: 4px solid #ba0000;
-  border-radius: 4px;
-  padding: 16px;
-  text-align: left;
-}
-
-.error-alert-box h5 {
-  margin: 0 0 6px 0;
-  color: #ba0000;
-  font-size: 0.95rem;
+.delivery-highlight-date .bold-text {
   font-weight: 700;
 }
 
-.error-alert-box p {
-  margin: 0;
-  font-size: 0.84rem;
-  color: #333333;
-}
-
-/* ==========================================================================
-   導 RESPONSIVE MEDIA QUERIES FOR ORDERS TIMELINE ENGINE
-   ========================================================================== */
-@media screen and (max-width: 768px) {
-  .header-meta-left-group {
-    gap: 16px;
-  }
-  
-  .order-card-panel-header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px;
-  }
-
-  .header-meta-right-group {
-    width: 100%;
-    border-top: 1px dashed #d5d9d9;
-    padding-top: 8px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .ship-to-block-hide {
-    display: none;
-  }
-
-  .order-item-row-layout {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .order-item-thumbnail-pic {
-    width: 120px;
-    height: 120px;
-  }
-}/* ==========================================================================
-   13. CUSTOM CONDITIONAL ADDRESS MANIPULATION ELEMENT COMPONENTS
-   ========================================================================== */
-.unique-flex-layout-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 195px; /* Ensures all top layout cards maintain uniform proportions */
-}
-
-.card-bottom-action-tray {
-  margin-top: 14px;
-  width: 100%;
-}
-
-.amazon-address-update-btn {
-  width: 100%;
-  background: #f0f2f2;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  padding: 6px 12px;
-  text-align: center;
-  font-size: 0.82rem;
-  font-weight: 400;
-  color: #0f1111;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213,217,217,.3);
-  transition: all 0.1s linear;
-}
-
-.amazon-address-update-btn:hover:not(:disabled) {
-  background-color: #e7e9ec;
-  border-color: #a2a6ac;
-}
-
-.amazon-address-update-btn:active:not(:disabled) {
-  background-color: #f0f2f2;
-  box-shadow: none;
-}
-
-/* 🎯 Disabled layout styling blocks matching browser validation states */
-.amazon-address-update-btn:disabled,
-.amazon-address-update-btn.btn-disabled-state {
-  background: #f7f8f8 !important;
-  border-color: #e7e9ec !important;
-  color: #a6a6a6 !important;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-  transform: none !important;
-}/* ==========================================================================
-   12. SINGLE ORDER SPECIFIC DETAIL PANEL INTERFACE MODULE
-   ========================================================================== */
-.single-order-detail-fluid-container {
-  width: 100%;
-  max-width: 1050px;
-  margin: 30px auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-}
-
-.single-order-meta-title-row {
-  margin-bottom: 22px;
-  border-bottom: 1px solid #e7e7e7;
-  padding-bottom: 12px;
-}
-
-.single-order-meta-title-row h1 {
-  font-size: 1.65rem;
-  font-weight: 400;
-  color: #0f1111;
-  margin: 0 0 6px 0;
-}
-
-.meta-subtitle-details {
+.delivery-subtext {
   font-size: 0.84rem;
   color: #565959;
-  margin: 0;
-}
-
-.meta-subtitle-details .divider-bar {
-  color: #ccc;
-  margin: 0 8px;
-}
-
-.meta-subtitle-details .mono-id {
-  font-family: monospace;
-  font-size: 0.88rem;
-  color: #111;
-  font-weight: 500;
-}
-
-/* Three Column Meta Details Grid Structure Layout */
-.order-summary-top-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-  margin-bottom: 24px;
-}
-
-.summary-grid-card {
-  background-color: #ffffff;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  padding: 16px 20px;
-  box-sizing: border-box;
-}
-
-.summary-grid-card h3 {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #0f1111;
-  margin: 0 0 10px 0;
-}
-
-.card-inner-address-text p {
-  font-size: 0.84rem;
-  color: #0f1111;
-  margin: 0 0 4px 0;
   line-height: 1.4;
 }
 
-.card-inner-address-text .shipping-user-name {
-  font-weight: 700;
+.delivery-subtext .bold-text {
+  color: #0f1111;
+  font-weight: 600;
 }
 
-.payment-method-row {
-  color: #007600 !important;
-  font-weight: 500;
-}
-
-.payment-method-row .bullet-dot {
-  font-weight: 800;
-  margin-right: 4px;
-}
-
-.payment-status-badge-label {
-  margin-top: 10px !important;
-  font-weight: 500;
-  color: #565959;
-}
-
-/* Invoice Calculations Sheet side blocks */
-.invoice-rows-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.invoice-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.84rem;
-  color: #565959;
-}
-
-.invoice-row .green-free {
+.delivery-subtext .timer-green {
   color: #007600;
-  font-weight: 500;
 }
 
-.invoice-split-line {
-  border: 0;
-  border-top: 1px solid #e7e7e7;
-  margin: 6px 0;
-}
-
-.total-row-highlight {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #b12704;
-}
-
-.single-order-view-header {
-  background-color: #f6f6f6 !important;
-}
-
-.items-count-indicator {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: #0f1111;
-}
-
-/* Subtotal Row Alignments on Left/Right Spans */
-.order-item-right-pricing-block {
-  text-align: right;
-  flex-shrink: 0;
-}
-
-.item-calculated-subtotal {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0f1111;
-}
-
-.divider-spacer {
-  margin: 0 8px;
-  color: #ddd;
-}
-
-.continue-shopping-pill-btn.special-buy-again-size {
-  padding: 4px 14px;
-  font-size: 0.78rem;
-  border-radius: 4px;
-  box-shadow: none;
-}
-
-/* ==========================================================================
-   導 RESPONSIVE MEDIA QUERIES FOR SINGLE ORDER PREVIEW WINDOWS
-   ========================================================================== */
-@media screen and (max-width: 680px) {
-  .order-item-row-layout {
-    position: relative;
-    padding-bottom: 45px !important;
-  }
-
-  .order-item-right-pricing-block {
-    position: absolute;
-    bottom: 16px;
-    right: 0;
-  }
-}/* ==========================================================================
-   16. DECORATIVE COLORED VARIANT OVERRIDES FOR INTERACTIVE ACTION BUTTONS
-   ========================================================================== */
-
-/* 🎯 Update Address: Amazon Blue Border Variant */
-.amazon-address-update-btn.btn-accent-blue {
-  color: #fff;
-  border: 1px solid #007185;
-  background-color: #007185;
-}
-
-.amazon-address-update-btn.btn-accent-blue:hover:not(:disabled) {
-  background-color: #f4fafd;
-  border-color: #004b58;
-  color: #004b58;
-}
-
-/* Form Save Changes: Amazon Solid Blue Accent Button */
-.inline-form-btn.btn-accent-blue-solid {
-  background: linear-gradient(to bottom, #008296, #007185);
-  border-color: #005b6b;
-  color: #ffffff;
-}
-
-.inline-form-btn.btn-accent-blue-solid:hover:not(:disabled) {
-  background: linear-gradient(to bottom, #006878, #005b6b);
-}
-
-/* 🎯 Cancel Order: Amazon Soft Matte Red Accent Button */
-.amazon-order-cancel-btn.btn-accent-red {
-  color: #fff;
-  border: 1px solid #cc0c39;
-  background-color: #cc0c39;
-  border-radius: 6px;
-  cursor: pointer;
-  padding: 6px 12px;
-}
-
-.amazon-order-cancel-btn.btn-accent-red:hover:not(:disabled) {
-  background-color: #fdf3f4;
-  border-color: #a00a2c;
-  color: #a00a2c;
-}
-
-/* Combined Absolute Safety Fallback for Disabled States */
-.amazon-address-update-btn.btn-accent-blue:disabled,
-.inline-form-btn.btn-accent-blue-solid:disabled,
-.amazon-order-cancel-btn.btn-accent-red:disabled {
-  background: #f7f8f8 !important;
-  border-color: #e7e9ec !important;
-  color: #a6a6a6 !important;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-}/* ==========================================================================
-   14. INLINE EMBEDDED ADDRESS EDITING FORM COMPONENT INTERFACE
-   ========================================================================== */
-.address-card-box-override {
-  min-height: auto !important; /* Resizes automatically to clean form heights */
-}
-
-.inline-address-update-form {
+/* Geolocation Row */
+.checkout-geo-location-anchor {
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex-wrap: wrap;
-  overflow: hidden;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  cursor: pointer;
 }
 
-.inline-address-update-form h3 {
-  font-size: 0.98rem;
-  font-weight: 700;
-  color: #111111;
-  margin-bottom: 12px !important;
+.checkout-geo-location-anchor:hover .geo-location-text {
+  color: #c45500;
+  text-decoration: underline;
 }
 
-.inline-form-error-toast {
-  background-color: #fff6f6;
-  border: 1px solid #d9534f;
-  color: #b94a48;
+.geo-pin-icon {
+  font-size: 0.85rem;
+}
+
+.geo-location-text {
   font-size: 0.78rem;
-  padding: 8px 12px;
-  border-radius: 4px;
-  margin-bottom: 12px;
+  color: #007185;
 }
 
-.form-input-group-row {
+/* Metadata Fulfillment Table Grid */
+.checkout-trust-meta-table {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-bottom: 10px;
-  width: 100%;
+  margin-bottom: 16px;
 }
 
-.form-input-group-row label {
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: #333333;
-}
-
-.form-input-group-row input {
-  height: 28px;
-  padding: 3px 7px;
-  border: 1px solid #a6a6a6;
-  border-top-color: #949494;
-  border-radius: 3px;
-  font-size: 0.82rem;
-  color: #0f1111;
-  outline: none;
-  box-shadow: 0 1px 0 rgba(255,255,255,0.5), inset 0 1px 0 rgba(0,0,0,0.07);
-  box-sizing: border-box;
-}
-
-.form-input-group-row input:focus {
-  border-color: #e77600;
-  box-shadow: 0 0 3px 2px rgba(228,121,17,0.5);
-}
-
-.form-input-split-two-col {
-  display: flex;
-  gap: 10px;
-  width: 100%;
-}
-
-.form-actions-pill-row-tray {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 10px;
-  padding-top: 8px;
-  border-top: 1px solid #f0f2f2;
-}
-
-.inline-form-btn {
-  height: 28px;
-  line-height: 26px;
-  padding: 0 14px;
+.meta-table-row {
+  display: grid;
+  grid-template-columns: 75px 1fr;
   font-size: 0.78rem;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 1px solid;
-  box-sizing: border-box;
-}
-
-.inline-form-btn.primary-gold {
-  background: linear-gradient(to bottom, #f7dfa5, #f0c14b);
-  border-color: #a88734;
-  color: #111111;
-}
-
-.inline-form-btn.primary-gold:hover:not(:disabled) {
-  background: linear-gradient(to bottom, #f5d17c, #ecb21f);
-}
-
-.inline-form-btn.secondary-gray {
-  background: #ffffff;
-  border-color: #adb1b8;
-  color: #0f1111;
-}
-
-.inline-form-btn.secondary-gray:hover:not(:disabled) {
-  background: #f7f8fa;
-}
-
-.inline-form-btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-/* ==========================================================================
-   10. HIGH-FIDELITY TWO-COLUMN PRODUCT PROFILE ENGINE
-   ========================================================================== */
-.product-details-view-container {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 25px 30px;
-  background-color: #ffffff; /* Solid stark white backdrop profile layout */
-  box-sizing: border-box;
-}
-
-.product-showcase-desktop-layout {
-  display: grid;
-  grid-template-columns: minmax(350px, 500px) 1fr;
-  gap: 45px;
-  align-items: flex-start;
-  width: 100%;
-}
-
-/* Sticky Image Viewport Controls */
-.product-image-stage-viewport {
-  width: 100%;
-}
-
-.sticky-image-frame-limiter {
-  position: sticky;
-  top: 95px;
-  border: 1px solid #e7e7e7;
-  border-radius: 8px;
-  background-color: #ffffff;
-  padding: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 480px;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.product-main-display-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* Technical Specification Details Information Sidebar Panel */
-.product-specs-editorial-panel {
-  display: flex;
-  flex-direction: column;
-}
-
-.amazon-editorial-product-title {
-  font-size: 1.65rem;
-  font-weight: 500;
-  color: #0f1111;
-  margin: 0 0 8px 0;
   line-height: 1.3;
-  letter-spacing: -0.02em;
 }
 
-.amazon-star-reviews-row-bar {
-  display: flex;
-  align-items: center;
-  margin-bottom: 4px;
+.meta-label {
+  color: #565959;
 }
 
-.stars-gold-editorial {
-  color: #de7921;
-  font-size: 0.95rem;
-  letter-spacing: 1px;
+.meta-value {
+  color: #0f1111;
 }
 
-.rating-count-editorial-link {
-  font-size: 0.85rem;
+.meta-value.link-style {
   color: #007185;
-  margin-left: 10px;
   cursor: pointer;
 }
 
-.rating-count-editorial-link:hover {
+.meta-value.link-style:hover {
   color: #c45500;
   text-decoration: underline;
 }
 
-.amazon-editorial-divider {
-  border: 0;
-  border-top: 1px solid #e7e7e7;
-  width: 100%;
-  margin: 14px 0;
-}
-
-/* Amazon Pricing Blocks Styling Structures */
-.amazon-pricing-editorial-block {
+/* Gift Option Layout styling */
+.checkout-gift-checkbox-row {
   display: flex;
-  flex-direction: column;
-}
-
-.price-primary-row-view {
-  display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 6px;
+  margin-bottom: 14px;
+  padding-bottom: 4px;
 }
 
-.price-percentage-drop-badge {
-  font-size: 1.7rem;
-  font-weight: 300;
-  color: #cc0c39; /* Crimson notification pricing warning tint */
-}
-
-.editorial-currency-symbol {
-  font-size: 1.1rem;
-  color: #0f1111;
-  font-weight: 400;
-  align-self: flex-start;
-  margin-top: 4px;
-}
-
-.editorial-price-digits {
-  font-size: 2.1rem;
-  font-weight: 400;
-  color: #0f1111;
-  line-height: 1;
-}
-
-.mrp-strikethrough-line {
-  font-size: 0.82rem;
-  color: #565959;
-  margin: 6px 0 2px 0;
-}
-
-.mrp-strikethrough-line .strikethrough {
-  text-decoration: line-through;
-}
-
-.inclusive-taxes-label-string {
-  font-size: 0.85rem;
-  color: #0f1111;
+.checkout-gift-checkbox-row input[type="checkbox"] {
   margin: 2px 0 0 0;
-  font-weight: 500;
-}
-
-/* Asset Checkmark Badges Rules Alignment Rows */
-.fulfillment-badges-horizontal-row {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  margin: 4px 0;
-}
-
-.badge-fulfillment-unit {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.green-checkmark-status-asset {
-  height: 18px;
-  width: 18px;
-  object-fit: contain;
-}
-
-.badge-fulfillment-unit span {
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #0f1111;
-}
-
-/* Stock Management Pills Layout Labels */
-.product-inventory-specification-meta {
-  margin-bottom: 12px;
-}
-
-.meta-text-row-item {
-  font-size: 0.9rem;
-  color: #565959;
-  margin: 0 0 6px 0;
-}
-
-.meta-text-row-item .capitalize-value {
-  text-transform: capitalize;
-  font-weight: 700;
-  color: #0f1111;
-}
-
-.realtime-stock-alert-badge-wrap {
-  margin-top: 10px;
-}
-
-.realtime-stock-badge {
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.in-stock-green {
-  color: #007600;
-}
-
-.out-stock-crimson {
-  color: #b12704;
-}
-
-/* Editorial Description Boxes text fields */
-.product-technical-description-box {
-  margin-top: 8px;
-}
-
-.technical-specs-header-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0f1111;
-  margin: 0 0 6px 0;
-}
-
-.technical-specs-body-copy {
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: #0f1111;
-  margin: 0;
-}
-
-/* Core Buttons Action Navigation Dock Wrapper Layer */
-.amazon-persistent-action-control-dock {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.amazon-action-pill-yellow-fluid,
-.amazon-action-pill-orange-fluid {
-  height: 38px;
-  border-radius: 20px;
-  font-size: 0.88rem;
-  font-weight: 500;
   cursor: pointer;
-  padding: 0 28px;
-  outline: none;
-  border: 1px solid;
-  min-width: 160px;
-  box-shadow: 0 2px 5px rgba(213,217,217,.5);
-  transition: background-color 0.1s ease;
+  width: 13px;
+  height: 13px;
 }
 
-.amazon-action-pill-yellow-fluid {
-  background-color: #ffd814;
-  border-color: #fcd200;
+.checkout-gift-checkbox-row label {
+  font-size: 0.82rem;
   color: #0f1111;
-}
-
-.amazon-action-pill-yellow-fluid:hover:not(.disabled-action-state) {
-  background-color: #f7ca00;
-}
-
-.amazon-action-pill-orange-fluid {
-  background-color: #ffa41c;
-  border-color: #ff8f00;
-  color: #0f1111;
-}
-
-.amazon-action-pill-orange-fluid:hover:not(.disabled-action-state) {
-  background-color: #f59200;
-}
-
-.disabled-action-state {
-  background-color: #f0f2f2 !important;
-  border-color: #d5d9d9 !important;
-  color: #a6a6a6 !important;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-}
-
-/* Unified Operational Quantity Selection Stepper Controls */
-.amazon-pill-qty-counter-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffd814;
-  border: 1px solid #fcd200;
-  border-radius: 20px;
-  width: 160px;
-  height: 38px;
-  box-shadow: 0 2px 5px rgba(213,217,217,.5);
-  overflow: hidden;
-}
-
-.qty-toggle-stepper-btn {
-  background: transparent;
-  border: none;
-  font-size: 1.15rem;
-  font-weight: 700;
   cursor: pointer;
-  padding: 0 16px;
-  height: 100%;
-  color: #0f1111;
-  transition: background-color 0.1s ease;
-}
-
-.qty-toggle-stepper-btn:hover:not(:disabled) {
-  background-color: rgba(0, 0, 0, 0.04);
-}
-
-.qty-toggle-stepper-btn:disabled {
-  color: #a6a6a6;
-  cursor: not-allowed;
-}
-
-.qty-toggle-numerical-value {
-  font-weight: 700;
-  color: #0f1111;
-  font-size: 0.95rem;
-}
-
-/* Carousel Section Styles (Maintained exact behavior map strings) */
-.related-cross-sell-shelf {
-  margin-top: 50px;
-  border-top: 1px solid #e7e7e7;
-  padding-top: 25px;
-  width: 100%;
-}
-
-.related-shelf-title-heading {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #cc6600; /* Amazon accent orange category track headers */
-  margin: 0 0 18px 0;
-}
-
-.empty-shelf-fallback-text {
-  color: #565959;
-  font-style: italic;
-  padding: 8px 0;
-  font-size: 0.9rem;
-}
-
-.related-items-horizontal-track {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  padding-bottom: 12px;
-  scrollbar-width: thin;
-}
-
-.related-item-clickable-wrapper-box {
-  flex-shrink: 0;
-}
-
-/* Responsive Viewspace Adjustments for Smaller Tablets */
-@media screen and (max-width: 850px) {
-  .product-showcase-desktop-layout {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .sticky-image-frame-limiter {
-    position: static;
-    height: 360px;
-  }
-}
-
-/* ==========================================================================
-   HIGH-FIDELITY THREE-COLUMN AMAZON PRODUCT STAGE ENGINE
-   ========================================================================== */
-.product-details-page-override {
-  background-color: #ffffff;
-  padding: 20px;
-  max-width: 1480px;
-  margin: 0 auto;
-}
-
-/* Three-column container engine layout */
-.product-showcase-container {
-  display: grid;
-  grid-template-columns: 4fr 5fr 3fr;
-  gap: 25px;
-  align-items: flex-start;
-  padding: 15px 0;
-  width: 100%;
-}
-
-@media screen and (max-width: 1024px) {
-  .product-showcase-container {
-    grid-template-columns: 1fr 1fr;
-  }
-  .products-specs-purchase-panel {
-    grid-column: span 2;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .product-showcase-container {
-    grid-template-columns: 1fr;
-  }
-  .products-specs-purchase-panel {
-    grid-column: span 1;
-  }
-}
-
-/* Left Image Stage Window */
-.product-image-hero-frame {
-  width: 100%;
-  border: 1px solid #eeeeee;
-  border-radius: 8px;
-  background-color: #ffffff;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-
-/* Middle Information Panel Column */
-.product-specs-info-panel {
-  display: flex;
-  flex-direction: column;
-}
-
-.product-main-title {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #0f1111;
-  margin: 0 0 10px 0;
-  line-height: 1.3;
-}
-
-.row-card-rating-line {
-  display: flex;
-  align-items: center;
-}
-
-.stars-gold {
-  color: #de7921;
-  font-size: 0.95rem;
-}
-
-.rating-count-link {
-  color: #007185;
-  font-size: 0.88rem;
-  text-decoration: none;
-}
-
-.rating-count-link:hover {
-  color: #c45500;
-  text-decoration: underline;
-}
-
-.meta-row {
-  font-size: 0.9rem;
-  color: #565959;
-  margin: 0 0 15px 0;
-}
-
-.product-pricing-block {
-  background-color: #ffffff;
-  padding: 5px 0;
-  margin-bottom: 10px;
-}
-
-.currencySymbol {
-  font-size: 1.1rem;
-  color: #0f1111;
-  vertical-align: super;
-}
-
-.priceDigits {
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: #0f1111;
-}
-
-.stock-indicator-badge {
-  font-size: 1.1rem;
-  font-weight: 700;
-  display: inline-block;
-}
-
-.stock-indicator-badge.in-stock {
-  color: #007600;
-}
-
-.stock-indicator-badge.out-of-stock {
-  color: #b12704;
-}
-
-.product-description-container h4 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #0f1111;
-  margin: 15px 0 5px 0;
-}
-
-.descBody {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #333333;
-  margin: 0;
-}
-
-/* Right-most Isolated Purchase Checkout Column */
-.products-specs-purchase-panel {
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
-  padding: 18px;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-}
-
-.products-specs-purchase-panel > span {
-  display: block;
-  font-size: 0.9rem;
-  color: #565959;
-  margin-bottom: 8px;
-}
-
-.products-specs-purchase-panel > span:first-of-type {
-  color: #007600;
-  font-weight: 600;
-}
-
-/* Amazon Promise Icons Layout Control Grid */
-.product_amazon_icon {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 15px 0;
-  gap: 10px;
-  border-bottom: 1px solid #e7e7e7;
-  padding-bottom: 12px;
-}
-
-.product_promise {
-  width: 42px;         /* Patched responsive dimensions instead of 4px */
-  height: 42px;        /* Patched responsive dimensions instead of 4px */
-  object-fit: contain;
-}
-
-/* Action Control Pill Buttons Frame Tray */
-.product-express-checkout-row {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 10px;
-  width: 100%;
-}
-
-.amazon-pill-btn {
-  width: 100%;
-  height: 36px;
-  border-radius: 20px;
-  font-size: 0.88rem;
-  font-weight: 500;
-  border: 1px solid;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 0 2px 5px rgba(213,217,217,.5);
-  transition: opacity 0.1s ease;
-}
-
-.amazon-pill-btn:hover {
-  opacity: 0.95;
-}
-
-.amazon-pill-btn.cart {
-  background-color: #ffd814;
-  border-color: #fcd200;
-  color: #0f1111;
-}
-
-.amazon-pill-btn.cart:hover {
-  background-color: #f7ca00;
-}
-
-.amazon-pill-btn.buy-now {
-  background-color: #ffa41c;
-  border-color: #ff8f00;
-  color: #0f1111;
-}
-
-.amazon-pill-btn.buy-now:hover {
-  background-color: #f59200;
-}
-
-.amazon-pill-btn.disabled {
-  background-color: #f0f2f2 !important;
-  border-color: #d5d9d9 !important;
-  color: #a6a6a6 !important;
-  cursor: not-allowed !important;
-  box-shadow: none !important;
-}
-
-/* Step Incrementor Quantity Pill */
-.qtyPill {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #ffd814;
-  border: 1px solid #fcd200;
-  border-radius: 20px;
-  width: 100%;
-  height: 36px;
-  box-shadow: 0 2px 5px rgba(213,217,217,.5);
-  overflow: hidden;
-}
-
-.qtyBtn {
-  background: transparent;
-  border: none;
-  font-size: 1.1rem;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0 16px;
-  height: 100%;
-  color: #0f1111;
-}
-
-.qtyBtn:hover {
-  background-color: rgba(0,0,0,0.03);
-}
-
-.qtyBtn:disabled {
-  color: #a6a6a6;
-  cursor: not-allowed;
-}
-
-/* Lower Subcategory Cross-Sell Section (Stays intact) */
-.related-cross-sell-shelf {
-  margin-top: 40px;
-  border-top: 2px solid #eaeded;
-  padding-top: 25px;
-  width: 100%;
-}
-
-.shelfTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #cc6600;
-  margin: 0 0 15px 0;
-}
-
-.horizontal-scroll-track {
-  display: flex;
-  gap: 15px;
-  overflow-x: auto;
-  padding-bottom: 12px;
-  scrollbar-width: thin;
-}
-
-.suggestionCard {
-  flex: 0 0 170px;
-  border: 1px solid #e7e7e7;
-  border-radius: 6px;
-  padding: 12px;
-  background-color: #ffffff;
-  cursor: pointer;
-  transition: transform 0.15s ease;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.suggestionCard:hover {
-  transform: translateY(-2px);
-}
-
-.suggestImgWrap {
-  height: 130px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 8px;
-  background-color: #ffffff;
-}
-
-.suggestImg {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.suggestName {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #007185;
-  margin: 0 0 5px 0;
-  height: 34px;
-  overflow: hidden;
-  display: -webkit-box;
-  WebkitLineClamp: 2;
-  WebkitBoxOrient: 'vertical';
-}
-
-.suggestPrice {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #b12704;
-  margin: 0;
+  user-select: none;
+  line-height: 1.2;
 }

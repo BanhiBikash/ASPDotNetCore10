@@ -237,9 +237,41 @@ const Product = () => {
         {/* right-most section */}
         <div className="products-specs-purchase-panel">
 
-          {/* Delivery Data */}
-          <span>Free Delivery in 3 days</span>
-          <span>Delivery to your location</span>
+          {/* 1. Precise Delivery Window */}
+          <div className="checkout-delivery-promise-block">
+            <span className="delivery-highlight-date">
+              FREE delivery <span className="bold-text">Wednesday, June 17</span>
+            </span>
+            <span className="delivery-subtext">
+              Or fastest delivery <span className="bold-text">Sunday, June 14</span>
+              <br />
+              Order within <span className="timer-green">14 hrs 32 mins</span>
+            </span>
+          </div>
+
+          {/* 2. Geolocation / Shipping Target */}
+          <div className="checkout-geo-location-anchor">
+            <span className="geo-pin-icon">📍</span>
+            <span className="geo-location-text">Deliver to India</span>
+          </div>
+
+          {/* 3. Transaction Meta Trust Details */}
+          <div className="checkout-trust-meta-table">
+            <div className="meta-table-row">
+              <span className="meta-label">Ships from</span>
+              <span className="meta-value link-style">Amazon.com</span>
+            </div>
+            <div className="meta-table-row">
+              <span className="meta-label">Sold by</span>
+              <span className="meta-value link-style">RetailerNet Ltd</span>
+            </div>
+          </div>
+
+          {/* 4. Customer Control Options (Gift Flag) */}
+          <div className="checkout-gift-checkbox-row">
+            <input type="checkbox" id="isAGift" name="isAGift" />
+            <label htmlFor="isAGift">Add a gift receipt for easy returns</label>
+          </div>
 
           {/* Icons Row */}
           <div className="product_amazon_icon">
@@ -252,11 +284,11 @@ const Product = () => {
           {/* 🔘 ACTION ROW CONTROLS */}
           <div className="product-express-checkout-row" style={styles.actionButtonRow}>
             {existingCartItem ? (
-              <div style={styles.qtyPill}>
+              <div className="qtyPill-container">
                 <button
                   onClick={() => handleDecrementCart(product)}
                   disabled={actionLoading[product.id]}
-                  style={styles.qtyBtn}
+                  className="qtyPill-button"
                 >
                   −
                 </button>
@@ -264,7 +296,7 @@ const Product = () => {
                 <button
                   onClick={() => handleAddToCart(product, true)}
                   disabled={!product.inStock || actionLoading[product.id] || existingCartItem.quantity >= product.stock}
-                  style={styles.qtyBtn}
+                  className="qtyPill-button"
                 >
                   +
                 </button>
@@ -480,14 +512,14 @@ const styles = {
     fontWeight: '600',
     color: '#b12704',
     margin: 0
-  },product_amazon_icon:{
-    display:'flex',
-    justifyContent:'space-evenly',
+  }, product_amazon_icon: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
     alignItems: 'center'
   },
   product_promise: {
-    width:'4px',
-    height:'4px'
+    width: '4px',
+    height: '4px'
   }
 };
 
