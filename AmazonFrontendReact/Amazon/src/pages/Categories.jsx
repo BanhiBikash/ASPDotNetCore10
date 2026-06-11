@@ -1,8 +1,12 @@
 import React from 'react'
+import CategoriesRow from '../Components/CategoriesRow'
 
 const Categories = () => {
   return (
-    <div>Categories</div>
+    <>
+      //top categories row 
+      <CategoriesRow />
+    </>
   )
 }
 
