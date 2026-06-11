@@ -4,10 +4,11 @@ import Footer from "./Components/Footer"
 import { Outlet } from "react-router-dom";
 import UserContextProvider from "./context/UserContextProvider";
 import CartContextProvider from "./context/CartContextProvider";
+import CategoryContextProvider from "./context/CategoryContextProvider";
 
 export const Amazon = () => {
     return (
-        <UserContextProvider><CartContextProvider>
+        <UserContextProvider><CartContextProvider><CategoryContextProvider>
             <div className="app-layout-wrapper">
                 {/* Locked to viewport top */}
                 <Navbar />
@@ -20,6 +21,6 @@ export const Amazon = () => {
                 {/* Base alignment ground layer */}
                 <Footer />
             </div>
-        </CartContextProvider></UserContextProvider>
+        </CategoryContextProvider></CartContextProvider></UserContextProvider>
     )
 }

@@ -2147,6 +2147,12 @@ html, body {
   width: 100%;
 }
 
+.categoryAndName{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Hide standard scrollbars across browsers while retaining native touch-swipe */
 .categories-row::-webkit-scrollbar {
   display: none;

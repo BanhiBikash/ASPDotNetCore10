@@ -7,11 +7,13 @@ import userLogo from "../assets/user.png";
 import cartLogo from "../assets/cart.png";
 import { useCart } from '../context/CartContext';
 import api from '../api/axiosConfig';
+import CategorySubCategory from '../context/CategorySubCategory';
 
 const Navbar = () => {
   const { user } = useContext(UserContext);
   const { cart } = useCart();
-  const [category, setCategory] = useState([]);
+  const {category, setCategory} = useContext(CategorySubCategory);
+  const {categoryArray,subCategoryArray} = category;
   const navigate = useNavigate();
 
   // 🔍 Search bar input and category state filters
@@ -24,10 +26,10 @@ const Navbar = () => {
       console.log("getting categories....");
       try {
         const response = await api.get('v1/Products/GetCategories');
-        const { categories } = response.data;
+        const { categories, subCategories } = response.data;
 
         // Set categories state array safely
-        setCategory(Array.isArray(categories) ? categories : []);
+        setCategory({categoryArray:categories, subCategoryArray:subCategories});
         console.log(response.data);
       } catch (e) {
         console.log("Error: can't fetch category " + e);
@@ -110,7 +112,7 @@ const Navbar = () => {
           onChange={(e) => searchByCategory(e)}
         >
           <option value="All">All Categories</option>
-          {Array.isArray(category) && category.map((item, index) => (
+          {Array.isArray(categoryArray) && categoryArray.map((item, index) => (
             <option value={item.name || item} key={item.id || item.name || index}>
               {item.name || item}
             </option>

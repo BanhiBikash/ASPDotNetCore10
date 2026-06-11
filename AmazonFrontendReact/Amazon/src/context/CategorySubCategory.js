@@ -1,5 +1,7 @@
-import React, {useContext} from 'react'
+import { createContext } from 'react';
 
-const CategorySubCategory = useContext();
+// 1. Create the context container
+const CategorySubCategory = createContext();
 
-export default CategorySubCategory
+// 2. Export it cleanly so providers and components can consume it
+export default CategorySubCategory;
