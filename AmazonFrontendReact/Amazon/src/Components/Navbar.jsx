@@ -136,7 +136,7 @@ const Navbar = () => {
       {/* Navigation Links Routing Container */}
       <div className="nav-links">
         <Link to="/" className="nav-items text-link-node">Home</Link>
-        <Link to="/product" className="nav-items text-link-node">Shop Products</Link>
+        <Link to="/categories" className="nav-items text-link-node">Categories</Link>
 
         {user && (
           <Link to="/add_product" className="nav-items text-link-node">Add Products</Link>

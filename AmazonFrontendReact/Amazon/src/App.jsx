@@ -14,6 +14,7 @@ import SearchResult from './pages/SearchResult';
 import Order_Success from './pages/Order_Success';
 import Orders from './pages/Orders';
 import Order from './pages/Order';
+import Categories from "./pages/Categories"
 
 function App() {
   // 1. Declare your layout routes cleanly inside your browser router creation hook
@@ -21,6 +22,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<Amazon />}>
         <Route index element={<Home />} />                {/* Matches layout root "/" */}
+        <Route path="Categories" element={<Categories />} />    {/* Categories Url */}
         <Route path="account" element={<Account />} />                {/* Matches layout root "/" */}
         <Route path="Account_Update" element={<Account_Update />} />                {/* Matches layout root "/" */}
         <Route path="login" element={<Login />} />        {/* Matches "/login" */}
