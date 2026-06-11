@@ -2113,3 +2113,91 @@ html, body {
   user-select: none;
   line-height: 1.2;
 }
+
+/* ==========================================================================
+   AMAZON STOREFRONT HORIZONTAL CIRCLE CATEGORIES COMPONENT
+   ========================================================================== */
+
+/* Outer full-width container card */
+.categories {
+  width: 100%;
+  padding: 16px 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  margin-bottom: 16px;
+}
+
+/* Heading section title styling */
+.categories h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #0f1111;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.3px;
+}
+
+/* Horizontal scrolling category track layout */
+.categories-row {
+  display: flex;
+  align-items: center;
+  gap: 22px; /* Space between each circle element */
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px 0;
+  width: 100%;
+}
+
+/* Hide standard scrollbars across browsers while retaining native touch-swipe */
+.categories-row::-webkit-scrollbar {
+  display: none;
+}
+.categories-row {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Individual circular category interactive node */
+.categories-row .category {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%; /* Forces exact circular bounding box form-factor */
+  background-color: #f8f9fa; /* Safe fallback background color before images load */
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+  flex-shrink: 0; /* Prevents circles from compressing on smaller desktop/tablet views */
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  z-index: 2;
+}
+
+/* Hover effects matching standard marketplace interaction */
+.categories-row .category:hover {
+  transform: scale(1.05); /* Slight lift animation */
+  border-color: #007185;  /* Iconic Amazon deep teal active link border color */
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE LAYOUT RESPONSIVENESS BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .categories {
+    padding: 12px 14px;
+  }
+  
+  .categories h2 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+  }
+
+  .categories-row {
+    gap: 16px; /* Compresses spacing tightly for mobile screens */
+  }
+
+  .categories-row .category {
+    width: 54px;  /* Compact scale factor transformation for smaller device screens */
+    height: 54px;
+  }
+}
