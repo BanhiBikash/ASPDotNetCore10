@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../api/axiosConfig';
+import CategorySubCategory from '../context/CategorySubCategory';
+import { useContext } from 'react';
 
 const ProductAdd = () => {
   // --- 🎯 Base States for Product Addition & Layout Metadata ---
@@ -12,11 +14,10 @@ const ProductAdd = () => {
     subCategory: ''
   });
 
-  const [categories, setCategories] = useState([]);
-  const [allSubCategories, setAllSubCategories] = useState([]);
   const [filteredSubCategories, setFilteredSubCategories] = useState([]);
   const [thumbnailFile, setThumbnailFile] = useState(null);
-
+  const {category, setCategory} = useContext(CategorySubCategory)
+  const {categoryArray, subCategoryArray} = category;
   const [uiStatus, setUiStatus] = useState({
     loading: false,
     fetchLoading: true,
@@ -53,13 +54,12 @@ const ProductAdd = () => {
         const response = await api.get('v1/Products/GetCategories');
         const { categories, subCategories } = response.data;
 
-        setCategories(categories);
-        setAllSubCategories(subCategories);
+        setCategory({categoryArray:categories, subCategoryArray:subCategories});
 
-        if (categories.length > 0) {
-          const firstCatId = categories[0].id.toString();
+        if (categoryArray.length > 0) {
+          const firstCatId = categoryArray[0].id.toString();
           setProductData(prev => ({ ...prev, category: firstCatId }));
-          filterSubCategoriesList(firstCatId, categories, subCategories);
+          filterSubCategoriesList(firstCatId, categoryArray, subCategoryArray);
         }
 
         // Hydrate initial inventory tracking view
@@ -99,7 +99,7 @@ const ProductAdd = () => {
 
   const handleCategoryChange = (e) => {
     const targetCategoryId = e.target.value;
-    filterSubCategoriesList(targetCategoryId, categories, allSubCategories);
+    filterSubCategoriesList(targetCategoryId, categoryArray, subCategoryArray);
   };
 
   const handleChange = (e) => {
@@ -334,7 +334,7 @@ const ProductAdd = () => {
                 className="auth-select-field"
                 required
               >
-                {categories.map(cat => (
+                {categoryArray.map(cat => (
                   <option key={cat.id} value={cat.id}>{cat.name}</option>
                 ))}
               </select>
