@@ -11,7 +11,16 @@ const CategoryContextProvider = ({children}) => {
     {
         // async function to do it
         async function fetchCategory(){
-            const response = api.get('');
+            //make request
+            const response = await api.get('v1/Products/GetCategories');
+            
+            if(response==null){
+                console.log("failed to fetch category and sub category")
+            }else{
+                const {cat, subCat} = response.data;
+                setCategory({category:cat, SubCategory: subCat})
+                console.log(category)
+            }
         }
 
         fetchCategory();

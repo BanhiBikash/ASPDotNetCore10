@@ -28,7 +28,7 @@ const Navbar = () => {
 
         // Set categories state array safely
         setCategory(Array.isArray(categories) ? categories : []);
-        console.log("Successfully fetched categories:", categories);
+        console.log(response.data);
       } catch (e) {
         console.log("Error: can't fetch category " + e);
       }

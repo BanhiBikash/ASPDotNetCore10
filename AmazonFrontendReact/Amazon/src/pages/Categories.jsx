@@ -4,7 +4,7 @@ import CategoriesRow from '../Components/CategoriesRow'
 const Categories = () => {
   return (
     <>
-      //top categories row 
+      {/* top categories row  */}
       <CategoriesRow />
     </>
   )
