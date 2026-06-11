@@ -2177,6 +2177,20 @@ html, body {
   cursor: pointer;
   transition: transform 0.15s ease-in-out, border-color 0.15s ease-in-out;
   z-index: 2;
+  overflow: hidden;
+}
+
+.categories-row .category img{
+  width: 100%;
+  border-radius: 50% ;
+  transition: transform 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.categories-row .category img:hover{
+  transform: scale(1.05); /* Slight lift animation */
+  border-color: #007185;  /* Iconic Amazon deep teal active link border color */
 }
 
 /* Hover effects matching standard marketplace interaction */
