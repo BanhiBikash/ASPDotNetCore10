@@ -9,7 +9,7 @@ const CategoriesRow = () => {
   // Destructure safely with a fallback default context object
   const context = useContext(CategorySubCategory) || {};
   const { category = { categoryArray: [], subCategoryArray: [] } } = context;
-  const { categoryArray = [] } = category;
+  const { categoryArray } = category;
 
   // ✅ FIXED: Using local state to manage asynchronous API values safely
   const [productArray, setProductArray] = useState([]);
@@ -53,7 +53,7 @@ const CategoriesRow = () => {
 
             // Fallback placeholder image if a category doesn't have any products yet
             const displayImageUrl = matchingProduct?.imageUrl;
-            console.log(displayImageUrl)
+            
             return (
               <div 
                 className="categoryAndName" 
