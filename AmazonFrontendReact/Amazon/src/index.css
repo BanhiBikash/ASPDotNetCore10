@@ -2221,3 +2221,922 @@ html, body {
     height: 54px;
   }
 }
+
+/* ==========================================================================\
+   ORDER DETAILS VIEW WORKSPACE (.single-order-detail-fluid-container)
+   ========================================================================== */
+.single-order-detail-fluid-container {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 1. Breadcrumbs Trail Layout */
+.orders-breadcrumb-trail {
+  font-size: 12px;
+  color: #565959;
+  margin-bottom: 16px;
+}
+
+.orders-breadcrumb-trail a {
+  color: #007185;
+  text-decoration: none;
+}
+
+.orders-breadcrumb-trail a:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+.orders-breadcrumb-trail .active-trail {
+  color: #c45500;
+  font-weight: 500;
+}
+
+/* 2. Page Metadata Headline Row */
+.single-order-meta-title-row {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #d5d9d9;
+  padding-bottom: 12px;
+}
+
+.single-order-meta-title-row h1 {
+  font-size: 28px;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 6px 0;
+}
+
+.meta-subtitle-details {
+  font-size: 14px;
+  color: #565959;
+  margin: 0;
+}
+
+.meta-subtitle-details .divider-bar {
+  color: #ccc;
+  margin: 0 8px;
+}
+
+.meta-subtitle-details .mono-id {
+  font-family: monospace;
+  font-size: 13px;
+  background-color: #f0f2f2;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: #333;
+}
+
+/* 3. Top Summary Cards Execution Grid */
+.order-summary-top-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: stretch;
+}
+
+.summary-grid-card {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.unique-flex-layout-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-top-content-area h3,
+.cost-calculation-summary-panel h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f1111;
+  margin: 0 0 10px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.card-inner-address-text p {
+  font-size: 14px;
+  color: #0f1111;
+  margin: 0 0 4px 0;
+  line-height: 1.4;
+}
+
+.card-inner-address-text .shipping-user-name {
+  font-weight: 700;
+  color: #111;
+}
+
+/* 4. Interactive Action Trays & Button Rules */
+.card-bottom-action-tray {
+  margin-top: 14px;
+  border-top: 1px dashed #e7e7e7;
+  padding-top: 12px;
+}
+
+/* Abstracted base styles for interaction buttons */
+.amazon-address-update-btn,
+.amazon-order-cancel-btn {
+  width: 100%;
+  padding: 7px 14px;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-accent-blue {
+  background: #f0f2f2;
+  border: 1px solid #d5d9d9;
+  color: #0f1111;
+}
+
+.btn-accent-blue:hover:not(:disabled) {
+  background: #e3e6e6;
+  border-color: #b5b9b9;
+}
+
+.btn-accent-red {
+  background: #ffeded;
+  border: 1px solid #e77600;
+  color: #b12704;
+}
+
+.btn-accent-red:hover:not(:disabled) {
+  background: #fdf0f0;
+  box-shadow: 0 2px 5px rgba(213,0,0,0.1);
+}
+
+.btn-disabled-state {
+  background: #f7f8f8 !important;
+  border-color: #e2e5e5 !important;
+  color: #888c8c !important;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+/* 5. Cost Breakdown Matrix Panel */
+.invoice-rows-wrapper {
+  margin-top: 8px;
+}
+
+.invoice-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #565959;
+  margin-bottom: 8px;
+}
+
+.invoice-row span:last-child {
+  color: #0f1111;
+}
+
+.invoice-row .green-free {
+  color: #067d62 !important;
+  font-weight: 700;
+}
+
+.invoice-split-line {
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  margin: 8px 0;
+}
+
+.invoice-row.total-row-highlight {
+  font-size: 16px;
+  font-weight: 700;
+  color: #b12704 !important;
+  margin-bottom: 0;
+}
+
+.invoice-row.total-row-highlight span {
+  color: #b12704 !important;
+}
+
+/* 6. Dynamic Inline Address Editing Form Box */
+.inline-address-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.inline-form-error-toast {
+  background-color: #fff6f6;
+  border: 1px solid #d9534f;
+  color: #d9534f;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.form-input-group-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-input-group-row label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+}
+
+.form-input-group-row input {
+  padding: 6px 10px;
+  font-size: 13px;
+  border: 1px solid #a6a9a9;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.form-input-group-row input:focus {
+  border-color: #e77600;
+  box-shadow: 0 0 3px rgba(231, 118, 0, 0.5);
+}
+
+.form-input-split-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-actions-pill-row-tray {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.inline-form-btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.inline-form-btn.secondary-gray {
+  background-color: #f0f2f2;
+  border: 1px solid #d5d9d9;
+  color: #0f1111;
+}
+
+.inline-form-btn.secondary-gray:hover {
+  background-color: #e3e6e6;
+}
+
+.inline-form-btn.btn-accent-blue-solid {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+}
+
+.inline-form-btn.btn-accent-blue-solid:hover {
+  background-color: #f7ca00;
+}
+
+/* 7. Status Badge Utility Color Map Rules */
+.payment-status-badge-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px !important;
+}
+
+.status-pill-indicator {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.status-badge-blue   { background-color: #e8f0fe; color: #1a73e8; }
+.status-badge-amber  { background-color: #fff7e0; color: #b06000; }
+.status-badge-green  { background-color: #e6f4ea; color: #137333; }
+.status-badge-red    { background-color: #fce8e6; color: #c5221f; }
+.status-badge-gray   { background-color: #f1f3f4; color: #5f6368; }
+.bullet-dot { color: #067d62; font-weight: bold; }
+
+/* 8. Main Items Grid Section Panel Container */
+.order-history-card-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.order-card-panel-header.single-order-view-header {
+  background-color: #f0f2f2;
+  border-bottom: 1px solid #d5d9d9;
+  padding: 12px 16px;
+}
+
+.items-count-indicator {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+.order-card-panel-body {
+  padding: 16px;
+}
+
+.order-items-inner-collection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-item-row-layout {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f2f2;
+}
+
+.order-item-row-layout:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.order-item-thumbnail-pic {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  background-color: #fafafa;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.order-item-core-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.order-item-title-anchor {
+  font-size: 15px;
+  font-weight: 500;
+  color: #007185;
+  text-decoration: none;
+  line-height: 1.3;
+}
+
+.order-item-title-anchor:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+.order-item-meta-pricing-specs {
+  font-size: 13px;
+  color: #565959;
+  margin: 4px 0 8px 0;
+}
+
+.order-item-meta-pricing-specs .dark-bold {
+  color: #0f1111;
+  font-weight: 600;
+}
+
+.order-item-meta-pricing-specs .divider-spacer {
+  color: #ccc;
+  margin: 0 6px;
+}
+
+/* Buy It Again Interactive Layout Pill */
+.order-item-action-links-row {
+  margin-top: auto;
+}
+
+.continue-shopping-pill-btn.special-buy-again-size {
+  display: inline-block;
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 400;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.continue-shopping-pill-btn.special-buy-again-size:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+
+.order-item-right-pricing-block {
+  text-align: right;
+  min-width: 80px;
+}
+
+.item-calculated-subtotal {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f1111;
+}
+
+/* ==========================================================================\
+   9. RESPONSIVE BREAKPOINT ENGINES FOR ORDERS VIEW
+   ========================================================================== */
+@media screen and (max-width: 900px) {
+  .order-summary-top-card-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .single-order-detail-fluid-container {
+    padding: 12px;
+  }
+  .single-order-meta-title-row h1 {
+    font-size: 22px;
+  }
+  .order-item-row-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .order-item-thumbnail-pic {
+    width: 70px;
+    height: 70px;
+  }
+  .order-item-right-pricing-block {
+    text-align: left;
+    min-width: auto;
+    border-top: 1px dashed #f0f2f2;
+    padding-top: 8px;
+  }
+}
+/* ==========================================================================\
+   ORDERS DASHBOARD STREAM WORKSPACE (.orders-dashboard-fluid-container)
+   ========================================================================== */
+.orders-dashboard-fluid-container {
+  max-width: 950px; /* Aligns nicely with the standard narrow user dashboard configuration */
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 1. Page Title Header Typography */
+.orders-page-main-heading {
+  font-size: 28px;
+  font-weight: 400;
+  color: #0f1111;
+  margin: 0 0 20px 0;
+}
+
+/* 2. Empty History State Blueprint */
+.orders-empty-history-card {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.orders-empty-history-card p {
+  font-size: 14px;
+  color: #0f1111;
+  margin: 0 0 16px 0;
+}
+
+.continue-shopping-pill-btn {
+  display: inline-block;
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+  padding: 8px 16px;
+  font-size: 13px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+  transition: background-color 0.1s ease;
+}
+
+.continue-shopping-pill-btn:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+
+/* 3. Stream Containers & Interactive History Cards */
+.orders-history-list-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.orders-history-list-stream .order-history-card-wrapper {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* Clear visual response when clicking/hovering a historic card row */
+.orders-history-list-stream .order-history-card-wrapper:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-color: #adb1b1;
+}
+
+/* 4. Split Meta-Header Styling (Gray Bar at top of each individual Order) */
+.order-card-panel-header {
+  background-color: #f0f2f2;
+  border-bottom: 1px solid #d5d9d9;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.header-meta-left-group {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.meta-info-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.meta-label-text {
+  font-size: 11px;
+  color: #565959;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.meta-value-text {
+  font-size: 13px;
+  color: #565959;
+}
+
+.meta-info-block .highlight-price {
+  color: #b12704;
+  font-weight: 500;
+}
+
+.meta-info-block .target-address-link {
+  color: #007185;
+  cursor: pointer;
+}
+
+.meta-info-block .target-address-link:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+.header-meta-right-group .meta-label-text {
+  font-family: monospace;
+  font-size: 12px;
+  color: #565959;
+}
+
+/* 5. Timelines & Item Component Internal Layouts */
+.order-status-timeline-strip {
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.action-btn-pill-small {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  color: #0f1111;
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(213,217,217,.2);
+  transition: background-color 0.1s ease;
+}
+
+.action-btn-pill-small:hover {
+  background-color: #f7f8f8;
+  border-color: #adb1b1;
+}
+
+/* 6. Async Loading Spinner State Shimmer UI */
+.orders-loading-spinner-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.amazon-loading-shimmer-circle {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #e77600; /* Iconic Amazon Yellow Accent Spinner colors */
+  border-radius: 50%;
+  animation: orders-dashboard-spin 0.8s linear infinite;
+  margin-bottom: 12px;
+}
+
+.orders-loading-spinner-wrapper p {
+  font-size: 14px;
+  color: #565959;
+  margin: 0;
+}
+
+@keyframes orders-dashboard-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 7. Error Panel Configurations */
+.orders-error-panel-boundary {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.error-alert-box {
+  background-color: #fff6f6;
+  border: 1px solid #c45500;
+  border-left: 4px solid #b12704;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.error-alert-box h5 {
+  margin: 0 0 6px 0;
+  color: #b12704;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.error-alert-box p {
+  margin: 0;
+  color: #333;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ==========================================================================\
+   8. RESPONSIVE DASHBOARD STREAM BREAKPOINT ENGINES
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+  .order-card-panel-header {
+    padding: 10px 14px;
+  }
+  .header-meta-left-group {
+    gap: 14px;
+  }
+  .ship-to-block-hide {
+    display: none; /* Trims down card footprints on mobile display screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .orders-dashboard-fluid-container {
+    padding: 12px;
+  }
+  .orders-page-main-heading {
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+  .order-card-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .header-meta-right-group {
+    border-top: 1px dashed #ccc;
+    width: 100%;
+    padding-top: 6px;
+  }
+}/* ==========================================================================\
+   ORDER SUCCESS VIEW WORKSPACE (.order-success-fluid-container)
+   ========================================================================== */
+.order-success-fluid-container {
+  max-width: 850px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+/* 1. Main Content Card Structural Wrapper */
+.order-success-card-panel {
+  background-color: #ffffff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Hero Success Status Layout (Green Checkmark Banner) */
+.success-header-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.success-checkmark-circle {
+  width: 32px;
+  height: 32px;
+  background-color: #067d62; /* Solid Amazon emerald success green */
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.success-title-text-block h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #067d62; /* Emphasizes message confirmation state */
+  margin: 0 0 4px 0;
+}
+
+.success-delivery-subtext {
+  font-size: 14px;
+  color: #0f1111;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Structural Split Line Divider */
+.success-layout-divider {
+  border: 0;
+  border-top: 1px solid #e7e7e7;
+  margin: 20px 0;
+}
+
+/* 3. Order Metadata Specific Matrix Box */
+.success-metadata-summary-box {
+  background-color: #f7f8f8;
+  border: 1px solid #e7e7e7;
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.metadata-row-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.metadata-label {
+  color: #565959;
+  min-width: 120px;
+}
+
+.metadata-value {
+  color: #0f1111;
+  font-weight: 500;
+}
+
+.metadata-value.identifier-hash {
+  font-family: monospace;
+  font-size: 13px;
+  background-color: #ffffff;
+  padding: 2px 8px;
+  border: 1px solid #d5d9d9;
+  border-radius: 4px;
+}
+
+.metadata-value.amount-text-amber {
+  color: #b12704; /* Price text accent mapping */
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* 4. Action Button Redirection Management Tray */
+.success-actions-redirection-tray {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.amazon-pill-btn-success {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 13px;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.1s ease, border-color 0.1s ease;
+  min-width: 150px;
+}
+
+/* Secondary Action Styling (Review Orders) */
+.amazon-pill-btn-success.secondary-gray {
+  background: #ffffff;
+  border: 1px solid #d5d9d9;
+  color: #0f1111;
+  box-shadow: 0 2px 5px rgba(213,217,217,.2);
+}
+
+.amazon-pill-btn-success.secondary-gray:hover {
+  background-color: #f7f8f8;
+  border-color: #adb1b1;
+}
+
+/* Primary Action Accent Styling (Continue Shopping) */
+.amazon-pill-btn-success.primary-gold {
+  background-color: #ffd814;
+  border: 1px solid #fcd200;
+  color: #0f1111;
+  box-shadow: 0 2px 5px rgba(213,217,217,.5);
+}
+
+.amazon-pill-btn-success.primary-gold:hover {
+  background-color: #f7ca00;
+  border-color: #f2c200;
+}
+
+/* 5. Legal Compliance & Security Disclaimer footer */
+.success-security-disclaimer.border-top-split {
+  border-top: 1px dashed #d5d9d9;
+  padding-top: 18px;
+  margin-top: 12px;
+}
+
+.success-security-disclaimer p {
+  font-size: 12px;
+  color: #565959;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.success-security-disclaimer a {
+  color: #007185;
+  text-decoration: none;
+}
+
+.success-security-disclaimer a:hover {
+  text-decoration: underline;
+  color: #c45500;
+}
+
+/* ==========================================================================\
+   6. RESPONSIVE BREAKPOINT QUERY ENGINES
+   ========================================================================== */
+@media screen and (max-width: 600px) {
+  .order-success-fluid-container {
+    padding: 12px;
+    margin: 20px auto;
+  }
+  .order-success-card-panel {
+    padding: 20px;
+  }
+  .success-header-banner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .success-title-text-block h1 {
+    font-size: 19px;
+  }
+  .metadata-row-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .amazon-pill-btn-success {
+    width: 100%;
+  }
+}
