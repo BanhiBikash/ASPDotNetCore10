@@ -1988,6 +1988,18 @@ html, body {
   box-sizing: border-box;
 }
 
+.row-card-details-frame{
+  width: 280px;
+}
+
+.row-card-details-frame .row-card-info-top{
+  width: 100%;
+}
+
+.row-card-description-body{
+width: 100%;
+}
+
 .row-card-image-viewport {
   height: 200px;
   width: 200px;
@@ -2000,7 +2012,13 @@ html, body {
   justify-content: center;
   padding: 10px;
   box-sizing: border-box;
-}/* ==========================================================================
+}
+
+.row-card-image-viewport img{
+  width: 100%;
+  aspect-ratio:1;
+}
+/* ==========================================================================
    Checkout Panel Layout Optimization Extensions
    ========================================================================== */
 .checkout-delivery-promise-block {
