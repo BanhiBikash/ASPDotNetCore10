@@ -1583,6 +1583,7 @@ html, body {
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(213,217,217,.5);
   overflow: hidden;
+  border: 1px solid orange;
 }
 
 .cart-quantity-selector-container button {
@@ -2017,6 +2018,12 @@ width: 100%;
 .row-card-image-viewport img{
   width: 100%;
   aspect-ratio:1;
+}
+
+.row-card-buttons-group button{
+  width: 280px;
+  padding: 6px 14px;
+  margin-top: 4px;
 }
 /* ==========================================================================
    Checkout Panel Layout Optimization Extensions
