@@ -132,7 +132,7 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
                       >
                         -
                       </button>
-                      <span className="cart-quantity-display-value">{existingCartItem.quantity}</span>
+                      <span style={{color:'white'}} className="cart-quantity-display-value">{existingCartItem.quantity}</span>
                       <button
                         type="button"
                         onClick={() => handleAddToCart(item, true)}

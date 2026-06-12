@@ -1578,9 +1578,8 @@ html, body {
 .cart-quantity-selector-container {
   display: flex;
   align-items: center;
-  background-color: #f0f2f2;
-  border: 1px solid #d5d9d9;
-  border-radius: 8px;
+  background-color: rgb(228, 150, 4);
+  border-radius: 20px;
   box-shadow: 0 2px 5px rgba(213,217,217,.5);
   overflow: hidden;
   border: 1px solid orange;
@@ -1595,10 +1594,14 @@ html, body {
   color: #0f1111;
   cursor: pointer;
   transition: background-color 0.1s;
+  color: #d5d9d9;
+}
+.cart-quantity-display-value{
+  color: #d5d9d9;
 }
 
 .cart-quantity-selector-container button:hover:not(:disabled) {
-  background-color: #e3e6e6;
+  
 }
 
 .cart-quantity-selector-container button:disabled {
