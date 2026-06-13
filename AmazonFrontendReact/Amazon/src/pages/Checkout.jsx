@@ -249,6 +249,7 @@ const Checkout = () => {
                 alt={item.productName}
                 style={styles.productImg}
                 onError={(e) => { e.target.src = 'https://via.placeholder.com/80?text=Product'; }}
+                onClick={function(){navigate(`../Product/${item.productId}`)}} 
               />
               <div style={styles.itemDetails}>
                 <h4 style={styles.productName}>{item.productName}</h4>

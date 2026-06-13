@@ -193,7 +193,7 @@ const CheckoutDemo = () => {
         <div style={styles.itemsList}>
           {productArray.map((item) => (
             <div key={item.productId} style={styles.itemRow}>
-              <img src={item.imageUrl} alt={item.productName} style={styles.productImg} />
+              <img src={item.imageUrl} alt={item.productName} style={styles.productImg} onClick={function(){navigate(`../Product/${item.productId}`)}} />
               <div style={styles.itemDetails}>
                 {/* 🎯 Now clean and safely consistent without local inline arrays queries */}
                 <h4 style={styles.productName}>{item.productName}</h4>
