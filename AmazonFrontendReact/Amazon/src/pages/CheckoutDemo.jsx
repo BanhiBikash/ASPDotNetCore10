@@ -8,6 +8,7 @@ const CheckoutDemo = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const {id} = useParams();
   const orderData = location.state?.orderData || { items: [], totalAmount: 0 };
   const { items, totalAmount } = orderData;
 
@@ -56,7 +57,20 @@ const CheckoutDemo = () => {
       }
     };
 
+    const fetchProductData = async ()=>{
+
+      //try fteching product data
+      try{
+        const response = await api.get(`v1/Products/${id}`)
+        console.log(response.data)
+      }catch(e){
+        console.log('failed to fetch product data'+id);
+      }
+    }
+
     fetchProfileDetails();
+    //if there is a buy now productID then fetch product data
+    (id && fetchProductData())
   }, []);
 
   const handleDemoPaymentSubmit = async () => {

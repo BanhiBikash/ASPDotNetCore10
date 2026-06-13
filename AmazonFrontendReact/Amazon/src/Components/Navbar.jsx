@@ -23,14 +23,14 @@ const Navbar = () => {
   // 📦 Fetch dynamic category metadata on navbar mount
   useEffect(() => {
     const fetchMetadata = async () => {
-      console.log("getting categories....");
+       
       try {
         const response = await api.get('v1/Products/GetCategories');
         const { categories, subCategories } = response.data;
 
         // Set categories state array safely
         setCategory({categoryArray:categories, subCategoryArray:subCategories});
-        console.log(response.data);
+         
       } catch (e) {
         console.log("Error: can't fetch category " + e);
       }

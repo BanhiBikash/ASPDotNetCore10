@@ -13,7 +13,7 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
   // Handling cart context
   const { cart: cartData, setCart } = useContext(CartContext);
   const { cart: itemsArray } = cartData;
-    console.log(itemsArray)
+     
   // 🎯 Find if the current item is already present in the cart array
   const existingCartItem = itemsArray?.find(cartItem => 
     cartItem.productId === item.id || (cartItem.product && cartItem.product.id === item.id)
