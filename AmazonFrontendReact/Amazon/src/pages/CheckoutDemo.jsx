@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from "../assets/Amazon-Logo.png";
-import api from '../api/axiosConfig'; 
+import api from '../api/axiosConfig';
 import { useParams } from 'react-router-dom';
 
 const CheckoutDemo = () => {
   const location = useLocation();
   const navigate = useNavigate();
+  const [productArray, setProductArray] = useState([])
+  const [checkoutAmount, setChekoutAmount] = useState(0)
 
-  const {id} = useParams();
+  const { id } = useParams();
   const orderData = location.state?.orderData || { items: [], totalAmount: 0 };
-  const { items, totalAmount } = orderData;
+  const { items, totalAmount } = orderData; 
 
   const [userProfile, setUserProfile] = useState({
-    userId: '', 
+    userId: '',
     name: 'Demo Customer',
     address: '',
     city: '',
@@ -42,7 +44,7 @@ const CheckoutDemo = () => {
           : 'Demo Customer';
 
         setUserProfile({
-          userId: data.userId || '', 
+          userId: data.userId || '',
           name: fullName,
           address: data.address || '',
           city: data.city || '',
@@ -57,21 +59,41 @@ const CheckoutDemo = () => {
       }
     };
 
-    const fetchProductData = async ()=>{
+    const fetchProductData = async () => {
+      try {
+        // 🎯 FIX 1: Added leading absolute slash '/' to ensure correct routing pathing
+        const response = await api.get(`/v1/Products/${id}`);
+        const product = response.data;
 
-      //try fteching product data
-      try{
-        const response = await api.get(`v1/Products/${id}`)
-        console.log(response.data)
-      }catch(e){
-        console.log('failed to fetch product data'+id);
+        if (product) {
+          // 🎯 FIX 2: Format the backend response properties right here to match 
+          // your frontend component item schema constraints perfectly
+          setProductArray([{
+            productId: product.id,        // Maps database 'id' to 'productId'
+            productName: product.name,    // Maps database 'name' to 'productName'
+            imageUrl: product.imageUrl,
+            quantity: 1,
+            unitPrice: product.price      // Maps database 'price' to 'unitPrice'
+          }]);
+          setChekoutAmount(product.price ?? 0);
+        }
+
+      } catch (e) {
+        console.log('failed to fetch product data with id:' + id);
       }
     }
 
     fetchProfileDetails();
-    //if there is a buy now productID then fetch product data
-    (id && fetchProductData())
-  }, []);
+    
+    if (id) {
+      fetchProductData();
+    }
+
+    if (!id) {
+      setProductArray(items || []);
+      setChekoutAmount(totalAmount || 0);
+    }
+  }, [id, items, totalAmount]);
 
   const handleDemoPaymentSubmit = async () => {
     const completedBackendPayload = {
@@ -79,12 +101,12 @@ const CheckoutDemo = () => {
       PostalCode: userProfile.postalCode || "700001",
       City: userProfile.city || "Demo City",
       Country: userProfile.country || "India",
-      Items: items.map(item => ({
+      Items: productArray.map(item => ({
         ProductId: item.productId,
         ProductName: item.productName || "Demo Product",
         ImageUrl: item.imageUrl || "https://via.placeholder.com/80?text=Product",
         Quantity: parseInt(item.quantity, 10) || 1,
-        UnitPrice: parseInt(item.unitPrice, 10) || 0 
+        UnitPrice: parseInt(item.unitPrice, 10) || 0
       }))
     };
 
@@ -97,24 +119,22 @@ const CheckoutDemo = () => {
         console.log("[DEMO FLOW] Order created on server. ID:", id);
 
         if (backendAmount > 0 && /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(id)) {
-          
-          // 🎯 Assemble completely fake payment parameters to send to your new Demo endpoint
+
           const demoConfirmationPayload = {
             OrderId: id,
             RazorpayPaymentId: `pay_MOCK_${Math.random().toString(36).substring(2, 11).toUpperCase()}`,
             RazorpayOrderId: `order_MOCK_${Math.random().toString(36).substring(2, 11).toUpperCase()}`,
             RazorpaySignature: "SIMULATED_DEMO_HMAC_HASH_SIGNATURE_OK",
-            PaymentMethod: "Wallet" // Simulates a fast mock wallet transaction
+            PaymentMethod: "Wallet" 
           };
 
           console.log("[DEMO FLOW] Submitting simulated payment verification data:", demoConfirmationPayload);
-          
-          // 🎯 Hits your dedicated bypass action route on the controller
+
           const confirmResponse = await api.post('/v1/Transaction/ConfirmPaymentDemo', demoConfirmationPayload);
 
           if (confirmResponse.status === 200 || confirmResponse.status === 201) {
             console.log("[DEMO FLOW] Payment mocked successfully. Moving to success screen.");
-            navigate(`/order_success?orderNo=${confirmResponse.data.orderId}&totalAmount=${totalAmount}`); 
+            navigate(`/order_success?orderNo=${confirmResponse.data.orderId}&totalAmount=${checkoutAmount}`);
           } else {
             alert("Demo confirmation endpoint rejected payload layout.");
           }
@@ -136,7 +156,7 @@ const CheckoutDemo = () => {
     );
   }
 
-  if (!items || items.length === 0) {
+  if (!productArray || productArray.length === 0) {
     return (
       <div style={styles.emptyContainer}>
         <h3>Your checkout context is empty.</h3>
@@ -165,19 +185,20 @@ const CheckoutDemo = () => {
       <div style={styles.itemsCard}>
         <div style={styles.actionRow}>
           <button style={styles.paymentBtn} onClick={handleDemoPaymentSubmit}>
-            Instant Demo Pay: ₹{totalAmount.toLocaleString('en-IN')}
+            Instant Demo Pay: ₹{checkoutAmount}
           </button>
         </div>
 
         <h3 style={styles.sectionTitle}>Review Items</h3>
         <div style={styles.itemsList}>
-          {items.map((item) => (
+          {productArray.map((item) => (
             <div key={item.productId} style={styles.itemRow}>
               <img src={item.imageUrl} alt={item.productName} style={styles.productImg} />
               <div style={styles.itemDetails}>
+                {/* 🎯 Now clean and safely consistent without local inline arrays queries */}
                 <h4 style={styles.productName}>{item.productName}</h4>
                 <p style={styles.productMeta}>Qty: <strong>{item.quantity}</strong></p>
-                <p style={styles.productPrice}>₹{item.unitPrice} each</p>
+                <p style={styles.productPrice}>₹{item.unitPrice.toLocaleString('en-IN')} each</p>
               </div>
             </div>
           ))}
@@ -187,7 +208,6 @@ const CheckoutDemo = () => {
   );
 };
 
-/* Caching matching CSS Layout constraints */
 const styles = {
   container: { maxWidth: '650px', margin: '20px auto', padding: '0 15px 40px 15px', fontFamily: 'sans-serif' },
   demoBanner: { background: '#d4edda', color: '#155724', padding: '6px', fontSize: '12px', fontWeight: 'bold', borderRadius: '4px', marginTop: '5px' },
