@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import logo from "../assets/Amazon-Logo.png";
 import api from '../api/axiosConfig'; 
+import { useParams } from 'react-router-dom';
 
 const CheckoutDemo = () => {
   const location = useLocation();

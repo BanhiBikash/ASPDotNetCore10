@@ -29,8 +29,8 @@ function App() {
         <Route path="product/:id" element={<Product />} />    {/* Matches "/product" */}
         <Route path="add_product" element={<ProductAdd />} />    {/* Matches "/add_product" */}
         <Route path="Cart" element={<Cart />} />    {/* Matches "/add_product" */}
-        <Route path="Checkout" element={<Checkout />} /> {/* The direct, express gateway page bypass */}
-        <Route path="CheckoutDemo" element={<CheckoutDemo />} /> {/* The direct, express gateway page bypass */}
+        <Route path="Checkout/:id?" element={<Checkout />} /> {/* The direct, express gateway page bypass */}
+        <Route path="CheckoutDemo/:id?" element={<CheckoutDemo />} /> {/* The direct, express gateway page bypass */}
         <Route path="SearchResult" element={<SearchResult />} />
         <Route path="Order_Success" element={<Order_Success />}/>
         <Route path="Orders" element={<Orders />} />
