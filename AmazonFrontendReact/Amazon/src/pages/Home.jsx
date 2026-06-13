@@ -22,7 +22,7 @@ const Home = () => {
     if (quad_items != null) {
       console.log("data received")
     }
-    console.log(quad_items.data)
+     
     setQuad(quad_items.data)
   }
 
@@ -33,7 +33,7 @@ const Home = () => {
     if (quad_items != null) {
       console.log("data received")
     }
-    console.log(quad_items.data)
+     
     setQuad2(quad_items.data)
   }
 
@@ -45,7 +45,7 @@ const Home = () => {
     if (response != null) {
       console.log("data received mobile")
     }
-    console.log(response.data)
+     
     setRow(response.data)
   }
 
