@@ -156,8 +156,9 @@ const Orders = () => {
                       <img 
                         src={item.imageUrl || "https://via.placeholder.com/100?text=No+Image"} 
                         alt={item.productName} 
-                        className="order-item-thumbnail-pic" 
-                        onClick={navigate(`../Products/${item.productId}`)}
+                        className="order-item-thumbnail-pic"                   
+                        onClick={function(){navigate(`../Product/${item.productId}`)}}
+
                       />
                       <div className="order-item-core-details">
                         <Link to={`/product/${item.productId}`} className="order-item-title-anchor">
