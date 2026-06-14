@@ -107,10 +107,10 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
             <div className="price-tag-digits">
               <span className="currency-symbol">₹</span>
               <span className="amount-number" style={{marginRight:'9px',textDecorationLine:'line-through'}}>
-                {Intl.NumberFormat('en-IN').format(item.price)}
+                {Intl.NumberFormat('en-IN').format(item.catalogPrice)}
               </span>
               <span className="amount-number">
-                {item.price - (item.price*item.discount)/100}
+                {item.price}
               </span>
             </div>
             <div className="stock-indicator-height">
