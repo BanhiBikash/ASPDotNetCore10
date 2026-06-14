@@ -141,7 +141,7 @@ const Navbar = () => {
         <Link to="/categories" className="nav-items text-link-node">Categories</Link>
 
         {user && (
-          <Link to="/add_product" className="nav-items text-link-node">Add Products</Link>
+          <Link to="/add_product" className="nav-items text-link-node">Handle Products</Link>
         )}
 
         {user ? (
