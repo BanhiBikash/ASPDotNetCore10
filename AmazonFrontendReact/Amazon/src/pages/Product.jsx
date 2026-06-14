@@ -6,14 +6,14 @@ import { useCart } from '../context/CartContext';
 import { baseUrl, checkoutUrl } from '../api/keyUrls';
 import ProductRow from '../Components/ProductRow';
 
-//get icons
-import cod from "../assets/cod.png"
-import free_shipping from "../assets/icon_free_shipping.png"
-import secure_pay from "../assets/secure_pay.png"
-import top_brand from "../assets/top_brand.png"
+// Import assets
+import cod from "../assets/cod.png";
+import free_shipping from "../assets/icon_free_shipping.png";
+import secure_pay from "../assets/secure_pay.png";
+import top_brand from "../assets/top_brand.png";
+
 
 const Product = () => {
-  // 🎯 Extract id from the routing path (e.g., /product/:id)
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -26,29 +26,24 @@ const Product = () => {
   const [uiStatus, setUiStatus] = useState({ loading: true, error: null });
   const [actionLoading, setActionLoading] = useState({});
 
-  // 🎯 Track if the main viewed item is already present in your active cart state
   const existingCartItem = itemsArray?.find(cartItem =>
     cartItem.productId === id || (cartItem.product && cartItem.product.id === id)
   );
 
-  // 📡 Step 1: Fetch Main Product Details and Chain Related SubCategory items
   useEffect(() => {
     const fetchProductDataAndRelated = async () => {
       if (!id) return;
       setUiStatus(prev => ({ ...prev, loading: true }));
 
       try {
-        // 1. Fetch main targeted product profile
         const productResponse = await api.get(`/v1/Products/${id}`);
         const currentItem = productResponse.data;
         setProduct(currentItem);
 
-        // 2. Chained Fetch: Get matching rows of the same subcategory enum item
         if (currentItem && currentItem.subCategory) {
           const relatedResponse = await api.get(`/v1/Products/subcategory/${encodeURIComponent(currentItem.subCategory)}`);
           const matchingList = Array.isArray(relatedResponse.data) ? relatedResponse.data : [];
 
-          // Filter out the current active item so it doesn't recommend itself
           setRelatedProducts(matchingList.filter(item => item.id !== currentItem.id && !item.isDeleted));
         }
 
@@ -66,7 +61,6 @@ const Product = () => {
     fetchProductDataAndRelated();
   }, [id]);
 
-  // 🛒 Handle Add to Cart / Increment Step
   const handleAddToCart = async (targetProduct, silent = false) => {
     const productId = targetProduct.id;
     setActionLoading(prev => ({ ...prev, [productId]: true }));
@@ -110,7 +104,6 @@ const Product = () => {
     }
   };
 
-  // 🔄 Handle Decrementing Item Quantity
   const handleDecrementCart = async (targetProduct) => {
     const productId = targetProduct.id;
     if (!existingCartItem) return;
@@ -181,15 +174,15 @@ const Product = () => {
   return (
     <div className="main-content-fluid product-details-page-override">
 
-      {/* 🛠️ UPPER SECTION: Main Focus Product Split Frame */}
-      <div className="product-showcase-container" style={styles.showcaseFlex}>
+      {/* UPPER SECTION: Main Focus Product Split Frame */}
+      <div className="product-showcase-container">
 
         {/* Left Side: Massive Image Viewport Block */}
-        <div className="product-image-hero-frame" style={styles.imageHeroBox}>
+        <div className="product-image-hero-frame">
           <img
             src={imageSource}
             alt={product.name}
-            style={styles.heroImg}
+            className="product-hero-img"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = 'https://placehold.co/400?text=Image+Load+Error';
@@ -197,29 +190,32 @@ const Product = () => {
           />
         </div>
 
-        {/* Right Side: Identity, Specs, and Actions Panel */}
-        <div className="product-specs-info-panel" style={styles.infoPanel}>
-          <h1 className="product-main-title" style={styles.mainTitle}>{product.name}</h1>
+        {/* Middle Side: Identity, Specs, and Secondary Information */}
+        <div className="product-specs-info-panel">
+          <h1 className="product-main-title">{product.name}</h1>
 
-          <div className="row-card-rating-line" style={{ marginBottom: '12px' }}>
+          <div className="row-card-rating-line">
             <span className="stars-gold">★★★★☆</span>
-            <span className="rating-count-link" style={{ marginLeft: '8px' }}>2,410 customer reviews</span>
+            <span className="rating-count-link">2,410 customer reviews</span>
           </div>
 
-          <hr style={styles.divider} />
+          <hr className="product-panel-divider" />
 
-          <p style={styles.metaRow}>
-            Category: <strong style={{ textTransform: 'capitalize' }}>{product.category}</strong>
+          <p className="product-meta-row">
+            Category: <strong className="text-capitalize">{product.category}</strong>
             {product.subCategory && (
-              <span> | Subcategory: <strong style={{ textTransform: 'capitalize' }}>{displaySubCategory}</strong></span>
+              <span> | Subcategory: <strong className="text-capitalize">{displaySubCategory}</strong></span>
             )}
           </p>
 
-          <div className="product-pricing-block" style={styles.priceContainer}>
-            <span style={styles.currencySymbol}>₹</span>
-            <span style={styles.priceDigits}>{Intl.NumberFormat('en-IN').format(product.price)}</span>
+          <div className="product-pricing-block">
+            <span className="product-price-discount">{product.discount}% <span style={{fontSize:'1.5rem'}}>Off</span></span>
+            <br />
+            <span className="product-currency-symbol">₹</span>
+            <span className="product-price-digits">{Intl.NumberFormat('en-IN').format(product.catalogPrice)}</span>
+            <span className="product-price-after">{product.price}</span>
 
-            <div style={{ marginTop: '8px' }}>
+            <div className="product-stock-wrapper">
               {product.inStock ? (
                 <span className="stock-indicator-badge in-stock">In Stock ({product.stock} items left)</span>
               ) : (
@@ -230,14 +226,12 @@ const Product = () => {
 
           <div className="product-description-container">
             <h4>Product Information</h4>
-            <p style={styles.descBody}>{product.description || 'Detailed technical specs haven\'t been allocated for this model option.'}</p>
+            <p className="product-desc-body">{product.description || 'Detailed technical specs haven\'t been allocated for this model option.'}</p>
           </div>
         </div>
 
-        {/* right-most section */}
+        {/* Right Side: Action Buy Panel Options Card */}
         <div className="products-specs-purchase-panel">
-
-          {/* 1. Precise Delivery Window */}
           <div className="checkout-delivery-promise-block">
             <span className="delivery-highlight-date">
               FREE delivery <span className="bold-text">Wednesday, June 17</span>
@@ -249,13 +243,11 @@ const Product = () => {
             </span>
           </div>
 
-          {/* 2. Geolocation / Shipping Target */}
           <div className="checkout-geo-location-anchor">
             <span className="geo-pin-icon">📍</span>
             <span className="geo-location-text">Deliver to India</span>
           </div>
 
-          {/* 3. Transaction Meta Trust Details */}
           <div className="checkout-trust-meta-table">
             <div className="meta-table-row">
               <span className="meta-label">Ships from</span>
@@ -267,36 +259,33 @@ const Product = () => {
             </div>
           </div>
 
-          {/* 4. Customer Control Options (Gift Flag) */}
           <div className="checkout-gift-checkbox-row">
             <input type="checkbox" id="isAGift" name="isAGift" />
             <label htmlFor="isAGift">Add a gift receipt for easy returns</label>
           </div>
 
-          {/* Icons Row */}
-          <div className="product_amazon_icon">
-            <img className='product_promise' src={secure_pay} alt="secure-pay" />
-            <img className='product_promise' src={free_shipping} alt="free_shipping" />
-            <img className='product_promise' src={cod} alt="cod_icon" />
-            <img className='product_promise' src={top_brand} alt="top_brand" />
+          <div className="product-amazon-trust-badge-row">
+            <img className="product-promise-badge-icon" src={secure_pay} alt="secure-pay" />
+            <img className="product-promise-badge-icon" src={free_shipping} alt="free_shipping" />
+            <img className="product-promise-badge-icon" src={cod} alt="cod_icon" />
+            <img className="product-promise-badge-icon" src={top_brand} alt="top_brand" />
           </div>
 
-          {/* 🔘 ACTION ROW CONTROLS */}
-          <div className="product-express-checkout-row" style={styles.actionButtonRow}>
+          <div className="product-express-checkout-row">
             {existingCartItem ? (
-              <div className="qtyPill-container">
+              <div className="qty-pill-container">
                 <button
                   onClick={() => handleDecrementCart(product)}
                   disabled={actionLoading[product.id]}
-                  className="qtyPill-button"
+                  className="qty-pill-action-btn"
                 >
                   −
                 </button>
-                <span style={{ fontWeight: '600', color: '#0f1111' }}>{existingCartItem.quantity}</span>
+                <span className="qty-pill-display-count">{existingCartItem.quantity}</span>
                 <button
                   onClick={() => handleAddToCart(product, true)}
                   disabled={!product.inStock || actionLoading[product.id] || existingCartItem.quantity >= product.stock}
-                  className="qtyPill-button"
+                  className="qty-pill-action-btn"
                 >
                   +
                 </button>
@@ -306,7 +295,6 @@ const Product = () => {
                 onClick={() => handleAddToCart(product)}
                 disabled={!product.inStock || actionLoading[product.id]}
                 className={`amazon-pill-btn cart ${!product.inStock ? 'disabled' : ''}`}
-                style={{ minWidth: '150px' }}
               >
                 {actionLoading[product.id] ? 'Updating...' : 'Add to Cart'}
               </button>
@@ -316,7 +304,6 @@ const Product = () => {
               onClick={() => handleBuyNow(product)}
               disabled={!product.inStock || actionLoading[product.id]}
               className={`amazon-pill-btn buy-now ${!product.inStock ? 'disabled' : ''}`}
-              style={{ minWidth: '150px' }}
             >
               Buy Now
             </button>
@@ -325,202 +312,11 @@ const Product = () => {
 
       </div>
 
-      {/* 🛠️ LOWER SECTION: Same SubCategory Recommendations Carousel Track */}
-      <div className="related-cross-sell-shelf" style={styles.relatedShelf}>
-        <h3 style={styles.shelfTitle}>Customers Who Bought Items In "{displaySubCategory}" Also Viewed</h3>
-
-        {relatedProducts.length === 0 ? (
-          <p style={{ color: '#666', fontStyle: 'italic', padding: '10px 0' }}>No complementary items available in this category cluster yet.</p>
-        ) : (
-          <div className="related-items-horizontal-track" style={styles.horizontalScrollTrack}>
-            {relatedProducts.map((item) => (
-              <div
-                key={item.id}
-                style={styles.suggestionCard}
-                onClick={() => navigate(`/product/${item.id}`)} // Route jumping updates view smoothly
-              >
-                <div style={styles.suggestImgWrap}>
-                  <img
-                    src={item.imageUrl || 'https://placehold.co/150?text=No+Image'}
-                    alt={item.name}
-                    style={styles.suggestImg}
-                  />
-                </div>
-                <h4 style={styles.suggestName}>{item.name}</h4>
-                <p style={styles.suggestPrice}>₹{Intl.NumberFormat('en-IN').format(item.price)}</p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      {/* LOWER SECTION: Same SubCategory Recommendations Carousel Track */}
+      <ProductRow row={relatedProducts} />
 
     </div>
   );
-};
-
-// Layout Object Configuration
-const styles = {
-  showcaseFlex: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    gap: '40px',
-    padding: '20px 0',
-    alignItems: 'flex-start'
-  },
-  imageHeroBox: {
-    flex: '1 1 400px',
-    maxWidth: '500px',
-    border: '1px solid #eeeeee',
-    borderRadius: '8px',
-    backgroundColor: '#ffffff',
-    padding: '20px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  heroImg: {
-    maxWidth: '100%',
-    maxHeight: '450px',
-    objectFit: 'contain'
-  },
-  infoPanel: {
-    flex: '1 1 500px',
-    padding: '0 10px'
-  },
-  mainTitle: {
-    fontSize: '2rem',
-    fontWeight: '500',
-    color: '#0f1111',
-    margin: '0 0 10px 0',
-    lineHeight: '1.2'
-  },
-  divider: {
-    border: '0',
-    height: '1px',
-    backgroundColor: '#e7e7e7',
-    margin: '15px 0'
-  },
-  metaRow: {
-    fontSize: '0.95rem',
-    color: '#565959',
-    margin: '0 0 15px 0'
-  },
-  priceContainer: {
-    backgroundColor: '#fafafa',
-    padding: '15px',
-    borderRadius: '4px',
-    marginBottom: '20px'
-  },
-  currencySymbol: {
-    fontSize: '1.2rem',
-    verticalAlign: 'super',
-    marginRight: '2px',
-    color: '#0f1111'
-  },
-  priceDigits: {
-    fontSize: '2.2rem',
-    fontWeight: '400',
-    color: '#0f1111'
-  },
-  descBody: {
-    fontSize: '1rem',
-    lineHeight: '1.6',
-    color: '#333333',
-    margin: '8px 0 20px 0'
-  },
-  actionButtonRow: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '15px',
-    marginTop: '25px',
-    flexWrap: 'wrap'
-  },
-  qtyPill: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-evenly',
-    backgroundColor: '#ffd814',
-    border: '1px solid #fcd200',
-    borderRadius: '20px',
-    width: '150px',
-    height: '35px'
-  },
-  qtyBtn: {
-    background: 'transparent',
-    border: 'none',
-    fontSize: '1.2rem',
-    fontWeight: 'bold',
-    cursor: 'pointer',
-    padding: '0 15px',
-    height: '100%'
-  },
-  relatedShelf: {
-    marginTop: '60px',
-    borderTop: '2px solid #eaeded',
-    paddingTop: '30px',
-    width: '100%'
-  },
-  shelfTitle: {
-    fontSize: '1.35rem',
-    fontWeight: '700',
-    color: '#cc6600',
-    marginBottom: '20px'
-  },
-  horizontalScrollTrack: {
-    display: 'flex',
-    gap: '20px',
-    overflowX: 'auto',
-    paddingBottom: '15px',
-    scrollbarWidth: 'thin'
-  },
-  suggestionCard: {
-    flex: '0 0 180px',
-    border: '1px solid #e7e7e7',
-    borderRadius: '6px',
-    padding: '12px',
-    backgroundColor: '#fff',
-    cursor: 'pointer',
-    transition: 'transform 0.15s ease',
-    textAlign: 'center'
-  },
-  suggestImgWrap: {
-    height: '140px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '10px',
-    backgroundColor: '#fff'
-  },
-  suggestImg: {
-    maxHeight: '100%',
-    maxWidth: '100%',
-    objectFit: 'contain'
-  },
-  suggestName: {
-    fontSize: '0.9rem',
-    fontWeight: '500',
-    color: '#007185',
-    margin: '0 0 6px 0',
-    height: '36px',
-    overflow: 'hidden',
-    display: '-webkit-box',
-    WebkitLineClamp: 2,
-    WebkitBoxOrient: 'vertical'
-  },
-  suggestPrice: {
-    fontSize: '1rem',
-    fontWeight: '600',
-    color: '#b12704',
-    margin: 0
-  }, product_amazon_icon: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    alignItems: 'center'
-  },
-  product_promise: {
-    width: '4px',
-    height: '4px'
-  }
 };
 
 export default Product;
