@@ -95,6 +95,10 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
           <p className="row-card-description-body">
             {item.description || 'No product details provided.'}
           </p>
+
+          <p style = {{color:'red'}} className="row-card-discount">
+            {item.discount || '0'}% Off
+          </p>
         </div>
 
         {/* Pricing block and actions panel wrapper */}
@@ -102,8 +106,11 @@ const ProductBox = ({ item, isItemBusy, handleAddToCart, handleBuyNow, baseUrl }
           <div className="price-tag-container">
             <div className="price-tag-digits">
               <span className="currency-symbol">₹</span>
-              <span className="amount-number">
+              <span className="amount-number" style={{marginRight:'9px',textDecorationLine:'line-through'}}>
                 {Intl.NumberFormat('en-IN').format(item.price)}
+              </span>
+              <span className="amount-number">
+                {item.price - (item.price*item.discount)/100}
               </span>
             </div>
             <div className="stock-indicator-height">

@@ -6,7 +6,7 @@ import api from '../api/axiosConfig';
 const Checkout = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const { id } = useParams(); // 🎯 Extract product ID if this is a "Buy Now" flow
+  const { id } = useParams(); //Extract product ID if this is a "Buy Now" flow
 
   // 🎯 Track checkout context fields dynamically in state
   const [productArray, setProductArray] = useState([]);

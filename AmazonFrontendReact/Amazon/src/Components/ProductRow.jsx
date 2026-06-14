@@ -17,7 +17,7 @@ const ProductRow = (props) => {
           {Array.isArray(row) && row.map(item => {
             return (<div className="deal-thumb-box">
               <img src={item.imageUrl} alt={item.name} onClick={function(){navigate(`../product/${item.id}`)}} />
-              <span className="deal-badge">Up to 35% Off</span>
+              <span className="deal-badge">Up to {item.discount}% Off</span>
               <p className="deal-desc">{item.name}</p>
             </div>)
           })}
