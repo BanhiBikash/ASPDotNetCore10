@@ -3266,13 +3266,13 @@ width: 100%;
   color: #0f1111;
 }
 
-.product-price-digits {
+.product-price-after {
   font-size: 2.2rem;
   font-weight: 400;
   color: #0f1111;
 }
 
-.product-price-after {
+.product-price-before {
   font-size: 1.2rem;
   color: #565959;
   margin-left: 10px;

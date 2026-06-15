@@ -32,9 +32,15 @@ const ProductAdd = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   // --- 🛠️ Edit Modal States ---
-  const [editingProduct, setEditingProduct] = useState(null); // Holds product being edited
+  const [editingProduct, setEditingProduct] = useState(null); 
   const [editForm, setEditForm] = useState({
-    id: '', name: '', price: '', stock: '', description: '', imageUrl: ''
+    id: '', 
+    name: '', 
+    price: '', 
+    discount: '', // 👈 Added discount field 
+    stock: '', 
+    description: '', 
+    imageUrl: ''
   });
   const [editThumbnail, setEditThumbnail] = useState(null);
 
@@ -148,7 +154,6 @@ const ProductAdd = () => {
       setThumbnailFile(null);
       if (document.getElementById('thumbnail')) document.getElementById('thumbnail').value = '';
 
-      // Refresh database grid array view
       refreshCatalogGrid();
     } catch (err) {
       console.error(err);
@@ -179,7 +184,6 @@ const ProductAdd = () => {
       }
 
       const response = await api.get(endpoint);
-      // Backend returns a single object when looking up explicit GUIDs; wrap it into an array
       const dataPayload = Array.isArray(response.data) ? response.data : [response.data];
       setSearchResults(dataPayload.filter(p => p !== null));
     } catch (err) {
@@ -216,6 +220,7 @@ const ProductAdd = () => {
       id: product.id,
       name: product.name,
       price: product.price,
+      discount: product.discount !== undefined && product.discount !== null ? product.discount : 0, // 👈 Capture current discount mapping
       stock: product.stock,
       description: product.description,
       imageUrl: product.imageUrl || ''
@@ -236,6 +241,7 @@ const ProductAdd = () => {
     updateFormPayload.append('Id', editForm.id);
     updateFormPayload.append('Name', editForm.name);
     updateFormPayload.append('Price', parseInt(editForm.price, 10) || 0);
+    updateFormPayload.append('Discount', parseInt(editForm.discount, 10) || 0); // 👈 Append discount numerical value to payload
     updateFormPayload.append('Stock', parseInt(editForm.stock, 10) || 0);
     updateFormPayload.append('InStock', (parseInt(editForm.stock, 10) || 0) > 0);
     updateFormPayload.append('Description', editForm.description);
@@ -246,7 +252,7 @@ const ProductAdd = () => {
     }
 
     try {
-      const response = await api.put('v1/Products', updateFormPayload);
+      await api.put('v1/Products', updateFormPayload);
       setUiStatus(prev => ({ ...prev, loading: false, success: 'Product updates committed successfully.' }));
       setEditingProduct(null);
       refreshCatalogGrid();
@@ -396,15 +402,10 @@ const ProductAdd = () => {
       </div>
 
       {/* SECTION 2: SEARCH ENGINE & INVENTORY UTILITY MANAGEMENT LISTING GRID */}
-
-      {uiStatus.success && <div className="admin-status-alert success">{uiStatus.success}</div>}
-      {uiStatus.error && <div className="admin-status-alert error">{uiStatus.error}</div>}
-      
       <div className="auth-card-box register-card-wide" style={{ background: '#fcfcfc' }}>
         <h2 className="auth-card-title" style={{ fontSize: '1.35rem' }}>Catalog Inventory Controller</h2>
         <p style={{ fontSize: '0.8rem', color: '#666', margin: '-10px 0 15px 0' }}>Filter rows real-time to alter or drop live elements</p>
 
-        {/* Search Parameter Inputs Block */}
         <form onSubmit={handleCatalogSearch} className="auth-form-flow" style={{ marginBottom: '20px' }}>
           <div className="auth-form-row-grid">
             <div className="auth-input-group">
@@ -437,7 +438,6 @@ const ProductAdd = () => {
           </button>
         </form>
 
-        {/* Database Search Results Grid List Output */}
         <div style={{ maxHeight: '400px', overflowY: 'auto', border: '1px solid #e7e7e7', borderRadius: '4px', background: '#fff' }}>
           {searchResults.length === 0 ? (
             <p style={{ textAlign: 'center', padding: '20px', fontSize: '0.85rem', color: '#777' }}>No records residing in filtered scope.</p>
@@ -452,7 +452,7 @@ const ProductAdd = () => {
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <h4 style={{ margin: '0 0 2px 0', fontSize: '0.88rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', color: '#111' }}>{item.name}</h4>
                   <p style={{ margin: 0, fontSize: '0.75rem', color: '#666' }}>
-                    Price: <strong>₹{item.price}</strong> | Stock: <strong>{item.stock}</strong> units
+                    Price: <strong>₹{item.price}</strong> {item.discount > 0 && <span>(Disc: <strong>{item.discount}%</strong>)</span>} | Stock: <strong>{item.stock}</strong> units
                   </p>
                   <p style={{ margin: 0, fontSize: '0.65rem', color: '#999', fontFamily: 'monospace' }}>{item.id}</p>
                 </div>
@@ -476,9 +476,9 @@ const ProductAdd = () => {
         </div>
       </div>
 
-      {/* SECTION 3: CONDITIONAL INLINE PRODUCT UPDATE CONTEXT MODAL OVERLAY */}
+      {/* SECTION 3: CONDITIONAL PRODUCT UPDATE CONTEXT MODAL OVERLAY */}
       {editingProduct && (
-        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.4)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyRules: 'center', padding: '20px', boxSizing: 'border-box', overflowY: 'auto' }}>
+        <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: 'rgba(0,0,0,0.4)', zIndex: 2000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px', boxSizing: 'border-box', overflowY: 'auto' }}>
           <div className="auth-card-box register-card-wide" style={{ margin: 'auto', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }}>
             <h2 className="auth-card-title" style={{ fontSize: '1.35rem' }}>Modify Catalog Record</h2>
             <p style={{ fontSize: '0.75rem', color: '#c45500', margin: '-10px 0 15px 0', fontFamily: 'monospace' }}>Target ID: {editForm.id}</p>
@@ -492,12 +492,20 @@ const ProductAdd = () => {
                 />
               </div>
 
+              {/* Added Discount Row alongside Price and Stock inside the layout grid container */}
               <div className="auth-form-row-grid">
                 <div className="auth-input-group">
                   <label htmlFor="edit_price">Price (INR)</label>
                   <input
                     type="number" id="edit_price" name="price" min="0"
                     value={editForm.price} onChange={handleEditChange} required
+                  />
+                </div>
+                <div className="auth-input-group">
+                  <label htmlFor="edit_discount">Discount (%)</label>
+                  <input
+                    type="number" id="edit_discount" name="discount" min="0" max="100"
+                    value={editForm.discount} onChange={handleEditChange} required
                   />
                 </div>
                 <div className="auth-input-group">

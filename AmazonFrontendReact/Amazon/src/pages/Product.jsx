@@ -212,8 +212,8 @@ const Product = () => {
             <span className="product-price-discount">{product.discount}% <span style={{fontSize:'1.5rem'}}>Off</span></span>
             <br />
             <span className="product-currency-symbol">₹</span>
-            <span className="product-price-digits">{Intl.NumberFormat('en-IN').format(product.catalogPrice)}</span>
-            <span className="product-price-after">{product.price}</span>
+            <span className="product-price-after">{Intl.NumberFormat('en-IN').format(product.price)}</span>
+            <span className="product-price-before">{Intl.NumberFormat('en-IN').format(product.catalogPrice)}</span>
 
             <div className="product-stock-wrapper">
               {product.inStock ? (
