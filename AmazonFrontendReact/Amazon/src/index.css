@@ -59,6 +59,17 @@ html, body {
   display: block;
 }
 
+.Nav-linksLogo-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .Nav-linksLogo-mobile{
+  display: block;
+  cursor: pointer;
+}
+}
+
 /* Core Search Input Form Wrapper */
 .nav-search-bar-container {
   display: flex;
@@ -544,9 +555,33 @@ html, body {
 
   /* Hide raw utility layout text options links to clean interface bloat */
   .nav-items.text-link-node {
-    display: none; /* Keeps layout dedicated strictly to Brand Logo, Identity and Cart elements */
+    font-size: 18px;
+    padding: 17px 0 3px 18px;
+    margin: 0;
+    width: 100%;
   }
   
+  .nav-links{
+    width:400px;
+    height: 100vh;
+    background-color: #111;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 2;
+    display: none;
+    flex-direction: column;
+    /* display: none; */
+  }
+
+  .nav-items-nav-account-link-profile{
+    align-self: center;
+    order:-1;
+    margin-top: 16px ;
+    padding: 0 155px 8px 155px;
+    border-bottom: 3.7px silver solid;
+  }
+
   .footer-links-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;

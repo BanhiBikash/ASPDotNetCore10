@@ -12,8 +12,8 @@ import CategorySubCategory from '../context/CategorySubCategory';
 const Navbar = () => {
   const { user } = useContext(UserContext);
   const { cart } = useCart();
-  const {category, setCategory} = useContext(CategorySubCategory);
-  const {categoryArray,subCategoryArray} = category;
+  const { category, setCategory } = useContext(CategorySubCategory);
+  const { categoryArray, subCategoryArray } = category;
   const navigate = useNavigate();
 
   // 🔍 Search bar input and category state filters
@@ -23,14 +23,14 @@ const Navbar = () => {
   // 📦 Fetch dynamic category metadata on navbar mount
   useEffect(() => {
     const fetchMetadata = async () => {
-       
+
       try {
         const response = await api.get('v1/Products/GetCategories');
         const { categories, subCategories } = response.data;
 
         // Set categories state array safely
-        setCategory({categoryArray:categories, subCategoryArray:subCategories});
-         
+        setCategory({ categoryArray: categories, subCategoryArray: subCategories });
+
       } catch (e) {
         console.log("Error: can't fetch category " + e);
       }
@@ -38,6 +38,9 @@ const Navbar = () => {
 
     fetchMetadata();
   }, []);
+
+  //handle the dropdown menu
+
 
   const getFirstName = () => {
     if (!user || !user.name) return 'Account';
@@ -73,12 +76,12 @@ const Navbar = () => {
   };
 
   //search by Category
-  const searchByCategory = (e)=>{
+  const searchByCategory = (e) => {
     //set the search category
     setSearchCategory(e.target.value)
-    
+
     const params = new URLSearchParams();
-    params.append('category',e.target.value)
+    params.append('category', e.target.value)
 
     //empty the input text
     setSearchQuery('')
@@ -152,16 +155,16 @@ const Navbar = () => {
         ) : (
           <Link to="/login" className="nav-items text-link-node">Login</Link>
         )}
-
-        <Link to="/Cart" className='cartLogo'>
-          <div className="cart-icon-wrapper">
-            <img src={cartLogo} alt="Cart Logo" />
-            {totalCount > 0 && (
-              <span className="nav-cart-badge-count">{totalCount}</span>
-            )}
-          </div>
-        </Link>
       </div>
+
+      <Link to="/Cart" className='cartLogo'>
+        <div className="cart-icon-wrapper">
+          <img src={cartLogo} alt="Cart Logo" />
+          {totalCount > 0 && (
+            <span className="nav-cart-badge-count">{totalCount}</span>
+          )}
+        </div>
+      </Link>
 
     </div>
   );
