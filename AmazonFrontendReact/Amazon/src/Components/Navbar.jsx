@@ -40,6 +40,38 @@ const Navbar = () => {
   }, []);
 
   //handle the dropdown menu
+  const handleDropDown = () => {
+    console.log('Mobile menu toggled')
+    const container = document.getElementsByClassName('nav-links')
+
+    if (container) {
+      console.log('container exists')
+
+      //show container
+      container[0].style.display = 'flex'
+
+      //stop scrolling
+      document.body.style.overflow = 'hidden'
+    }
+  }
+
+  // handle the closing of dropdown menu
+  const pageBody = document.body;
+
+  pageBody.addEventListener("click", () => {
+    const container = document.getElementsByClassName("nav-links")[0];
+    
+    if (container) {
+      console.log("container exists");
+
+      // hide container
+      container.style.display = "none";
+
+      // re-enable scrolling
+      document.body.style.overflow = "auto"; // or "scroll"
+    }
+  });
+
 
 
   const getFirstName = () => {
@@ -99,7 +131,7 @@ const Navbar = () => {
           src={nav_icon}
           alt="Toggle Menu"
           className="Nav-linksLogo-mobile"
-          onClick={() => console.log('Mobile menu toggled')}
+          onClick={(e)=>{e.stopPropagation(); handleDropDown();}}
         />
 
         <Link to="/" className="logo-link">
