@@ -2,8 +2,8 @@ import axios from 'axios';
 
 // 📡 Central axios instance — Kept exactly as you requested to match your existing code paths!
 const api = axios.create({
-  // baseURL: 'https://localhost:7130/api', 
-  baseURL: 'http://localhost:7130/api', 
+  baseURL: 'https://amazoncloneapi-gucthdcgf6hmgdbw.centralindia-01.azurewebsites.net/api', 
+  // baseURL: 'http://localhost:7130/api', 
 });
 
 /* ==========================================================================
