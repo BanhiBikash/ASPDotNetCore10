@@ -59,8 +59,9 @@ const Navbar = () => {
   const pageBody = document.body;
 
   pageBody.addEventListener("click", () => {
+     if (window.innerWidth <= 768) {
     const container = document.getElementsByClassName("nav-links")[0];
-    
+
     if (container) {
       console.log("container exists");
 
@@ -70,6 +71,7 @@ const Navbar = () => {
       // re-enable scrolling
       document.body.style.overflow = "auto"; // or "scroll"
     }
+  }
   });
 
 
